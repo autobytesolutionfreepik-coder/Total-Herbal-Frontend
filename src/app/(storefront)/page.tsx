@@ -19,6 +19,7 @@ import {
   Package,
   Lock,
   CheckCircle2,
+  Mail,
 } from "lucide-react";
 import { cn } from "@/lib/utils/cn";
 import { formatCurrency } from "@/lib/utils/format";
@@ -197,12 +198,14 @@ const locations = [
     address: "520 Overthrow Blvd, Los Angeles, CA 90011",
     hours: "Open · Closes 10:00 PM",
     phone: "(716) 556-0125",
+    img: "/images/Apothecary.png",
   },
   {
     name: "Total Herbal Care — Downtown",
     address: "112 Ocean Road, Los Angeles, CA 90011",
     hours: "Open · Closes 10:00 PM",
     phone: "(716) 556-0125",
+    img: "/images/Find-a-Location-Near-You.png",
   },
 ];
 
@@ -333,29 +336,26 @@ export default function HomePage() {
       </section>
 
       {/* ══ 2. TRUST STRIP — Exact Figma match ═══════════════════════════════ */}
-      <section className="relative z-20 -mt-10 md:-mt-12 bg-transparent py-0 animate-none">
+      <section className="relative z-20 -mt-10 md:-mt-14 bg-transparent py-0 animate-none">
         <div className="container-site">
           {/* Green rounded container */}
-          <div
-            className="rounded-2xl py-5 px-6 md:px-10 shadow-lg"
-            style={{
-              background: "linear-gradient(to right, #2E3518 0%, #026C24 100%)",
-            }}
-          >
+          <div className="rounded-2xl py-5 px-6 md:px-10 shadow-lg bg-gradient-to-r from-[#2E3518] to-[#026C24]">
             <div className="grid grid-cols-3 md:grid-cols-6 gap-4">
               {trustItems.map(({ img, label, sub }) => (
                 <div
                   key={label}
-                  className="flex items-center gap-2.5 justify-start"
+                  className="flex items-center gap-3 justify-start"
                 >
-                  {/* PNG Icon */}
-                  <Image
-                    src={img}
-                    alt={`${label} ${sub}`}
-                    width={44}
-                    height={44}
-                    className="w-11 h-11 flex-shrink-0 object-contain"
-                  />
+                  {/* White circle icon wrapper */}
+                  <div className="w-16 h-16 rounded-full border border-white flex items-center justify-center flex-shrink-0 bg-white/5">
+                    <Image
+                      src={img}
+                      alt={`${label} ${sub}`}
+                      width={34}
+                      height={34}
+                      className="w-10 h-10 object-contain"
+                    />
+                  </div>
                   <div className="leading-tight">
                     <p className="text-white text-[11px] md:text-[13px] font-semibold">
                       {label}
@@ -1072,15 +1072,16 @@ export default function HomePage() {
                 className="bg-white rounded-xl p-5 flex gap-4"
                 style={{ boxShadow: "0 2px 12px rgba(0,0,0,0.07)" }}
               >
-                <div
-                  className="w-28 h-24 rounded-lg flex-shrink-0 flex items-center justify-center"
-                  style={{ background: "#016C24" }}
-                >
-                  <span className="text-white font-bold text-xs text-center">
-                    CANNABIS
-                  </span>
+                <div className="w-32 h-40 rounded-lg items-center overflow-hidden relative flex-shrink-0">
+                  <Image
+                    src={loc.img}
+                    alt={loc.name}
+                    fill
+                    className="object-cover"
+                    sizes="112px"
+                  />
                 </div>
-                <div className="flex-1 min-w-0">
+                <div className="flex-1 min-w-0 items-center justify-center">
                   <h3
                     className="font-bold text-sm mb-2"
                     style={{
@@ -1157,40 +1158,66 @@ export default function HomePage() {
       </section>
 
       {/* ══ 12. STAY ELEVATED / NEWSLETTER ═══════════════════════════════════ */}
-      <section className="py-14" style={{ background: "#016C24" }}>
+      <section className="py-4" style={{ background: "#F5F0E8" }}>
         <div className="container-site">
-          <div className="flex flex-col md:flex-row items-center justify-between gap-8">
-            <div>
-              <h2
-                className="text-2xl md:text-3xl font-bold text-white mb-1"
-                style={{ fontFamily: "Times New Roman, serif" }}
-              >
-                Stay Elevated
-              </h2>
-              <p
-                className="text-sm max-w-sm"
-                style={{ color: "rgba(255,255,255,0.6)" }}
-              >
-                Lorem ipsum dummy summary text about product printing and
-                typesetting convenience.
-              </p>
-            </div>
-            <div className="flex w-full md:w-auto gap-2">
-              <input
-                type="email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                placeholder="Your email address"
-                className="flex-1 md:w-72 text-sm px-4 py-2.5 rounded-full outline-none transition-colors"
-                style={{
-                  background: "rgba(255,255,255,0.1)",
-                  border: "1px solid rgba(255,255,255,0.2)",
-                  color: "#fff",
-                }}
+          <div className="relative rounded-3xl overflow-hidden py-12 px-8 md:px-28 bg-[#016C24] shadow-3xl">
+            {/* Left Leaf Graphic */}
+            <div className="absolute left-0 bottom-0 top-0 w-[120px] md:w-[250px] pointer-events-none select-none">
+              <Image
+                src="/images/cta-left.png"
+                alt="Cannabis Leaf Left"
+                fill
+                className="object-contain object-left-bottom"
+                sizes="(max-width: 768px) 120px, 180px"
               />
-              <Button variant="white" size="md">
-                Subscribe
-              </Button>
+            </div>
+
+            {/* Right Leaf Graphic */}
+            <div className="absolute right-0 bottom-0 top-0 w-[120px] md:w-[280px] pointer-events-none select-none">
+              <Image
+                src="/images/Cta-right.png"
+                alt="Cannabis Leaf Right"
+                fill
+                className="object-contain object-right-bottom"
+                sizes="(max-width: 768px) 120px, 180px"
+              />
+            </div>
+
+            {/* Content Overlay */}
+            <div className="relative z-10 flex flex-col lg:flex-row items-center justify-between gap-8">
+              <div className="text-left text-white max-w-md">
+                <h2
+                  className="text-2xl md:text-4xl font-bold text-white mb-2"
+                  style={{ fontFamily: "Times New Roman, serif" }}
+                >
+                  Stay Elevated
+                </h2>
+                <p className="text-xs md:text-sm text-white/80 leading-relaxed">
+                  Lorem Ipsum is simply dummy text of the printing and
+                  typesetting industry. Lorem Ipsum
+                </p>
+              </div>
+
+              <div className="flex flex-col sm:flex-row w-full lg:w-auto items-stretch sm:items-center gap-3">
+                {/* Email input pill */}
+                <div className="relative flex items-center bg-white rounded-full px-4 py-2.5 flex-1 sm:w-80 shadow-md">
+                  <Mail className="w-4 h-4 text-gray-400 mr-2.5 flex-shrink-0" />
+                  <input
+                    type="email"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    placeholder="Enter your email"
+                    className="bg-transparent border-none outline-none text-sm text-gray-800 placeholder-gray-400 w-full"
+                  />
+                </div>
+                {/* Subscribe Button */}
+                <Button
+                  variant="primary"
+                  className="rounded-full px-8 py-2.5 border border-white text-white bg-transparent hover:bg-white hover:text-[#016C24] transition-all font-semibold shadow-md shrink-0"
+                >
+                  Subscribe
+                </Button>
+              </div>
             </div>
           </div>
         </div>
