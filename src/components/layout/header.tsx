@@ -66,7 +66,7 @@ export function Header() {
             </span>
             <span
               className="text-xl font-bold leading-none"
-              style={{ fontFamily: "Times New Roman, serif", color: "#4CAF80" }}
+              style={{ fontFamily: "Times New Roman, serif", color: "#027F2C" }}
             >
               Herbal
             </span>

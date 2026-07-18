@@ -19,8 +19,12 @@ const supportLinks = [
 
 export function Footer() {
   return (
-    <footer className="bg-[#1A1A1A] text-white">
-      <div className="container-site py-14">
+    <footer
+      className="relative text-white overflow-hidden bg-cover bg-center"
+      style={{ backgroundImage: "url('/images/footer.png')" }}
+    >
+      <div className="absolute inset-0 bg-black/5 z-0" />
+      <div className="container-site py-14 relative z-10">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
           {/* Brand */}
           <div className="lg:col-span-1">
@@ -28,7 +32,7 @@ export function Footer() {
               <span style={{ fontFamily: "Times New Roman, serif", fontSize: "1.35rem", fontWeight: 700, color: "#fff" }}>
                 Total
               </span>
-              <span style={{ fontFamily: "Times New Roman, serif", fontSize: "1.35rem", fontWeight: 700, color: "#4CAF80" }}>
+              <span style={{ fontFamily: "Times New Roman, serif", fontSize: "1.35rem", fontWeight: 700, color: "#027F2C" }}>
                 Herbal
               </span>
               <span style={{ fontFamily: "Times New Roman, serif", fontSize: "1.35rem", fontWeight: 700, color: "#fff" }}>
@@ -108,7 +112,7 @@ export function Footer() {
       </div>
 
       {/* Bottom Bar */}
-      <div className="border-t border-white/10">
+      <div className="border-t border-white/10 relative z-10">
         <div className="container-site py-4 flex flex-col sm:flex-row items-center justify-between gap-2 text-xs text-white/40">
           <p>© 2026 Total Herbal Care. Adults 21+ Only. Lab Tested & Secure.</p>
           <div className="flex items-center gap-4">
