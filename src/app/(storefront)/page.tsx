@@ -27,25 +27,37 @@ import { Button } from "@/components/ui/button";
 /* ─── Static Data ─────────────────────────────────────────────────────────── */
 
 const trustItems = [
-  { img: "/icons/Premium-Quality.png",   label: "Premium",   sub: "Quality" },
-  { img: "/icons/Lab-Tested.png",        label: "Lab",        sub: "Tested" },
-  { img: "/icons/Licensed-Dispensary.png", label: "Licensed",   sub: "Dispensary" },
-  { img: "/icons/Wide-Selection.png",      label: "Wide",       sub: "Selection" },
-  { img: "/icons/Friendly-Experts.png",   label: "Friendly",   sub: "Experts" },
-  { img: "/icons/Secure-Checkout.png",     label: "Secure",     sub: "Checkout" },
+  { img: "/icons/Premium-Quality.png", label: "Premium", sub: "Quality" },
+  { img: "/icons/Lab-Tested.png", label: "Lab", sub: "Tested" },
+  {
+    img: "/icons/Licensed-Dispensary.png",
+    label: "Licensed",
+    sub: "Dispensary",
+  },
+  { img: "/icons/Wide-Selection.png", label: "Wide", sub: "Selection" },
+  { img: "/icons/Friendly-Experts.png", label: "Friendly", sub: "Experts" },
+  { img: "/icons/Secure-Checkout.png", label: "Secure", sub: "Checkout" },
 ];
 
 const categories = [
-  { label: "Flower",        slug: "flowers",       img: "/images/Flower.png" },
-  { label: "Pre-Rolls",     slug: "pre-rolls",     img: "/images/Pre-Rolls.png" },
-  { label: "Vapes",         slug: "vapes",         img: "/images/Vapes.png" },
-  { label: "Edibles",       slug: "edibles",       img: "/images/Edibles.png" },
-  { label: "Concentrates",  slug: "concentrates",  img: "/images/Concentrates.png" },
-  { label: "Infused Drinks",slug: "infused-drinks",img: "/images/Infused-Drinks.png" },
-  { label: "Oils",          slug: "oils",          img: "/images/Oils.png" },
-  { label: "Tinctures",     slug: "tinctures",     img: "/images/Tinctures.png" },
-  { label: "Herbal Teas",   slug: "herbal-teas",   img: "/images/Herbal-Teas.png" },
-  { label: "Apothecary",    slug: "apothecary",    img: "/images/Apothecary.png" },
+  { label: "Flower", slug: "flowers", img: "/images/Flower.png" },
+  { label: "Pre-Rolls", slug: "pre-rolls", img: "/images/Pre-Rolls.png" },
+  { label: "Vapes", slug: "vapes", img: "/images/Vapes.png" },
+  { label: "Edibles", slug: "edibles", img: "/images/Edibles.png" },
+  {
+    label: "Concentrates",
+    slug: "concentrates",
+    img: "/images/Concentrates.png",
+  },
+  {
+    label: "Infused Drinks",
+    slug: "infused-drinks",
+    img: "/images/Infused-Drinks.png",
+  },
+  { label: "Oils", slug: "oils", img: "/images/Oils.png" },
+  { label: "Tinctures", slug: "tinctures", img: "/images/Tinctures.png" },
+  { label: "Herbal Teas", slug: "herbal-teas", img: "/images/Herbal-Teas.png" },
+  { label: "Apothecary", slug: "apothecary", img: "/images/Apothecary.png" },
 ];
 
 const newArrivals = [
@@ -96,56 +108,102 @@ const newArrivals = [
 ];
 
 const differenceCards = [
-  { icon: Award,        title: "Premium Quality",     desc: "We source only the finest cannabis products, ensuring superior quality in every item we offer." },
-  { icon: FlaskConical, title: "Lab Tested",          desc: "All products undergo rigorous third-party laboratory testing for purity, potency, and safety." },
-  { icon: Shield,       title: "Licensed Dispensary", desc: "Operating under full state compliance as a fully licensed and regulated cannabis dispensary." },
-  { icon: Package,      title: "Wide Selection",      desc: "From flowers and concentrates to edibles and tinctures — we carry something for every preference." },
-  { icon: Users,        title: "Friendly Experts",    desc: "Our knowledgeable staff is always ready to guide you to the perfect product for your needs." },
-  { icon: Lock,         title: "Secure Checkout",     desc: "Shop with confidence through our encrypted, private, and fully secure checkout experience." },
+  {
+    icon: Award,
+    title: "Premium Quality",
+    desc: "We source only the finest cannabis products, ensuring superior quality in every item we offer.",
+  },
+  {
+    icon: FlaskConical,
+    title: "Lab Tested",
+    desc: "All products undergo rigorous third-party laboratory testing for purity, potency, and safety.",
+  },
+  {
+    icon: Shield,
+    title: "Licensed Dispensary",
+    desc: "Operating under full state compliance as a fully licensed and regulated cannabis dispensary.",
+  },
+  {
+    icon: Package,
+    title: "Wide Selection",
+    desc: "From flowers and concentrates to edibles and tinctures — we carry something for every preference.",
+  },
+  {
+    icon: Users,
+    title: "Friendly Experts",
+    desc: "Our knowledgeable staff is always ready to guide you to the perfect product for your needs.",
+  },
+  {
+    icon: Lock,
+    title: "Secure Checkout",
+    desc: "Shop with confidence through our encrypted, private, and fully secure checkout experience.",
+  },
 ];
 
 const testimonials = [
   {
     text: "The selection at TotalHerbalCare is unparalleled. Their edibles actually taste gourmet and the results are consistent every time. Best dispensary in the city.",
-    author: "Sarah J.", role: "Verified Customer",
+    author: "Sarah J.",
+    role: "Verified Customer",
     img: "https://images.unsplash.com/photo-1494790108755-2616b612b47c?w=80&h=80&fit=crop&q=80",
   },
   {
     text: "Their staff really know their stuff. I was looking for something to help with sleep and their recommendations were spot on. The store vibe is so high-end.",
-    author: "Marcus W.", role: "Regular Customer",
+    author: "Marcus W.",
+    role: "Regular Customer",
     img: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=80&h=80&fit=crop&q=80",
   },
   {
     text: "Absolutely love the packaging and the focus on lab results. It gives me peace of mind knowing exactly what I'm putting into my body. Truly a premium experience.",
-    author: "Diana R.", role: "Verified Customer",
+    author: "Diana R.",
+    role: "Verified Customer",
     img: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=80&h=80&fit=crop&q=80",
   },
 ];
 
 const blogPosts = [
   {
-    id: "1", category: "BEGINNER", title: "A Beginner's Guide to CBD",
-    excerpt: "Lorem ipsum is simply dummy text of the printing and typesetting industry. Lorem ipsum.",
+    id: "1",
+    category: "BEGINNER",
+    title: "A Beginner's Guide to CBD",
+    excerpt:
+      "Lorem ipsum is simply dummy text of the printing and typesetting industry. Lorem ipsum.",
     img: "/images/Beginners.png",
     slug: "beginners-guide-to-cbd",
   },
   {
-    id: "2", category: "SCIENCE", title: "Understanding Terpenes",
-    excerpt: "Lorem ipsum is simply dummy text of the printing and typesetting industry. Lorem ipsum.",
+    id: "2",
+    category: "SCIENCE",
+    title: "Understanding Terpenes",
+    excerpt:
+      "Lorem ipsum is simply dummy text of the printing and typesetting industry. Lorem ipsum.",
     img: "/images/science.png",
     slug: "understanding-terpenes",
   },
   {
-    id: "3", category: "LIFESTYLE", title: "The Art of Pre-Rolls",
-    excerpt: "Lorem ipsum is simply dummy text of the printing and typesetting industry. Lorem ipsum.",
+    id: "3",
+    category: "LIFESTYLE",
+    title: "The Art of Pre-Rolls",
+    excerpt:
+      "Lorem ipsum is simply dummy text of the printing and typesetting industry. Lorem ipsum.",
     img: "/images/LIFESTYLE.png",
     slug: "the-art-of-pre-rolls",
   },
 ];
 
 const locations = [
-  { name: "Total Herbal Care — Westside",  address: "520 Overthrow Blvd, Los Angeles, CA 90011", hours: "Open · Closes 10:00 PM", phone: "(716) 556-0125" },
-  { name: "Total Herbal Care — Downtown",  address: "112 Ocean Road, Los Angeles, CA 90011",     hours: "Open · Closes 10:00 PM", phone: "(716) 556-0125" },
+  {
+    name: "Total Herbal Care — Westside",
+    address: "520 Overthrow Blvd, Los Angeles, CA 90011",
+    hours: "Open · Closes 10:00 PM",
+    phone: "(716) 556-0125",
+  },
+  {
+    name: "Total Herbal Care — Downtown",
+    address: "112 Ocean Road, Los Angeles, CA 90011",
+    hours: "Open · Closes 10:00 PM",
+    phone: "(716) 556-0125",
+  },
 ];
 
 const faqs = [
@@ -157,25 +215,35 @@ const faqs = [
 /* ─── Animation Variants ─────────────────────────────────────────────────── */
 const fadeUp = {
   hidden: { opacity: 0, y: 28 },
-  show: { opacity: 1, y: 0, transition: { duration: 0.55, ease: [0.4, 0, 0.2, 1] as const } },
+  show: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.55, ease: [0.4, 0, 0.2, 1] as const },
+  },
 };
 const stagger = { show: { transition: { staggerChildren: 0.09 } } };
 const scaleIn = {
   hidden: { opacity: 0, scale: 0.93 },
-  show: { opacity: 1, scale: 1, transition: { duration: 0.45, ease: [0.4, 0, 0.2, 1] as const } },
+  show: {
+    opacity: 1,
+    scale: 1,
+    transition: { duration: 0.45, ease: [0.4, 0, 0.2, 1] as const },
+  },
 };
 
 /* ══════════════════════════════════════════════════════════════════════════ */
 export default function HomePage() {
   const heroRef = useRef<HTMLDivElement>(null);
-  const { scrollYProgress } = useScroll({ target: heroRef, offset: ["start start", "end start"] });
+  const { scrollYProgress } = useScroll({
+    target: heroRef,
+    offset: ["start start", "end start"],
+  });
   const heroY = useTransform(scrollYProgress, [0, 1], [0, 70]);
   const [openFaq, setOpenFaq] = useState<number | null>(null);
   const [email, setEmail] = useState("");
 
   return (
     <div className="overflow-x-hidden">
-
       {/* ══ 1. HERO ══════════════════════════════════════════════════════════ */}
       <section
         ref={heroRef}
@@ -183,7 +251,10 @@ export default function HomePage() {
         style={{ backgroundColor: "#1A2E1A" }}
       >
         {/* Background — Hero_banner.png */}
-        <motion.div style={{ y: heroY }} className="absolute inset-0 will-change-transform">
+        <motion.div
+          style={{ y: heroY }}
+          className="absolute inset-0 will-change-transform"
+        >
           <Image
             src="/images/Hero_banner.png"
             alt="Premium cannabis products"
@@ -198,8 +269,12 @@ export default function HomePage() {
 
         {/* Hero content */}
         <div className="container-site relative z-10 py-20 lg:py-28">
-          <motion.div initial="hidden" animate="show" variants={stagger} className="max-w-[520px]">
-
+          <motion.div
+            initial="hidden"
+            animate="show"
+            variants={stagger}
+            className="max-w-[520px]"
+          >
             {/* ── "ESTABLISHED 2024" pill ── */}
             <motion.div variants={fadeUp} className="mb-6">
               <span
@@ -222,11 +297,12 @@ export default function HomePage() {
               style={{
                 fontFamily: "Times New Roman, serif",
                 fontSize: "clamp(2.4rem, 5vw, 3.6rem)",
-                color: "#fff"
+                color: "#fff",
               }}
             >
               Premium Cannabis
-              <br />Products for Every
+              <br />
+              Products for Every
               <br />
               <span style={{ color: "#C9A961" }}>Lifestyle</span>
             </motion.h1>
@@ -237,7 +313,10 @@ export default function HomePage() {
               className="text-sm leading-relaxed mb-8 max-w-[420px]"
               style={{ color: "rgba(255,255,255,0.72)" }}
             >
-              Lorem ipsum is simply dummy text of the printing and typesetting industry. Lorem ipsum has been the industry&apos;s standard dummy text ever since 1500s, when designers at Letterset and James Mosley, the librarian at St Bride Printing.
+              Lorem ipsum is simply dummy text of the printing and typesetting
+              industry. Lorem ipsum has been the industry&apos;s standard dummy
+              text ever since 1500s, when designers at Letterset and James
+              Mosley, the librarian at St Bride Printing.
             </motion.p>
 
             {/* CTAs */}
@@ -249,7 +328,6 @@ export default function HomePage() {
                 Find a Location
               </Button>
             </motion.div>
-
           </motion.div>
         </div>
       </section>
@@ -260,11 +338,16 @@ export default function HomePage() {
           {/* Green rounded container */}
           <div
             className="rounded-2xl py-5 px-6 md:px-10 shadow-lg"
-            style={{ background: "linear-gradient(to right, #2E3518 0%, #026C24 100%)" }}
+            style={{
+              background: "linear-gradient(to right, #2E3518 0%, #026C24 100%)",
+            }}
           >
             <div className="grid grid-cols-3 md:grid-cols-6 gap-4">
               {trustItems.map(({ img, label, sub }) => (
-                <div key={label} className="flex items-center gap-2.5 justify-start">
+                <div
+                  key={label}
+                  className="flex items-center gap-2.5 justify-start"
+                >
                   {/* PNG Icon */}
                   <Image
                     src={img}
@@ -274,8 +357,15 @@ export default function HomePage() {
                     className="w-11 h-11 flex-shrink-0 object-contain"
                   />
                   <div className="leading-tight">
-                    <p className="text-white text-[11px] md:text-[13px] font-semibold">{label}</p>
-                    <p className="text-[10px] md:text-[12px] font-semibold" style={{ color: "#C9A961" }}>{sub}</p>
+                    <p className="text-white text-[11px] md:text-[13px] font-semibold">
+                      {label}
+                    </p>
+                    <p
+                      className="text-[10px] md:text-[12px] font-semibold"
+                      style={{ color: "#C9A961" }}
+                    >
+                      {sub}
+                    </p>
                   </div>
                 </div>
               ))}
@@ -288,7 +378,9 @@ export default function HomePage() {
       <section className="py-16" style={{ background: "#F5F0E8" }}>
         <div className="container-site">
           <motion.div
-            initial="hidden" whileInView="show" viewport={{ once: true, margin: "-60px" }}
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: true, margin: "-60px" }}
             variants={stagger}
             className="text-center mb-10"
           >
@@ -300,29 +392,45 @@ export default function HomePage() {
               Explore Our Collection
             </motion.h2>
             {/* Gold underline accent */}
-            <motion.div variants={fadeUp} className="flex justify-center mt-3 mb-1">
-              <div className="w-10 h-[3px] rounded-full" style={{ background: "#C9A961" }} />
+            <motion.div
+              variants={fadeUp}
+              className="flex justify-center mt-3 mb-1"
+            >
+              <div
+                className="w-10 h-[3px] rounded-full"
+                style={{ background: "#C9A961" }}
+              />
             </motion.div>
           </motion.div>
 
           <motion.div
-            initial="hidden" whileInView="show" viewport={{ once: true, margin: "-40px" }}
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: true, margin: "-40px" }}
             variants={stagger}
             className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4"
           >
             {categories.map((cat) => (
               <motion.div key={cat.label} variants={scaleIn}>
-                <Link href={`/shop?category=${cat.slug}`} className="group block text-center">
+                <Link
+                  href={`/shop?category=${cat.slug}`}
+                  className="group block text-center"
+                >
                   <div className="relative overflow-hidden rounded-xl mb-2.5 aspect-[4/3]">
                     <Image
-                      src={cat.img} alt={cat.label} fill
+                      src={cat.img}
+                      alt={cat.label}
+                      fill
                       className="object-cover transition-transform duration-500 group-hover:scale-[1.07]"
                       sizes="(max-width:640px) 50vw, (max-width:1024px) 33vw, 20vw"
                     />
                   </div>
                   <p
                     className="text-sm font-semibold transition-colors"
-                    style={{ fontFamily: "Manrope, sans-serif", color: "#2D6B4F" }}
+                    style={{
+                      fontFamily: "Manrope, sans-serif",
+                      color: "#2D6B4F",
+                    }}
                   >
                     {cat.label}
                   </p>
@@ -334,12 +442,13 @@ export default function HomePage() {
       </section>
 
       {/* ══ 4. NEW ARRIVALS — 100% Figma product cards ═══════════════════════ */}
-      <section className="py-16" style={{ background: "#F5F0E8" }}>
+      <section className="py-4" style={{ background: "#F5F0E8" }}>
         <div className="container-site">
-
           {/* Header row */}
           <motion.div
-            initial="hidden" whileInView="show" viewport={{ once: true }}
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: true }}
             variants={stagger}
             className="flex items-end justify-between mb-8"
           >
@@ -347,11 +456,18 @@ export default function HomePage() {
               <motion.h2
                 variants={fadeUp}
                 className="text-3xl font-bold"
-                style={{ fontFamily: "Times New Roman, serif", color: "#016C24" }}
+                style={{
+                  fontFamily: "Times New Roman, serif",
+                  color: "#016C24",
+                }}
               >
                 New Arrivals
               </motion.h2>
-              <motion.p variants={fadeUp} className="text-sm mt-1" style={{ color: "#767676" }}>
+              <motion.p
+                variants={fadeUp}
+                className="text-sm mt-1"
+                style={{ color: "#767676" }}
+              >
                 Our latest premium drops, laboratory-certified.
               </motion.p>
             </div>
@@ -359,7 +475,11 @@ export default function HomePage() {
               <Link
                 href="/shop"
                 className="text-sm font-semibold flex items-center gap-1 transition-colors hover:opacity-75"
-                style={{ color: "#016C24", textDecoration: "underline", textUnderlineOffset: "3px" }}
+                style={{
+                  color: "#016C24",
+                  textDecoration: "underline",
+                  textUnderlineOffset: "3px",
+                }}
               >
                 View All Products
               </Link>
@@ -368,7 +488,9 @@ export default function HomePage() {
 
           {/* Product Cards — Exact Figma layout */}
           <motion.div
-            initial="hidden" whileInView="show" viewport={{ once: true, margin: "-40px" }}
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: true, margin: "-40px" }}
             variants={stagger}
             className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5"
           >
@@ -379,11 +501,12 @@ export default function HomePage() {
               }
               return (
                 <motion.div key={p.id} variants={scaleIn}>
-                  <div
-                    className="group relative rounded-[20px] overflow-hidden flex flex-col cursor-pointer bg-white border border-neutral-100 hover:shadow-[0_8px_32px_rgba(0,0,0,0.08)] hover:-translate-y-1 transition-all duration-300 h-full animate-none"
-                  >
+                  <div className="group relative rounded-[20px] overflow-hidden flex flex-col cursor-pointer bg-white border border-neutral-100 hover:shadow-[0_8px_32px_rgba(0,0,0,0.08)] hover:-translate-y-1 transition-all duration-300 h-full animate-none">
                     {/* ── Image area — tall, takes most of the card ── */}
-                    <div className="relative overflow-hidden w-full" style={{ aspectRatio: "4/5" }}>
+                    <div
+                      className="relative overflow-hidden w-full"
+                      style={{ aspectRatio: "4/5" }}
+                    >
                       <Image
                         src={p.img}
                         alt={p.name}
@@ -403,12 +526,15 @@ export default function HomePage() {
 
                     {/* ── Info area ── */}
                     <div className="p-5 flex flex-col gap-1.5 flex-1">
-
                       {/* Star rating */}
                       <div className="flex items-center gap-1">
                         <Star className="w-3.5 h-3.5 fill-[#016C24] text-[#016C24]" />
-                        <span className="text-xs font-bold text-[#016C24]">{p.rating}</span>
-                        <span className="text-xs text-[#767676]">({p.reviews} reviews)</span>
+                        <span className="text-xs font-bold text-[#016C24]">
+                          {p.rating}
+                        </span>
+                        <span className="text-xs text-[#767676]">
+                          ({p.reviews} reviews)
+                        </span>
                       </div>
 
                       {/* Product name — dark green like Figma */}
@@ -443,41 +569,61 @@ export default function HomePage() {
                           <ShoppingCart className="w-4 h-4" />
                         </Button>
                       </div>
-
                     </div>
                   </div>
                 </motion.div>
               );
             })}
           </motion.div>
-
         </div>
       </section>
 
       {/* ══ 5. SEASONAL BANNER (First) ═══════════════════════════════════════ */}
       <section className="py-12 bg-transparent animate-none">
         <div className="container-site">
-          <div className="relative rounded-3xl overflow-hidden shadow-sm" style={{ height: "380px" }}>
+          <div
+            className="relative rounded-3xl overflow-hidden shadow-sm"
+            style={{ height: "380px" }}
+          >
             <Image
               src="/images/Limited-time-offer.png"
               alt="Seasonal Collection"
-              fill className="object-cover object-center animate-none" sizes="100vw"
+              fill
+              className="object-cover object-center animate-none"
+              sizes="100vw"
             />
             <div className="absolute inset-0 bg-black/45" />
             <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-6">
-              <motion.div initial="hidden" whileInView="show" viewport={{ once: true }} variants={stagger} className="max-w-2xl">
-                <motion.p variants={fadeUp} className="text-xs font-bold tracking-[0.2em] uppercase mb-2 text-white/70">
+              <motion.div
+                initial="hidden"
+                whileInView="show"
+                viewport={{ once: true }}
+                variants={stagger}
+                className="max-w-2xl"
+              >
+                <motion.p
+                  variants={fadeUp}
+                  className="text-xs font-bold tracking-[0.2em] uppercase mb-2 text-white/70"
+                >
                   LIMITED TIME OFFER
                 </motion.p>
-               <motion.h2
-  variants={fadeUp}
-  className="text-2xl md:text-4xl font-bold  mb-3 whitespace-pre-line"
-  style={{ fontFamily: "Times New Roman, serif", color: "white" }}
->
-  Seasonal Collection:{"\n"}Fresh Summer Blooms
-</motion.h2>
-                <motion.p variants={fadeUp} className="text-xs md:text-sm max-w-lg mx-auto mb-6 leading-relaxed text-white/80">
-                  Experience the essence of the season with our exclusive sun-grown flower collection. 20% off all flower products this week.
+                <motion.h2
+                  variants={fadeUp}
+                  className="text-2xl md:text-4xl font-bold  mb-3 whitespace-pre-line"
+                  style={{
+                    fontFamily: "Times New Roman, serif",
+                    color: "white",
+                  }}
+                >
+                  Seasonal Collection:{"\n"}Fresh Summer Blooms
+                </motion.h2>
+                <motion.p
+                  variants={fadeUp}
+                  className="text-xs md:text-sm max-w-lg mx-auto mb-6 leading-relaxed text-white/80"
+                >
+                  Experience the essence of the season with our exclusive
+                  sun-grown flower collection. 20% off all flower products this
+                  week.
                 </motion.p>
                 <motion.div variants={fadeUp}>
                   <Button href="/shop" variant="white" className="px-8 py-2.5">
@@ -491,41 +637,68 @@ export default function HomePage() {
       </section>
 
       {/* ══ 6. THE TOTALHERBALCARE DIFFERENCE ════════════════════════════════ */}
-      <section className="py-16" style={{ background: "#F5F0E8" }}>
+      <section className="py-6" style={{ background: "#F5F0E8" }}>
         <div className="container-site">
           <motion.div
-            initial="hidden" whileInView="show" viewport={{ once: true }}
-            variants={stagger} className="text-center mb-12"
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: true }}
+            variants={stagger}
+            className="text-center mb-12"
           >
-            <motion.h2 variants={fadeUp} className="text-3xl md:text-[2.2rem] font-bold mb-2"
-              style={{ fontFamily: "Times New Roman, serif", color: "#016C24" }}>
+            <motion.h2
+              variants={fadeUp}
+              className="text-3xl md:text-[2.2rem] font-bold mb-2"
+              style={{ fontFamily: "Times New Roman, serif", color: "#016C24" }}
+            >
               The TotalHerbalCare Difference
             </motion.h2>
-            <motion.p variants={fadeUp} className="text-sm max-w-xl mx-auto" style={{ color: "#767676" }}>
-              Setting the benchmarks for quality, safety, and luxury in the cannabis wellness industry.
+            <motion.p
+              variants={fadeUp}
+              className="text-sm max-w-xl mx-auto"
+              style={{ color: "#767676" }}
+            >
+              Setting the benchmarks for quality, safety, and luxury in the
+              cannabis wellness industry.
             </motion.p>
           </motion.div>
 
           <motion.div
-            initial="hidden" whileInView="show" viewport={{ once: true, margin: "-60px" }}
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: true, margin: "-60px" }}
             variants={stagger}
             className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5"
           >
             {differenceCards.map(({ icon: Icon, title, desc }) => (
               <motion.div
-                key={title} variants={scaleIn}
+                key={title}
+                variants={scaleIn}
                 className="bg-white rounded-xl p-6 transition-shadow duration-300 hover:shadow-lg"
                 style={{ boxShadow: "0 2px 12px rgba(0,0,0,0.07)" }}
               >
-                <div className="w-10 h-10 rounded-lg flex items-center justify-center mb-4"
-                  style={{ background: "#F0F7F3" }}>
+                <div
+                  className="w-10 h-10 rounded-lg flex items-center justify-center mb-4"
+                  style={{ background: "#F0F7F3" }}
+                >
                   <Icon className="w-5 h-5" style={{ color: "#2D6B4F" }} />
                 </div>
-                <h3 className="font-semibold mb-2"
-                  style={{ fontFamily: "Times New Roman, serif", fontSize: "1rem", color: "#1A1A1A" }}>
+                <h3
+                  className="font-semibold mb-2"
+                  style={{
+                    fontFamily: "Times New Roman, serif",
+                    fontSize: "1rem",
+                    color: "#1A1A1A",
+                  }}
+                >
                   {title}
                 </h3>
-                <p className="text-sm leading-relaxed" style={{ color: "#767676" }}>{desc}</p>
+                <p
+                  className="text-sm leading-relaxed"
+                  style={{ color: "#767676" }}
+                >
+                  {desc}
+                </p>
               </motion.div>
             ))}
           </motion.div>
@@ -538,23 +711,36 @@ export default function HomePage() {
           <div className="grid md:grid-cols-2 gap-14 items-center">
             {/* Image */}
             <motion.div
-              initial={{ opacity: 0, x: -40 }} whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }} transition={{ duration: 0.6, ease: [0.4, 0, 0.2, 1] }}
+              initial={{ opacity: 0, x: -40 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, ease: [0.4, 0, 0.2, 1] }}
               className="relative"
             >
-              <div className="relative rounded-[24px] overflow-hidden shadow-md" style={{ aspectRatio: "4/3" }}>
+              <div
+                className="relative rounded-[24px] overflow-hidden shadow-md"
+                style={{ aspectRatio: "3/4" }}
+              >
                 <Image
                   src="/images/OUR-COMMITMENT.png"
-                  alt="Cannabis cultivation" fill className="object-cover animate-none"
+                  alt="Cannabis cultivation"
+                  fill
+                  className="object-cover animate-none"
                   sizes="(max-width:768px) 100vw, 50vw"
                 />
               </div>
               {/* Floating badge */}
               <div
-                className="absolute bottom-6 left-6 bg-white/90 backdrop-blur-md rounded-2xl px-5 py-4 shadow-xl border border-white/20"
+                className="absolute bottom-6 right-6 bg-white/70 backdrop-blur-md rounded-2xl px-5 py-4 shadow-xl border border-white/20"
                 style={{ transform: "none" }}
               >
-                <p className="text-2xl font-bold" style={{ fontFamily: "Times New Roman, serif", color: "#016C24" }}>
+                <p
+                  className="text-2xl font-bold"
+                  style={{
+                    fontFamily: "Times New Roman, serif",
+                    color: "#016C24",
+                  }}
+                >
                   10+ Years
                 </p>
                 <p className="text-xs max-w-[160px] mt-0.5 text-neutral-600">
@@ -565,18 +751,33 @@ export default function HomePage() {
 
             {/* Text */}
             <motion.div
-              initial={{ opacity: 0, x: 40 }} whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }} transition={{ duration: 0.6, ease: [0.4, 0, 0.2, 1] }}
+              initial={{ opacity: 0, x: 40 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, ease: [0.4, 0, 0.2, 1] }}
             >
               <p className="text-xs font-bold tracking-widest uppercase mb-3 text-[#016C24]">
                 Our Commitment
               </p>
-              <h2 className="text-3xl md:text-4xl font-bold leading-snug mb-4"
-                style={{ fontFamily: "Times New Roman, serif", color: "#016C24" }}>
-                Elevating Standards<br />in Cannabis Wellness
+              <h2
+                className="text-3xl md:text-4xl font-bold leading-snug mb-4"
+                style={{
+                  fontFamily: "Times New Roman, serif",
+                  color: "#016C24",
+                }}
+              >
+                Elevating Standards
+                <br />
+                in Cannabis Wellness
               </h2>
-              <p className="text-sm leading-relaxed mb-6" style={{ color: "#4A4A4A" }}>
-                Lorem ipsum is simply dummy text of the printing and typesetting industry. Lorem ipsum has been the industry&apos;s standard dummy text ever since 1500s, when designers at Letterset and James Mosley. The librarian at St Bride Printing.
+              <p
+                className="text-sm leading-relaxed mb-6"
+                style={{ color: "#4A4A4A" }}
+              >
+                Lorem ipsum is simply dummy text of the printing and typesetting
+                industry. Lorem ipsum has been the industry&apos;s standard
+                dummy text ever since 1500s, when designers at Letterset and
+                James Mosley. The librarian at St Bride Printing.
               </p>
               <div className="space-y-4">
                 {["Ethical Cultivation", "Community Education"].map((item) => (
@@ -585,9 +786,15 @@ export default function HomePage() {
                       <CheckCircle2 className="w-3.5 h-3.5 text-[#016C24]" />
                     </div>
                     <div>
-                      <p className="font-semibold text-sm mb-0.5" style={{ color: "#1A1A1A" }}>{item}</p>
+                      <p
+                        className="font-semibold text-sm mb-0.5"
+                        style={{ color: "#1A1A1A" }}
+                      >
+                        {item}
+                      </p>
                       <p className="text-sm" style={{ color: "#767676" }}>
-                        Lorem ipsum is simply dummy text of the printing and typesetting industry. Lorem ipsum.
+                        Lorem ipsum is simply dummy text of the printing and
+                        typesetting industry. Lorem ipsum.
                       </p>
                     </div>
                   </div>
@@ -607,46 +814,77 @@ export default function HomePage() {
       <section className="py-16" style={{ background: "#F0EBE1" }}>
         <div className="container-site">
           <motion.div
-            initial="hidden" whileInView="show" viewport={{ once: true }}
-            variants={stagger} className="text-center mb-10"
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: true }}
+            variants={stagger}
+            className="text-center mb-10"
           >
-            <motion.h2 variants={fadeUp} className="text-3xl md:text-[2.2rem] font-bold mb-3"
-              style={{ fontFamily: "Times New Roman, serif", color: "#1A1A1A" }}>
+            <motion.h2
+              variants={fadeUp}
+              className="text-3xl md:text-[2.2rem] font-bold mb-3"
+              style={{ fontFamily: "Times New Roman, serif", color: "#1A1A1A" }}
+            >
               What Our Community Says
             </motion.h2>
             <motion.div variants={fadeUp} className="flex justify-center gap-1">
               {[...Array(5)].map((_, i) => (
-                <Star key={i} className="w-5 h-5 fill-[#C9A961] text-[#C9A961]" />
+                <Star
+                  key={i}
+                  className="w-5 h-5 fill-[#C9A961] text-[#C9A961]"
+                />
               ))}
             </motion.div>
           </motion.div>
 
           <motion.div
-            initial="hidden" whileInView="show" viewport={{ once: true, margin: "-60px" }}
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: true, margin: "-60px" }}
             variants={stagger}
             className="grid grid-cols-1 md:grid-cols-3 gap-6"
           >
             {testimonials.map((t) => (
               <motion.div
-                key={t.author} variants={scaleIn}
+                key={t.author}
+                variants={scaleIn}
                 className="bg-white rounded-2xl p-6 transition-shadow duration-300 hover:shadow-lg"
                 style={{ boxShadow: "0 2px 16px rgba(0,0,0,0.07)" }}
               >
                 <div className="flex gap-1 mb-4">
                   {[...Array(5)].map((_, i) => (
-                    <Star key={i} className="w-4 h-4 fill-[#C9A961] text-[#C9A961]" />
+                    <Star
+                      key={i}
+                      className="w-4 h-4 fill-[#C9A961] text-[#C9A961]"
+                    />
                   ))}
                 </div>
-                <p className="text-sm leading-relaxed mb-5 italic" style={{ color: "#4A4A4A" }}>
+                <p
+                  className="text-sm leading-relaxed mb-5 italic"
+                  style={{ color: "#4A4A4A" }}
+                >
                   &ldquo;{t.text}&rdquo;
                 </p>
                 <div className="flex items-center gap-3">
                   <div className="relative w-10 h-10 rounded-full overflow-hidden flex-shrink-0">
-                    <Image src={t.img} alt={t.author} fill className="object-cover" sizes="40px" />
+                    <Image
+                      src={t.img}
+                      alt={t.author}
+                      fill
+                      className="object-cover"
+                      sizes="40px"
+                    />
                   </div>
                   <div>
-                    <p className="font-semibold text-sm" style={{ color: "#1A1A1A" }}>{t.author}</p>
-                    <p className="text-[11px]" style={{ color: "#767676" }}>{t.role}</p>
+                    <p
+                      className="font-semibold text-sm"
+                      style={{ color: "#1A1A1A" }}
+                    >
+                      {t.author}
+                    </p>
+                    <p className="text-[11px]" style={{ color: "#767676" }}>
+                      {t.role}
+                    </p>
                   </div>
                 </div>
               </motion.div>
@@ -659,16 +897,30 @@ export default function HomePage() {
       <section className="py-16" style={{ background: "#F5F0E8" }}>
         <div className="container-site">
           <motion.div
-            initial="hidden" whileInView="show" viewport={{ once: true }}
-            variants={stagger} className="flex items-end justify-between mb-8"
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: true }}
+            variants={stagger}
+            className="flex items-end justify-between mb-8"
           >
             <div>
-              <motion.h2 variants={fadeUp} className="text-3xl font-bold"
-                style={{ fontFamily: "Times New Roman, serif", color: "#016C24" }}>
+              <motion.h2
+                variants={fadeUp}
+                className="text-3xl font-bold"
+                style={{
+                  fontFamily: "Times New Roman, serif",
+                  color: "#016C24",
+                }}
+              >
                 Cannabis Education
               </motion.h2>
-              <motion.p variants={fadeUp} className="text-sm mt-1" style={{ color: "#767676" }}>
-                Expand your knowledge with our latest research and lifestyle guides.
+              <motion.p
+                variants={fadeUp}
+                className="text-sm mt-1"
+                style={{ color: "#767676" }}
+              >
+                Expand your knowledge with our latest research and lifestyle
+                guides.
               </motion.p>
             </div>
             <motion.div variants={fadeUp}>
@@ -682,31 +934,53 @@ export default function HomePage() {
           </motion.div>
 
           <motion.div
-            initial="hidden" whileInView="show" viewport={{ once: true, margin: "-40px" }}
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: true, margin: "-40px" }}
             variants={stagger}
             className="grid grid-cols-1 md:grid-cols-3 gap-6"
           >
             {blogPosts.map((post) => (
               <motion.div key={post.id} variants={scaleIn}>
                 <Link href={`/blog/${post.slug}`} className="group block">
-                  <div className="relative rounded-xl overflow-hidden mb-4" style={{ aspectRatio: "16/10" }}>
+                  <div
+                    className="relative rounded-xl overflow-hidden mb-4"
+                    style={{ aspectRatio: "16/10" }}
+                  >
                     <Image
-                      src={post.img} alt={post.title} fill
+                      src={post.img}
+                      alt={post.title}
+                      fill
                       className="object-cover transition-transform duration-500 group-hover:scale-[1.05]"
                       sizes="(max-width:768px) 100vw, 33vw"
                     />
                   </div>
-                  <span className="text-[10px] font-bold tracking-widest uppercase block mb-1.5"
-                    style={{ color: "#2D6B4F" }}>
+                  <span
+                    className="text-[10px] font-bold tracking-widest uppercase block mb-1.5"
+                    style={{ color: "#2D6B4F" }}
+                  >
                     {post.category}
                   </span>
-                  <h3 className="font-bold mb-2 transition-colors group-hover:opacity-70"
-                    style={{ fontFamily: "Times New Roman, serif", fontSize: "1rem", color: "#1A1A1A" }}>
+                  <h3
+                    className="font-bold mb-2 transition-colors group-hover:opacity-70"
+                    style={{
+                      fontFamily: "Times New Roman, serif",
+                      fontSize: "1rem",
+                      color: "#1A1A1A",
+                    }}
+                  >
                     {post.title}
                   </h3>
-                  <p className="text-sm leading-relaxed mb-3" style={{ color: "#767676" }}>{post.excerpt}</p>
-                  <span className="flex items-center gap-1 text-sm font-semibold transition-all group-hover:gap-2"
-                    style={{ color: "#2D6B4F" }}>
+                  <p
+                    className="text-sm leading-relaxed mb-3"
+                    style={{ color: "#767676" }}
+                  >
+                    {post.excerpt}
+                  </p>
+                  <span
+                    className="flex items-center gap-1 text-sm font-semibold transition-all group-hover:gap-2"
+                    style={{ color: "#2D6B4F" }}
+                  >
                     Read Article <ArrowRight className="w-4 h-4" />
                   </span>
                 </Link>
@@ -719,32 +993,41 @@ export default function HomePage() {
       {/* ══ 10. SEASONAL BANNER 2 ════════════════════════════════════════════ */}
       <section className="py-12 bg-transparent animate-none">
         <div className="container-site">
-          <div className="grid grid-cols-1 md:grid-cols-2 rounded-3xl overflow-hidden shadow-lg bg-[#0A0D0B] animate-none">
-            {/* Left: Text Content */}
-            <div className="p-8 md:p-14 flex flex-col justify-center text-left">
-              <p className="text-xs font-bold tracking-[0.2em] uppercase mb-1 text-white/60">
-                Seasonal Collection
+          <div className="relative rounded-3xl overflow-hidden shadow-lg h-[340px] md:h-[400px]">
+            {/* Background Image */}
+            <Image
+              src="/images/Fresh-Summer-Blooms.png"
+              alt="Fresh Summer Blooms Dropper"
+              fill
+              className="object-cover object-right animate-none"
+              sizes="100vw"
+            />
+            {/* Gradient Overlay: dark on the left, fading to transparent on the right */}
+            <div className="absolute inset-0 bg-gradient-to-r from-black/10 via-black/10 to-transparent md:w-[70%]" />
+            <div className="absolute inset-0 bg-black/20" />
+
+            {/* Left Content Overlay */}
+            <div className="absolute inset-0 flex flex-col justify-center text-left px-8 md:px-16 max-w-xl">
+              <p className="text-xs font-bold tracking-[0.2em] uppercase mb-1 text-white">
+                Seasonal Collection:
               </p>
-              <h2 className="text-2xl md:text-4xl font-bold text-white mb-3"
-                style={{ fontFamily: "Times New Roman, serif" }}>
+              <h2
+                className="text-2xl md:text-4xl font-bold mb-2"
+                style={{ fontFamily: "Times New Roman, serif", color: "white" }}
+              >
                 Fresh Summer Blooms
               </h2>
-              <p className="text-xs md:text-sm mb-6 max-w-md leading-relaxed text-white/70">
-                Lorem ipsum is simply dummy text of the printing and typesetting industry. Lorem ipsum.
+              <p className="text-xs md:text-sm mb-5 max-w-sm leading-relaxed text-white/70">
+                Lorem ipsum is simply dummy text of the printing and typesetting
+                industry. Lorem ipsum.
               </p>
-              <Button href="/shop" variant="primary" className="py-2.5 px-7 w-fit animate-none">
+              <Button
+                href="/shop"
+                variant="primary"
+                className="py-2.5 px-7 w-fit animate-none"
+              >
                 Shop Now
               </Button>
-            </div>
-            
-            {/* Right: Image */}
-            <div className="relative min-h-[260px] md:min-h-full">
-              <Image
-                src="/images/Limited-time-offer.png"
-                alt="Fresh Summer Blooms Dropper"
-                fill className="object-cover object-center animate-none"
-                sizes="(max-width:768px) 100vw, 50vw"
-              />
             </div>
           </div>
         </div>
@@ -754,16 +1037,25 @@ export default function HomePage() {
       <section className="py-16" style={{ background: "#F5F0E8" }}>
         <div className="container-site">
           <motion.div
-            initial="hidden" whileInView="show" viewport={{ once: true }}
-            variants={stagger} className="flex items-end justify-between mb-8"
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: true }}
+            variants={stagger}
+            className="flex items-end justify-between mb-8"
           >
-            <motion.h2 variants={fadeUp} className="text-3xl font-bold"
-              style={{ fontFamily: "Times New Roman, serif", color: "#1A1A1A" }}>
+            <motion.h2
+              variants={fadeUp}
+              className="text-3xl font-bold"
+              style={{ fontFamily: "Times New Roman, serif", color: "#1A1A1A" }}
+            >
               Find a Location Near You
             </motion.h2>
             <motion.div variants={fadeUp}>
-              <Link href="/contact" className="flex items-center gap-1 text-sm font-semibold transition-colors hover:opacity-70"
-                style={{ color: "#2D6B4F" }}>
+              <Link
+                href="/contact"
+                className="flex items-center gap-1 text-sm font-semibold transition-colors hover:opacity-70"
+                style={{ color: "#2D6B4F" }}
+              >
                 View All Locations <ArrowRight className="w-4 h-4" />
               </Link>
             </motion.div>
@@ -773,31 +1065,59 @@ export default function HomePage() {
             {locations.map((loc) => (
               <motion.div
                 key={loc.name}
-                initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }} transition={{ duration: 0.5 }}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5 }}
                 className="bg-white rounded-xl p-5 flex gap-4"
                 style={{ boxShadow: "0 2px 12px rgba(0,0,0,0.07)" }}
               >
-                <div className="w-28 h-24 rounded-lg flex-shrink-0 flex items-center justify-center"
-                  style={{ background: "#016C24" }}>
-                  <span className="text-white font-bold text-xs text-center">CANNABIS</span>
+                <div
+                  className="w-28 h-24 rounded-lg flex-shrink-0 flex items-center justify-center"
+                  style={{ background: "#016C24" }}
+                >
+                  <span className="text-white font-bold text-xs text-center">
+                    CANNABIS
+                  </span>
                 </div>
                 <div className="flex-1 min-w-0">
-                  <h3 className="font-bold text-sm mb-2"
-                    style={{ fontFamily: "Times New Roman, serif", color: "#1A1A1A" }}>
+                  <h3
+                    className="font-bold text-sm mb-2"
+                    style={{
+                      fontFamily: "Times New Roman, serif",
+                      color: "#1A1A1A",
+                    }}
+                  >
                     {loc.name}
                   </h3>
-                  <div className="space-y-1.5 text-[12px]" style={{ color: "#767676" }}>
+                  <div
+                    className="space-y-1.5 text-[12px]"
+                    style={{ color: "#767676" }}
+                  >
                     <div className="flex items-start gap-1.5">
-                      <MapPin className="w-3.5 h-3.5 mt-0.5 flex-shrink-0" style={{ color: "#2D6B4F" }} />
+                      <MapPin
+                        className="w-3.5 h-3.5 mt-0.5 flex-shrink-0"
+                        style={{ color: "#2D6B4F" }}
+                      />
                       <span>{loc.address}</span>
                     </div>
                     <div className="flex items-center gap-1.5">
-                      <Clock className="w-3.5 h-3.5 flex-shrink-0" style={{ color: "#2D6B4F" }} />
-                      <span className="font-medium" style={{ color: "#2D6B4F" }}>{loc.hours}</span>
+                      <Clock
+                        className="w-3.5 h-3.5 flex-shrink-0"
+                        style={{ color: "#2D6B4F" }}
+                      />
+                      <span
+                        className="font-medium"
+                        style={{ color: "#2D6B4F" }}
+                      >
+                        {loc.hours}
+                      </span>
                     </div>
                     <div className="flex items-center gap-1.5">
-                      <Phone className="w-3.5 h-3.5 flex-shrink-0" style={{ color: "#2D6B4F" }} />
+                      <Phone
+                        className="w-3.5 h-3.5 flex-shrink-0"
+                        style={{ color: "#2D6B4F" }}
+                      />
                       <span>{loc.phone}</span>
                     </div>
                   </div>
@@ -810,15 +1130,25 @@ export default function HomePage() {
           </div>
 
           {/* Map */}
-          <div className="w-full rounded-xl overflow-hidden relative" style={{ height: "220px" }}>
+          <div
+            className="w-full rounded-xl overflow-hidden relative"
+            style={{ height: "220px" }}
+          >
             <Image
               src="/images/Find-a-Location-Near-You.png"
-              alt="Map of Los Angeles" fill className="object-cover" sizes="100vw"
+              alt="Map of Los Angeles"
+              fill
+              className="object-cover"
+              sizes="100vw"
             />
-            <div className="absolute inset-0 flex items-center justify-center"
-              style={{ background: "rgba(0,0,0,0.15)" }}>
-              <div className="bg-white rounded-full px-5 py-2 text-sm font-semibold shadow-lg"
-                style={{ color: "#1A1A1A" }}>
+            <div
+              className="absolute inset-0 flex items-center justify-center"
+              style={{ background: "rgba(0,0,0,0.15)" }}
+            >
+              <div
+                className="bg-white rounded-full px-5 py-2 text-sm font-semibold shadow-lg"
+                style={{ color: "#1A1A1A" }}
+              >
                 Los Angeles
               </div>
             </div>
@@ -831,17 +1161,25 @@ export default function HomePage() {
         <div className="container-site">
           <div className="flex flex-col md:flex-row items-center justify-between gap-8">
             <div>
-              <h2 className="text-2xl md:text-3xl font-bold text-white mb-1"
-                style={{ fontFamily: "Times New Roman, serif" }}>
+              <h2
+                className="text-2xl md:text-3xl font-bold text-white mb-1"
+                style={{ fontFamily: "Times New Roman, serif" }}
+              >
                 Stay Elevated
               </h2>
-              <p className="text-sm max-w-sm" style={{ color: "rgba(255,255,255,0.6)" }}>
-                Lorem ipsum dummy summary text about product printing and typesetting convenience.
+              <p
+                className="text-sm max-w-sm"
+                style={{ color: "rgba(255,255,255,0.6)" }}
+              >
+                Lorem ipsum dummy summary text about product printing and
+                typesetting convenience.
               </p>
             </div>
             <div className="flex w-full md:w-auto gap-2">
               <input
-                type="email" value={email} onChange={(e) => setEmail(e.target.value)}
+                type="email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
                 placeholder="Your email address"
                 className="flex-1 md:w-72 text-sm px-4 py-2.5 rounded-full outline-none transition-colors"
                 style={{
@@ -862,11 +1200,17 @@ export default function HomePage() {
       <section className="py-16" style={{ background: "#F5F0E8" }}>
         <div className="container-site" style={{ maxWidth: "720px" }}>
           <motion.div
-            initial="hidden" whileInView="show" viewport={{ once: true }}
-            variants={stagger} className="text-center mb-10"
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: true }}
+            variants={stagger}
+            className="text-center mb-10"
           >
-            <motion.h2 variants={fadeUp} className="text-3xl font-bold"
-              style={{ fontFamily: "Times New Roman, serif", color: "#1A1A1A" }}>
+            <motion.h2
+              variants={fadeUp}
+              className="text-3xl font-bold"
+              style={{ fontFamily: "Times New Roman, serif", color: "#1A1A1A" }}
+            >
               Frequently Asked Questions
             </motion.h2>
           </motion.div>
@@ -875,8 +1219,10 @@ export default function HomePage() {
             {faqs.map((q, i) => (
               <motion.div
                 key={i}
-                initial={{ opacity: 0, y: 12 }} whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }} transition={{ delay: i * 0.08, duration: 0.4 }}
+                initial={{ opacity: 0, y: 12 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.08, duration: 0.4 }}
                 className="bg-white rounded-xl overflow-hidden"
                 style={{ boxShadow: "0 2px 10px rgba(0,0,0,0.06)" }}
               >
@@ -886,8 +1232,14 @@ export default function HomePage() {
                   style={{ color: "#2D6B4F" }}
                 >
                   <span>{q}</span>
-                  <motion.div animate={{ rotate: openFaq === i ? 180 : 0 }} transition={{ duration: 0.25 }}>
-                    <ChevronDown className="w-4 h-4 flex-shrink-0" style={{ color: "#2D6B4F" }} />
+                  <motion.div
+                    animate={{ rotate: openFaq === i ? 180 : 0 }}
+                    transition={{ duration: 0.25 }}
+                  >
+                    <ChevronDown
+                      className="w-4 h-4 flex-shrink-0"
+                      style={{ color: "#2D6B4F" }}
+                    />
                   </motion.div>
                 </button>
                 <AnimatePresence initial={false}>
@@ -899,8 +1251,15 @@ export default function HomePage() {
                       transition={{ duration: 0.3, ease: [0.4, 0, 0.2, 1] }}
                       className="overflow-hidden"
                     >
-                      <p className="px-6 pb-5 text-sm leading-relaxed" style={{ color: "#767676" }}>
-                        Lorem ipsum is simply dummy text of the printing and typesetting industry. Lorem ipsum has been the industry&apos;s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+                      <p
+                        className="px-6 pb-5 text-sm leading-relaxed"
+                        style={{ color: "#767676" }}
+                      >
+                        Lorem ipsum is simply dummy text of the printing and
+                        typesetting industry. Lorem ipsum has been the
+                        industry&apos;s standard dummy text ever since the
+                        1500s, when an unknown printer took a galley of type and
+                        scrambled it to make a type specimen book.
                       </p>
                     </motion.div>
                   )}
@@ -910,7 +1269,6 @@ export default function HomePage() {
           </div>
         </div>
       </section>
-
     </div>
   );
 }

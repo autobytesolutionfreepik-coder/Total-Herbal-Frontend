@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { MapPin, Phone, Mail, Share2, Send, Camera, Play, MessageCircle } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 const quickLinks = [
   { label: "Flowers", href: "/shop?category=flowers" },
@@ -119,10 +120,10 @@ export function Footer() {
 
       {/* Live Chat Button */}
       <div className="fixed bottom-6 right-6 z-50">
-        <button className="flex items-center gap-2 bg-[#2D6B4F] hover:bg-[#1B4332] text-white text-sm font-semibold px-4 py-2.5 rounded-full shadow-lg transition-all duration-200 hover:shadow-[0_4px_20px_rgba(45,107,79,0.4)]">
+        <Button variant="primary" size="sm" className="shadow-lg flex items-center gap-2 hover:shadow-[0_4px_20px_rgba(1,108,36,0.4)]">
           <MessageCircle className="w-4 h-4" />
           Live Chat
-        </button>
+        </Button>
       </div>
     </footer>
   );
