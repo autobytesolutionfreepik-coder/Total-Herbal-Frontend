@@ -39,10 +39,11 @@ export function Header() {
   return (
     <>
       {/* Announcement Bar */}
-      <div className="bg-[#1B3A2D] text-white text-xs font-semibold tracking-widest text-center py-2 px-4 select-none">
-        <span className="opacity-90">
-          PREMIUM CANNABIS PRODUCTS&nbsp;&nbsp;•&nbsp;&nbsp;ADULTS 21+ ONLY&nbsp;&nbsp;•&nbsp;&nbsp;LAB TESTED&nbsp;&nbsp;•&nbsp;&nbsp;SECURE SHOPPING
-        </span>
+      <div className="bg-[#016C24] text-white text-[11px] font-semibold tracking-widest py-2.5 select-none overflow-hidden relative w-full">
+        <div className="animate-marquee whitespace-nowrap flex">
+          <span className="pr-16">PREMIUM CANNABIS PRODUCTS&nbsp;&nbsp;•&nbsp;&nbsp;ADULTS 21+ ONLY&nbsp;&nbsp;•&nbsp;&nbsp;LAB TESTED&nbsp;&nbsp;•&nbsp;&nbsp;SECURE SHOPPING&nbsp;&nbsp;•&nbsp;&nbsp;</span>
+          <span className="pr-16">PREMIUM CANNABIS PRODUCTS&nbsp;&nbsp;•&nbsp;&nbsp;ADULTS 21+ ONLY&nbsp;&nbsp;•&nbsp;&nbsp;LAB TESTED&nbsp;&nbsp;•&nbsp;&nbsp;SECURE SHOPPING&nbsp;&nbsp;•&nbsp;&nbsp;</span>
+        </div>
       </div>
 
       {/* Main Header */}

@@ -255,11 +255,11 @@ export default function HomePage() {
       </section>
 
       {/* ══ 2. TRUST STRIP — Exact Figma match ═══════════════════════════════ */}
-      <section className="bg-[#EDE8DF] py-5">
+      <section className="relative z-20 -mt-10 md:-mt-12 bg-transparent py-0 animate-none">
         <div className="container-site">
           {/* Green rounded container */}
           <div
-            className="rounded-2xl py-5 px-6 md:px-10"
+            className="rounded-2xl py-5 px-6 md:px-10 shadow-lg"
             style={{ background: "linear-gradient(to right, #2E3518 0%, #026C24 100%)" }}
           >
             <div className="grid grid-cols-3 md:grid-cols-6 gap-4">
@@ -295,7 +295,7 @@ export default function HomePage() {
             <motion.h2
               variants={fadeUp}
               className="text-3xl md:text-[2.2rem] font-bold"
-              style={{ fontFamily: "Times New Roman, serif", color: "#1B3A2D" }}
+              style={{ fontFamily: "Times New Roman, serif", color: "#016C24" }}
             >
               Explore Our Collection
             </motion.h2>
@@ -347,7 +347,7 @@ export default function HomePage() {
               <motion.h2
                 variants={fadeUp}
                 className="text-3xl font-bold"
-                style={{ fontFamily: "Times New Roman, serif", color: "#1B3A2D" }}
+                style={{ fontFamily: "Times New Roman, serif", color: "#016C24" }}
               >
                 New Arrivals
               </motion.h2>
@@ -359,7 +359,7 @@ export default function HomePage() {
               <Link
                 href="/shop"
                 className="text-sm font-semibold flex items-center gap-1 transition-colors hover:opacity-75"
-                style={{ color: "#1B3A2D", textDecoration: "underline", textUnderlineOffset: "3px" }}
+                style={{ color: "#016C24", textDecoration: "underline", textUnderlineOffset: "3px" }}
               >
                 View All Products
               </Link>
@@ -372,130 +372,120 @@ export default function HomePage() {
             variants={stagger}
             className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5"
           >
-            {newArrivals.map((p) => (
-              <motion.div key={p.id} variants={scaleIn}>
-                <div
-                  className="group relative rounded-2xl overflow-hidden flex flex-col cursor-pointer transition-shadow duration-300"
-                  onMouseEnter={(e) => {
-                    e.currentTarget.style.boxShadow = "0 8px 32px rgba(0,0,0,0.14)";
-                    e.currentTarget.style.transform = "translateY(-4px)";
-                  }}
-                  onMouseLeave={(e) => {
-                    e.currentTarget.style.boxShadow = "0 2px 16px rgba(0,0,0,0.08)";
-                    e.currentTarget.style.transform = "translateY(0)";
-                  }}
-                  style={{
-                    background: "#FFFFFF",
-                    boxShadow: "0 2px 16px rgba(0,0,0,0.08)",
-                    transition: "box-shadow 0.3s ease, transform 0.3s ease",
-                  }}
-                >
-                  {/* ── Image area — tall, takes most of the card ── */}
-                  <div className="relative overflow-hidden" style={{ height: "280px" }}>
-                    <Image
-                      src={p.img}
-                      alt={p.name}
-                      fill
-                      className="object-cover transition-transform duration-500 group-hover:scale-[1.04]"
-                      sizes="(max-width:640px) 100vw, (max-width:1024px) 50vw, 25vw"
-                    />
+            {newArrivals.map((p) => {
+              let badgeColor = "#016C24";
+              if (p.type === "VAPE") {
+                badgeColor = "#55605A";
+              }
+              return (
+                <motion.div key={p.id} variants={scaleIn}>
+                  <div
+                    className="group relative rounded-[20px] overflow-hidden flex flex-col cursor-pointer bg-white border border-neutral-100 hover:shadow-[0_8px_32px_rgba(0,0,0,0.08)] hover:-translate-y-1 transition-all duration-300 h-full animate-none"
+                  >
+                    {/* ── Image area — tall, takes most of the card ── */}
+                    <div className="relative overflow-hidden w-full" style={{ aspectRatio: "4/5" }}>
+                      <Image
+                        src={p.img}
+                        alt={p.name}
+                        fill
+                        className="object-cover transition-transform duration-500 group-hover:scale-[1.03]"
+                        sizes="(max-width:640px) 100vw, (max-width:1024px) 50vw, 25vw"
+                      />
 
-                    {/* Product type badge — green pill, top-left */}
-                    <span
-                      className="absolute top-3 left-3 text-white text-[10px] font-bold tracking-widest uppercase px-3 py-1 rounded-full"
-                      style={{ background: "#2D6B4F" }}
-                    >
-                      {p.type}
-                    </span>
-                  </div>
-
-                  {/* ── Info area ── */}
-                  <div className="p-4 flex flex-col gap-1 flex-1">
-
-                    {/* Star rating */}
-                    <div className="flex items-center gap-1.5">
-                      <Star className="w-3.5 h-3.5 fill-[#C9A961] text-[#C9A961]" />
-                      <span className="text-xs font-semibold text-[#1A1A1A]">{p.rating}</span>
-                      <span className="text-xs text-[#9E9E9E]">({p.reviews} reviews)</span>
-                    </div>
-
-                    {/* Product name — dark green like Figma */}
-                    <h3
-                      className="font-bold leading-snug"
-                      style={{
-                        fontFamily: "Times New Roman, serif",
-                        fontSize: "1.05rem",
-                        color: "#1B3A2D",
-                      }}
-                    >
-                      {p.name}
-                    </h3>
-
-                    {/* Strain • THC info */}
-                    <p className="text-xs" style={{ color: "#9E9E9E" }}>
-                      {p.strain} • {p.thc}
-                    </p>
-
-                    {/* Price + Cart button row */}
-                    <div className="flex items-center justify-between mt-3">
+                      {/* Product type badge — green/slate pill, top-left */}
                       <span
-                        className="font-bold text-lg"
-                        style={{ fontFamily: "Manrope, sans-serif", color: "#2D6B4F" }}
+                        className="absolute top-4 left-4 text-white text-[9px] font-bold tracking-widest uppercase px-3 py-1 rounded-full animate-none"
+                        style={{ background: badgeColor }}
                       >
-                        {formatCurrency(p.price)}
+                        {p.type}
                       </span>
-
-                      {/* Green circle cart button */}
-                      <Button
-                        variant="dark"
-                        size="icon"
-                        className="w-9 h-9"
-                        aria-label={`Add ${p.name} to cart`}
-                      >
-                        <ShoppingCart className="w-4 h-4" />
-                      </Button>
                     </div>
 
+                    {/* ── Info area ── */}
+                    <div className="p-5 flex flex-col gap-1.5 flex-1">
+
+                      {/* Star rating */}
+                      <div className="flex items-center gap-1">
+                        <Star className="w-3.5 h-3.5 fill-[#016C24] text-[#016C24]" />
+                        <span className="text-xs font-bold text-[#016C24]">{p.rating}</span>
+                        <span className="text-xs text-[#767676]">({p.reviews} reviews)</span>
+                      </div>
+
+                      {/* Product name — dark green like Figma */}
+                      <h3
+                        className="font-bold leading-snug text-[1.1rem] text-[#016C24]"
+                        style={{ fontFamily: "var(--font-sans), sans-serif" }}
+                      >
+                        {p.name}
+                      </h3>
+
+                      {/* Strain • THC info */}
+                      <p className="text-xs text-[#767676] font-medium">
+                        {p.strain} • {p.thc}
+                      </p>
+
+                      {/* Price + Cart button row */}
+                      <div className="flex items-center justify-between mt-auto pt-3">
+                        <span
+                          className="font-bold text-lg text-[#016C24]"
+                          style={{ fontFamily: "var(--font-sans), sans-serif" }}
+                        >
+                          {formatCurrency(p.price)}
+                        </span>
+
+                        {/* Green circle cart button */}
+                        <Button
+                          variant="primary"
+                          size="icon"
+                          className="w-9 h-9"
+                          aria-label={`Add ${p.name} to cart`}
+                        >
+                          <ShoppingCart className="w-4 h-4" />
+                        </Button>
+                      </div>
+
+                    </div>
                   </div>
-                </div>
-              </motion.div>
-            ))}
+                </motion.div>
+              );
+            })}
           </motion.div>
 
         </div>
       </section>
 
       {/* ══ 5. SEASONAL BANNER (First) ═══════════════════════════════════════ */}
-      <section className="relative overflow-hidden">
-        <div className="relative" style={{ height: "300px" }}>
-          <Image
-            src="/images/Fresh-Summer-Blooms.png"
-            alt="Seasonal Collection"
-            fill className="object-cover object-center" sizes="100vw"
-          />
-          <div className="absolute inset-0" style={{ background: "rgba(0,0,0,0.55)" }} />
-          <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-4">
-            <motion.div initial="hidden" whileInView="show" viewport={{ once: true }} variants={stagger}>
-              <motion.p variants={fadeUp} className="text-xs font-bold tracking-[0.2em] uppercase mb-2" style={{ color: "rgba(255,255,255,0.65)" }}>
-                Limited Time Offer
-              </motion.p>
-              <motion.h2
-                variants={fadeUp}
-                className="text-white text-3xl md:text-4xl font-bold mb-3"
-                style={{ fontFamily: "Times New Roman, serif" }}
-              >
-                Seasonal Collection:<br />
-                <span style={{ color: "#C9A961" }}>Fresh Summer Blooms</span>
-              </motion.h2>
-              <motion.p variants={fadeUp} className="text-sm mb-6 max-w-md mx-auto" style={{ color: "rgba(255,255,255,0.7)" }}>
-                Experience the essence of the season with our exclusive sun-grown flower collection. 20% off all flower products this week.
-              </motion.p>
-              <motion.div variants={fadeUp}>
-                <Button href="/shop" variant="outline" className="px-7">
-                  Explore the Sale
-                </Button>
+      <section className="py-12 bg-transparent animate-none">
+        <div className="container-site">
+          <div className="relative rounded-3xl overflow-hidden shadow-sm" style={{ height: "380px" }}>
+            <Image
+              src="/images/Limited-time-offer.png"
+              alt="Seasonal Collection"
+              fill className="object-cover object-center animate-none" sizes="100vw"
+            />
+            <div className="absolute inset-0 bg-black/45" />
+            <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-6">
+              <motion.div initial="hidden" whileInView="show" viewport={{ once: true }} variants={stagger} className="max-w-2xl">
+                <motion.p variants={fadeUp} className="text-xs font-bold tracking-[0.2em] uppercase mb-2 text-white/70">
+                  LIMITED TIME OFFER
+                </motion.p>
+               <motion.h2
+  variants={fadeUp}
+  className="text-2xl md:text-4xl font-bold  mb-3 whitespace-pre-line"
+  style={{ fontFamily: "Times New Roman, serif", color: "white" }}
+>
+  Seasonal Collection:{"\n"}Fresh Summer Blooms
+</motion.h2>
+                <motion.p variants={fadeUp} className="text-xs md:text-sm max-w-lg mx-auto mb-6 leading-relaxed text-white/80">
+                  Experience the essence of the season with our exclusive sun-grown flower collection. 20% off all flower products this week.
+                </motion.p>
+                <motion.div variants={fadeUp}>
+                  <Button href="/shop" variant="white" className="px-8 py-2.5">
+                    Explore the Sale
+                  </Button>
+                </motion.div>
               </motion.div>
-            </motion.div>
+            </div>
           </div>
         </div>
       </section>
@@ -508,7 +498,7 @@ export default function HomePage() {
             variants={stagger} className="text-center mb-12"
           >
             <motion.h2 variants={fadeUp} className="text-3xl md:text-[2.2rem] font-bold mb-2"
-              style={{ fontFamily: "Times New Roman, serif", color: "#1B3A2D" }}>
+              style={{ fontFamily: "Times New Roman, serif", color: "#016C24" }}>
               The TotalHerbalCare Difference
             </motion.h2>
             <motion.p variants={fadeUp} className="text-sm max-w-xl mx-auto" style={{ color: "#767676" }}>
@@ -550,24 +540,25 @@ export default function HomePage() {
             <motion.div
               initial={{ opacity: 0, x: -40 }} whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }} transition={{ duration: 0.6, ease: [0.4, 0, 0.2, 1] }}
+              className="relative"
             >
-              <div className="relative rounded-2xl overflow-hidden" style={{ aspectRatio: "4/3" }}>
+              <div className="relative rounded-[24px] overflow-hidden shadow-md" style={{ aspectRatio: "4/3" }}>
                 <Image
                   src="/images/OUR-COMMITMENT.png"
-                  alt="Cannabis cultivation" fill className="object-cover"
+                  alt="Cannabis cultivation" fill className="object-cover animate-none"
                   sizes="(max-width:768px) 100vw, 50vw"
                 />
               </div>
               {/* Floating badge */}
               <div
-                className="absolute bottom-5 left-5 bg-white rounded-xl px-5 py-4 shadow-lg"
+                className="absolute bottom-6 left-6 bg-white/90 backdrop-blur-md rounded-2xl px-5 py-4 shadow-xl border border-white/20"
                 style={{ transform: "none" }}
               >
-                <p className="text-2xl font-bold" style={{ fontFamily: "Times New Roman, serif", color: "#2D6B4F" }}>
+                <p className="text-2xl font-bold" style={{ fontFamily: "Times New Roman, serif", color: "#016C24" }}>
                   10+ Years
                 </p>
-                <p className="text-xs max-w-[160px] mt-0.5" style={{ color: "#767676" }}>
-                  Of experience in organic cultivation and wellness innovation
+                <p className="text-xs max-w-[160px] mt-0.5 text-neutral-600">
+                  Of experience in organic cultivation and wellness innovation.
                 </p>
               </div>
             </motion.div>
@@ -577,11 +568,11 @@ export default function HomePage() {
               initial={{ opacity: 0, x: 40 }} whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }} transition={{ duration: 0.6, ease: [0.4, 0, 0.2, 1] }}
             >
-              <p className="text-xs font-bold tracking-widest uppercase mb-3" style={{ color: "#2D6B4F" }}>
+              <p className="text-xs font-bold tracking-widest uppercase mb-3 text-[#016C24]">
                 Our Commitment
               </p>
               <h2 className="text-3xl md:text-4xl font-bold leading-snug mb-4"
-                style={{ fontFamily: "Times New Roman, serif", color: "#1A1A1A" }}>
+                style={{ fontFamily: "Times New Roman, serif", color: "#016C24" }}>
                 Elevating Standards<br />in Cannabis Wellness
               </h2>
               <p className="text-sm leading-relaxed mb-6" style={{ color: "#4A4A4A" }}>
@@ -590,9 +581,8 @@ export default function HomePage() {
               <div className="space-y-4">
                 {["Ethical Cultivation", "Community Education"].map((item) => (
                   <div key={item} className="flex gap-3">
-                    <div className="w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5"
-                      style={{ background: "rgba(45,107,79,0.12)" }}>
-                      <CheckCircle2 className="w-3.5 h-3.5" style={{ color: "#2D6B4F" }} />
+                    <div className="w-6 h-6 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5 bg-[#016C24]/10">
+                      <CheckCircle2 className="w-3.5 h-3.5 text-[#016C24]" />
                     </div>
                     <div>
                       <p className="font-semibold text-sm mb-0.5" style={{ color: "#1A1A1A" }}>{item}</p>
@@ -674,7 +664,7 @@ export default function HomePage() {
           >
             <div>
               <motion.h2 variants={fadeUp} className="text-3xl font-bold"
-                style={{ fontFamily: "Times New Roman, serif", color: "#1B3A2D" }}>
+                style={{ fontFamily: "Times New Roman, serif", color: "#016C24" }}>
                 Cannabis Education
               </motion.h2>
               <motion.p variants={fadeUp} className="text-sm mt-1" style={{ color: "#767676" }}>
@@ -727,27 +717,35 @@ export default function HomePage() {
       </section>
 
       {/* ══ 10. SEASONAL BANNER 2 ════════════════════════════════════════════ */}
-      <section className="relative overflow-hidden">
-        <div className="relative" style={{ height: "220px" }}>
-          <Image
-            src="/images/Limited-time-offer.png"
-            alt="Fresh Summer Blooms" fill className="object-cover object-center" sizes="100vw"
-          />
-          <div className="absolute inset-0" style={{ background: "rgba(0,0,0,0.52)" }} />
-          <div className="absolute inset-0 flex flex-col justify-center px-8 md:px-16">
-            <p className="text-xs font-bold tracking-widest uppercase mb-1" style={{ color: "rgba(255,255,255,0.65)" }}>
-              Seasonal Collection
-            </p>
-            <h2 className="text-2xl md:text-3xl font-bold text-white mb-2"
-              style={{ fontFamily: "Times New Roman, serif" }}>
-              Fresh Summer Blooms
-            </h2>
-            <p className="text-sm mb-4 max-w-sm" style={{ color: "rgba(255,255,255,0.7)" }}>
-              Lorem ipsum is simply dummy text of the printing and typesetting industry. Lorem ipsum.
-            </p>
-            <Button href="/shop" variant="primary" className="py-2 px-6 w-fit">
-              Shop Now
-            </Button>
+      <section className="py-12 bg-transparent animate-none">
+        <div className="container-site">
+          <div className="grid grid-cols-1 md:grid-cols-2 rounded-3xl overflow-hidden shadow-lg bg-[#0A0D0B] animate-none">
+            {/* Left: Text Content */}
+            <div className="p-8 md:p-14 flex flex-col justify-center text-left">
+              <p className="text-xs font-bold tracking-[0.2em] uppercase mb-1 text-white/60">
+                Seasonal Collection
+              </p>
+              <h2 className="text-2xl md:text-4xl font-bold text-white mb-3"
+                style={{ fontFamily: "Times New Roman, serif" }}>
+                Fresh Summer Blooms
+              </h2>
+              <p className="text-xs md:text-sm mb-6 max-w-md leading-relaxed text-white/70">
+                Lorem ipsum is simply dummy text of the printing and typesetting industry. Lorem ipsum.
+              </p>
+              <Button href="/shop" variant="primary" className="py-2.5 px-7 w-fit animate-none">
+                Shop Now
+              </Button>
+            </div>
+            
+            {/* Right: Image */}
+            <div className="relative min-h-[260px] md:min-h-full">
+              <Image
+                src="/images/Limited-time-offer.png"
+                alt="Fresh Summer Blooms Dropper"
+                fill className="object-cover object-center animate-none"
+                sizes="(max-width:768px) 100vw, 50vw"
+              />
+            </div>
           </div>
         </div>
       </section>
@@ -781,7 +779,7 @@ export default function HomePage() {
                 style={{ boxShadow: "0 2px 12px rgba(0,0,0,0.07)" }}
               >
                 <div className="w-28 h-24 rounded-lg flex-shrink-0 flex items-center justify-center"
-                  style={{ background: "#1B3A2D" }}>
+                  style={{ background: "#016C24" }}>
                   <span className="text-white font-bold text-xs text-center">CANNABIS</span>
                 </div>
                 <div className="flex-1 min-w-0">
@@ -829,7 +827,7 @@ export default function HomePage() {
       </section>
 
       {/* ══ 12. STAY ELEVATED / NEWSLETTER ═══════════════════════════════════ */}
-      <section className="py-14" style={{ background: "#1B3A2D" }}>
+      <section className="py-14" style={{ background: "#016C24" }}>
         <div className="container-site">
           <div className="flex flex-col md:flex-row items-center justify-between gap-8">
             <div>
