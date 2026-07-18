@@ -283,11 +283,12 @@ export default function HomePage() {
               <span
                 className="inline-flex items-center px-5 py-1.5 rounded-full text-[11px] font-bold tracking-[0.2em] uppercase"
                 style={{
-                  background: "rgba(20,20,20,0.72)",
-                  border: "1px solid rgba(201,169,97,0.4)",
-                  color: "#C9A961",
-                  backdropFilter: "blur(8px)",
-                }}
+  background: "rgba(255, 255, 255, 0.10)",
+  // border: "1px solid rgba(201, 169, 97, 0.4)",
+  color: "#C9A961",
+  backdropFilter: "blur(12px)",
+  WebkitBackdropFilter: "blur(12px)",
+}}
               >
                 ESTABLISHED 2024
               </span>
