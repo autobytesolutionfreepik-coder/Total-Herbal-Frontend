@@ -15,13 +15,13 @@ export const Button = React.forwardRef<HTMLButtonElement & HTMLAnchorElement, Bu
       "inline-flex items-center justify-center gap-2 font-bold rounded-full transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2";
     
     const variants = {
-      primary: "text-white bg-[#016C24] hover:bg-[#027F2C] active:bg-[#01531B] hover:-translate-y-0.5 shadow-sm active:translate-y-0",
-      secondary: "text-[#016C24] bg-cream-dark hover:bg-cream active:bg-cream-dark border border-green-800/10",
+      primary: "text-white bg-green-700 hover:bg-green-600 active:bg-green-800 hover:-translate-y-0.5 shadow-sm active:translate-y-0",
+      secondary: "text-green-700 bg-cream-dark hover:bg-cream active:bg-cream-dark border border-green-800/10",
       outline: "text-white border border-white/60 hover:bg-white hover:text-ink hover:border-white active:scale-98 bg-transparent",
-      gold: "text-white bg-[#C9A961] hover:bg-[#E2C98A] active:bg-[#C9A961] hover:-translate-y-0.5 active:translate-y-0",
-      dark: "text-white bg-[#0D2318] hover:bg-[#1B3A2D] active:bg-[#0D2318] active:scale-95 shadow-sm",
-      white: "bg-white text-[#016C24] hover:bg-cream-dark active:bg-white shadow-sm border border-neutral-100",
-      ghost: "text-[#016C24] hover:bg-cream-dark/50 active:bg-cream-dark",
+      gold: "text-white bg-gold hover:bg-gold-light active:bg-gold hover:-translate-y-0.5 active:translate-y-0",
+      dark: "text-white bg-green-950 hover:bg-green-900 active:bg-green-950 active:scale-95 shadow-sm",
+      white: "bg-white text-green-700 hover:bg-cream-dark active:bg-white shadow-sm border border-neutral-100",
+      ghost: "text-green-700 hover:bg-cream-dark/50 active:bg-cream-dark",
       link: "p-0 text-sm font-semibold transition-colors hover:opacity-70",
     };
 

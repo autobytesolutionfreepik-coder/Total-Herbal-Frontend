@@ -8,8 +8,8 @@
   --color-green-950:    #0D2318;
   --color-green-900:    #1B3A2D;
   --color-green-800:    #1E4D35;
-  --color-green-700:    #2D6B4F;
-  --color-green-600:    #3A8C65;
+  --color-green-700:    #016C24;
+  --color-green-600:    #027F2C;
   --color-green-500:    #4CAF80;
   --color-green-400:    #6BC99A;
   --color-green-300:    #93DDB8;
@@ -36,7 +36,7 @@
   /* Shadows */
   --shadow-card: 0 2px 12px 0 rgba(0,0,0,0.08);
   --shadow-card-hover: 0 8px 32px 0 rgba(0,0,0,0.14);
-  --shadow-green: 0 4px 24px 0 rgba(45,107,79,0.18);
+  --shadow-green: 0 4px 24px 0 rgba(1,108,36,0.18);
 
   /* Transitions */
   --ease-smooth: cubic-bezier(0.4, 0, 0.2, 1);
