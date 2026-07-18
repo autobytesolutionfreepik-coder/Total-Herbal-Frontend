@@ -1,0 +1,208 @@
+@import "tailwindcss";
+
+/* ─── Design Tokens ─────────────────────────────────────────────────────────── */
+@theme {
+  /* Palette */
+  --color-cream:        #F5F0E8;
+  --color-cream-dark:   #EDE8DF;
+  --color-green-950:    #0D2318;
+  --color-green-900:    #1B3A2D;
+  --color-green-800:    #1E4D35;
+  --color-green-700:    #2D6B4F;
+  --color-green-600:    #3A8C65;
+  --color-green-500:    #4CAF80;
+  --color-green-400:    #6BC99A;
+  --color-green-300:    #93DDB8;
+  --color-green-100:    #D6F0E4;
+  --color-gold:         #C9A961;
+  --color-gold-light:   #E2C98A;
+  --color-ink:          #1A1A1A;
+  --color-ink-muted:    #4A4A4A;
+  --color-ink-subtle:   #767676;
+  --color-surface:      #FFFFFF;
+  --color-surface-alt:  #F9F6F1;
+
+  /* Typography */
+  --font-serif:   "Times New Roman", "Times", Georgia, serif;
+  --font-sans:    var(--font-manrope), "Manrope", system-ui, sans-serif;
+
+  /* Spacing Scale */
+  --spacing-section: 5rem;
+
+  /* Border Radius */
+  --radius-card: 0.75rem;
+  --radius-pill: 9999px;
+
+  /* Shadows */
+  --shadow-card: 0 2px 12px 0 rgba(0,0,0,0.08);
+  --shadow-card-hover: 0 8px 32px 0 rgba(0,0,0,0.14);
+  --shadow-green: 0 4px 24px 0 rgba(45,107,79,0.18);
+
+  /* Transitions */
+  --ease-smooth: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ─── Base Reset ─────────────────────────────────────────────────────────────── */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--color-cream);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ─── Typography ─────────────────────────────────────────────────────────────── */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-serif);
+  line-height: 1.15;
+  color: var(--color-ink);
+}
+
+/* ─── Scrollbar ──────────────────────────────────────────────────────────────── */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--color-cream); }
+::-webkit-scrollbar-thumb { background: var(--color-green-700); border-radius: 3px; }
+
+/* ─── Focus Visible ──────────────────────────────────────────────────────────── */
+:focus-visible {
+  outline: 2px solid var(--color-green-600);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* ─── Utility classes (Tailwind v4 CSS-layer approach) ───────────────────────── */
+.container-site {
+  width: 100%;
+  max-width: 1280px;
+  margin-inline: auto;
+  padding-inline: 1.25rem;
+}
+
+@media (min-width: 768px) {
+  .container-site {
+    padding-inline: 2rem;
+  }
+}
+
+@media (min-width: 1280px) {
+  .container-site {
+    padding-inline: 2.5rem;
+  }
+}
+
+/* Section padding */
+.section-py {
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+}
+
+@media (min-width: 1024px) {
+  .section-py {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+  }
+}
+
+/* Card base */
+.card-base {
+  background: var(--color-surface);
+  border-radius: var(--radius-card);
+  box-shadow: var(--shadow-card);
+  transition: box-shadow 0.3s var(--ease-smooth), transform 0.3s var(--ease-smooth);
+}
+
+.card-base:hover {
+  box-shadow: var(--shadow-card-hover);
+  transform: translateY(-3px);
+}
+
+/* Green button */
+.btn-green {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: var(--color-green-700);
+  color: #fff;
+  font-family: var(--font-sans);
+  font-weight: 600;
+  font-size: 0.875rem;
+  padding: 0.6rem 1.4rem;
+  border-radius: var(--radius-pill);
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.25s var(--ease-smooth), transform 0.2s var(--ease-smooth);
+}
+
+.btn-green:hover {
+  background-color: var(--color-green-600);
+  transform: translateY(-1px);
+}
+
+/* Outline button */
+.btn-outline {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: transparent;
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  font-weight: 600;
+  font-size: 0.875rem;
+  padding: 0.6rem 1.4rem;
+  border-radius: var(--radius-pill);
+  border: 1.5px solid var(--color-ink);
+  cursor: pointer;
+  transition: background-color 0.25s, border-color 0.25s, color 0.25s, transform 0.2s;
+}
+
+.btn-outline:hover {
+  background: var(--color-ink);
+  color: #fff;
+  transform: translateY(-1px);
+}
+
+/* Section heading accent underline */
+.heading-accent {
+  position: relative;
+  display: inline-block;
+}
+
+.heading-accent::after {
+  content: "";
+  position: absolute;
+  bottom: -6px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 40px;
+  height: 3px;
+  background: var(--color-gold);
+  border-radius: 2px;
+}
+
+/* Strain badges */
+.badge-indica  { background: #3B2D8F; color: #fff; }
+.badge-sativa  { background: #B45309; color: #fff; }
+.badge-hybrid  { background: #1B4332; color: #fff; }
+.badge-cbd     { background: #0369A1; color: #fff; }
+.badge-none    { background: #6B7280; color: #fff; }
+.badge-sale    { background: var(--color-gold); color: #1A1A1A; }
+.badge-new     { background: var(--color-green-700); color: #fff; }
+
+.strain-badge {
+  font-family: var(--font-sans);
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 0.2rem 0.55rem;
+  border-radius: 4px;
+}
