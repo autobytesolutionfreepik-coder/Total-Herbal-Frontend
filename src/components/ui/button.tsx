@@ -15,26 +15,15 @@ export const Button = React.forwardRef<HTMLButtonElement & HTMLAnchorElement, Bu
       "inline-flex items-center justify-center gap-2 font-bold rounded-full transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2";
     
     const variants = {
-      primary: "text-white hover:brightness-110 hover:-translate-y-0.5 shadow-sm active:translate-y-0",
-      secondary: "text-green-950 bg-cream-dark hover:bg-cream active:bg-cream-dark border border-green-800/10",
-      outline: "text-white border transition-all hover:bg-white hover:text-ink active:scale-98",
-      gold: "text-white hover:brightness-110 hover:-translate-y-0.5 active:translate-y-0",
-      dark: "text-white hover:brightness-110 active:scale-95 shadow-sm",
-      white: "bg-white text-green-900 hover:bg-cream-dark active:bg-white",
-      ghost: "text-green-700 hover:bg-cream-dark/50 active:bg-cream-dark",
+      primary: "text-white bg-[#016C24] hover:bg-[#027F2C] active:bg-[#01531B] hover:-translate-y-0.5 shadow-sm active:translate-y-0",
+      secondary: "text-[#016C24] bg-cream-dark hover:bg-cream active:bg-cream-dark border border-green-800/10",
+      outline: "text-white border border-white/60 hover:bg-white hover:text-ink hover:border-white active:scale-98 bg-transparent",
+      gold: "text-white bg-[#C9A961] hover:bg-[#E2C98A] active:bg-[#C9A961] hover:-translate-y-0.5 active:translate-y-0",
+      dark: "text-white bg-[#0D2318] hover:bg-[#1B3A2D] active:bg-[#0D2318] active:scale-95 shadow-sm",
+      white: "bg-white text-[#016C24] hover:bg-cream-dark active:bg-white shadow-sm border border-neutral-100",
+      ghost: "text-[#016C24] hover:bg-cream-dark/50 active:bg-cream-dark",
       link: "p-0 text-sm font-semibold transition-colors hover:opacity-70",
     };
-
-    const inlineStyles: React.CSSProperties = {};
-    if (variant === "primary") {
-      inlineStyles.background = "#2D6B4F";
-    } else if (variant === "outline") {
-      inlineStyles.borderColor = "rgba(255,255,255,0.6)";
-    } else if (variant === "gold") {
-      inlineStyles.background = "#C9A961";
-    } else if (variant === "dark") {
-      inlineStyles.background = "#0D2318";
-    }
 
     const sizes = {
       sm: "px-4 py-1.5 text-xs",
@@ -55,7 +44,6 @@ export const Button = React.forwardRef<HTMLButtonElement & HTMLAnchorElement, Bu
         <Link
           href={href}
           className={combinedClassName}
-          style={inlineStyles}
           ref={ref as any}
           {...(props as any)}
         >
@@ -68,7 +56,6 @@ export const Button = React.forwardRef<HTMLButtonElement & HTMLAnchorElement, Bu
       <button
         ref={ref}
         className={combinedClassName}
-        style={inlineStyles}
         {...props}
       >
         {children}
