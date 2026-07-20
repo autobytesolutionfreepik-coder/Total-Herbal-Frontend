@@ -168,7 +168,7 @@ const blogPosts = [
     category: "BEGINNER",
     title: "A Beginner's Guide to CBD",
     excerpt:
-      "Lorem ipsum is simply dummy text of the printing and typesetting industry. Lorem ipsum.",
+      "Learn the basics of Cannabidiol (CBD), its wellness benefits, recommended dosages, and how to choose the right premium CBD products.",
     img: "/images/Beginners.png",
     slug: "beginners-guide-to-cbd",
   },
@@ -177,7 +177,7 @@ const blogPosts = [
     category: "SCIENCE",
     title: "Understanding Terpenes",
     excerpt:
-      "Lorem ipsum is simply dummy text of the printing and typesetting industry. Lorem ipsum.",
+      "Explore how aromatic compounds called terpenes affect the flavor, aroma, and therapeutic properties of different cannabis strains.",
     img: "/images/science.png",
     slug: "understanding-terpenes",
   },
@@ -186,7 +186,7 @@ const blogPosts = [
     category: "LIFESTYLE",
     title: "The Art of Pre-Rolls",
     excerpt:
-      "Lorem ipsum is simply dummy text of the printing and typesetting industry. Lorem ipsum.",
+      "Discover the craftsmanship behind rolling the perfect joint, selecting premium flower, and experiencing full-spectrum flavor profiles.",
     img: "/images/LIFESTYLE.png",
     slug: "the-art-of-pre-rolls",
   },
@@ -210,9 +210,18 @@ const locations = [
 ];
 
 const faqs = [
-  "Do you offer same-day delivery?",
-  "What payment methods do you accept?",
-  "Are your products laboratory tested?",
+  {
+    q: "Do you offer same-day delivery?",
+    a: "Yes! We offer fast, discreet, same-day delivery throughout the Los Angeles area for all orders placed before 8:00 PM. Deliveries are fully compliant with local laws and state regulations.",
+  },
+  {
+    q: "What payment methods do you accept?",
+    a: "We accept cash upon delivery/pickup, as well as select secure digital payment methods. Our checkout process is fully encrypted and compliant to protect your transaction details.",
+  },
+  {
+    q: "Are your products laboratory tested?",
+    a: "Absolutely. All cannabis products at Total Herbal Care undergo rigorous, independent third-party laboratory testing. We verify terpene profiles, cannabinoid potency, and screen for heavy metals, pesticides, and microbial impurities to ensure maximum safety.",
+  },
 ];
 
 /* ─── Animation Variants ─────────────────────────────────────────────────── */
@@ -314,13 +323,10 @@ export default function HomePage() {
             {/* Sub copy */}
             <motion.p
               variants={fadeUp}
-              className="text-sm leading-relaxed mb-8 max-w-[420px]"
-              style={{ color: "rgba(255,255,255,0.72)" }}
+              className="text-base leading-relaxed mb-8 max-w-[460px]"
+              style={{ color: "rgba(255,255,255,0.85)" }}
             >
-              Lorem ipsum is simply dummy text of the printing and typesetting
-              industry. Lorem ipsum has been the industry&apos;s standard dummy
-              text ever since 1500s, when designers at Letterset and James
-              Mosley, the librarian at St Bride Printing.
+              Discover high-quality, lab-tested cannabis flowers, concentrates, vapes, and edibles crafted to elevate your lifestyle. Experience legal, licensed cannabis delivery and pick-up options customized to your preference.
             </motion.p>
 
             {/* CTAs */}
@@ -656,7 +662,7 @@ export default function HomePage() {
             </motion.h2>
             <motion.p
               variants={fadeUp}
-              className="text-sm max-w-xl mx-auto"
+              className="text-base max-w-xl mx-auto"
               style={{ color: "#767676" }}
             >
               Setting the benchmarks for quality, safety, and luxury in the
@@ -720,7 +726,7 @@ export default function HomePage() {
             >
               <div
                 className="relative rounded-[24px] overflow-hidden shadow-md"
-                style={{ aspectRatio: "3/4" }}
+                style={{ aspectRatio: "4/4" }}
               >
                 <Image
                   src="/images/OUR-COMMITMENT.png"
@@ -772,17 +778,23 @@ export default function HomePage() {
                 in Cannabis Wellness
               </h2>
               <p
-                className="text-sm leading-relaxed mb-6"
+                className="text-base leading-relaxed mb-6"
                 style={{ color: "#4A4A4A" }}
               >
-                Lorem ipsum is simply dummy text of the printing and typesetting
-                industry. Lorem ipsum has been the industry&apos;s standard
-                dummy text ever since 1500s, when designers at Letterset and
-                James Mosley. The librarian at St Bride Printing.
+                We are dedicated to producing organic, sun-grown cannabis through sustainable farming practices. From seed to sale, our licensed cultivators maintain the highest quality standards so you receive safe, pure, and premium medical-grade cannabis.
               </p>
               <div className="space-y-4">
-                {["Ethical Cultivation", "Community Education"].map((item) => (
-                  <div key={item} className="flex gap-3">
+                {[
+                  {
+                    title: "Ethical Cultivation",
+                    desc: "We prioritize regenerative soil practices, zero synthetic pesticides, and careful hand-trimming to preserve terpenes and active cannabinoids.",
+                  },
+                  {
+                    title: "Community Education",
+                    desc: "Our knowledgeable budtenders and educational articles help demystify dosage, strain profiles, and terpenes for safe, beneficial intake.",
+                  },
+                ].map((item) => (
+                  <div key={item.title} className="flex gap-3">
                     <div className="w-6 h-6 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5 bg-[#016C24]/10">
                       <CheckCircle2 className="w-3.5 h-3.5 text-[#016C24]" />
                     </div>
@@ -791,11 +803,10 @@ export default function HomePage() {
                         className="font-semibold text-sm mb-0.5"
                         style={{ color: "#1A1A1A" }}
                       >
-                        {item}
+                        {item.title}
                       </p>
-                      <p className="text-sm" style={{ color: "#767676" }}>
-                        Lorem ipsum is simply dummy text of the printing and
-                        typesetting industry. Lorem ipsum.
+                      <p className="text-[15px] leading-relaxed" style={{ color: "#767676" }}>
+                        {item.desc}
                       </p>
                     </div>
                   </div>
@@ -1018,9 +1029,8 @@ export default function HomePage() {
               >
                 Fresh Summer Blooms
               </h2>
-              <p className="text-xs md:text-sm mb-5 max-w-sm leading-relaxed text-white/70">
-                Lorem ipsum is simply dummy text of the printing and typesetting
-                industry. Lorem ipsum.
+              <p className="text-sm md:text-base mb-5 max-w-sm leading-relaxed text-white/80">
+                Enjoy our handcrafted seasonal concentrates and organic flower strains. 100% lab-certified for flavor purity and balanced therapeutic cannabinoid profiles.
               </p>
               <Button
                 href="/shop"
@@ -1193,9 +1203,8 @@ export default function HomePage() {
                 >
                   Stay Elevated
                 </h2>
-                <p className="text-xs md:text-sm text-white/80 leading-relaxed">
-                  Lorem Ipsum is simply dummy text of the printing and
-                  typesetting industry. Lorem Ipsum
+                <p className="text-sm md:text-base text-white/85 leading-relaxed">
+                  Subscribe to receive our latest cannabis product drops, wellness insights, discount codes, and exclusive store delivery updates.
                 </p>
               </div>
 
@@ -1256,10 +1265,10 @@ export default function HomePage() {
               >
                 <button
                   onClick={() => setOpenFaq(openFaq === i ? null : i)}
-                  className="w-full flex items-center justify-between px-6 py-4 text-sm font-medium text-left transition-colors hover:opacity-70"
+                  className="w-full flex items-center justify-between px-6 py-4 text-[15px] font-semibold text-left transition-colors hover:opacity-70"
                   style={{ color: "#2D6B4F" }}
                 >
-                  <span>{q}</span>
+                  <span>{q.q}</span>
                   <motion.div
                     animate={{ rotate: openFaq === i ? 180 : 0 }}
                     transition={{ duration: 0.25 }}
@@ -1280,14 +1289,10 @@ export default function HomePage() {
                       className="overflow-hidden"
                     >
                       <p
-                        className="px-6 pb-5 text-sm leading-relaxed"
+                        className="px-6 pb-5 text-sm md:text-base leading-relaxed"
                         style={{ color: "#767676" }}
                       >
-                        Lorem ipsum is simply dummy text of the printing and
-                        typesetting industry. Lorem ipsum has been the
-                        industry&apos;s standard dummy text ever since the
-                        1500s, when an unknown printer took a galley of type and
-                        scrambled it to make a type specimen book.
+                        {q.a}
                       </p>
                     </motion.div>
                   )}

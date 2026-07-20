@@ -10,8 +10,6 @@ import {
   User,
   Menu,
   X,
-  ChevronDown,
-  MapPin,
 } from "lucide-react";
 import { cn } from "@/lib/utils/cn";
 
@@ -27,7 +25,6 @@ const navLinks = [
 export function Header() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
-  const [searchOpen, setSearchOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
 
   useEffect(() => {
@@ -49,36 +46,47 @@ export function Header() {
       {/* Main Header */}
       <header
         className={cn(
-          "sticky top-0 z-50 transition-all duration-300",
+          "sticky top-0 z-40 transition-all duration-300",
           scrolled
             ? "bg-white/95 backdrop-blur-md shadow-[0_2px_20px_rgba(0,0,0,0.08)]"
             : "bg-white"
         )}
       >
         <div className="container-site flex items-center justify-between h-16 gap-4">
-          {/* Logo */}
-          <Link href="/" className="flex-shrink-0 flex items-center gap-1 group">
-            <span
-              className="text-xl font-bold leading-none"
-              style={{ fontFamily: "Times New Roman, serif", color: "#1B3A2D" }}
-            >
-              Total
-            </span>
-            <span
-              className="text-xl font-bold leading-none"
-              style={{ fontFamily: "Times New Roman, serif", color: "#027F2C" }}
-            >
-              Herbal
-            </span>
-            <span
-              className="text-xl font-bold leading-none"
-              style={{ fontFamily: "Times New Roman, serif", color: "#1B3A2D" }}
-            >
-              Care
-            </span>
-          </Link>
+          {/* Mobile: Left Hamburger Toggle */}
+          <button
+            aria-label="Toggle menu"
+            onClick={() => setMobileOpen(true)}
+            className="md:hidden p-2 -ml-2 rounded-full hover:bg-[#F5F0E8] transition-colors"
+          >
+            <Menu className="w-5 h-5 text-[#1A1A1A]" />
+          </button>
 
-          {/* Desktop Nav */}
+          {/* Desktop Left / Mobile Center: Logo */}
+          <div className="flex-1 md:flex-initial flex justify-center md:justify-start">
+            <Link href="/" className="flex items-center gap-1 group">
+              <span
+                className="text-xl font-bold leading-none text-[#1B3A2D]"
+                style={{ fontFamily: "Times New Roman, serif" }}
+              >
+                Total
+              </span>
+              <span
+                className="text-xl font-bold leading-none text-[#027F2C]"
+                style={{ fontFamily: "Times New Roman, serif" }}
+              >
+                Herbal
+              </span>
+              <span
+                className="text-xl font-bold leading-none text-[#1B3A2D]"
+                style={{ fontFamily: "Times New Roman, serif" }}
+              >
+                Care
+              </span>
+            </Link>
+          </div>
+
+          {/* Desktop Center: Nav Links */}
           <nav className="hidden md:flex items-center gap-6">
             {navLinks.map((link) => (
               <Link
@@ -92,9 +100,9 @@ export function Header() {
             ))}
           </nav>
 
-          {/* Search + Actions */}
-          <div className="flex items-center gap-3">
-            {/* Search Bar (desktop) */}
+          {/* Desktop Right / Mobile Right: Actions */}
+          <div className="flex items-center gap-2 md:gap-3 flex-shrink-0">
+            {/* Search Input (Desktop only) */}
             <div className="hidden lg:flex items-center gap-2 bg-[#F5F0E8] rounded-full px-3 py-1.5 w-40 xl:w-52">
               <Search className="w-3.5 h-3.5 text-[#767676] flex-shrink-0" />
               <input
@@ -106,15 +114,7 @@ export function Header() {
               />
             </div>
 
-            {/* Icon Buttons */}
-            <button
-              aria-label="Search"
-              onClick={() => setSearchOpen(true)}
-              className="lg:hidden p-2 rounded-full hover:bg-[#F5F0E8] transition-colors"
-            >
-              <Search className="w-4.5 h-4.5 text-[#1A1A1A]" />
-            </button>
-
+            {/* Wishlist */}
             <Link
               href="/account/wishlist"
               aria-label="Wishlist"
@@ -123,6 +123,7 @@ export function Header() {
               <Heart className="w-4.5 h-4.5 text-[#1A1A1A]" />
             </Link>
 
+            {/* Account */}
             <Link
               href="/account"
               aria-label="Account"
@@ -131,6 +132,7 @@ export function Header() {
               <User className="w-4.5 h-4.5 text-[#1A1A1A]" />
             </Link>
 
+            {/* Cart */}
             <Link
               href="/cart"
               aria-label="Cart"
@@ -142,62 +144,97 @@ export function Header() {
               </span>
             </Link>
 
+            {/* Shop Now Button (Desktop only) */}
             <Link
               href="/shop"
               className="hidden sm:inline-flex btn-green text-sm ml-1"
             >
               Shop Now
             </Link>
-
-            {/* Mobile menu toggle */}
-            <button
-              aria-label="Toggle menu"
-              onClick={() => setMobileOpen((v) => !v)}
-              className="md:hidden p-2 rounded-full hover:bg-[#F5F0E8] transition-colors"
-            >
-              {mobileOpen ? (
-                <X className="w-5 h-5" />
-              ) : (
-                <Menu className="w-5 h-5" />
-              )}
-            </button>
           </div>
         </div>
 
-        {/* Mobile Nav Drawer */}
+        {/* Left Side Drawer Mobile Nav */}
         <AnimatePresence>
           {mobileOpen && (
-            <motion.nav
-              initial={{ height: 0, opacity: 0 }}
-              animate={{ height: "auto", opacity: 1 }}
-              exit={{ height: 0, opacity: 0 }}
-              transition={{ duration: 0.3, ease: [0.4, 0, 0.2, 1] }}
-              className="md:hidden overflow-hidden border-t border-[#EDE8DF]"
-            >
-              <div className="container-site py-4 flex flex-col gap-1">
-                {navLinks.map((link, i) => (
-                  <motion.div
-                    key={link.label}
-                    initial={{ opacity: 0, x: -16 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ delay: i * 0.05 }}
+            <>
+              {/* Backdrop Overlay */}
+              <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 0.5 }}
+                exit={{ opacity: 0 }}
+                onClick={() => setMobileOpen(false)}
+                className="fixed inset-0 z-50 bg-black md:hidden"
+              />
+
+              {/* Slide-out Drawer from Left */}
+              <motion.div
+                initial={{ x: "-100%" }}
+                animate={{ x: 0 }}
+                exit={{ x: "-100%" }}
+                transition={{ type: "spring", damping: 25, stiffness: 200 }}
+                className="fixed top-0 bottom-0 left-0 z-50 w-[280px] bg-white shadow-2xl p-6 flex flex-col gap-6 md:hidden overflow-y-auto"
+              >
+                {/* Header inside drawer */}
+                <div className="flex items-center justify-between pb-4 border-b border-[#EDE8DF]">
+                  <Link href="/" onClick={() => setMobileOpen(false)} className="flex items-center gap-1">
+                    <span className="text-lg font-bold leading-none text-[#1B3A2D]" style={{ fontFamily: "Times New Roman, serif" }}>Total</span>
+                    <span className="text-lg font-bold leading-none text-[#027F2C]" style={{ fontFamily: "Times New Roman, serif" }}>Herbal</span>
+                    <span className="text-lg font-bold leading-none text-[#1B3A2D]" style={{ fontFamily: "Times New Roman, serif" }}>Care</span>
+                  </Link>
+                  <button
+                    aria-label="Close menu"
+                    onClick={() => setMobileOpen(false)}
+                    className="p-1.5 rounded-full hover:bg-[#F5F0E8] transition-colors"
                   >
-                    <Link
-                      href={link.href}
-                      onClick={() => setMobileOpen(false)}
-                      className="block py-2.5 px-3 rounded-lg text-sm font-medium text-[#1A1A1A] hover:bg-[#F5F0E8] hover:text-[#2D6B4F] transition-colors"
+                    <X className="w-5 h-5 text-[#1A1A1A]" />
+                  </button>
+                </div>
+
+                {/* Search Bar inside Drawer */}
+                <div className="flex items-center gap-2 bg-[#F5F0E8] rounded-full px-4 py-2.5 w-full">
+                  <Search className="w-4 h-4 text-[#767676] flex-shrink-0" />
+                  <input
+                    type="text"
+                    placeholder="Search products..."
+                    value={searchQuery}
+                    onChange={(e) => setSearchQuery(e.target.value)}
+                    className="bg-transparent text-sm text-[#1A1A1A] placeholder-[#767676] outline-none w-full font-[Manrope]"
+                  />
+                </div>
+
+                {/* Nav Links List */}
+                <nav className="flex flex-col gap-1.5">
+                  {navLinks.map((link, i) => (
+                    <motion.div
+                      key={link.label}
+                      initial={{ opacity: 0, x: -16 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      transition={{ delay: i * 0.04 }}
                     >
-                      {link.label}
-                    </Link>
-                  </motion.div>
-                ))}
-                <div className="pt-3 border-t border-[#EDE8DF] mt-1">
-                  <Link href="/shop" className="btn-green w-full justify-center">
+                      <Link
+                        href={link.href}
+                        onClick={() => setMobileOpen(false)}
+                        className="block py-2.5 px-3 rounded-lg text-[15px] font-semibold text-[#1A1A1A] hover:bg-[#F5F0E8] hover:text-[#2D6B4F] transition-colors"
+                      >
+                        {link.label}
+                      </Link>
+                    </motion.div>
+                  ))}
+                </nav>
+
+                {/* Shop Now CTA inside Drawer */}
+                <div className="mt-auto pt-4 border-t border-[#EDE8DF]">
+                  <Link
+                    href="/shop"
+                    onClick={() => setMobileOpen(false)}
+                    className="btn-green w-full justify-center text-center py-3 text-sm font-semibold rounded-full"
+                  >
                     Shop Now
                   </Link>
                 </div>
-              </div>
-            </motion.nav>
+              </motion.div>
+            </>
           )}
         </AnimatePresence>
       </header>
