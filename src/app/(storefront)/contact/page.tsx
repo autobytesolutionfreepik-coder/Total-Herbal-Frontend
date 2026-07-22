@@ -19,37 +19,37 @@ const features = [
   {
     icon: Zap,
     title: "Fast Support",
-    desc: "Our team prioritizes timely responses to ensure your wellness journey is never interrupted.",
+    desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
   },
   {
     icon: Award,
     title: "Licensed Experts",
-    desc: "Consultations are handled by certified professionals with deep botanical knowledge.",
+    desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
   },
   {
     icon: Lock,
     title: "Secure & Private",
-    desc: "Your health information and personal data are protected by industry-leading security.",
+    desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
   },
   {
     icon: Sparkles,
     title: "Personalized Guidance",
-    desc: "We tailor every recommendation to your unique physiological needs and wellness goals.",
+    desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
   },
 ];
 
 const faqsList = [
   {
-    q: "Do you offer same-day delivery?",
-    a: "Yes! We offer fast, discreet, same-day delivery throughout the Los Angeles area for all orders placed before 8:00 PM. Deliveries are fully compliant with local laws and state regulations.",
+    q: "Lorem ipsum dolor sit amet, consectetur adipiscing elit?",
+    a: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
   },
   {
-    q: "What payment methods do you accept?",
-    a: "We accept cash upon delivery/pickup, as well as select secure digital payment methods. Our checkout process is fully encrypted and compliant to protect your transaction details.",
+    q: "Sed do eiusmod tempor incididunt ut labore et dolore?",
+    a: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
   },
   {
-    q: "Are your products laboratory tested?",
-    a: "Absolutely. All cannabis products at Total Herbal Care undergo rigorous, independent third-party laboratory testing. We verify terpene profiles, cannabinoid potency, and screen for heavy metals, pesticides, and microbial impurities to ensure maximum safety.",
+    q: "Ut enim ad minim veniam, quis nostrud exercitation?",
+    a: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
   },
 ];
 
@@ -88,7 +88,7 @@ export default function ContactPage() {
 
   return (
     <div className="bg-[#F5F0E8] min-h-screen pb-12 font-[Manrope]">
-      {/* ══ 1. FULL BLEED EDGE-TO-EDGE HERO BANNER (100% FIGMA MATCH) ═════════ */}
+      {/* ══ 1. FULL BLEED EDGE-TO-EDGE HERO BANNER ════════════════════════════ */}
       <section className="relative w-full bg-[#F3EFE6] border-b border-[#E5DFD3] overflow-hidden min-h-[300px] sm:min-h-[360px] md:min-h-[420px] lg:min-h-[460px] 2xl:min-h-[500px] flex items-center">
         {/* Full Bleed Image (contact-banner.png) */}
         <Image
@@ -103,7 +103,7 @@ export default function ContactPage() {
         {/* Left Fade Gradient */}
         <div className="absolute inset-0 bg-gradient-to-r from-[#F3EFE6] via-[#F3EFE6]/90 via-35% md:via-42% to-transparent pointer-events-none" />
 
-        {/* Inner Content positioned inside container-site for clean left alignment */}
+        {/* Inner Content */}
         <div className="container-site relative z-10 w-full">
           <motion.div
             initial="hidden"
@@ -131,7 +131,7 @@ export default function ContactPage() {
               variants={fadeIn}
               className="text-xs md:text-sm 2xl:text-base text-[#4A4A4A] leading-relaxed mb-6 max-w-md font-medium"
             >
-              Our dedicated team of herbalists and wellness experts are here to guide you on your journey. Reach out for personalized support or visit our flagship dispensary.
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
             </motion.p>
 
             <motion.div variants={fadeIn} className="flex flex-wrap items-center gap-3">
@@ -168,7 +168,7 @@ export default function ContactPage() {
                   Inquiry &amp; Guidance
                 </h2>
                 <p className="text-xs md:text-sm 2xl:text-base text-[#767676] leading-relaxed mb-6">
-                  Whether you&apos;re exploring herbal remedies for the first time or seeking specific product knowledge, our expert team is ready to assist you.
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
                 </p>
 
                 <form onSubmit={handleSubmit} className="space-y-4">
@@ -290,7 +290,7 @@ export default function ContactPage() {
                     Personalized Botanical Advice
                   </h3>
                   <p className="text-xs md:text-sm text-white/85 leading-relaxed">
-                    Schedule a 1-on-1 session with our certified wellness care team to select ideal dosages and strain profiles.
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
                   </p>
                 </div>
               </div>
@@ -375,7 +375,7 @@ export default function ContactPage() {
                   Stay Elevated
                 </h2>
                 <p className="text-sm md:text-base text-white/85 leading-relaxed">
-                  Subscribe to receive our latest cannabis product drops, wellness insights, discount codes, and exclusive store delivery updates.
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
                 </p>
               </div>
 

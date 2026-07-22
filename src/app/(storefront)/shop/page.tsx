@@ -186,7 +186,7 @@ const testimonials = [
   {
     id: 1,
     quote:
-      "The selection at Total HerbalCare is unparalleled. Their edibles actually taste gourmet and the results are consistent every time. Best dispensary in the city.",
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
     name: "Sarah L.",
     role: "VERIFIED CUSTOMER",
     avatar: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=150&q=80",
@@ -194,7 +194,7 @@ const testimonials = [
   {
     id: 2,
     quote:
-      "Their staff really knows their stuff. I was looking for something to help with sleep and their recommendations were spot on. The store vibe is so high-end.",
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
     name: "Marcus R.",
     role: "VERIFIED CUSTOMER",
     avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=150&q=80",
@@ -202,7 +202,7 @@ const testimonials = [
   {
     id: 3,
     quote:
-      "Absolutely love the packaging and the focus on lab results. It gives me peace of mind knowing exactly what I'm putting into my body. Truly a premium experience.",
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
     name: "Elena K.",
     role: "VERIFIED CUSTOMER",
     avatar: "https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=150&q=80",
@@ -241,7 +241,7 @@ export default function ShopPage() {
 
   return (
     <div className="bg-[#F5F0E8] min-h-screen pb-12 font-[Manrope]">
-      {/* ══ 1. FULL BLEED EDGE-TO-EDGE HERO BANNER (100% FIGMA MATCH) ═════════ */}
+      {/* ══ 1. FULL BLEED EDGE-TO-EDGE HERO BANNER ════════════════════════════ */}
       <section className="relative w-full bg-[#F4F1EA] border-b border-[#E5DFD3] overflow-hidden min-h-[220px] sm:min-h-[260px] md:min-h-[300px] lg:min-h-[340px] 2xl:min-h-[380px] flex items-center">
         {/* Full Bleed Image (shop-banner.png) */}
         <Image
@@ -256,7 +256,7 @@ export default function ShopPage() {
         {/* Left Fade Gradient */}
         <div className="absolute inset-0 bg-gradient-to-r from-[#F4F1EA] via-[#F4F1EA]/80 via-35% to-transparent pointer-events-none" />
 
-        {/* Inner Content positioned inside container-site for clean left alignment */}
+        {/* Inner Content */}
         <div className="container-site relative z-10 w-full">
           <motion.div
             initial="hidden"
@@ -284,9 +284,7 @@ export default function ShopPage() {
               variants={fadeIn}
               className="text-xs md:text-sm 2xl:text-base text-[#4A4A4A] leading-relaxed max-w-md font-medium"
             >
-              Premium cannabis products crafted for purity, potency, and peace of mind.
-              <br className="hidden sm:inline" />
-              Explore our laboratory-tested selections designed for every lifestyle.
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
             </motion.p>
           </motion.div>
         </div>
@@ -639,7 +637,7 @@ export default function ShopPage() {
                   Stay Elevated
                 </h2>
                 <p className="text-sm md:text-base text-white/85 leading-relaxed">
-                  Subscribe to receive our latest cannabis product drops, wellness insights, discount codes, and exclusive store delivery updates.
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
                 </p>
               </div>
 

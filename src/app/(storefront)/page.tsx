@@ -112,50 +112,50 @@ const differenceCards = [
   {
     icon: Award,
     title: "Premium Quality",
-    desc: "We source only the finest cannabis products, ensuring superior quality in every item we offer.",
+    desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
   },
   {
     icon: FlaskConical,
     title: "Lab Tested",
-    desc: "All products undergo rigorous third-party laboratory testing for purity, potency, and safety.",
+    desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
   },
   {
     icon: Shield,
     title: "Licensed Dispensary",
-    desc: "Operating under full state compliance as a fully licensed and regulated cannabis dispensary.",
+    desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
   },
   {
     icon: Package,
     title: "Wide Selection",
-    desc: "From flowers and concentrates to edibles and tinctures — we carry something for every preference.",
+    desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
   },
   {
     icon: Users,
     title: "Friendly Experts",
-    desc: "Our knowledgeable staff is always ready to guide you to the perfect product for your needs.",
+    desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
   },
   {
     icon: Lock,
     title: "Secure Checkout",
-    desc: "Shop with confidence through our encrypted, private, and fully secure checkout experience.",
+    desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
   },
 ];
 
 const testimonials = [
   {
-    text: "The selection at TotalHerbalCare is unparalleled. Their edibles actually taste gourmet and the results are consistent every time. Best dispensary in the city.",
+    text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.",
     author: "Sarah J.",
     role: "Verified Customer",
     img: "https://images.unsplash.com/photo-1494790108755-2616b612b47c?w=80&h=80&fit=crop&q=80",
   },
   {
-    text: "Their staff really know their stuff. I was looking for something to help with sleep and their recommendations were spot on. The store vibe is so high-end.",
+    text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.",
     author: "Marcus W.",
     role: "Regular Customer",
     img: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=80&h=80&fit=crop&q=80",
   },
   {
-    text: "Absolutely love the packaging and the focus on lab results. It gives me peace of mind knowing exactly what I'm putting into my body. Truly a premium experience.",
+    text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.",
     author: "Diana R.",
     role: "Verified Customer",
     img: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=80&h=80&fit=crop&q=80",
@@ -168,7 +168,7 @@ const blogPosts = [
     category: "BEGINNER",
     title: "A Beginner's Guide to CBD",
     excerpt:
-      "Learn the basics of Cannabidiol (CBD), its wellness benefits, recommended dosages, and how to choose the right premium CBD products.",
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
     img: "/images/Beginners.png",
     slug: "beginners-guide-to-cbd",
   },
@@ -177,7 +177,7 @@ const blogPosts = [
     category: "SCIENCE",
     title: "Understanding Terpenes",
     excerpt:
-      "Explore how aromatic compounds called terpenes affect the flavor, aroma, and therapeutic properties of different cannabis strains.",
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
     img: "/images/science.png",
     slug: "understanding-terpenes",
   },
@@ -186,7 +186,7 @@ const blogPosts = [
     category: "LIFESTYLE",
     title: "The Art of Pre-Rolls",
     excerpt:
-      "Discover the craftsmanship behind rolling the perfect joint, selecting premium flower, and experiencing full-spectrum flavor profiles.",
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
     img: "/images/LIFESTYLE.png",
     slug: "the-art-of-pre-rolls",
   },
@@ -211,16 +211,16 @@ const locations = [
 
 const faqs = [
   {
-    q: "Do you offer same-day delivery?",
-    a: "Yes! We offer fast, discreet, same-day delivery throughout the Los Angeles area for all orders placed before 8:00 PM. Deliveries are fully compliant with local laws and state regulations.",
+    q: "Lorem ipsum dolor sit amet, consectetur adipiscing elit?",
+    a: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
   },
   {
-    q: "What payment methods do you accept?",
-    a: "We accept cash upon delivery/pickup, as well as select secure digital payment methods. Our checkout process is fully encrypted and compliant to protect your transaction details.",
+    q: "Sed do eiusmod tempor incididunt ut labore et dolore?",
+    a: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
   },
   {
-    q: "Are your products laboratory tested?",
-    a: "Absolutely. All cannabis products at Total Herbal Care undergo rigorous, independent third-party laboratory testing. We verify terpene profiles, cannabinoid potency, and screen for heavy metals, pesticides, and microbial impurities to ensure maximum safety.",
+    q: "Ut enim ad minim veniam, quis nostrud exercitation?",
+    a: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
   },
 ];
 
@@ -326,7 +326,7 @@ export default function HomePage() {
               className="text-base leading-relaxed mb-8 max-w-[460px]"
               style={{ color: "rgba(255,255,255,0.85)" }}
             >
-              Discover high-quality, lab-tested cannabis flowers, concentrates, vapes, and edibles crafted to elevate your lifestyle. Experience legal, licensed cannabis delivery and pick-up options customized to your preference.
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.
             </motion.p>
 
             {/* CTAs */}
@@ -475,7 +475,7 @@ export default function HomePage() {
                 className="text-sm mt-1"
                 style={{ color: "#767676" }}
               >
-                Our latest premium drops, laboratory-certified.
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
               </motion.p>
             </div>
             <motion.div variants={fadeUp}>
@@ -628,9 +628,7 @@ export default function HomePage() {
                   variants={fadeUp}
                   className="text-xs md:text-sm max-w-lg mx-auto mb-6 leading-relaxed text-white/80"
                 >
-                  Experience the essence of the season with our exclusive
-                  sun-grown flower collection. 20% off all flower products this
-                  week.
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
                 </motion.p>
                 <motion.div variants={fadeUp}>
                   <Button href="/shop" variant="white" className="px-8 py-2.5">
@@ -665,8 +663,7 @@ export default function HomePage() {
               className="text-base max-w-xl mx-auto"
               style={{ color: "#767676" }}
             >
-              Setting the benchmarks for quality, safety, and luxury in the
-              cannabis wellness industry.
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
             </motion.p>
           </motion.div>
 
@@ -781,17 +778,17 @@ export default function HomePage() {
                 className="text-base leading-relaxed mb-6"
                 style={{ color: "#4A4A4A" }}
               >
-                We are dedicated to producing organic, sun-grown cannabis through sustainable farming practices. From seed to sale, our licensed cultivators maintain the highest quality standards so you receive safe, pure, and premium medical-grade cannabis.
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
               </p>
               <div className="space-y-4">
                 {[
                   {
                     title: "Ethical Cultivation",
-                    desc: "We prioritize regenerative soil practices, zero synthetic pesticides, and careful hand-trimming to preserve terpenes and active cannabinoids.",
+                    desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
                   },
                   {
                     title: "Community Education",
-                    desc: "Our knowledgeable budtenders and educational articles help demystify dosage, strain profiles, and terpenes for safe, beneficial intake.",
+                    desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
                   },
                 ].map((item) => (
                   <div key={item.title} className="flex gap-3">
@@ -1030,7 +1027,7 @@ export default function HomePage() {
                 Fresh Summer Blooms
               </h2>
               <p className="text-sm md:text-base mb-5 max-w-sm leading-relaxed text-white/80">
-                Enjoy our handcrafted seasonal concentrates and organic flower strains. 100% lab-certified for flavor purity and balanced therapeutic cannabinoid profiles.
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
               </p>
               <Button
                 href="/shop"
