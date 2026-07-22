@@ -88,73 +88,69 @@ export default function ContactPage() {
 
   return (
     <div className="bg-[#F5F0E8] min-h-screen pb-12 font-[Manrope]">
-      {/* ══ 1. HERO BANNER (100% REPLICATED FROM FIGMA SCREENSHOT) ════════════ */}
-      <section className="py-6 md:py-8 bg-[#F5F0E8]">
-        <div className="container-site">
-          <div className="relative rounded-2xl md:rounded-3xl overflow-hidden bg-[#EFEBE2] border border-[#E2DAD0] shadow-sm min-h-[320px] sm:min-h-[380px] md:min-h-[420px] lg:min-h-[460px] 2xl:min-h-[500px] flex items-center">
-            {/* Right Store Photo Image (contact-banner.png) */}
-            <div className="absolute right-0 top-0 bottom-0 w-full sm:w-[65%] md:w-[60%] lg:w-[56%] 2xl:w-[54%] pointer-events-none">
-              <Image
-                src="/images/contact-banner.png"
-                alt="Apothecary Dispensary Interior Banner"
-                fill
-                className="object-cover object-left-top"
-                priority
-                sizes="(max-width: 640px) 100vw, 60vw"
-              />
-            </div>
+      {/* ══ 1. FULL BLEED EDGE-TO-EDGE HERO BANNER (100% FIGMA MATCH) ═════════ */}
+      <section className="relative w-full bg-[#F3EFE6] border-b border-[#E5DFD3] overflow-hidden min-h-[300px] sm:min-h-[360px] md:min-h-[420px] lg:min-h-[460px] 2xl:min-h-[500px] flex items-center">
+        {/* Full Bleed Image (contact-banner.png) */}
+        <Image
+          src="/images/contact-banner.png"
+          alt="Let's Start The Conversation Full Width Banner"
+          fill
+          className="object-cover object-right-top"
+          priority
+          sizes="100vw"
+        />
 
-            {/* Soft Fade Overlay */}
-            <div className="absolute inset-0 bg-gradient-to-r from-[#EFEBE2] via-[#EFEBE2]/95 sm:via-[#EFEBE2]/85 to-transparent sm:w-[70%] md:w-[60%] lg:w-[55%] pointer-events-none" />
+        {/* Left Fade Gradient */}
+        <div className="absolute inset-0 bg-gradient-to-r from-[#F3EFE6] via-[#F3EFE6]/90 via-35% md:via-42% to-transparent pointer-events-none" />
 
-            {/* Left Content */}
-            <motion.div
-              initial="hidden"
-              animate="show"
-              variants={stagger}
-              className="relative z-10 p-6 md:p-12 2xl:p-14 max-w-xl text-left"
-            >
-              <motion.div variants={fadeIn} className="flex items-center gap-1.5 text-[11px] md:text-xs text-[#767676] mb-3">
-                <Link href="/" className="hover:text-[#016C24] transition-colors">
-                  Home
-                </Link>
-                <span>&gt;</span>
-                <span className="font-medium text-[#1A1A1A]">Contact</span>
-              </motion.div>
-
-              <motion.h1
-                variants={fadeIn}
-                className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl 2xl:text-7xl font-bold leading-[1.06] mb-4 text-[#016C24]"
-                style={{ fontFamily: "Times New Roman, serif" }}
-              >
-                Let&apos;s Start <br /> The Conversation
-              </motion.h1>
-
-              <motion.p
-                variants={fadeIn}
-                className="text-xs md:text-sm 2xl:text-base text-[#4A4A4A] leading-relaxed mb-6 max-w-md font-medium"
-              >
-                Our dedicated team of herbalists and wellness experts are here to guide you on your journey. Reach out for personalized support or visit our flagship dispensary.
-              </motion.p>
-
-              <motion.div variants={fadeIn} className="flex flex-wrap items-center gap-3">
-                <Button
-                  href="#inquiry"
-                  variant="primary"
-                  className="px-7 py-3 text-xs md:text-sm font-semibold rounded-full shadow-md hover:scale-102 transition-transform bg-[#016C24] text-white"
-                >
-                  Contact Support
-                </Button>
-                <Button
-                  href="/location"
-                  variant="outline"
-                  className="px-7 py-3 text-xs md:text-sm font-semibold rounded-full border-none text-[#016C24] bg-white shadow-md hover:bg-[#F5F0E8] transition-all"
-                >
-                  Find a Store
-                </Button>
-              </motion.div>
+        {/* Inner Content positioned inside container-site for clean left alignment */}
+        <div className="container-site relative z-10 w-full">
+          <motion.div
+            initial="hidden"
+            animate="show"
+            variants={stagger}
+            className="py-8 md:py-12 2xl:py-14 max-w-xl text-left"
+          >
+            <motion.div variants={fadeIn} className="flex items-center gap-1.5 text-[11px] md:text-xs text-[#767676] mb-3 font-medium">
+              <Link href="/" className="hover:text-[#016C24] transition-colors">
+                Home
+              </Link>
+              <span>&gt;</span>
+              <span className="font-medium text-[#1A1A1A]">Contact</span>
             </motion.div>
-          </div>
+
+            <motion.h1
+              variants={fadeIn}
+              className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl 2xl:text-7xl font-bold leading-[1.06] mb-4 text-[#016C24]"
+              style={{ fontFamily: "Times New Roman, serif" }}
+            >
+              Let&apos;s Start <br /> The Conversation
+            </motion.h1>
+
+            <motion.p
+              variants={fadeIn}
+              className="text-xs md:text-sm 2xl:text-base text-[#4A4A4A] leading-relaxed mb-6 max-w-md font-medium"
+            >
+              Our dedicated team of herbalists and wellness experts are here to guide you on your journey. Reach out for personalized support or visit our flagship dispensary.
+            </motion.p>
+
+            <motion.div variants={fadeIn} className="flex flex-wrap items-center gap-3">
+              <Button
+                href="#inquiry"
+                variant="primary"
+                className="px-7 py-3 text-xs md:text-sm font-semibold rounded-full shadow-md hover:scale-102 transition-transform bg-[#016C24] text-white"
+              >
+                Contact Support
+              </Button>
+              <Button
+                href="/location"
+                variant="outline"
+                className="px-7 py-3 text-xs md:text-sm font-semibold rounded-full border-none text-[#016C24] bg-white shadow-md hover:bg-[#F5F0E8] transition-all"
+              >
+                Find a Store
+              </Button>
+            </motion.div>
+          </motion.div>
         </div>
       </section>
 

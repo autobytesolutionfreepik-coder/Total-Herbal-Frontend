@@ -241,63 +241,59 @@ export default function ShopPage() {
 
   return (
     <div className="bg-[#F5F0E8] min-h-screen pb-12 font-[Manrope]">
-      {/* ══ 1. HERO BANNER (100% REPLICATED FROM FIGMA SCREENSHOT) ════════════ */}
-      <section className="py-6 md:py-8 bg-[#F5F0E8]">
-        <div className="container-site">
-          <div className="relative rounded-2xl md:rounded-3xl overflow-hidden bg-[#EFEBE2] border border-[#E2DAD0] shadow-sm min-h-[220px] sm:min-h-[260px] md:min-h-[300px] lg:min-h-[320px] 2xl:min-h-[360px] flex items-center">
-            {/* Right Image Graphic (shop-banner.png) */}
-            <div className="absolute right-0 top-0 bottom-0 w-full sm:w-[65%] md:w-[60%] lg:w-[55%] 2xl:w-[52%] pointer-events-none">
-              <Image
-                src="/images/shop-banner.png"
-                alt="Our Collection Banner Graphic"
-                fill
-                className="object-cover object-right"
-                priority
-                sizes="(max-width: 640px) 100vw, 60vw"
-              />
-            </div>
+      {/* ══ 1. FULL BLEED EDGE-TO-EDGE HERO BANNER (100% FIGMA MATCH) ═════════ */}
+      <section className="relative w-full bg-[#F4F1EA] border-b border-[#E5DFD3] overflow-hidden min-h-[220px] sm:min-h-[260px] md:min-h-[300px] lg:min-h-[340px] 2xl:min-h-[380px] flex items-center">
+        {/* Full Bleed Image (shop-banner.png) */}
+        <Image
+          src="/images/shop-banner.png"
+          alt="Our Collection Banner Graphic"
+          fill
+          className="object-cover object-right"
+          priority
+          sizes="100vw"
+        />
 
-            {/* Soft Fade Overlay */}
-            <div className="absolute inset-0 bg-gradient-to-r from-[#EFEBE2] via-[#EFEBE2]/90 sm:via-[#EFEBE2]/80 to-transparent sm:w-[70%] md:w-[60%] lg:w-[55%] pointer-events-none" />
+        {/* Left Fade Gradient */}
+        <div className="absolute inset-0 bg-gradient-to-r from-[#F4F1EA] via-[#F4F1EA]/80 via-35% to-transparent pointer-events-none" />
 
-            {/* Left Content */}
-            <motion.div
-              initial="hidden"
-              animate="show"
-              variants={stagger}
-              className="relative z-10 p-6 md:p-12 2xl:p-14 max-w-xl text-left"
-            >
-              <motion.div variants={fadeIn} className="flex items-center gap-1.5 text-[11px] md:text-xs text-[#767676] mb-2">
-                <Link href="/" className="hover:text-[#016C24] transition-colors">
-                  Home
-                </Link>
-                <span>&gt;</span>
-                <span className="font-medium text-[#1A1A1A]">Shop</span>
-              </motion.div>
-
-              <motion.h1
-                variants={fadeIn}
-                className="text-3xl md:text-5xl lg:text-6xl 2xl:text-7xl font-bold leading-none mb-3 text-[#016C24]"
-                style={{ fontFamily: "Times New Roman, serif" }}
-              >
-                Our Collection
-              </motion.h1>
-
-              <motion.p
-                variants={fadeIn}
-                className="text-xs md:text-sm 2xl:text-base text-[#4A4A4A] leading-relaxed max-w-md font-medium"
-              >
-                Premium cannabis products crafted for purity, potency, and peace of mind.
-                <br className="hidden sm:inline" />
-                Explore our laboratory-tested selections designed for every lifestyle.
-              </motion.p>
+        {/* Inner Content positioned inside container-site for clean left alignment */}
+        <div className="container-site relative z-10 w-full">
+          <motion.div
+            initial="hidden"
+            animate="show"
+            variants={stagger}
+            className="py-8 md:py-12 2xl:py-14 max-w-xl text-left"
+          >
+            <motion.div variants={fadeIn} className="flex items-center gap-1.5 text-[11px] md:text-xs text-[#767676] mb-2 font-medium">
+              <Link href="/" className="hover:text-[#016C24] transition-colors">
+                Home
+              </Link>
+              <span>&gt;</span>
+              <span className="font-medium text-[#1A1A1A]">Shop</span>
             </motion.div>
-          </div>
+
+            <motion.h1
+              variants={fadeIn}
+              className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl 2xl:text-7xl font-bold leading-none mb-3 text-[#016C24]"
+              style={{ fontFamily: "Times New Roman, serif" }}
+            >
+              Our Collection
+            </motion.h1>
+
+            <motion.p
+              variants={fadeIn}
+              className="text-xs md:text-sm 2xl:text-base text-[#4A4A4A] leading-relaxed max-w-md font-medium"
+            >
+              Premium cannabis products crafted for purity, potency, and peace of mind.
+              <br className="hidden sm:inline" />
+              Explore our laboratory-tested selections designed for every lifestyle.
+            </motion.p>
+          </motion.div>
         </div>
       </section>
 
       {/* ══ 2. MAIN SHOP CONTENT (STICKY SIDEBAR + PRODUCT GRID) ═══════════════ */}
-      <section className="py-6 md:py-10">
+      <section className="py-8 md:py-12">
         <div className="container-site">
           <div className="flex flex-col lg:flex-row gap-8 2xl:gap-12 items-start relative">
             {/* ── STICKY Desktop Sidebar Filter ── */}
