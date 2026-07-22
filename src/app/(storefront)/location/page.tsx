@@ -14,7 +14,6 @@ import {
   CreditCard,
   UserCheck,
   Mail,
-  Search,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
@@ -41,22 +40,22 @@ const amenitiesList = [
   {
     icon: ShoppingBag,
     title: "Curbside Pickup",
-    desc: "Fast & secure collection from your vehicle.",
+    desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
   },
   {
     icon: ShieldCheck,
     title: "ADA Accessible",
-    desc: "Fully compliant entryways and layouts.",
+    desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
   },
   {
     icon: CreditCard,
     title: "ATM On-site",
-    desc: "Secure cash access for convenient transactions.",
+    desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
   },
   {
     icon: UserCheck,
     title: "Expert Consultation",
-    desc: "In-house care specialists available daily.",
+    desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
   },
 ];
 
@@ -97,7 +96,7 @@ export default function LocationPage() {
             </motion.h1>
 
             <motion.p variants={fadeIn} className="text-xs md:text-sm text-[#4A4A4A] leading-relaxed max-w-2xl mx-auto">
-              Experience award-winning botanical care and personalized consultations. Visit any of our licensed flagship locations across California or order online for fast same-day delivery.
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.
             </motion.p>
           </motion.div>
         </div>
@@ -202,8 +201,8 @@ export default function LocationPage() {
                       <MapPin className="w-5 h-5 text-[#016C24]" />
                     </div>
                     <div>
-                      <h4 className="text-sm font-bold text-[#1A1A1A]">Los Angeles &amp; Bay Area Dispensaries</h4>
-                      <p className="text-xs text-[#767676]">2 Licensed Stores • Open 7 Days a Week</p>
+                      <h4 className="text-sm font-bold text-[#1A1A1A]">Lorem Ipsum Location</h4>
+                      <p className="text-xs text-[#767676]">Lorem ipsum dolor sit amet</p>
                     </div>
                   </div>
                   <Button href="/shop" variant="primary" size="sm" className="hidden sm:inline-flex text-xs">
@@ -227,7 +226,7 @@ export default function LocationPage() {
               Premium Amenities
             </h2>
             <p className="text-xs md:text-sm text-[#767676]">
-              Setting the standard for customer comfort, security, and accessibility.
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
             </p>
           </div>
 
@@ -295,7 +294,7 @@ export default function LocationPage() {
                   Stay Elevated
                 </h2>
                 <p className="text-sm md:text-base text-white/85 leading-relaxed">
-                  Subscribe to receive our latest cannabis product drops, wellness insights, discount codes, and exclusive store delivery updates.
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
                 </p>
               </div>
 
