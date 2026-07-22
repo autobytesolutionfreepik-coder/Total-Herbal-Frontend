@@ -241,18 +241,33 @@ export default function ShopPage() {
 
   return (
     <div className="bg-[#F5F0E8] min-h-screen pb-12 font-[Manrope]">
-      {/* ══ 1. HERO BANNER ════════════════════════════════════════════════════ */}
-      <section className="py-8 md:py-12 bg-[#F5F0E8] border-b border-[#E8E0D2]">
+      {/* ══ 1. HERO BANNER (100% REPLICATED FROM FIGMA SCREENSHOT) ════════════ */}
+      <section className="py-6 md:py-8 bg-[#F5F0E8]">
         <div className="container-site">
-          <div className="relative rounded-3xl overflow-hidden bg-white/70 backdrop-blur-md shadow-sm border border-white/60 p-6 md:p-12 flex flex-col md:flex-row items-center justify-between gap-8 min-h-[240px] md:min-h-[280px]">
+          <div className="relative rounded-2xl md:rounded-3xl overflow-hidden bg-[#EFEBE2] border border-[#E2DAD0] shadow-sm min-h-[220px] sm:min-h-[260px] md:min-h-[300px] lg:min-h-[320px] 2xl:min-h-[360px] flex items-center">
+            {/* Right Image Graphic (shop-banner.png) */}
+            <div className="absolute right-0 top-0 bottom-0 w-full sm:w-[65%] md:w-[60%] lg:w-[55%] 2xl:w-[52%] pointer-events-none">
+              <Image
+                src="/images/shop-banner.png"
+                alt="Our Collection Banner Graphic"
+                fill
+                className="object-cover object-right"
+                priority
+                sizes="(max-width: 640px) 100vw, 60vw"
+              />
+            </div>
+
+            {/* Soft Fade Overlay */}
+            <div className="absolute inset-0 bg-gradient-to-r from-[#EFEBE2] via-[#EFEBE2]/90 sm:via-[#EFEBE2]/80 to-transparent sm:w-[70%] md:w-[60%] lg:w-[55%] pointer-events-none" />
+
             {/* Left Content */}
             <motion.div
               initial="hidden"
               animate="show"
               variants={stagger}
-              className="max-w-xl text-left relative z-10"
+              className="relative z-10 p-6 md:p-12 2xl:p-14 max-w-xl text-left"
             >
-              <motion.div variants={fadeIn} className="flex items-center gap-2 text-xs text-[#767676] mb-3">
+              <motion.div variants={fadeIn} className="flex items-center gap-1.5 text-[11px] md:text-xs text-[#767676] mb-2">
                 <Link href="/" className="hover:text-[#016C24] transition-colors">
                   Home
                 </Link>
@@ -262,52 +277,36 @@ export default function ShopPage() {
 
               <motion.h1
                 variants={fadeIn}
-                className="text-3xl md:text-5xl font-bold leading-tight mb-3"
-                style={{ fontFamily: "Times New Roman, serif", color: "#016C24" }}
+                className="text-3xl md:text-5xl lg:text-6xl 2xl:text-7xl font-bold leading-none mb-3 text-[#016C24]"
+                style={{ fontFamily: "Times New Roman, serif" }}
               >
                 Our Collection
               </motion.h1>
 
               <motion.p
                 variants={fadeIn}
-                className="text-xs md:text-sm text-[#55605A] leading-relaxed max-w-lg"
+                className="text-xs md:text-sm 2xl:text-base text-[#4A4A4A] leading-relaxed max-w-md font-medium"
               >
                 Premium cannabis products crafted for purity, potency, and peace of mind.
+                <br className="hidden sm:inline" />
                 Explore our laboratory-tested selections designed for every lifestyle.
               </motion.p>
-            </motion.div>
-
-            {/* Right Background / Image Graphic */}
-            <motion.div
-              initial={{ opacity: 0, scale: 0.95 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.5 }}
-              className="relative w-full md:w-[45%] h-[180px] md:h-[240px] flex-shrink-0 flex items-center justify-end"
-            >
-              <Image
-                src="/images/Fresh-Summer-Blooms.png"
-                alt="Our Collection"
-                fill
-                className="object-contain object-right"
-                priority
-                sizes="(max-width:768px) 100vw, 45vw"
-              />
             </motion.div>
           </div>
         </div>
       </section>
 
-      {/* ══ 2. MAIN SHOP CONTENT (SIDEBAR + PRODUCT GRID) ═════════════════════ */}
-      <section className="py-8 md:py-12">
+      {/* ══ 2. MAIN SHOP CONTENT (STICKY SIDEBAR + PRODUCT GRID) ═══════════════ */}
+      <section className="py-6 md:py-10">
         <div className="container-site">
-          <div className="flex flex-col lg:flex-row gap-8 items-start">
-            {/* ── Desktop Sidebar Filter ── */}
-            <aside className="hidden lg:block w-64 flex-shrink-0 bg-transparent space-y-8">
+          <div className="flex flex-col lg:flex-row gap-8 2xl:gap-12 items-start relative">
+            {/* ── STICKY Desktop Sidebar Filter ── */}
+            <aside className="hidden lg:block w-64 xl:w-72 2xl:w-80 flex-shrink-0 sticky top-24 self-start space-y-8 bg-transparent transition-all">
               {/* Category Accordion */}
               <div className="pb-6 border-b border-[#E2DAD0]">
                 <button
                   onClick={() => setCategoryOpen(!categoryOpen)}
-                  className="w-full flex items-center justify-between text-left mb-4"
+                  className="w-full flex items-center justify-between text-left mb-4 group"
                 >
                   <h3 className="text-xs font-extrabold tracking-widest uppercase text-[#016C24]">
                     CATEGORY
@@ -370,7 +369,7 @@ export default function ShopPage() {
                         className={`px-4 py-1.5 rounded-full text-xs font-semibold transition-all ${
                           isSelected
                             ? "bg-[#016C24] text-white shadow-sm"
-                            : "bg-white/60 text-[#4A4A4A] border border-[#D5CECE] hover:border-[#016C24] hover:text-[#016C24]"
+                            : "bg-white/70 text-[#4A4A4A] border border-[#D5CECE] hover:border-[#016C24] hover:text-[#016C24]"
                         }`}
                       >
                         {eff}
@@ -401,14 +400,14 @@ export default function ShopPage() {
             </aside>
 
             {/* ── Main Product Area ── */}
-            <div className="flex-1 w-full">
+            <div className="flex-1 w-full min-w-0">
               {/* Top Controls Bar */}
               <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mb-6">
                 <div className="flex items-center gap-3">
                   {/* Mobile filter toggle */}
                   <button
                     onClick={() => setMobileFilterOpen(true)}
-                    className="lg:hidden flex items-center gap-2 bg-white px-4 py-2 rounded-full border border-[#D5CECE] text-xs font-semibold text-[#1A1A1A]"
+                    className="lg:hidden flex items-center gap-2 bg-white px-4 py-2 rounded-full border border-[#D5CECE] text-xs font-semibold text-[#1A1A1A] shadow-sm"
                   >
                     <Filter className="w-3.5 h-3.5 text-[#016C24]" />
                     <span>Filters</span>
@@ -425,7 +424,7 @@ export default function ShopPage() {
                     <select
                       value={sortBy}
                       onChange={(e) => setSortBy(e.target.value)}
-                      className="appearance-none bg-white border border-[#D5CECE] rounded-xl px-4 py-2 pr-9 text-xs font-semibold text-[#1A1A1A] outline-none cursor-pointer hover:border-[#016C24] transition-colors"
+                      className="appearance-none bg-white border border-[#D5CECE] rounded-xl px-4 py-2 pr-9 text-xs font-semibold text-[#1A1A1A] outline-none cursor-pointer hover:border-[#016C24] transition-colors shadow-sm"
                     >
                       <option value="Best Selling">Best Selling</option>
                       <option value="Price: Low to High">Price: Low to High</option>
@@ -438,16 +437,16 @@ export default function ShopPage() {
                 </div>
               </div>
 
-              {/* ── Product Grid (4 columns) ── */}
+              {/* ── Product Grid ── */}
               <motion.div
                 initial="hidden"
                 animate="show"
                 variants={stagger}
-                className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-5"
+                className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-4 gap-5 2xl:gap-6"
               >
                 {productsList.map((p, idx) => (
                   <motion.div key={`${p.id}-${idx}`} variants={fadeIn}>
-                    <div className="group relative rounded-[20px] overflow-hidden flex flex-col bg-white border border-[#E8E0D2] hover:shadow-[0_12px_36px_rgba(0,0,0,0.08)] hover:-translate-y-1 transition-all duration-300 h-full">
+                    <div className="group relative rounded-[20px] overflow-hidden flex flex-col bg-white border border-[#E8E0D2] hover:shadow-[0_16px_40px_rgba(0,0,0,0.1)] hover:-translate-y-1.5 transition-all duration-300 h-full">
                       {/* Image container */}
                       <div className="relative overflow-hidden w-full aspect-[4/5] bg-[#FAF8F5]">
                         <Image
@@ -455,7 +454,7 @@ export default function ShopPage() {
                           alt={p.name}
                           fill
                           className="object-cover transition-transform duration-500 group-hover:scale-[1.04]"
-                          sizes="(max-width:640px) 100vw, (max-width:1024px) 50vw, 25vw"
+                          sizes="(max-width:640px) 100vw, (max-width:1024px) 50vw, (max-width:1536px) 33vw, 25vw"
                         />
                       </div>
 
@@ -586,7 +585,7 @@ export default function ShopPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: t.id * 0.1 }}
-                className="bg-white rounded-2xl p-7 shadow-sm border border-[#E8E0D2] flex flex-col justify-between"
+                className="bg-white rounded-2xl p-7 shadow-sm border border-[#E8E0D2] flex flex-col justify-between hover:shadow-md transition-shadow"
               >
                 <p className="text-xs md:text-sm text-[#4A4A4A] leading-relaxed mb-6 italic">
                   &ldquo;{t.quote}&rdquo;
