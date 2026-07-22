@@ -11,7 +11,6 @@ import {
   Sparkles,
   ChevronDown,
   Mail,
-  CheckCircle2,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { toast } from "sonner";
@@ -89,13 +88,33 @@ export default function ContactPage() {
 
   return (
     <div className="bg-[#F5F0E8] min-h-screen pb-12 font-[Manrope]">
-      {/* ══ 1. HERO BANNER ════════════════════════════════════════════════════ */}
-      <section className="py-8 md:py-12 bg-[#F5F0E8] border-b border-[#E8E0D2]">
+      {/* ══ 1. HERO BANNER (100% REPLICATED FROM FIGMA SCREENSHOT) ════════════ */}
+      <section className="py-6 md:py-8 bg-[#F5F0E8]">
         <div className="container-site">
-          <div className="relative rounded-3xl overflow-hidden bg-white/70 backdrop-blur-md shadow-sm border border-white/60 p-6 md:p-12 flex flex-col lg:flex-row items-center justify-between gap-8">
+          <div className="relative rounded-2xl md:rounded-3xl overflow-hidden bg-[#EFEBE2] border border-[#E2DAD0] shadow-sm min-h-[320px] sm:min-h-[380px] md:min-h-[420px] lg:min-h-[460px] 2xl:min-h-[500px] flex items-center">
+            {/* Right Store Photo Image (contact-banner.png) */}
+            <div className="absolute right-0 top-0 bottom-0 w-full sm:w-[65%] md:w-[60%] lg:w-[56%] 2xl:w-[54%] pointer-events-none">
+              <Image
+                src="/images/contact-banner.png"
+                alt="Apothecary Dispensary Interior Banner"
+                fill
+                className="object-cover object-left-top"
+                priority
+                sizes="(max-width: 640px) 100vw, 60vw"
+              />
+            </div>
+
+            {/* Soft Fade Overlay */}
+            <div className="absolute inset-0 bg-gradient-to-r from-[#EFEBE2] via-[#EFEBE2]/95 sm:via-[#EFEBE2]/85 to-transparent sm:w-[70%] md:w-[60%] lg:w-[55%] pointer-events-none" />
+
             {/* Left Content */}
-            <motion.div initial="hidden" animate="show" variants={stagger} className="max-w-xl text-left">
-              <motion.div variants={fadeIn} className="flex items-center gap-2 text-xs text-[#767676] mb-3">
+            <motion.div
+              initial="hidden"
+              animate="show"
+              variants={stagger}
+              className="relative z-10 p-6 md:p-12 2xl:p-14 max-w-xl text-left"
+            >
+              <motion.div variants={fadeIn} className="flex items-center gap-1.5 text-[11px] md:text-xs text-[#767676] mb-3">
                 <Link href="/" className="hover:text-[#016C24] transition-colors">
                   Home
                 </Link>
@@ -105,41 +124,35 @@ export default function ContactPage() {
 
               <motion.h1
                 variants={fadeIn}
-                className="text-3xl md:text-5xl font-bold leading-tight mb-4 text-[#016C24]"
+                className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl 2xl:text-7xl font-bold leading-[1.06] mb-4 text-[#016C24]"
                 style={{ fontFamily: "Times New Roman, serif" }}
               >
-                Let&apos;s Start The Conversation
+                Let&apos;s Start <br /> The Conversation
               </motion.h1>
 
-              <motion.p variants={fadeIn} className="text-xs md:text-sm text-[#55605A] leading-relaxed mb-6 max-w-md">
+              <motion.p
+                variants={fadeIn}
+                className="text-xs md:text-sm 2xl:text-base text-[#4A4A4A] leading-relaxed mb-6 max-w-md font-medium"
+              >
                 Our dedicated team of herbalists and wellness experts are here to guide you on your journey. Reach out for personalized support or visit our flagship dispensary.
               </motion.p>
 
-              <motion.div variants={fadeIn} className="flex flex-wrap gap-3">
-                <Button href="#inquiry" variant="primary" className="px-6 py-2.5 text-xs font-semibold rounded-full">
+              <motion.div variants={fadeIn} className="flex flex-wrap items-center gap-3">
+                <Button
+                  href="#inquiry"
+                  variant="primary"
+                  className="px-7 py-3 text-xs md:text-sm font-semibold rounded-full shadow-md hover:scale-102 transition-transform bg-[#016C24] text-white"
+                >
                   Contact Support
                 </Button>
-                <Button href="/location" variant="outline" className="px-6 py-2.5 text-xs font-semibold rounded-full border-[#D5CECE] hover:border-[#016C24] text-[#1A1A1A] bg-white">
+                <Button
+                  href="/location"
+                  variant="outline"
+                  className="px-7 py-3 text-xs md:text-sm font-semibold rounded-full border-none text-[#016C24] bg-white shadow-md hover:bg-[#F5F0E8] transition-all"
+                >
                   Find a Store
                 </Button>
               </motion.div>
-            </motion.div>
-
-            {/* Right Image Graphic */}
-            <motion.div
-              initial={{ opacity: 0, scale: 0.95 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.5 }}
-              className="relative w-full lg:w-[48%] h-[220px] md:h-[280px] rounded-2xl overflow-hidden shadow-sm"
-            >
-              <Image
-                src="/images/Apothecary.png"
-                alt="Store Interior Apothecary"
-                fill
-                className="object-cover"
-                priority
-                sizes="(max-width:1024px) 100vw, 48vw"
-              />
             </motion.div>
           </div>
         </div>
@@ -150,15 +163,15 @@ export default function ContactPage() {
         <div className="container-site">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-stretch">
             {/* Form Column */}
-            <div className="lg:col-span-6 bg-white/80 backdrop-blur-sm rounded-3xl p-6 md:p-10 border border-[#E8E0D2] shadow-sm flex flex-col justify-between">
+            <div className="lg:col-span-6 bg-white/80 backdrop-blur-sm rounded-3xl p-6 md:p-10 2xl:p-12 border border-[#E8E0D2] shadow-sm flex flex-col justify-between">
               <div>
                 <h2
-                  className="text-2xl md:text-3xl font-bold mb-2 text-[#016C24]"
+                  className="text-2xl md:text-4xl font-bold mb-2 text-[#016C24]"
                   style={{ fontFamily: "Times New Roman, serif" }}
                 >
                   Inquiry &amp; Guidance
                 </h2>
-                <p className="text-xs md:text-sm text-[#767676] leading-relaxed mb-6">
+                <p className="text-xs md:text-sm 2xl:text-base text-[#767676] leading-relaxed mb-6">
                   Whether you&apos;re exploring herbal remedies for the first time or seeking specific product knowledge, our expert team is ready to assist you.
                 </p>
 
@@ -251,7 +264,7 @@ export default function ContactPage() {
                     type="submit"
                     disabled={submitting}
                     variant="primary"
-                    className="w-full sm:w-auto px-8 py-3 rounded-full text-xs font-bold uppercase tracking-wider shadow-md hover:scale-102 transition-all"
+                    className="w-full sm:w-auto px-8 py-3 rounded-full text-xs font-bold uppercase tracking-wider shadow-md hover:scale-102 transition-all bg-[#016C24] text-white"
                   >
                     {submitting ? "Submitting..." : "Submit Inquiry"}
                   </Button>
@@ -280,7 +293,7 @@ export default function ContactPage() {
                   >
                     Personalized Botanical Advice
                   </h3>
-                  <p className="text-xs text-white/80 leading-relaxed">
+                  <p className="text-xs md:text-sm text-white/85 leading-relaxed">
                     Schedule a 1-on-1 session with our certified wellness care team to select ideal dosages and strain profiles.
                   </p>
                 </div>

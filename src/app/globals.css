@@ -99,6 +99,13 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
+@media (min-width: 1536px) {
+  .container-site {
+    max-width: 1440px;
+    padding-inline: 3rem;
+  }
+}
+
 /* Section padding */
 .section-py {
   padding-top: 4rem;
