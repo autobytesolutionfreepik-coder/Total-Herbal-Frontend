@@ -125,21 +125,19 @@ export default function BlogPage() {
         );
 
   return (
-    <div className="bg-[#F5F0E8] min-h-screen font-[Manrope] pb-12">
-      {/* ══ 1. FULL BLEED EDGE-TO-EDGE HERO BANNER (FIGMA MATCH) ════════════ */}
-      <section className="relative w-full bg-[#F3EFE6] border-b border-[#E5DFD3] overflow-hidden min-h-[320px] sm:min-h-[380px] md:min-h-[440px] 2xl:min-h-[480px] flex items-center">
-        {/* Full Bleed Image */}
+    <div className="bg-[#EFEBE2] min-h-screen font-[Manrope] pb-12">
+      {/* ══ 1. FULL BLEED EDGE-TO-EDGE HERO BANNER (100% FIGMA MATCH) ════════ */}
+      <section className="relative w-full bg-[#EFEBE2] border-b border-[#E2DAD0] overflow-hidden min-h-[300px] sm:min-h-[360px] md:min-h-[420px] lg:min-h-[460px] 2xl:min-h-[500px] flex items-center">
+        {/* Crisp Full-Resolution Image (blog-banner.png) */}
         <Image
-          src="/images/Fresh-Summer-Blooms.png"
-          alt="The Molecular Symphony Hero Banner"
+          src="/images/blog-banner.png"
+          alt="The Molecular Symphony Hero Banner Graphic"
           fill
           priority
-          className="object-cover object-right"
+          quality={100}
+          className="object-cover object-center"
           sizes="100vw"
         />
-
-        {/* Left Fade Gradient for High Contrast */}
-        <div className="absolute inset-0 bg-gradient-to-r from-[#F3EFE6] via-[#F3EFE6]/90 via-40% md:via-48% to-transparent pointer-events-none" />
 
         {/* Content Container */}
         <div className="container-site relative z-10 w-full">
@@ -147,9 +145,10 @@ export default function BlogPage() {
             initial="hidden"
             animate="show"
             variants={stagger}
-            className="py-10 md:py-14 max-w-2xl text-left"
+            className="py-10 md:py-14 max-w-xl lg:max-w-2xl text-left"
           >
-            <motion.div variants={fadeIn} className="flex items-center gap-1.5 text-xs text-[#767676] mb-3 font-medium">
+            {/* Breadcrumb */}
+            <motion.div variants={fadeIn} className="flex items-center gap-1.5 text-[11px] text-[#666666] mb-3 font-medium">
               <Link href="/" className="hover:text-[#016C24] transition-colors">
                 Home
               </Link>
@@ -157,15 +156,16 @@ export default function BlogPage() {
               <span className="font-semibold text-[#1A1A1A]">Blog</span>
             </motion.div>
 
+            {/* Title with exact Figma Font Colors */}
             <motion.div variants={fadeIn} className="mb-4">
               <span
-                className="text-xl md:text-2xl lg:text-3xl font-bold text-[#1A1A1A] block mb-1"
+                className="text-2xl sm:text-3xl md:text-4xl lg:text-[2.6rem] font-bold text-[#1A1A1A] block mb-1 leading-tight"
                 style={{ fontFamily: "Times New Roman, serif" }}
               >
                 The Molecular Symphony:
               </span>
               <h1
-                className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-[1.08] text-[#016C24]"
+                className="text-3xl sm:text-4xl md:text-5xl lg:text-[3.6rem] font-bold leading-[1.06] text-[#016C24]"
                 style={{ fontFamily: "Times New Roman, serif" }}
               >
                 Understanding Terpenes <br className="hidden sm:inline" />
@@ -173,9 +173,10 @@ export default function BlogPage() {
               </h1>
             </motion.div>
 
+            {/* Subtext */}
             <motion.p
               variants={fadeIn}
-              className="text-xs md:text-sm 2xl:text-base text-[#4A4A4A] leading-relaxed max-w-xl font-medium"
+              className="text-xs md:text-sm 2xl:text-base text-[#4A4A4A] leading-relaxed max-w-md font-medium"
             >
               Explore the intricate science behind the aromatic compounds that define the cannabis experience and how they interact with your body&apos;s endocannabinoid system.
             </motion.p>
@@ -184,19 +185,19 @@ export default function BlogPage() {
       </section>
 
       {/* ══ 2. CATEGORY FILTER PILLS BAR ════════════════════════════════════ */}
-      <section className="py-10 bg-[#F5F0E8]">
+      <section className="py-10 bg-[#EFEBE2]">
         <div className="container-site">
-          <div className="bg-[#EFEBE2] p-2 rounded-full max-w-3xl mx-auto flex items-center justify-center gap-2 sm:gap-4 flex-wrap border border-[#E2DAD0] shadow-xs">
+          <div className="bg-[#E5DCD0] p-3 rounded-full max-w-4xl mx-auto flex items-center justify-center gap-4 sm:gap-8 flex-wrap border border-[#DDD3C5]">
             {categories.map((cat) => {
               const isSelected = selectedCategory === cat;
               return (
                 <button
                   key={cat}
                   onClick={() => setSelectedCategory(cat)}
-                  className={`px-6 py-2.5 rounded-full text-xs sm:text-sm font-semibold transition-all ${
+                  className={`px-7 py-2.5 rounded-full text-sm font-semibold transition-all ${
                     isSelected
-                      ? "bg-[#016C24] text-white shadow-sm"
-                      : "text-[#4A4A4A] hover:text-[#016C24] hover:bg-white/50"
+                      ? "bg-[#016C24] text-white shadow-sm font-bold"
+                      : "text-[#3D433E] hover:text-[#016C24]"
                   }`}
                 >
                   {cat}
@@ -208,7 +209,7 @@ export default function BlogPage() {
       </section>
 
       {/* ══ 3. RECENT INSIGHTS GRID ═════════════════════════════════════════ */}
-      <section className="py-8 md:py-12 bg-[#F5F0E8]">
+      <section className="py-8 md:py-12 bg-[#EFEBE2]">
         <div className="container-site">
           <div className="mb-10 text-left">
             <h2
@@ -217,7 +218,7 @@ export default function BlogPage() {
             >
               Recent Insights
             </h2>
-            <p className="text-xs md:text-sm text-[#767676] font-medium">
+            <p className="text-xs md:text-sm text-[#4A4A4A] font-medium">
               Exploring the frontier of botanical wellness.
             </p>
           </div>
@@ -233,7 +234,7 @@ export default function BlogPage() {
               <motion.div key={post.id} variants={fadeIn}>
                 <Link
                   href={`/blog/${post.slug}`}
-                  className="group flex flex-col h-full bg-white/40 hover:bg-white rounded-3xl p-4 transition-all duration-300 border border-transparent hover:border-[#E8E0D2] hover:shadow-md"
+                  className="group flex flex-col h-full bg-white/50 hover:bg-white rounded-3xl p-4 transition-all duration-300 border border-transparent hover:border-[#E2DAD0] hover:shadow-md"
                 >
                   {/* Card Image */}
                   <div className="relative rounded-2xl overflow-hidden mb-4 aspect-[16/10] w-full bg-[#FAF8F5]">
@@ -246,7 +247,7 @@ export default function BlogPage() {
                     />
 
                     {/* Category Badge Pill */}
-                    <span className="absolute top-3 left-3 bg-white/90 backdrop-blur-md text-[#1A1A1A] text-[10px] font-extrabold tracking-wider uppercase px-3 py-1 rounded-full shadow-xs">
+                    <span className="absolute top-3 left-3 bg-white/95 backdrop-blur-md text-[#1A1A1A] text-[10px] font-extrabold tracking-wider uppercase px-3 py-1 rounded-full shadow-xs">
                       {post.category}
                     </span>
                   </div>
@@ -281,7 +282,7 @@ export default function BlogPage() {
       </section>
 
       {/* ══ 4. STAY ELEVATED NEWSLETTER BANNER ════════════════════════════════ */}
-      <section className="py-8 bg-[#F5F0E8]">
+      <section className="py-8 bg-[#EFEBE2]">
         <div className="container-site">
           <div className="relative rounded-3xl overflow-hidden py-12 px-8 md:px-28 bg-[#016C24] shadow-xl">
             {/* Left Leaf Graphic */}
