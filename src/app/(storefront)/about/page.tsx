@@ -85,28 +85,30 @@ const stagger = {
 
 export default function AboutPage() {
   return (
-    <div className="bg-[#F5F0E8] min-h-screen font-[Manrope]">
-      {/* ══ 1. FULL BLEED EDGE-TO-EDGE HERO BANNER (FIGMA MATCH) ════════════ */}
-      <section className="relative w-full bg-[#162B1D] overflow-hidden min-h-[340px] sm:min-h-[400px] md:min-h-[460px] 2xl:min-h-[500px] flex items-center justify-center text-center">
-        {/* Full Bleed Dewy Leaf Background Image */}
+    <div className="bg-[#EFEBE2] min-h-screen font-[Manrope]">
+      {/* ══ 1. FULL BLEED EDGE-TO-EDGE HERO BANNER (100% FIGMA MATCH) ════════ */}
+      <section className="relative w-full bg-[#162B1D] overflow-hidden min-h-[260px] sm:min-h-[320px] md:min-h-[380px] lg:min-h-[420px] 2xl:min-h-[460px] flex items-center justify-center text-center">
+        {/* Crisp Full-Resolution Image (about-banner.png) */}
         <Image
-          src="/images/Hero_banner.png"
-          alt="Our Mission Background"
+          src="/images/about-banner.png"
+          alt="Our Mission for Better Wellness Banner Graphic"
           fill
           priority
-          className="object-cover object-center opacity-40"
+          quality={100}
+          className="object-cover object-center"
           sizes="100vw"
         />
 
-        {/* Content Container */}
-        <div className="container-site relative z-10 py-12 md:py-16">
+        {/* Content Container (Pure Crisp Rendering) */}
+        <div className="container-site relative z-10 py-10 md:py-14">
           <motion.div
             initial="hidden"
             animate="show"
             variants={stagger}
             className="max-w-3xl mx-auto text-center"
           >
-            <motion.div variants={fadeIn} className="flex items-center justify-center gap-1.5 text-xs text-[#E2DAD0] mb-3 font-medium">
+            {/* Breadcrumb */}
+            <motion.div variants={fadeIn} className="flex items-center justify-center gap-1.5 text-xs text-[#E2DAD0] mb-2 font-medium">
               <Link href="/" className="hover:text-[#C9A961] transition-colors">
                 Home
               </Link>
@@ -114,6 +116,7 @@ export default function AboutPage() {
               <span className="font-semibold text-white">About</span>
             </motion.div>
 
+            {/* Subtitle */}
             <motion.p
               variants={fadeIn}
               className="text-xs font-bold tracking-[0.25em] uppercase mb-2 text-[#C9A961]"
@@ -121,6 +124,7 @@ export default function AboutPage() {
               OUR FOUNDATION
             </motion.p>
 
+            {/* Main Title */}
             <motion.h1
               variants={fadeIn}
               className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl 2xl:text-7xl font-bold leading-tight mb-4 text-white"
@@ -129,11 +133,12 @@ export default function AboutPage() {
               Our Mission for Better Wellness
             </motion.h1>
 
+            {/* Subtext */}
             <motion.p
               variants={fadeIn}
-              className="text-xs md:text-sm 2xl:text-base text-white/80 leading-relaxed max-w-2xl mx-auto font-medium"
+              className="text-xs md:text-sm text-white/90 leading-relaxed max-w-3xl mx-auto font-medium"
             >
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.
+              Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry&apos;s standard dummy text ever since 1966, when designers at Letraset and James Mosley, the librarian at St Bride Printing Library in London, took a 1914 Cicero translation and scrambled it to make dummy text for Letraset&apos;s Body Type sheets. It has
             </motion.p>
           </motion.div>
         </div>
@@ -159,11 +164,11 @@ export default function AboutPage() {
               </h2>
 
               <p className="text-xs md:text-sm 2xl:text-base text-[#4A4A4A] leading-relaxed">
-                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry&apos;s standard dummy text ever since 1966, when designers at Letraset and James Mosley, the librarian at St Bride Printing Library in London, took a 1914 Cicero translation and scrambled it to make dummy text for Letraset&apos;s Body Type sheets. It has survived not only many decades, but also the leap into electronic typesetting, remaining essentially unchanged.
+                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry&apos;s standard dummy text ever since 1966, when designers at Letraset and James Mosley, the librarian at St Bride Printing Library in London, took a 1914 Cicero translation and scrambled it to make dummy text for Letraset&apos;s Body Type sheets. It has survived not only many decades, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised thanks to these sheets and more recently with desktop publishing software like Aldus PageMaker and Microsoft Word including versions of Lorem Ipsum.
               </p>
 
               <p className="text-xs md:text-sm 2xl:text-base text-[#4A4A4A] leading-relaxed">
-                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry&apos;s standard dummy text ever since 1966, when designers at Letraset and James Mosley, the librarian at St Bride Printing Library in London, took a 1914 Cicero translation and scrambled it to make dummy text for Letraset&apos;s Body Type sheets. It has survived not only many decades.
+                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry&apos;s standard dummy text ever since 1966, when designers at Letraset and James Mosley, the librarian at St Bride Printing Library in London, took a 1914 Cicero translation and scrambled it to make dummy text for Letraset&apos;s Body Type sheets. It has survived not only many decades, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised thanks to these sheets and more recently with desktop publishing software like Aldus PageMaker and Microsoft Word including versions of Lorem Ipsum.
               </p>
             </motion.div>
 
