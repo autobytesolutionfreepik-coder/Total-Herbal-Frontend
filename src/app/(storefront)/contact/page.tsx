@@ -11,45 +11,47 @@ import {
   Sparkles,
   ChevronDown,
   Mail,
+  Loader2,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { toast } from "sonner";
+import { useSubmitContactMutation, useSubscribeNewsletterMutation } from "@/features/marketing/api";
 
 const features = [
   {
     icon: Zap,
     title: "Fast Support",
-    desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    desc: "Responsive herbal consultation team ready to assist with strain selection and order inquiries.",
   },
   {
     icon: Award,
     title: "Licensed Experts",
-    desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    desc: "Certified cannabis wellness advisors trained in cannabinoid science and organic extraction.",
   },
   {
     icon: Lock,
     title: "Secure & Private",
-    desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    desc: "Strict privacy safeguards and encrypted client communication for discreet herbal delivery.",
   },
   {
     icon: Sparkles,
     title: "Personalized Guidance",
-    desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    desc: "Tailored strain recommendations matched to your specific lifestyle and sleep goals.",
   },
 ];
 
 const faqsList = [
   {
-    q: "Lorem ipsum dolor sit amet, consectetur adipiscing elit?",
-    a: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+    q: "How fast do dispensary support representatives respond?",
+    a: "Our customer guidance team typically responds within 1 to 2 business hours during dispensary operation times (9 AM - 9 PM PST).",
   },
   {
-    q: "Sed do eiusmod tempor incididunt ut labore et dolore?",
-    a: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+    q: "Can I request a personalized strain consultation before ordering?",
+    a: "Absolutely! Submit your inquiry with details about your wellness goals, and our specialists will provide tailored product recommendations.",
   },
   {
-    q: "Ut enim ad minim veniam, quis nostrud exercitation?",
-    a: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+    q: "What should I do if I need to update my shipping address?",
+    a: "If your order has not been dispatched, contact support immediately with your order number or manage your addresses in your account dashboard.",
   },
 ];
 
@@ -69,28 +71,51 @@ export default function ContactPage() {
   const [phoneNumber, setPhoneNumber] = useState("");
   const [subject, setSubject] = useState("Product Inquiry");
   const [message, setMessage] = useState("");
-  const [submitting, setSubmitting] = useState(false);
   const [openFaq, setOpenFaq] = useState<number | null>(null);
   const [newsletterEmail, setNewsletterEmail] = useState("");
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const submitContactMutation = useSubmitContactMutation();
+  const submitNewsletterMutation = useSubscribeNewsletterMutation();
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setSubmitting(true);
-    setTimeout(() => {
-      setSubmitting(false);
+    try {
+      await submitContactMutation.mutateAsync({
+        name: fullName,
+        email: emailAddress,
+        phone: phoneNumber || undefined,
+        subject,
+        message,
+      });
       toast.success("Thank you! Your inquiry has been submitted successfully.");
       setFullName("");
       setEmailAddress("");
       setPhoneNumber("");
       setMessage("");
-    }, 800);
+    } catch {
+      toast.error("Failed to submit contact message. Please try again.");
+    }
+  };
+
+  const handleSubscribe = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!newsletterEmail || !newsletterEmail.includes("@")) {
+      toast.error("Please enter a valid email address.");
+      return;
+    }
+    try {
+      await submitNewsletterMutation.mutateAsync(newsletterEmail);
+      toast.success("Thank you for subscribing to Total Herbal Care!");
+      setNewsletterEmail("");
+    } catch {
+      toast.error("Newsletter subscription failed.");
+    }
   };
 
   return (
     <div className="bg-[#F5F0E8] min-h-screen pb-12 font-[Manrope]">
-      {/* ══ 1. FULL BLEED EDGE-TO-EDGE HERO BANNER ════════════════════════════ */}
+      {/* ══ 1. HERO BANNER ════════════════════════════════════════════════════ */}
       <section className="relative w-full bg-[#F3EFE6] border-b border-[#E5DFD3] overflow-hidden min-h-[300px] sm:min-h-[360px] md:min-h-[420px] lg:min-h-[460px] 2xl:min-h-[500px] flex items-center">
-        {/* Full Bleed Image (contact-banner.png) */}
         <Image
           src="/images/contact-banner.png"
           alt="Let's Start The Conversation Full Width Banner"
@@ -100,10 +125,8 @@ export default function ContactPage() {
           sizes="100vw"
         />
 
-        {/* Left Fade Gradient */}
         <div className="absolute inset-0 bg-gradient-to-r from-[#F3EFE6] via-[#F3EFE6]/90 via-35% md:via-42% to-transparent pointer-events-none" />
 
-        {/* Inner Content */}
         <div className="container-site relative z-10 w-full">
           <motion.div
             initial="hidden"
@@ -131,7 +154,7 @@ export default function ContactPage() {
               variants={fadeIn}
               className="text-xs md:text-sm 2xl:text-base text-[#4A4A4A] leading-relaxed mb-6 max-w-md font-medium"
             >
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+              Have questions about our lab-tested organic strains, store hours, or online order delivery? Our certified specialists are ready to help.
             </motion.p>
 
             <motion.div variants={fadeIn} className="flex flex-wrap items-center gap-3">
@@ -154,11 +177,10 @@ export default function ContactPage() {
         </div>
       </section>
 
-      {/* ══ 2. INQUIRY & GUIDANCE FORM SECTION ═════════════════════════════════ */}
+      {/* ══ 2. INQUIRY FORM ═══════════════════════════════════════════════════ */}
       <section id="inquiry" className="py-12 md:py-16">
         <div className="container-site">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-stretch">
-            {/* Form Column */}
             <div className="lg:col-span-6 bg-white/80 backdrop-blur-sm rounded-3xl p-6 md:p-10 2xl:p-12 border border-[#E8E0D2] shadow-sm flex flex-col justify-between">
               <div>
                 <h2
@@ -168,15 +190,14 @@ export default function ContactPage() {
                   Inquiry &amp; Guidance
                 </h2>
                 <p className="text-xs md:text-sm 2xl:text-base text-[#767676] leading-relaxed mb-6">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                  Fill out the form below and an herbal wellness advisor will respond promptly.
                 </p>
 
                 <form onSubmit={handleSubmit} className="space-y-4">
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                    {/* Full Name */}
                     <div>
                       <label className="block text-[11px] font-bold uppercase tracking-wider text-[#1A1A1A] mb-1">
-                        Full Name
+                        Full Name *
                       </label>
                       <input
                         type="text"
@@ -188,10 +209,9 @@ export default function ContactPage() {
                       />
                     </div>
 
-                    {/* Email Address */}
                     <div>
                       <label className="block text-[11px] font-bold uppercase tracking-wider text-[#1A1A1A] mb-1">
-                        Email Address
+                        Email Address *
                       </label>
                       <input
                         type="email"
@@ -205,7 +225,6 @@ export default function ContactPage() {
                   </div>
 
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                    {/* Phone Number */}
                     <div>
                       <label className="block text-[11px] font-bold uppercase tracking-wider text-[#1A1A1A] mb-1">
                         Phone Number
@@ -219,7 +238,6 @@ export default function ContactPage() {
                       />
                     </div>
 
-                    {/* Subject */}
                     <div>
                       <label className="block text-[11px] font-bold uppercase tracking-wider text-[#1A1A1A] mb-1">
                         Subject
@@ -240,10 +258,9 @@ export default function ContactPage() {
                     </div>
                   </div>
 
-                  {/* Message */}
                   <div>
                     <label className="block text-[11px] font-bold uppercase tracking-wider text-[#1A1A1A] mb-1">
-                      Message
+                      Message *
                     </label>
                     <textarea
                       rows={4}
@@ -255,20 +272,25 @@ export default function ContactPage() {
                     />
                   </div>
 
-                  {/* Submit Button */}
                   <Button
                     type="submit"
-                    disabled={submitting}
+                    disabled={submitContactMutation.isPending}
                     variant="primary"
                     className="w-full sm:w-auto px-8 py-3 rounded-full text-xs font-bold uppercase tracking-wider shadow-md hover:scale-102 transition-all bg-[#016C24] text-white"
                   >
-                    {submitting ? "Submitting..." : "Submit Inquiry"}
+                    {submitContactMutation.isPending ? (
+                      <>
+                        <Loader2 className="w-4 h-4 animate-spin" />
+                        Submitting...
+                      </>
+                    ) : (
+                      "Submit Inquiry"
+                    )}
                   </Button>
                 </form>
               </div>
             </div>
 
-            {/* Image Consultation Column */}
             <div className="lg:col-span-6">
               <div className="relative rounded-3xl overflow-hidden shadow-md border border-[#E8E0D2] min-h-[380px] lg:h-full w-full bg-[#FAF8F5]">
                 <Image
@@ -290,7 +312,7 @@ export default function ContactPage() {
                     Personalized Botanical Advice
                   </h3>
                   <p className="text-xs md:text-sm text-white/85 leading-relaxed">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                    Our certified strain specialists assist in selecting optimal cannabinoid and terpene profiles.
                   </p>
                 </div>
               </div>
@@ -299,7 +321,7 @@ export default function ContactPage() {
         </div>
       </section>
 
-      {/* ══ 3. WHY CONSULT OUR SPECIALISTS? ═══════════════════════════════════ */}
+      {/* ══ 3. WHY CONSULT SPECIALISTS ════════════════════════════════════════ */}
       <section className="py-16 bg-[#F5F0E8] border-t border-[#E8E0D2]">
         <div className="container-site">
           <div className="text-center max-w-xl mx-auto mb-12">
@@ -339,11 +361,10 @@ export default function ContactPage() {
         </div>
       </section>
 
-      {/* ══ 4. STAY ELEVATED NEWSLETTER BANNER ════════════════════════════════ */}
+      {/* ══ 4. NEWSLETTER BANNER ═════════════════════════════════════════════ */}
       <section className="py-8 bg-[#F5F0E8]">
         <div className="container-site">
           <div className="relative rounded-3xl overflow-hidden py-12 px-8 md:px-28 bg-[#016C24] shadow-xl">
-            {/* Left Leaf Graphic */}
             <div className="absolute left-0 bottom-0 top-0 w-[120px] md:w-[250px] pointer-events-none select-none">
               <Image
                 src="/images/cta-left.png"
@@ -354,7 +375,6 @@ export default function ContactPage() {
               />
             </div>
 
-            {/* Right Leaf Graphic */}
             <div className="absolute right-0 bottom-0 top-0 w-[120px] md:w-[280px] pointer-events-none select-none">
               <Image
                 src="/images/Cta-right.png"
@@ -365,7 +385,6 @@ export default function ContactPage() {
               />
             </div>
 
-            {/* Content Overlay */}
             <div className="relative z-10 flex flex-col lg:flex-row items-center justify-between gap-8">
               <div className="text-left text-white max-w-md">
                 <h2
@@ -375,12 +394,14 @@ export default function ContactPage() {
                   Stay Elevated
                 </h2>
                 <p className="text-sm md:text-base text-white/85 leading-relaxed">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                  Subscribe to receive dispensary product drops, wellness insights, and special coupon codes.
                 </p>
               </div>
 
-              <div className="flex flex-col sm:flex-row w-full lg:w-auto items-stretch sm:items-center gap-3">
-                {/* Email input pill */}
+              <form
+                onSubmit={handleSubscribe}
+                className="flex flex-col sm:flex-row w-full lg:w-auto items-stretch sm:items-center gap-3"
+              >
                 <div className="relative flex items-center bg-white rounded-full px-4 py-2.5 flex-1 sm:w-80 shadow-md">
                   <Mail className="w-4 h-4 text-gray-400 mr-2.5 flex-shrink-0" />
                   <input
@@ -391,20 +412,25 @@ export default function ContactPage() {
                     className="bg-transparent border-none outline-none text-sm text-gray-800 placeholder-gray-400 w-full"
                   />
                 </div>
-                {/* Subscribe Button */}
                 <Button
+                  type="submit"
+                  disabled={submitNewsletterMutation.isPending}
                   variant="primary"
                   className="rounded-full px-8 py-2.5 border border-white text-white bg-transparent hover:bg-white hover:text-[#016C24] transition-all font-semibold shadow-md shrink-0"
                 >
-                  Subscribe
+                  {submitNewsletterMutation.isPending ? (
+                    <Loader2 className="w-4 h-4 animate-spin" />
+                  ) : (
+                    "Subscribe"
+                  )}
                 </Button>
-              </div>
+              </form>
             </div>
           </div>
         </div>
       </section>
 
-      {/* ══ 5. FREQUENTLY ASKED QUESTIONS ═════════════════════════════════════ */}
+      {/* ══ 5. FAQ ═══════════════════════════════════════════════════════════ */}
       <section className="py-16 bg-[#F5F0E8] border-t border-[#E8E0D2]">
         <div className="container-site max-w-3xl">
           <div className="text-center mb-10">
@@ -428,8 +454,7 @@ export default function ContactPage() {
               >
                 <button
                   onClick={() => setOpenFaq(openFaq === i ? null : i)}
-                  className="w-full flex items-center justify-between px-6 py-4 text-sm md:text-base font-semibold text-left transition-colors hover:text-[#016C24]"
-                  style={{ color: "#2D6B4F" }}
+                  className="w-full flex items-center justify-between px-6 py-4 text-sm md:text-base font-semibold text-left transition-colors hover:text-[#016C24] text-[#2D6B4F]"
                 >
                   <span>{faq.q}</span>
                   <motion.div
@@ -446,7 +471,7 @@ export default function ContactPage() {
                       initial={{ height: 0, opacity: 0 }}
                       animate={{ height: "auto", opacity: 1 }}
                       exit={{ height: 0, opacity: 0 }}
-                      transition={{ duration: 0.3, ease: [0.4, 0, 0.2, 1] }}
+                      transition={{ duration: 0.3 }}
                       className="overflow-hidden"
                     >
                       <p className="px-6 pb-5 text-xs md:text-sm text-[#767676] leading-relaxed border-t border-[#FAF8F5] pt-3">
