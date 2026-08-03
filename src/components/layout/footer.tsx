@@ -28,14 +28,14 @@ export function Footer() {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
           {/* Brand */}
           <div className="lg:col-span-1">
-            <Link href="/" className="inline-flex items-center gap-0.5 mb-4">
-              <span style={{ fontFamily: "Times New Roman, serif", fontSize: "1.35rem", fontWeight: 700, color: "#fff" }}>
+            <Link href="/" className="inline-flex items-center mb-4">
+              <span style={{ fontFamily: "Times New Roman, serif", fontSize: "1.75rem", fontWeight: 700, color: "#fff", letterSpacing: "-0.02em" }}>
                 Total
               </span>
-              <span style={{ fontFamily: "Times New Roman, serif", fontSize: "1.35rem", fontWeight: 700, color: "#027F2C" }}>
+              <span style={{ fontFamily: "Times New Roman, serif", fontSize: "1.75rem", fontWeight: 700, color: "#027F2C", letterSpacing: "-0.02em" }}>
                 Herbal
               </span>
-              <span style={{ fontFamily: "Times New Roman, serif", fontSize: "1.35rem", fontWeight: 700, color: "#fff" }}>
+              <span style={{ fontFamily: "Times New Roman, serif", fontSize: "1.75rem", fontWeight: 700, color: "#fff", letterSpacing: "-0.02em" }}>
                 Care
               </span>
             </Link>

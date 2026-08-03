@@ -2,16 +2,14 @@
 
 import Link from "next/link";
 import { useState, useEffect } from "react";
+import { useRouter } from "next/navigation";
 import { motion, AnimatePresence } from "motion/react";
-import {
-  Search,
-  ShoppingCart,
-  Heart,
-  User,
-  Menu,
-  X,
-} from "lucide-react";
+import { Search, ShoppingCart, Heart, User, Menu, X, ShieldCheck } from "lucide-react";
 import { cn } from "@/lib/utils/cn";
+import { useAuthStore } from "@/stores/auth-store";
+import { useCartStore } from "@/stores/cart-store";
+import { useCartQuery } from "@/features/cart/api";
+import { useWishlistQuery } from "@/features/wishlist/api";
 
 const navLinks = [
   { label: "Home", href: "/" },
@@ -23,9 +21,25 @@ const navLinks = [
 ];
 
 export function Header() {
+  const router = useRouter();
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
+
+  const { isAuthenticated, user } = useAuthStore();
+
+  // Cart counts
+  const localCartItems = useCartStore((s) => s.items);
+  const openCartDrawer = useCartStore((s) => s.openCart);
+  const { data: serverCart } = useCartQuery();
+
+  const cartCount = isAuthenticated
+    ? serverCart?.items?.reduce((acc, item) => acc + item.quantity, 0) || 0
+    : localCartItems.reduce((acc, item) => acc + item.quantity, 0);
+
+  // Wishlist count
+  const { data: wishlistData } = useWishlistQuery();
+  const wishlistCount = wishlistData?.length || 0;
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20);
@@ -33,13 +47,27 @@ export function Header() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
+  const handleSearchSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (searchQuery.trim()) {
+      router.push(`/shop?q=${encodeURIComponent(searchQuery.trim())}`);
+      setMobileOpen(false);
+    }
+  };
+
   return (
     <>
       {/* Announcement Bar */}
       <div className="bg-[#016C24] text-white text-[11px] font-semibold tracking-widest py-2.5 select-none overflow-hidden relative w-full">
         <div className="animate-marquee whitespace-nowrap flex">
-          <span className="pr-16">PREMIUM CANNABIS PRODUCTS&nbsp;&nbsp;•&nbsp;&nbsp;ADULTS 21+ ONLY&nbsp;&nbsp;•&nbsp;&nbsp;LAB TESTED&nbsp;&nbsp;•&nbsp;&nbsp;SECURE SHOPPING&nbsp;&nbsp;•&nbsp;&nbsp;</span>
-          <span className="pr-16">PREMIUM CANNABIS PRODUCTS&nbsp;&nbsp;•&nbsp;&nbsp;ADULTS 21+ ONLY&nbsp;&nbsp;•&nbsp;&nbsp;LAB TESTED&nbsp;&nbsp;•&nbsp;&nbsp;SECURE SHOPPING&nbsp;&nbsp;•&nbsp;&nbsp;</span>
+          <span className="pr-16">
+            PREMIUM ORGANIC HERBAL CARE &nbsp;•&nbsp; ADULTS 21+ ONLY &nbsp;•&nbsp; LAB
+            TESTED &nbsp;•&nbsp; 100% SECURE SHOPPING &nbsp;•&nbsp;
+          </span>
+          <span className="pr-16">
+            PREMIUM ORGANIC HERBAL CARE &nbsp;•&nbsp; ADULTS 21+ ONLY &nbsp;•&nbsp; LAB
+            TESTED &nbsp;•&nbsp; 100% SECURE SHOPPING &nbsp;•&nbsp;
+          </span>
         </div>
       </div>
 
@@ -49,7 +77,7 @@ export function Header() {
           "sticky top-0 z-40 transition-all duration-300",
           scrolled
             ? "bg-white/95 backdrop-blur-md shadow-[0_2px_20px_rgba(0,0,0,0.08)]"
-            : "bg-white"
+            : "bg-white border-b border-[#EDE8DF]"
         )}
       >
         <div className="container-site flex items-center justify-between h-16 gap-4">
@@ -64,21 +92,21 @@ export function Header() {
 
           {/* Desktop Left / Mobile Center: Logo */}
           <div className="flex-1 md:flex-initial flex justify-center md:justify-start">
-            <Link href="/" className="flex items-center gap-1 group">
+            <Link href="/" className="inline-flex items-center group">
               <span
-                className="text-xl font-bold leading-none text-[#1B3A2D]"
+                className="text-2xl sm:text-3xl font-bold leading-none text-[#1B3A2D] tracking-tight"
                 style={{ fontFamily: "Times New Roman, serif" }}
               >
                 Total
               </span>
               <span
-                className="text-xl font-bold leading-none text-[#027F2C]"
+                className="text-2xl sm:text-3xl font-bold leading-none text-[#027F2C] tracking-tight"
                 style={{ fontFamily: "Times New Roman, serif" }}
               >
                 Herbal
               </span>
               <span
-                className="text-xl font-bold leading-none text-[#1B3A2D]"
+                className="text-2xl sm:text-3xl font-bold leading-none text-[#1B3A2D] tracking-tight"
                 style={{ fontFamily: "Times New Roman, serif" }}
               >
                 Care
@@ -103,62 +131,72 @@ export function Header() {
           {/* Desktop Right / Mobile Right: Actions */}
           <div className="flex items-center gap-2 md:gap-3 flex-shrink-0">
             {/* Search Input (Desktop only) */}
-            <div className="hidden lg:flex items-center gap-2 bg-[#F5F0E8] rounded-full px-3 py-1.5 w-40 xl:w-52">
+            <form
+              onSubmit={handleSearchSubmit}
+              className="hidden lg:flex items-center gap-2 bg-[#F5F0E8] rounded-full px-3 py-1.5 w-40 xl:w-52 border border-transparent focus-within:border-green-700 transition-all"
+            >
               <Search className="w-3.5 h-3.5 text-[#767676] flex-shrink-0" />
               <input
                 type="text"
-                placeholder="Search..."
+                placeholder="Search strains..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                className="bg-transparent text-sm text-[#1A1A1A] placeholder-[#767676] outline-none w-full font-[Manrope]"
+                className="bg-transparent text-xs text-[#1A1A1A] placeholder-[#767676] outline-none w-full font-[Manrope]"
               />
-            </div>
+            </form>
 
             {/* Wishlist */}
             <Link
-              href="/account/wishlist"
+              href={isAuthenticated ? "/account/wishlist" : "/sign-in"}
               aria-label="Wishlist"
               className="p-2 rounded-full hover:bg-[#F5F0E8] transition-colors relative"
             >
               <Heart className="w-4.5 h-4.5 text-[#1A1A1A]" />
+              {wishlistCount > 0 && (
+                <span className="absolute -top-0.5 -right-0.5 w-4 h-4 bg-red-600 text-white text-[10px] font-bold rounded-full flex items-center justify-center">
+                  {wishlistCount}
+                </span>
+              )}
             </Link>
 
             {/* Account */}
             <Link
-              href="/account"
+              href={isAuthenticated ? "/account" : "/sign-in"}
               aria-label="Account"
-              className="p-2 rounded-full hover:bg-[#F5F0E8] transition-colors"
+              className="p-2 rounded-full hover:bg-[#F5F0E8] transition-colors relative"
             >
               <User className="w-4.5 h-4.5 text-[#1A1A1A]" />
+              {isAuthenticated && (
+                <span className="absolute bottom-1 right-1 w-2 h-2 bg-green-600 rounded-full ring-2 ring-white" />
+              )}
             </Link>
 
-            {/* Cart */}
-            <Link
-              href="/cart"
-              aria-label="Cart"
+            {/* Cart Drawer Trigger */}
+            <button
+              onClick={openCartDrawer}
+              aria-label="Shopping Cart"
               className="p-2 rounded-full hover:bg-[#F5F0E8] transition-colors relative"
             >
               <ShoppingCart className="w-4.5 h-4.5 text-[#1A1A1A]" />
-              <span className="absolute -top-0.5 -right-0.5 w-4 h-4 bg-[#2D6B4F] text-white text-[10px] font-bold rounded-full flex items-center justify-center">
-                0
+              <span className="absolute -top-0.5 -right-0.5 w-4.5 h-4.5 bg-[#2D6B4F] text-white text-[10px] font-bold rounded-full flex items-center justify-center">
+                {cartCount}
               </span>
-            </Link>
+            </button>
 
-            {/* Shop Now Button (Desktop only) */}
+            {/* Shop Now Button */}
             <Link
               href="/shop"
-              className="hidden sm:inline-flex btn-green text-sm ml-1"
+              className="hidden sm:inline-flex btn-green text-xs px-4 py-2"
             >
               Shop Now
             </Link>
           </div>
         </div>
 
-        {/* Left Side Drawer Mobile Nav */}
+        {/* Mobile Left Drawer Navigation */}
         <AnimatePresence>
           {mobileOpen && (
             <>
-              {/* Backdrop Overlay */}
               <motion.div
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 0.5 }}
@@ -167,7 +205,6 @@ export function Header() {
                 className="fixed inset-0 z-50 bg-black md:hidden"
               />
 
-              {/* Slide-out Drawer from Left */}
               <motion.div
                 initial={{ x: "-100%" }}
                 animate={{ x: 0 }}
@@ -175,12 +212,30 @@ export function Header() {
                 transition={{ type: "spring", damping: 25, stiffness: 200 }}
                 className="fixed top-0 bottom-0 left-0 z-50 w-[280px] bg-white shadow-2xl p-6 flex flex-col gap-6 md:hidden overflow-y-auto"
               >
-                {/* Header inside drawer */}
                 <div className="flex items-center justify-between pb-4 border-b border-[#EDE8DF]">
-                  <Link href="/" onClick={() => setMobileOpen(false)} className="flex items-center gap-1">
-                    <span className="text-lg font-bold leading-none text-[#1B3A2D]" style={{ fontFamily: "Times New Roman, serif" }}>Total</span>
-                    <span className="text-lg font-bold leading-none text-[#027F2C]" style={{ fontFamily: "Times New Roman, serif" }}>Herbal</span>
-                    <span className="text-lg font-bold leading-none text-[#1B3A2D]" style={{ fontFamily: "Times New Roman, serif" }}>Care</span>
+                  <Link
+                    href="/"
+                    onClick={() => setMobileOpen(false)}
+                    className="inline-flex items-center"
+                  >
+                    <span
+                      className="text-xl font-bold leading-none text-[#1B3A2D] tracking-tight"
+                      style={{ fontFamily: "Times New Roman, serif" }}
+                    >
+                      Total
+                    </span>
+                    <span
+                      className="text-xl font-bold leading-none text-[#027F2C] tracking-tight"
+                      style={{ fontFamily: "Times New Roman, serif" }}
+                    >
+                      Herbal
+                    </span>
+                    <span
+                      className="text-xl font-bold leading-none text-[#1B3A2D] tracking-tight"
+                      style={{ fontFamily: "Times New Roman, serif" }}
+                    >
+                      Care
+                    </span>
                   </Link>
                   <button
                     aria-label="Close menu"
@@ -191,8 +246,11 @@ export function Header() {
                   </button>
                 </div>
 
-                {/* Search Bar inside Drawer */}
-                <div className="flex items-center gap-2 bg-[#F5F0E8] rounded-full px-4 py-2.5 w-full">
+                {/* Mobile Search Form */}
+                <form
+                  onSubmit={handleSearchSubmit}
+                  className="flex items-center gap-2 bg-[#F5F0E8] rounded-full px-4 py-2.5 w-full"
+                >
                   <Search className="w-4 h-4 text-[#767676] flex-shrink-0" />
                   <input
                     type="text"
@@ -201,9 +259,9 @@ export function Header() {
                     onChange={(e) => setSearchQuery(e.target.value)}
                     className="bg-transparent text-sm text-[#1A1A1A] placeholder-[#767676] outline-none w-full font-[Manrope]"
                   />
-                </div>
+                </form>
 
-                {/* Nav Links List */}
+                {/* Mobile Links */}
                 <nav className="flex flex-col gap-1.5">
                   {navLinks.map((link, i) => (
                     <motion.div
@@ -223,14 +281,13 @@ export function Header() {
                   ))}
                 </nav>
 
-                {/* Shop Now CTA inside Drawer */}
                 <div className="mt-auto pt-4 border-t border-[#EDE8DF]">
                   <Link
                     href="/shop"
                     onClick={() => setMobileOpen(false)}
                     className="btn-green w-full justify-center text-center py-3 text-sm font-semibold rounded-full"
                   >
-                    Shop Now
+                    Shop Catalog
                   </Link>
                 </div>
               </motion.div>
