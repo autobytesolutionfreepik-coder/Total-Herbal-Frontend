@@ -138,7 +138,7 @@ export default function AboutPage() {
               variants={fadeIn}
               className="text-xs md:text-sm text-white/90 leading-relaxed max-w-3xl mx-auto font-medium"
             >
-              Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry&apos;s standard dummy text ever since 1966, when designers at Letraset and James Mosley, the librarian at St Bride Printing Library in London, took a 1914 Cicero translation and scrambled it to make dummy text for Letraset&apos;s Body Type sheets. It has
+              Total Herbal Care was founded on the principles of regenerative organic agriculture, ISO-accredited laboratory testing, and radical botanical transparency. Discover how our licensed dispensary delivers pure, lab-tested cannabis flowers, precision edibles, and full-spectrum extracts directly to your door.
             </motion.p>
           </motion.div>
         </div>
@@ -164,11 +164,11 @@ export default function AboutPage() {
               </h2>
 
               <p className="text-xs md:text-sm 2xl:text-base text-[#4A4A4A] leading-relaxed">
-                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry&apos;s standard dummy text ever since 1966, when designers at Letraset and James Mosley, the librarian at St Bride Printing Library in London, took a 1914 Cicero translation and scrambled it to make dummy text for Letraset&apos;s Body Type sheets. It has survived not only many decades, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised thanks to these sheets and more recently with desktop publishing software like Aldus PageMaker and Microsoft Word including versions of Lorem Ipsum.
+                Founded with a vision to revolutionize organic cannabis wellness, Total Herbal Care bridges traditional botanical wisdom with modern pharmaceutical precision. We partner exclusively with local regenerative farms to cultivate non-GMO, pesticide-free organic cannabis flower strains rich in natural terpenes.
               </p>
 
               <p className="text-xs md:text-sm 2xl:text-base text-[#4A4A4A] leading-relaxed">
-                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry&apos;s standard dummy text ever since 1966, when designers at Letraset and James Mosley, the librarian at St Bride Printing Library in London, took a 1914 Cicero translation and scrambled it to make dummy text for Letraset&apos;s Body Type sheets. It has survived not only many decades, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised thanks to these sheets and more recently with desktop publishing software like Aldus PageMaker and Microsoft Word including versions of Lorem Ipsum.
+                Every product in our organic dispensary catalog—from high-potency craft Indica flowers to solventless terpene vape cartridges and sleep chocolates—undergoes rigorous third-party ISO laboratory verification. We deliver verified certificates of analysis (COA) for every single batch, providing unmatched quality for adults 21+.
               </p>
             </motion.div>
 
@@ -252,7 +252,23 @@ export default function AboutPage() {
                 </h2>
 
                 <div className="space-y-6">
-                  {purityFeatures.map(({ icon: Icon, title, desc }) => (
+                  {[
+                    {
+                      icon: ShieldCheck,
+                      title: "Triple-Tested Batching",
+                      desc: "Every product lot is tested by accredited ISO laboratories for cannabinoid potency, terpene profiles, heavy metals, pesticides, and residual solvents.",
+                    },
+                    {
+                      icon: Zap,
+                      title: "Advanced Extraction",
+                      desc: "We employ solventless rosin and cold CO2 extraction techniques to maintain the full-spectrum entourage effect without synthetic chemicals.",
+                    },
+                    {
+                      icon: HeartHandshake,
+                      title: "Patient Safety First",
+                      desc: "We adhere strictly to state dispensary compliance, child-resistant packaging, and transparent labeling for maximum consumer safety.",
+                    },
+                  ].map(({ icon: Icon, title, desc }) => (
                     <div key={title} className="flex items-start gap-4">
                       <div className="w-10 h-10 rounded-full bg-[#E6F4EA] flex items-center justify-center flex-shrink-0 mt-1 text-[#016C24]">
                         <Icon className="w-4 h-4 text-[#016C24]" />
@@ -381,7 +397,7 @@ export default function AboutPage() {
                   Stay Elevated
                 </h2>
                 <p className="text-sm md:text-base text-white/85 leading-relaxed">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                  Subscribe to receive our latest organic harvest announcements, budtender education guides, and exclusive dispensary offers.
                 </p>
               </div>
 

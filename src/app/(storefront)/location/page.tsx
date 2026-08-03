@@ -20,42 +20,42 @@ import { Button } from "@/components/ui/button";
 const locationsList = [
   {
     id: "1",
-    name: "TotalHerbalCare - Downtown",
-    status: "OPEN",
-    address: "1202 Market Street, Suite 400, San Francisco, CA 94103",
-    phone: "(415) 555-0123",
+    name: "TotalHerbalCare — Westside Flagship",
+    status: "OPEN NOW",
+    address: "520 Overthrow Blvd, Los Angeles, CA 90011",
+    phone: "(716) 556-0125",
     hours: "9:00 AM - 10:00 PM Daily",
   },
   {
     id: "2",
-    name: "TotalHerbalCare - Mission",
-    status: "OPEN",
-    address: "2450 Valencia Street, San Francisco, CA 94110",
-    phone: "(415) 555-0199",
-    hours: "10:00 AM - 9:00 PM Daily",
+    name: "TotalHerbalCare — Downtown Storefront",
+    status: "OPEN NOW",
+    address: "112 Ocean Road, Los Angeles, CA 90011",
+    phone: "(716) 556-0125",
+    hours: "9:00 AM - 10:00 PM Daily",
   },
 ];
 
 const amenitiesList = [
   {
     icon: ShoppingBag,
-    title: "Curbside Pickup",
-    desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    title: "Express Express Pickup",
+    desc: "Order online for fast, contactless in-store counter or curbside pickup.",
   },
   {
     icon: ShieldCheck,
-    title: "ADA Accessible",
-    desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    title: "ADA Accessible Store",
+    desc: "Wheelchair accessible storefront design with dedicated barrier-free parking.",
   },
   {
     icon: CreditCard,
-    title: "ATM On-site",
-    desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    title: "On-Site Payment ATM",
+    desc: "Convenient fee-free ATM available on-site supporting debit and PIN transactions.",
   },
   {
     icon: UserCheck,
-    title: "Expert Consultation",
-    desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    title: "Budtender Consultation",
+    desc: "One-on-one strain consultations with state-certified herbal wellness advisors.",
   },
 ];
 
@@ -96,7 +96,7 @@ export default function LocationPage() {
             </motion.h1>
 
             <motion.p variants={fadeIn} className="text-xs md:text-sm text-[#4A4A4A] leading-relaxed max-w-2xl mx-auto">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.
+              Locate licensed Total Herbal Care dispensary storefronts in Westside and Downtown Los Angeles. Visit us for in-store consultation, express curbside pickup, or same-day local delivery across LA zip code 90011.
             </motion.p>
           </motion.div>
         </div>
@@ -201,8 +201,8 @@ export default function LocationPage() {
                       <MapPin className="w-5 h-5 text-[#016C24]" />
                     </div>
                     <div>
-                      <h4 className="text-sm font-bold text-[#1A1A1A]">Lorem Ipsum Location</h4>
-                      <p className="text-xs text-[#767676]">Lorem ipsum dolor sit amet</p>
+                      <h4 className="text-sm font-bold text-[#1A1A1A]">Westside LA Dispensary Hub</h4>
+                      <p className="text-xs text-[#767676]">520 Overthrow Blvd, Los Angeles, CA 90011</p>
                     </div>
                   </div>
                   <Button href="/shop" variant="primary" size="sm" className="hidden sm:inline-flex text-xs">
@@ -226,7 +226,7 @@ export default function LocationPage() {
               Premium Amenities
             </h2>
             <p className="text-xs md:text-sm text-[#767676]">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+              Designed to elevate your local organic cannabis buying experience.
             </p>
           </div>
 
@@ -294,7 +294,7 @@ export default function LocationPage() {
                   Stay Elevated
                 </h2>
                 <p className="text-sm md:text-base text-white/85 leading-relaxed">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                  Subscribe for real-time Los Angeles dispensary stock updates, local delivery promotions, and strain releases.
                 </p>
               </div>
 

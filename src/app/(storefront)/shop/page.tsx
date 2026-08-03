@@ -8,7 +8,7 @@ import { Search, Filter, Star, ShoppingBag, Heart, SlidersHorizontal } from "luc
 import { toast } from "sonner";
 import { formatCurrency } from "@/lib/utils/format";
 import { useProductsQuery, useCategoriesQuery } from "@/features/catalog/queries";
-import { ProductQueryParams } from "@/features/catalog/types";
+import { ProductQueryParams, Category, Product } from "@/features/catalog/types";
 import { StrainType } from "@/types/enums";
 import { useCartStore } from "@/stores/cart-store";
 import { useAuthStore } from "@/stores/auth-store";
@@ -26,10 +26,20 @@ export default function ShopPage() {
 
   const [searchTerm, setSearchTerm] = useState("");
 
-  const { data: categories = [] } = useCategoriesQuery();
+  const { data: rawCategories } = useCategoriesQuery();
+  const categories: Category[] = Array.isArray(rawCategories)
+    ? rawCategories
+    : Array.isArray((rawCategories as any)?.data)
+    ? (rawCategories as any).data
+    : [];
+
   const { data: productsResponse, isLoading } = useProductsQuery(queryParams);
 
-  const products = productsResponse?.data || [];
+  const products: Product[] = Array.isArray(productsResponse?.data)
+    ? productsResponse.data
+    : Array.isArray(productsResponse)
+    ? (productsResponse as any)
+    : [];
   const meta = productsResponse?.meta;
 
   const addItemToLocalCart = useCartStore((s) => s.addItem);
