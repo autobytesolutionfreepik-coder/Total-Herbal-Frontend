@@ -87,21 +87,21 @@ export default function SignUpPage() {
 
         {/* Brand Logo Header */}
         <div className="mb-6 flex flex-col items-center justify-center">
-          <Link href="/" className="inline-flex items-center gap-1 group hover:opacity-90 transition-opacity mb-2">
+          <Link href="/" className="inline-flex items-center group hover:opacity-90 transition-opacity mb-2">
             <span
-              className="text-2xl sm:text-3xl font-bold leading-none text-[#1B3A2D]"
+              className="text-3xl sm:text-4xl font-bold leading-none text-[#1B3A2D] tracking-tight"
               style={{ fontFamily: "Times New Roman, serif" }}
             >
               Total
             </span>
             <span
-              className="text-2xl sm:text-3xl font-bold leading-none text-[#027F2C]"
+              className="text-3xl sm:text-4xl font-bold leading-none text-[#027F2C] tracking-tight"
               style={{ fontFamily: "Times New Roman, serif" }}
             >
               Herbal
             </span>
             <span
-              className="text-2xl sm:text-3xl font-bold leading-none text-[#1B3A2D]"
+              className="text-3xl sm:text-4xl font-bold leading-none text-[#1B3A2D] tracking-tight"
               style={{ fontFamily: "Times New Roman, serif" }}
             >
               Care

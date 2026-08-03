@@ -63,7 +63,7 @@ const defaultCategories = [
     slug: "infused-drinks",
     img: "/images/Infused-Drinks.png",
   },
-  { label: "Oils", slug: "oils", img: "/images/Oils.png" },
+  { label: "Topicals", slug: "topicals", img: "/images/Oils.png" },
   { label: "Tinctures", slug: "tinctures", img: "/images/Tinctures.png" },
   { label: "Herbal Teas", slug: "herbal-teas", img: "/images/Herbal-Teas.png" },
   { label: "Apothecary", slug: "apothecary", img: "/images/Apothecary.png" },

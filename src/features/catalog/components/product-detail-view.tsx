@@ -203,7 +203,7 @@ export function ProductDetailView({ product }: ProductDetailViewProps) {
           <div className="relative aspect-square w-full rounded-2xl bg-surface border border-cream-dark/60 overflow-hidden shadow-card">
             <Image
               src={selectedImage}
-              alt={product.name}
+              alt={product?.name || "Product Image"}
               fill
               priority
               className="object-cover object-center transition-all duration-300 hover:scale-105"
@@ -236,7 +236,7 @@ export function ProductDetailView({ product }: ProductDetailViewProps) {
                 >
                   <Image
                     src={img.url}
-                    alt={img.alt || product.name}
+                    alt={img.alt || product?.name || `Product thumbnail ${idx + 1}`}
                     fill
                     className="object-cover"
                   />
@@ -584,7 +584,7 @@ export function ProductDetailView({ product }: ProductDetailViewProps) {
                 <div className="relative aspect-square w-full rounded-xl overflow-hidden mb-3 bg-cream/40">
                   <Image
                     src={rel.images?.[0]?.url || "/placeholder-product.jpg"}
-                    alt={rel.name}
+                    alt={rel.name || "Related Herbal Product"}
                     fill
                     className="object-cover group-hover:scale-105 transition-transform duration-300"
                   />

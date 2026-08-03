@@ -5,7 +5,16 @@ export default function robots(): MetadataRoute.Robots {
     rules: {
       userAgent: "*",
       allow: "/",
-      disallow: "/admin/",
+      disallow: [
+        "/admin/",
+        "/account/",
+        "/cart",
+        "/checkout",
+        "/login",
+        "/sign-in",
+        "/sign-up",
+        "/api/",
+      ],
     },
     sitemap: "https://totalherbalcare.com/sitemap.xml",
   };

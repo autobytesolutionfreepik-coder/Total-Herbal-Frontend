@@ -92,21 +92,21 @@ export function Header() {
 
           {/* Desktop Left / Mobile Center: Logo */}
           <div className="flex-1 md:flex-initial flex justify-center md:justify-start">
-            <Link href="/" className="flex items-center gap-1 group">
+            <Link href="/" className="inline-flex items-center group">
               <span
-                className="text-xl font-bold leading-none text-[#1B3A2D]"
+                className="text-2xl sm:text-3xl font-bold leading-none text-[#1B3A2D] tracking-tight"
                 style={{ fontFamily: "Times New Roman, serif" }}
               >
                 Total
               </span>
               <span
-                className="text-xl font-bold leading-none text-[#027F2C]"
+                className="text-2xl sm:text-3xl font-bold leading-none text-[#027F2C] tracking-tight"
                 style={{ fontFamily: "Times New Roman, serif" }}
               >
                 Herbal
               </span>
               <span
-                className="text-xl font-bold leading-none text-[#1B3A2D]"
+                className="text-2xl sm:text-3xl font-bold leading-none text-[#1B3A2D] tracking-tight"
                 style={{ fontFamily: "Times New Roman, serif" }}
               >
                 Care
@@ -216,22 +216,22 @@ export function Header() {
                   <Link
                     href="/"
                     onClick={() => setMobileOpen(false)}
-                    className="flex items-center gap-1"
+                    className="inline-flex items-center"
                   >
                     <span
-                      className="text-lg font-bold leading-none text-[#1B3A2D]"
+                      className="text-xl font-bold leading-none text-[#1B3A2D] tracking-tight"
                       style={{ fontFamily: "Times New Roman, serif" }}
                     >
                       Total
                     </span>
                     <span
-                      className="text-lg font-bold leading-none text-[#027F2C]"
+                      className="text-xl font-bold leading-none text-[#027F2C] tracking-tight"
                       style={{ fontFamily: "Times New Roman, serif" }}
                     >
                       Herbal
                     </span>
                     <span
-                      className="text-lg font-bold leading-none text-[#1B3A2D]"
+                      className="text-xl font-bold leading-none text-[#1B3A2D] tracking-tight"
                       style={{ fontFamily: "Times New Roman, serif" }}
                     >
                       Care
