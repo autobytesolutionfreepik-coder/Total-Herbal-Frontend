@@ -9,6 +9,7 @@ import {
   useDeleteAddressMutation,
   useSetDefaultAddressMutation,
 } from "@/features/addresses/api";
+import { Address } from "@/features/addresses/types";
 import { useAuthStore } from "@/stores/auth-store";
 
 export default function AccountAddressesPage() {
@@ -229,7 +230,7 @@ export default function AccountAddressesPage() {
         </p>
       ) : (
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-          {addresses.map((addr) => (
+          {addresses.map((addr: Address) => (
             <div
               key={addr.id}
               className={`p-5 rounded-xl border-2 space-y-2 transition-all ${

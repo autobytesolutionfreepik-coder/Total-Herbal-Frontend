@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { Package, ExternalLink, ArrowRight, Clock } from "lucide-react";
 import { useMyOrdersQuery } from "@/features/orders/api";
+import { Order } from "@/features/orders/types";
 import { formatCurrency } from "@/lib/utils/format";
 
 export default function AccountOrdersPage() {
@@ -42,7 +43,7 @@ export default function AccountOrdersPage() {
         </div>
       ) : (
         <div className="space-y-4">
-          {orders.map((order) => (
+          {orders.map((order: Order) => (
             <div
               key={order.id}
               className="p-5 rounded-xl border border-cream-dark bg-cream/20 hover:border-green-700/50 transition-all flex flex-col sm:flex-row sm:items-center justify-between gap-4"

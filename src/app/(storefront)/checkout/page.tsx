@@ -23,6 +23,7 @@ import { useAuthStore } from "@/stores/auth-store";
 import { useCartStore } from "@/stores/cart-store";
 import { useCartQuery } from "@/features/cart/api";
 import { useAddressesQuery, useCreateAddressMutation } from "@/features/addresses/api";
+import { Address } from "@/features/addresses/types";
 import { useCheckoutMutation, usePaymentConfigQuery } from "@/features/orders/api";
 import { PaymentMethod } from "@/types/enums";
 
@@ -49,7 +50,7 @@ export default function CheckoutPage() {
         variant: local.variant,
       }));
 
-  const subtotal = items.reduce((total, item) => {
+  const subtotal = items.reduce((total: number, item: any) => {
     const price = item.variant ? Number(item.variant.price) : Number(item.product.price);
     return total + price * item.quantity;
   }, 0);
@@ -182,7 +183,7 @@ export default function CheckoutPage() {
             {/* Saved Addresses List */}
             {addresses.length > 0 && !showNewAddressForm && (
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                {addresses.map((addr) => {
+                {addresses.map((addr: Address) => {
                   const isSelected =
                     selectedAddressId === addr.id ||
                     (!selectedAddressId && addr.isDefault);
@@ -424,7 +425,7 @@ export default function CheckoutPage() {
 
             {/* Items summary */}
             <div className="space-y-3 max-h-60 overflow-y-auto pr-1">
-              {items.map((item, idx) => (
+              {items.map((item: any, idx: number) => (
                 <div key={idx} className="flex justify-between items-center text-xs">
                   <div className="truncate pr-2">
                     <span className="font-semibold text-ink">{item.product.name}</span>

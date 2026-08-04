@@ -8,6 +8,7 @@ import { Clock, Calendar, Share2, ArrowLeft, Mail, Loader2, User } from "lucide-
 import { Button } from "@/components/ui/button";
 import { toast } from "sonner";
 import { useBlogPostBySlugQuery, useBlogPostsQuery } from "@/features/blog/api";
+import { BlogPost } from "@/features/blog/types";
 import { useSubscribeNewsletterMutation } from "@/features/marketing/api";
 
 interface PageProps {
@@ -213,9 +214,9 @@ export default function SingleBlogPostPage({ params }: PageProps) {
             </h3>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               {recentPostsData?.data
-                ?.filter((p) => p.slug !== slug)
+                ?.filter((p: BlogPost) => p.slug !== slug)
                 .slice(0, 3)
-                .map((rel) => (
+                .map((rel: BlogPost) => (
                   <Link
                     key={rel.id}
                     href={`/blog/${rel.slug}`}

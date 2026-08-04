@@ -50,7 +50,7 @@ export const cartApi = {
 export function useCartQuery() {
   const { isAuthenticated } = useAuthStore();
 
-  return useQuery({
+  return useQuery<Cart>({
     queryKey: queryKeys.cart.get(),
     queryFn: async () => {
       const res = await cartApi.getCart();

@@ -71,7 +71,7 @@ export default function CartPage() {
         variant: local.variant,
       }));
 
-  const subtotalNumber = items.reduce((total, item) => {
+  const subtotalNumber = items.reduce((total: number, item: any) => {
     const itemPrice = item.variant ? Number(item.variant.price) : Number(item.product.price);
     return total + itemPrice * item.quantity;
   }, 0);
@@ -173,7 +173,7 @@ export default function CartPage() {
           {/* Items List (Left Column) */}
           <div className="lg:col-span-8 space-y-4">
             <div className="bg-surface rounded-2xl border border-cream-dark/60 shadow-card divide-y divide-cream-dark/60 overflow-hidden">
-              {items.map((item) => {
+              {items.map((item: any) => {
                 const itemPrice = item.variant
                   ? Number(item.variant.price)
                   : Number(item.product.price);

@@ -5,6 +5,7 @@ import Link from "next/link";
 import { Heart, ShoppingBag, Trash2, ArrowRight } from "lucide-react";
 import { toast } from "sonner";
 import { useWishlistQuery, useRemoveFromWishlistMutation } from "@/features/wishlist/api";
+import { WishlistItem } from "@/features/wishlist/types";
 import { useAddToCartMutation } from "@/features/cart/api";
 import { formatCurrency } from "@/lib/utils/format";
 import { useCartStore } from "@/stores/cart-store";
@@ -68,7 +69,7 @@ export default function AccountWishlistPage() {
         </div>
       ) : (
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {wishlist.map((item) => {
+          {wishlist.map((item: WishlistItem) => {
             const product = item.product;
             if (!product) return null;
 

@@ -47,14 +47,14 @@ export const blogApi = {
 };
 
 export function useBlogPostsQuery(params?: BlogQueryParams) {
-  return useQuery({
+  return useQuery<PaginatedResponse<BlogPost>>({
     queryKey: queryKeys.blog.posts(params as Record<string, unknown>),
     queryFn: () => blogApi.getPosts(params),
   });
 }
 
 export function useBlogPostBySlugQuery(slug: string) {
-  return useQuery({
+  return useQuery<BlogPost>({
     queryKey: queryKeys.blog.postDetail(slug),
     queryFn: async () => {
       const res = await blogApi.getPostBySlug(slug);
@@ -65,11 +65,11 @@ export function useBlogPostBySlugQuery(slug: string) {
 }
 
 export function useBlogCategoriesQuery() {
-  return useQuery({
+  return useQuery<BlogCategory[]>({
     queryKey: queryKeys.blog.categories(),
     queryFn: async () => {
       const res = await blogApi.getCategories();
-      return res.data;
+      return res.data || [];
     },
   });
 }

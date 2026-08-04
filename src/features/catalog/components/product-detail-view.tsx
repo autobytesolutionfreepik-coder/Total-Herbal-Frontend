@@ -19,6 +19,8 @@ import {
 } from "lucide-react";
 import { toast } from "sonner";
 import { Product, ProductVariant } from "@/features/catalog/types";
+import { WishlistItem } from "@/features/wishlist/types";
+import { Review } from "@/features/reviews/types";
 import { formatCurrency } from "@/lib/utils/format";
 import { useCartStore } from "@/stores/cart-store";
 import { useAddToCartMutation } from "@/features/cart/api";
@@ -57,7 +59,7 @@ export function ProductDetailView({ product }: ProductDetailViewProps) {
   const removeFromWishlistMutation = useRemoveFromWishlistMutation();
 
   const isWishlisted =
-    wishlistData?.some((item) => item.productId === product.id) || false;
+    wishlistData?.some((item: WishlistItem) => item.productId === product.id) || false;
 
   // Reviews hook
   const { data: reviewsResponse, isLoading: isReviewsLoading } = useProductReviewsQuery(product.id);
@@ -525,7 +527,7 @@ export function ProductDetailView({ product }: ProductDetailViewProps) {
           </p>
         ) : (
           <div className="space-y-6 divide-y divide-cream-dark">
-            {reviews.map((rev) => (
+            {reviews.map((rev: Review) => (
               <div key={rev.id} className="pt-6 first:pt-0">
                 <div className="flex items-center justify-between mb-2">
                   <div className="flex items-center gap-2">
@@ -575,7 +577,7 @@ export function ProductDetailView({ product }: ProductDetailViewProps) {
             Related Herbal Products
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {relatedProducts.map((rel) => (
+            {relatedProducts.map((rel: Product) => (
               <Link
                 key={rel.id}
                 href={`/products/${rel.slug}`}

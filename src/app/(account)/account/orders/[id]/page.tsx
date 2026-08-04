@@ -6,6 +6,7 @@ import Image from "next/image";
 import { ArrowLeft, Package, MapPin, CreditCard, ShieldCheck, AlertCircle } from "lucide-react";
 import { toast } from "sonner";
 import { useOrderDetailQuery, useCancelOrderMutation } from "@/features/orders/api";
+import { OrderItem } from "@/features/orders/types";
 import { formatCurrency } from "@/lib/utils/format";
 
 interface PageProps {
@@ -97,7 +98,7 @@ export default function SingleOrderDetailPage({ params }: PageProps) {
           Purchased Items ({order.items.length})
         </h3>
         <div className="divide-y divide-cream-dark border border-cream-dark rounded-xl overflow-hidden">
-          {order.items.map((item) => (
+          {order.items.map((item: OrderItem) => (
             <div key={item.id} className="p-4 flex items-center gap-4 bg-cream/20">
               <div className="relative w-16 h-16 rounded-lg bg-surface overflow-hidden flex-shrink-0 border border-cream-dark">
                 <Image

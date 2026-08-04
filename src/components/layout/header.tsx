@@ -34,8 +34,8 @@ export function Header() {
   const { data: serverCart } = useCartQuery();
 
   const cartCount = isAuthenticated
-    ? serverCart?.items?.reduce((acc, item) => acc + item.quantity, 0) || 0
-    : localCartItems.reduce((acc, item) => acc + item.quantity, 0);
+    ? serverCart?.items?.reduce((acc: number, item: any) => acc + item.quantity, 0) || 0
+    : localCartItems.reduce((acc: number, item: any) => acc + item.quantity, 0);
 
   // Wishlist count
   const { data: wishlistData } = useWishlistQuery();

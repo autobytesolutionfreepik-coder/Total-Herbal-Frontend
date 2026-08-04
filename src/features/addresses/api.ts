@@ -34,11 +34,11 @@ export const addressesApi = {
 };
 
 export function useAddressesQuery() {
-  return useQuery({
+  return useQuery<Address[]>({
     queryKey: queryKeys.addresses.list(),
     queryFn: async () => {
       const res = await addressesApi.getAddresses();
-      return res.data;
+      return res.data || [];
     },
   });
 }
