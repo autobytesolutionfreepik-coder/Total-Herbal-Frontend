@@ -47,7 +47,7 @@ export function CartDrawer() {
         variant: local.variant,
       }));
 
-  const subtotal = items.reduce((sum, item) => {
+  const subtotal = items.reduce((sum: number, item: any) => {
     const price = item.variant ? Number(item.variant.price) : Number(item.product.price);
     return sum + price * item.quantity;
   }, 0);
@@ -137,7 +137,7 @@ export function CartDrawer() {
               </div>
             ) : (
               <div className="flex-1 overflow-y-auto py-4 space-y-4 pr-1 divide-y divide-cream-dark/60">
-                {items.map((item) => {
+                {items.map((item: any) => {
                   const price = item.variant
                     ? Number(item.variant.price)
                     : Number(item.product.price);

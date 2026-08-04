@@ -977,7 +977,7 @@ export default function HomePage() {
             variants={stagger}
             className="grid grid-cols-1 md:grid-cols-3 gap-6"
           >
-            {blogPostsList.map((post) => (
+            {blogPostsList.map((post: any) => (
               <motion.div key={post.id} variants={scaleIn}>
                 <Link href={`/blog/${post.slug}`} className="group block">
                   <div

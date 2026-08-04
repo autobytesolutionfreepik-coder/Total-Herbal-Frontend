@@ -8,6 +8,7 @@ import { Mail, Clock, Loader2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { toast } from "sonner";
 import { useBlogPostsQuery, useBlogCategoriesQuery } from "@/features/blog/api";
+import { BlogCategory, BlogPost } from "@/features/blog/types";
 import { useSubscribeNewsletterMutation } from "@/features/marketing/api";
 
 const defaultCategories = ["All Posts", "Wellness", "Science", "Lifestyle", "Recipes"];
@@ -64,11 +65,11 @@ export default function BlogPage() {
   const newsletterMutation = useSubscribeNewsletterMutation();
 
   const categories = serverCategories?.length
-    ? ["All Posts", ...serverCategories.map((c) => c.name)]
+    ? ["All Posts", ...serverCategories.map((c: BlogCategory) => c.name)]
     : defaultCategories;
 
   const postsList = serverBlogPosts?.data?.length
-    ? serverBlogPosts.data.map((b) => ({
+    ? serverBlogPosts.data.map((b: BlogPost) => ({
         id: b.id,
         category: b.category?.name?.toUpperCase() || "WELLNESS",
         date: new Date(b.createdAt).toLocaleDateString("en-US", {
@@ -88,7 +89,7 @@ export default function BlogPage() {
     selectedCategory === "All Posts"
       ? postsList
       : postsList.filter(
-          (post) =>
+          (post: any) =>
             post.category.toLowerCase() === selectedCategory.toLowerCase()
         );
 
@@ -214,7 +215,7 @@ export default function BlogPage() {
               variants={stagger}
               className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
             >
-              {filteredPosts.map((post) => (
+              {filteredPosts.map((post: any) => (
                 <motion.div key={post.id} variants={fadeIn}>
                   <Link
                     href={`/blog/${post.slug}`}

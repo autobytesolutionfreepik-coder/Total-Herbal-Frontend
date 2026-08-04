@@ -7,6 +7,8 @@ import { useAuthStore } from "@/stores/auth-store";
 import { useMyOrdersQuery } from "@/features/orders/api";
 import { useAddressesQuery } from "@/features/addresses/api";
 import { useWishlistQuery } from "@/features/wishlist/api";
+import { Address } from "@/features/addresses/types";
+import { Order } from "@/features/orders/types";
 import { formatCurrency } from "@/lib/utils/format";
 
 export default function AccountDashboardPage() {
@@ -16,7 +18,7 @@ export default function AccountDashboardPage() {
   const { data: wishlist = [] } = useWishlistQuery();
 
   const recentOrders = orders.slice(0, 3);
-  const defaultAddress = addresses.find((a) => a.isDefault) || addresses[0];
+  const defaultAddress = addresses.find((a: Address) => a.isDefault) || addresses[0];
 
   return (
     <div className="space-y-6">
@@ -91,7 +93,7 @@ export default function AccountDashboardPage() {
           </p>
         ) : (
           <div className="divide-y divide-cream-dark/60">
-            {recentOrders.map((order) => (
+            {recentOrders.map((order: Order) => (
               <div
                 key={order.id}
                 className="py-3 flex flex-wrap items-center justify-between gap-4 text-xs"

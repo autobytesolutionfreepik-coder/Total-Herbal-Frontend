@@ -88,17 +88,17 @@ export function useCheckoutMutation() {
 }
 
 export function useMyOrdersQuery() {
-  return useQuery({
+  return useQuery<Order[]>({
     queryKey: queryKeys.orders.myOrders(),
     queryFn: async () => {
       const res = await ordersApi.getMyOrders();
-      return res.data;
+      return res.data || [];
     },
   });
 }
 
 export function useOrderDetailQuery(id: string) {
-  return useQuery({
+  return useQuery<Order>({
     queryKey: queryKeys.orders.detail(id),
     queryFn: async () => {
       const res = await ordersApi.getOrderById(id);

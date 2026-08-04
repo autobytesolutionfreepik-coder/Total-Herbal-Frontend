@@ -145,6 +145,7 @@ export default function RootLayout({
       lang="en"
       className={`${manrope.variable} h-full antialiased`}
       data-scroll-behavior="smooth"
+      suppressHydrationWarning
     >
       <head>
         <script
@@ -152,7 +153,7 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdSchema) }}
         />
       </head>
-      <body className="min-h-full flex flex-col bg-[#F5F0E8]">
+      <body className="min-h-full flex flex-col bg-[#F5F0E8]" suppressHydrationWarning>
         <QueryProvider>
           {children}
           <Toaster

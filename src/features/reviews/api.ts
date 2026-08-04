@@ -49,7 +49,7 @@ export const reviewsApi = {
 };
 
 export function useProductReviewsQuery(productId: string, params?: { page?: number; limit?: number }) {
-  return useQuery({
+  return useQuery<PaginatedResponse<Review>>({
     queryKey: queryKeys.products.reviews(productId, params),
     queryFn: () => reviewsApi.getProductReviews(productId, params),
     enabled: !!productId,

@@ -38,11 +38,11 @@ export const wishlistApi = {
 export function useWishlistQuery() {
   const { isAuthenticated } = useAuthStore();
 
-  return useQuery({
+  return useQuery<WishlistItem[]>({
     queryKey: queryKeys.wishlist.get(),
     queryFn: async () => {
       const res = await wishlistApi.getWishlist();
-      return res.data;
+      return res.data || [];
     },
     enabled: isAuthenticated,
   });
