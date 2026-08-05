@@ -383,51 +383,48 @@ export default function HomePage() {
             variants={stagger}
             className="max-w-[620px]"
           >
-            <motion.div variants={fadeUp} className="mb-6">
-              <span
-                className="inline-flex items-center gap-2 px-6 py-2.5 rounded-full text-xs font-extrabold tracking-[0.22em] uppercase border border-[#C9A961]/40 shadow-xl"
-                style={{
-                  background: "rgba(13, 35, 24, 0.85)",
-                  color: "#E2C98A",
-                  backdropFilter: "blur(16px)",
-                  WebkitBackdropFilter: "blur(16px)",
-                }}
-              >
-                <span className="w-2.5 h-2.5 rounded-full bg-[#C9A961] animate-pulse" />
+            <motion.div variants={fadeUp} className="mb-5">
+              <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-xs font-bold tracking-widest uppercase bg-black/40 border border-white/15 text-[#C9A961] backdrop-blur-md">
                 ESTABLISHED 2022 • ISO 17025 CERTIFIED
               </span>
             </motion.div>
 
             <motion.h1
               variants={fadeUp}
-              className="font-bold leading-[1.04] mb-7 tracking-tight drop-shadow-lg"
+              className="font-bold leading-[1.08] mb-6 tracking-tight drop-shadow-md"
               style={{
                 fontFamily: "Times New Roman, serif",
-                fontSize: "clamp(2.8rem, 6vw, 4.4rem)",
+                fontSize: "clamp(2.8rem, 5.8vw, 4.2rem)",
                 color: "#fff",
               }}
             >
-              Organic Cannabis
+              Premium Organic Cannabis
               <br />
               Formulas for Every
               <br />
-              <span className="text-gold-gradient italic">Lifestyle</span>
+              <span className="text-[#C9A961]">Lifestyle</span>
             </motion.h1>
 
             <motion.p
               variants={fadeUp}
-              className="text-lg sm:text-xl leading-relaxed mb-10 max-w-[540px] text-white/90 font-medium"
+              className="text-base sm:text-lg leading-relaxed mb-8 max-w-[560px] text-white/90 font-medium"
             >
               Discover lab-tested organic flowers, precision-dosed edibles, full-spectrum vapes, and apothecary wellness remedies delivered directly to your door.
             </motion.p>
 
-            <motion.div variants={fadeUp} className="flex flex-wrap items-center gap-5">
-              <Button href="/shop" variant="gold" size="lg" className="shadow-[0_8px_30px_rgba(201,169,97,0.4)] px-10 py-4.5 text-base sm:text-lg">
-                Shop Catalog <ArrowRight className="w-5 h-5 ml-1.5" />
-              </Button>
-              <Button href="/location" variant="outline" size="lg" className="px-10 py-4.5 text-base sm:text-lg">
-                Find Dispensary
-              </Button>
+            <motion.div variants={fadeUp} className="flex flex-wrap items-center gap-4">
+              <Link
+                href="/shop"
+                className="bg-[#007A2B] hover:bg-[#00581F] text-white text-sm font-bold tracking-wider uppercase px-8 py-3.5 rounded-full transition-all shadow-md inline-flex items-center justify-center"
+              >
+                Shop Now
+              </Link>
+              <Link
+                href="/location"
+                className="bg-[#E5EAE7] hover:bg-white text-[#006828] text-sm font-bold tracking-wider uppercase px-8 py-3.5 rounded-full transition-all shadow-sm inline-flex items-center justify-center"
+              >
+                Find a Location
+              </Link>
             </motion.div>
           </motion.div>
         </div>
@@ -436,7 +433,7 @@ export default function HomePage() {
       {/* ══ 2. TRUST STRIP ═══════════════════════════════════════════════════ */}
       <section className="relative z-20 -mt-12 md:-mt-16 bg-transparent py-0">
         <div className="container-site">
-          <div className="rounded-2xl sm:rounded-3xl py-7 md:py-9 px-6 md:px-10 shadow-[0_20px_50px_rgba(1,108,36,0.3)] bg-gradient-to-r from-[#016C24] via-[#084A22] to-[#0B2519] border border-white/25 backdrop-blur-xl">
+          <div className="rounded-2xl sm:rounded-3xl py-7 md:py-9 px-6 md:px-10 shadow-[0_20px_50px_rgba(1,108,36,0.3)] bg-gradient-to-b from-[#016C24] via-[#084824] to-[#071F14] border border-white/25 backdrop-blur-xl">
             <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-6 md:gap-18 items-center">
               {trustItems.map(({ img, label, sub }) => (
                 <div key={label} className="flex items-center gap-3.5 sm:gap-4 group hover:translate-y-[-2px] transition-transform duration-300">
@@ -465,7 +462,7 @@ export default function HomePage() {
       </section>
 
       {/* ══ 3. EXPLORE COLLECTION ════════════════════════════════════════════ */}
-      <section className="py-20" style={{ background: "#F5F0E8" }}>
+      <section className="py-20" style={{ background: "#E9E4DE" }}>
         <div className="container-site">
           <motion.div
             initial="hidden"
@@ -474,12 +471,12 @@ export default function HomePage() {
             variants={stagger}
             className="text-center mb-14"
           >
-            <motion.p variants={fadeUp} className="text-xs font-bold uppercase tracking-[0.2em] text-[#C9A961] mb-2">
+            <motion.p variants={fadeUp} className="text-sm font-bold uppercase tracking-[0.2em] text-[#C9A961] mb-2">
               CURATED BOTANICAL CATEGORIES
             </motion.p>
             <motion.h2
               variants={fadeUp}
-              className="text-3xl md:text-4xl font-bold tracking-tight"
+              className="text-5xl md:text-6xl font-bold tracking-tight"
               style={{ fontFamily: "Times New Roman, serif", color: "#0D2318" }}
             >
               Explore Our Collection
@@ -522,7 +519,7 @@ export default function HomePage() {
       </section>
 
       {/* ══ 4. NEW ARRIVALS ══════════════════════════════════════════════════ */}
-      <section className="py-12" style={{ background: "#F5F0E8" }}>
+      <section className="py-12" style={{ background: "#ede2d7" }}>
         <div className="container-site">
           <motion.div
             initial="hidden"
@@ -532,19 +529,19 @@ export default function HomePage() {
             className="flex flex-col sm:flex-row items-start sm:items-end justify-between mb-10 gap-4"
           >
             <div>
-              <motion.p variants={fadeUp} className="text-xs font-bold uppercase tracking-[0.2em] text-[#C9A961] mb-1">
+              <motion.p variants={fadeUp} className="text-sm font-bold uppercase tracking-[0.2em] text-[#C9A961] mb-1">
                 FRESHLY HARVESTED
               </motion.p>
               <motion.h2
                 variants={fadeUp}
-                className="text-3xl md:text-4xl font-bold tracking-tight text-[#0D2318]"
-                style={{ fontFamily: "Times New Roman, serif" }}
+                className="text-5xl md:text-6xl font-bold tracking-tight text-[#0D2318]"
+                style={{ fontFamily: "Times New Roman, serif", color: "#027F2C" }}
               >
                 New Arrivals
               </motion.h2>
               <motion.p
                 variants={fadeUp}
-                className="text-sm mt-1 text-[#4A4A4A] font-medium"
+                className="text-md mt-1 text-[#4A4A4A] font-medium"
               >
                 Fresh organic harvests and laboratory-tested dispensary additions.
               </motion.p>
