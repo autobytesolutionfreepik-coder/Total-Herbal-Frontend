@@ -436,24 +436,24 @@ export default function HomePage() {
       {/* ══ 2. TRUST STRIP ═══════════════════════════════════════════════════ */}
       <section className="relative z-20 -mt-12 md:-mt-16 bg-transparent py-0">
         <div className="container-site">
-          <div className="rounded-3xl py-6 px-6 md:px-12 shadow-[0_20px_50px_rgba(13,35,24,0.2)] bg-gradient-to-r from-[#0D2318] via-[#1B3A2D] to-[#0D2318] border border-white/15 backdrop-blur-xl">
-            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-6 items-center">
+          <div className="rounded-2xl sm:rounded-3xl py-7 md:py-9 px-6 md:px-10 shadow-[0_20px_50px_rgba(1,108,36,0.3)] bg-gradient-to-r from-[#016C24] via-[#084A22] to-[#0B2519] border border-white/25 backdrop-blur-xl">
+            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-6 md:gap-18 items-center">
               {trustItems.map(({ img, label, sub }) => (
-                <div key={label} className="flex items-center gap-3.5 group hover:translate-y-[-2px] transition-transform duration-300">
-                  <div className="w-14 h-14 rounded-2xl border border-white/20 flex items-center justify-center flex-shrink-0 bg-white/10 group-hover:bg-[#016C24] group-hover:border-[#C9A961] transition-all duration-300 shadow-inner">
+                <div key={label} className="flex items-center gap-3.5 sm:gap-4 group hover:translate-y-[-2px] transition-transform duration-300">
+                  <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-full border-2 border-white flex items-center justify-center flex-shrink-0 bg-[#0D2318]/30 group-hover:bg-[#016C24] transition-all duration-300 shadow-md">
                     <Image
                       src={img}
                       alt={`${label} ${sub}`}
-                      width={32}
-                      height={32}
-                      className="w-8 h-8 object-contain"
+                      width={48}
+                      height={48}
+                      className="w-10 h-10 sm:w-12 sm:h-12 object-contain"
                     />
                   </div>
-                  <div className="leading-snug">
-                    <p className="text-white text-xs md:text-sm font-bold tracking-wide">
+                  <div className="leading-tight font-sans">
+                    <p className="text-white text-base sm:text-lg font-bold tracking-tight">
                       {label}
                     </p>
-                    <p className="text-[11px] md:text-xs font-semibold text-[#E2C98A]">
+                    <p className="text-sm sm:text-base font-bold text-[#E2C98A] tracking-tight">
                       {sub}
                     </p>
                   </div>
