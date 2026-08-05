@@ -358,8 +358,7 @@ export default function HomePage() {
       {/* ══ 1. HERO ══════════════════════════════════════════════════════════ */}
       <section
         ref={heroRef}
-        className="relative min-h-[560px] lg:min-h-[620px] overflow-hidden flex items-center"
-        style={{ backgroundColor: "#1A2E1A" }}
+        className="relative min-h-[600px] lg:min-h-[680px] overflow-hidden flex items-center bg-[#0D2318]"
       >
         <motion.div
           style={{ y: heroY }}
@@ -370,39 +369,41 @@ export default function HomePage() {
             alt="Premium cannabis products"
             fill
             priority
-            className="object-cover object-center"
+            className="object-cover object-center brightness-90"
             sizes="100vw"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-black/75 via-black/45 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-r from-[#0D2318]/90 via-[#0D2318]/65 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#0D2318] via-transparent to-transparent opacity-80" />
         </motion.div>
 
-        <div className="container-site relative z-10 py-20 lg:py-28">
+        <div className="container-site relative z-10 py-24 lg:py-32">
           <motion.div
             initial="hidden"
             animate="show"
             variants={stagger}
-            className="max-w-[520px]"
+            className="max-w-[620px]"
           >
             <motion.div variants={fadeUp} className="mb-6">
               <span
-                className="inline-flex items-center px-5 py-1.5 rounded-full text-[11px] font-bold tracking-[0.2em] uppercase"
+                className="inline-flex items-center gap-2 px-6 py-2.5 rounded-full text-xs font-extrabold tracking-[0.22em] uppercase border border-[#C9A961]/40 shadow-xl"
                 style={{
-                  background: "rgba(255, 255, 255, 0.10)",
-                  color: "#C9A961",
-                  backdropFilter: "blur(12px)",
-                  WebkitBackdropFilter: "blur(12px)",
+                  background: "rgba(13, 35, 24, 0.85)",
+                  color: "#E2C98A",
+                  backdropFilter: "blur(16px)",
+                  WebkitBackdropFilter: "blur(16px)",
                 }}
               >
-                ESTABLISHED 2024
+                <span className="w-2.5 h-2.5 rounded-full bg-[#C9A961] animate-pulse" />
+                ESTABLISHED 2022 • ISO 17025 CERTIFIED
               </span>
             </motion.div>
 
             <motion.h1
               variants={fadeUp}
-              className="font-bold leading-[1.08] mb-5"
+              className="font-bold leading-[1.04] mb-7 tracking-tight drop-shadow-lg"
               style={{
                 fontFamily: "Times New Roman, serif",
-                fontSize: "clamp(2.4rem, 5vw, 3.6rem)",
+                fontSize: "clamp(2.8rem, 6vw, 4.4rem)",
                 color: "#fff",
               }}
             >
@@ -410,23 +411,22 @@ export default function HomePage() {
               <br />
               Formulas for Every
               <br />
-              <span style={{ color: "#C9A961" }}>Lifestyle</span>
+              <span className="text-gold-gradient italic">Lifestyle</span>
             </motion.h1>
 
             <motion.p
               variants={fadeUp}
-              className="text-base leading-relaxed mb-8 max-w-[460px]"
-              style={{ color: "rgba(255,255,255,0.85)" }}
+              className="text-lg sm:text-xl leading-relaxed mb-10 max-w-[540px] text-white/90 font-medium"
             >
-              Discover lab-tested organic flowers, precision-dosed edibles, full-spectrum vapes, and apothecary wellness remedies delivered to your door.
+              Discover lab-tested organic flowers, precision-dosed edibles, full-spectrum vapes, and apothecary wellness remedies delivered directly to your door.
             </motion.p>
 
-            <motion.div variants={fadeUp} className="flex flex-wrap gap-3">
-              <Button href="/shop" variant="primary">
-                Shop Catalog
+            <motion.div variants={fadeUp} className="flex flex-wrap items-center gap-5">
+              <Button href="/shop" variant="gold" size="lg" className="shadow-[0_8px_30px_rgba(201,169,97,0.4)] px-10 py-4.5 text-base sm:text-lg">
+                Shop Catalog <ArrowRight className="w-5 h-5 ml-1.5" />
               </Button>
-              <Button href="/contact" variant="outline">
-                Find a Dispensary
+              <Button href="/location" variant="outline" size="lg" className="px-10 py-4.5 text-base sm:text-lg">
+                Find Dispensary
               </Button>
             </motion.div>
           </motion.div>
@@ -434,29 +434,26 @@ export default function HomePage() {
       </section>
 
       {/* ══ 2. TRUST STRIP ═══════════════════════════════════════════════════ */}
-      <section className="relative z-20 -mt-10 md:-mt-14 bg-transparent py-0 animate-none">
+      <section className="relative z-20 -mt-12 md:-mt-16 bg-transparent py-0">
         <div className="container-site">
-          <div className="rounded-2xl py-5 px-6 md:px-10 shadow-lg bg-gradient-to-r from-[#2E3518] to-[#026C24]">
-            <div className="grid grid-cols-3 md:grid-cols-6 gap-4">
+          <div className="rounded-3xl py-6 px-6 md:px-12 shadow-[0_20px_50px_rgba(13,35,24,0.2)] bg-gradient-to-r from-[#0D2318] via-[#1B3A2D] to-[#0D2318] border border-white/15 backdrop-blur-xl">
+            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-6 items-center">
               {trustItems.map(({ img, label, sub }) => (
-                <div key={label} className="flex items-center gap-3 justify-start">
-                  <div className="w-16 h-16 rounded-full border border-white flex items-center justify-center flex-shrink-0 bg-white/5">
+                <div key={label} className="flex items-center gap-3.5 group hover:translate-y-[-2px] transition-transform duration-300">
+                  <div className="w-14 h-14 rounded-2xl border border-white/20 flex items-center justify-center flex-shrink-0 bg-white/10 group-hover:bg-[#016C24] group-hover:border-[#C9A961] transition-all duration-300 shadow-inner">
                     <Image
                       src={img}
                       alt={`${label} ${sub}`}
-                      width={34}
-                      height={34}
-                      className="w-10 h-10 object-contain"
+                      width={32}
+                      height={32}
+                      className="w-8 h-8 object-contain"
                     />
                   </div>
-                  <div className="leading-tight">
-                    <p className="text-white text-[11px] md:text-[13px] font-semibold">
+                  <div className="leading-snug">
+                    <p className="text-white text-xs md:text-sm font-bold tracking-wide">
                       {label}
                     </p>
-                    <p
-                      className="text-[10px] md:text-[12px] font-semibold"
-                      style={{ color: "#C9A961" }}
-                    >
+                    <p className="text-[11px] md:text-xs font-semibold text-[#E2C98A]">
                       {sub}
                     </p>
                   </div>
@@ -468,27 +465,27 @@ export default function HomePage() {
       </section>
 
       {/* ══ 3. EXPLORE COLLECTION ════════════════════════════════════════════ */}
-      <section className="py-16" style={{ background: "#F5F0E8" }}>
+      <section className="py-20" style={{ background: "#F5F0E8" }}>
         <div className="container-site">
           <motion.div
             initial="hidden"
             whileInView="show"
             viewport={{ once: true, margin: "-60px" }}
             variants={stagger}
-            className="text-center mb-10"
+            className="text-center mb-14"
           >
+            <motion.p variants={fadeUp} className="text-xs font-bold uppercase tracking-[0.2em] text-[#C9A961] mb-2">
+              CURATED BOTANICAL CATEGORIES
+            </motion.p>
             <motion.h2
               variants={fadeUp}
-              className="text-3xl md:text-[2.2rem] font-bold"
-              style={{ fontFamily: "Times New Roman, serif", color: "#016C24" }}
+              className="text-3xl md:text-4xl font-bold tracking-tight"
+              style={{ fontFamily: "Times New Roman, serif", color: "#0D2318" }}
             >
               Explore Our Collection
             </motion.h2>
             <motion.div variants={fadeUp} className="flex justify-center mt-3 mb-1">
-              <div
-                className="w-10 h-[3px] rounded-full"
-                style={{ background: "#C9A961" }}
-              />
+              <div className="w-12 h-1 rounded-full bg-gradient-to-r from-[#016C24] to-[#C9A961]" />
             </motion.div>
           </motion.div>
 
@@ -497,30 +494,24 @@ export default function HomePage() {
             whileInView="show"
             viewport={{ once: true, margin: "-40px" }}
             variants={stagger}
-            className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4"
+            className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-5"
           >
             {categoriesList.map((cat: { label: string; slug: string; img: string }) => (
               <motion.div key={cat.label} variants={scaleIn}>
                 <Link
                   href={`/shop?category=${cat.slug}`}
-                  className="group block text-center"
+                  className="group block text-center bg-white rounded-2xl p-3 border border-[#EDE8DF] shadow-[0_4px_20px_rgba(0,0,0,0.04)] hover:shadow-[0_12px_32px_rgba(13,35,24,0.12)] hover:border-[#016C24]/30 hover:-translate-y-1.5 transition-all duration-300"
                 >
-                  <div className="relative overflow-hidden rounded-xl mb-2.5 aspect-[4/3]">
+                  <div className="relative overflow-hidden rounded-xl mb-3 aspect-[4/3] bg-[#F9F6F1]">
                     <Image
                       src={cat.img}
                       alt={cat.label}
                       fill
-                      className="object-cover transition-transform duration-500 group-hover:scale-[1.07]"
+                      className="object-cover transition-transform duration-700 group-hover:scale-110"
                       sizes="(max-width:640px) 50vw, (max-width:1024px) 33vw, 20vw"
                     />
                   </div>
-                  <p
-                    className="text-sm font-semibold transition-colors"
-                    style={{
-                      fontFamily: "Manrope, sans-serif",
-                      color: "#2D6B4F",
-                    }}
-                  >
+                  <p className="text-sm font-extrabold text-[#0D2318] group-hover:text-[#016C24] transition-colors font-sans">
                     {cat.label}
                   </p>
                 </Link>
@@ -531,30 +522,29 @@ export default function HomePage() {
       </section>
 
       {/* ══ 4. NEW ARRIVALS ══════════════════════════════════════════════════ */}
-      <section className="py-4" style={{ background: "#F5F0E8" }}>
+      <section className="py-12" style={{ background: "#F5F0E8" }}>
         <div className="container-site">
           <motion.div
             initial="hidden"
             whileInView="show"
             viewport={{ once: true }}
             variants={stagger}
-            className="flex items-end justify-between mb-8"
+            className="flex flex-col sm:flex-row items-start sm:items-end justify-between mb-10 gap-4"
           >
             <div>
+              <motion.p variants={fadeUp} className="text-xs font-bold uppercase tracking-[0.2em] text-[#C9A961] mb-1">
+                FRESHLY HARVESTED
+              </motion.p>
               <motion.h2
                 variants={fadeUp}
-                className="text-3xl font-bold"
-                style={{
-                  fontFamily: "Times New Roman, serif",
-                  color: "#016C24",
-                }}
+                className="text-3xl md:text-4xl font-bold tracking-tight text-[#0D2318]"
+                style={{ fontFamily: "Times New Roman, serif" }}
               >
                 New Arrivals
               </motion.h2>
               <motion.p
                 variants={fadeUp}
-                className="text-sm mt-1"
-                style={{ color: "#767676" }}
+                className="text-sm mt-1 text-[#4A4A4A] font-medium"
               >
                 Fresh organic harvests and laboratory-tested dispensary additions.
               </motion.p>
@@ -562,14 +552,10 @@ export default function HomePage() {
             <motion.div variants={fadeUp}>
               <Link
                 href="/shop"
-                className="text-sm font-semibold flex items-center gap-1 transition-colors hover:opacity-75"
-                style={{
-                  color: "#016C24",
-                  textDecoration: "underline",
-                  textUnderlineOffset: "3px",
-                }}
+                className="text-sm font-bold flex items-center gap-1.5 text-[#016C24] hover:text-[#0D2318] transition-colors group"
               >
-                View All Products
+                <span>View All Catalog</span>
+                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </Link>
             </motion.div>
           </motion.div>
@@ -579,61 +565,52 @@ export default function HomePage() {
             whileInView="show"
             viewport={{ once: true, margin: "-40px" }}
             variants={stagger}
-            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5"
+            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6"
           >
             {newArrivals.map((p: { id: string; name: string; type: string; strain: string; thc: string; price: string; rating: number; reviewsCount: number; img: string; slug: string }) => {
-              let badgeColor = "#016C24";
-              if (p.type === "VAPE") {
-                badgeColor = "#55605A";
-              }
               return (
                 <motion.div key={p.id} variants={scaleIn}>
-                  <div className="group relative rounded-[20px] overflow-hidden flex flex-col bg-white border border-neutral-100 hover:shadow-[0_8px_32px_rgba(0,0,0,0.08)] hover:-translate-y-1 transition-all duration-300 h-full">
-                    <Link href={`/products/${p.slug}`} className="block relative w-full aspect-[4/5]">
+                  <div className="group relative rounded-2xl overflow-hidden flex flex-col bg-white border border-[#EDE8DF] hover:border-[#016C24]/30 shadow-[0_4px_20px_rgba(0,0,0,0.04)] hover:shadow-[0_16px_40px_rgba(13,35,24,0.12)] hover:-translate-y-1.5 transition-all duration-300 h-full">
+                    <Link href={`/products/${p.slug}`} className="block relative w-full aspect-[4/5] bg-[#F9F6F1] overflow-hidden">
                       <Image
                         src={p.img}
                         alt={p.name}
                         fill
-                        className="object-cover transition-transform duration-500 group-hover:scale-[1.03]"
+                        className="object-cover transition-transform duration-700 group-hover:scale-105"
                         sizes="(max-width:640px) 100vw, (max-width:1024px) 50vw, 25vw"
                       />
                       <span
-                        className="absolute top-4 left-4 text-white text-[9px] font-bold tracking-widest uppercase px-3 py-1 rounded-full"
-                        style={{ background: badgeColor }}
+                        className="absolute top-3.5 left-3.5 text-white text-[10px] font-extrabold tracking-wider uppercase px-3 py-1 rounded-full bg-[#0D2318]/80 backdrop-blur-md border border-white/20 shadow-md"
                       >
                         {p.type}
                       </span>
                     </Link>
 
-                    <div className="p-5 flex flex-col gap-1.5 flex-1">
-                      <div className="flex items-center gap-1">
-                        <Star className="w-3.5 h-3.5 fill-[#016C24] text-[#016C24]" />
-                        <span className="text-xs font-bold text-[#016C24]">
+                    <div className="p-5 flex flex-col gap-2 flex-1">
+                      <div className="flex items-center gap-1.5">
+                        <div className="flex items-center text-[#C9A961]">
+                          <Star className="w-3.5 h-3.5 fill-[#C9A961] text-[#C9A961]" />
+                        </div>
+                        <span className="text-xs font-extrabold text-[#0D2318]">
                           {p.rating}
                         </span>
-                        <span className="text-xs text-[#767676]">
+                        <span className="text-xs text-[#767676] font-medium">
                           ({p.reviewsCount} reviews)
                         </span>
                       </div>
 
                       <Link href={`/products/${p.slug}`}>
-                        <h3
-                          className="font-bold leading-snug text-[1.1rem] text-[#016C24] hover:opacity-80 transition-opacity"
-                          style={{ fontFamily: "var(--font-sans), sans-serif" }}
-                        >
+                        <h3 className="font-bold leading-snug text-lg text-[#0D2318] group-hover:text-[#016C24] transition-colors font-sans">
                           {p.name}
                         </h3>
                       </Link>
 
-                      <p className="text-xs text-[#767676] font-medium">
+                      <p className="text-xs text-[#4A4A4A] font-semibold">
                         {p.strain} • {p.thc}
                       </p>
 
-                      <div className="flex items-center justify-between mt-auto pt-3">
-                        <span
-                          className="font-bold text-lg text-[#016C24]"
-                          style={{ fontFamily: "var(--font-sans), sans-serif" }}
-                        >
+                      <div className="flex items-center justify-between mt-auto pt-4 border-t border-[#EDE8DF]/60">
+                        <span className="font-extrabold text-xl text-[#0D2318] font-sans">
                           {formatCurrency(p.price)}
                         </span>
 
@@ -641,7 +618,7 @@ export default function HomePage() {
                           variant="primary"
                           size="icon"
                           onClick={() => handleAddToCart(p)}
-                          className="w-9 h-9"
+                          className="w-10 h-10 shadow-[0_4px_16px_rgba(1,108,36,0.25)] hover:shadow-[0_6px_20px_rgba(1,108,36,0.4)]"
                           aria-label={`Add ${p.name} to cart`}
                         >
                           <ShoppingCart className="w-4 h-4" />
@@ -657,47 +634,48 @@ export default function HomePage() {
       </section>
 
       {/* ══ 5. SEASONAL BANNER ═══════════════════════════════════════════════ */}
-      <section className="py-12 bg-transparent animate-none">
+      <section className="py-12 bg-transparent">
         <div className="container-site">
-          <div className="relative rounded-3xl overflow-hidden shadow-sm h-[380px]">
+          <div className="relative rounded-3xl overflow-hidden shadow-[0_20px_50px_rgba(13,35,24,0.18)] min-h-[420px] flex items-center border border-white/20">
             <Image
               src="/images/Limited-time-offer.png"
               alt="Seasonal Collection"
               fill
-              className="object-cover object-center animate-none"
+              className="object-cover object-center brightness-75"
               sizes="100vw"
             />
-            <div className="absolute inset-0 bg-black/45" />
-            <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-6">
+            <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/50 to-transparent" />
+            <div className="relative z-10 p-8 sm:p-14 max-w-2xl text-left">
               <motion.div
                 initial="hidden"
                 whileInView="show"
                 viewport={{ once: true }}
                 variants={stagger}
-                className="max-w-2xl"
               >
-                <motion.p
+                <motion.span
                   variants={fadeUp}
-                  className="text-xs font-bold tracking-[0.2em] uppercase mb-2 text-white/70"
+                  className="inline-block text-[11px] font-extrabold tracking-[0.22em] uppercase mb-3 px-4 py-1.5 rounded-full bg-[#C9A961] text-[#0D2318] shadow-md"
                 >
                   LIMITED TIME OFFER
-                </motion.p>
+                </motion.span>
                 <motion.h2
                   variants={fadeUp}
-                  className="text-2xl md:text-4xl font-bold mb-3 whitespace-pre-line text-white"
-                  style={{ fontFamily: "Times New Roman, serif", color: "white" }}
+                  className="text-3xl md:text-5xl font-bold mb-4 leading-tight text-white"
+                  style={{ fontFamily: "Times New Roman, serif" }}
                 >
-                  Seasonal Collection: Fresh Summer Blooms
+                  Seasonal Collection:
+                  <br />
+                  <span className="text-[#E2C98A]">Fresh Summer Blooms</span>
                 </motion.h2>
                 <motion.p
                   variants={fadeUp}
-                  className="text-xs md:text-sm max-w-lg mx-auto mb-6 leading-relaxed text-white/80"
+                  className="text-sm md:text-base mb-8 leading-relaxed text-white/90 font-medium max-w-lg"
                 >
                   Experience limited release organic terpene blends and high-potency concentrates crafted for summer relaxation.
                 </motion.p>
                 <motion.div variants={fadeUp}>
-                  <Button href="/shop" variant="white" className="px-8 py-2.5">
-                    Explore the Sale
+                  <Button href="/shop" variant="gold" size="lg" className="shadow-xl">
+                    Explore Seasonal Collection <ArrowRight className="w-4 h-4 ml-1" />
                   </Button>
                 </motion.div>
               </motion.div>
@@ -707,26 +685,28 @@ export default function HomePage() {
       </section>
 
       {/* ══ 6. DIFFERENCE ════════════════════════════════════════════════════ */}
-      <section className="py-6" style={{ background: "#F5F0E8" }}>
+      <section className="py-20" style={{ background: "#F5F0E8" }}>
         <div className="container-site">
           <motion.div
             initial="hidden"
             whileInView="show"
             viewport={{ once: true }}
             variants={stagger}
-            className="text-center mb-12"
+            className="text-center mb-14"
           >
+            <motion.p variants={fadeUp} className="text-xs font-bold uppercase tracking-[0.2em] text-[#C9A961] mb-2">
+              WHY CHOOSE TOTAL HERBAL CARE
+            </motion.p>
             <motion.h2
               variants={fadeUp}
-              className="text-3xl md:text-[2.2rem] font-bold mb-2"
-              style={{ fontFamily: "Times New Roman, serif", color: "#016C24" }}
+              className="text-3xl md:text-4xl font-bold text-[#0D2318]"
+              style={{ fontFamily: "Times New Roman, serif" }}
             >
               The TotalHerbalCare Difference
             </motion.h2>
             <motion.p
               variants={fadeUp}
-              className="text-base max-w-xl mx-auto"
-              style={{ color: "#767676" }}
+              className="text-base max-w-xl mx-auto mt-2 text-[#4A4A4A] font-medium"
             >
               Setting the standard for purity, safety, and customer guidance in organic herbal cannabis.
             </motion.p>
@@ -737,32 +717,26 @@ export default function HomePage() {
             whileInView="show"
             viewport={{ once: true, margin: "-60px" }}
             variants={stagger}
-            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5"
+            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"
           >
             {differenceCards.map(({ icon: Icon, title, desc }) => (
               <motion.div
                 key={title}
                 variants={scaleIn}
-                className="bg-white rounded-xl p-6 transition-shadow duration-300 hover:shadow-lg"
-                style={{ boxShadow: "0 2px 12px rgba(0,0,0,0.07)" }}
+                className="bg-white rounded-2xl p-7 border border-[#EDE8DF] transition-all duration-300 hover:shadow-[0_16px_40px_rgba(13,35,24,0.1)] hover:border-[#016C24]/30 hover:-translate-y-1"
               >
                 <div
-                  className="w-10 h-10 rounded-lg flex items-center justify-center mb-4"
-                  style={{ background: "#F0F7F3" }}
+                  className="w-12 h-12 rounded-2xl flex items-center justify-center mb-5 bg-[#0D2318] text-[#E2C98A] shadow-md"
                 >
-                  <Icon className="w-5 h-5" style={{ color: "#2D6B4F" }} />
+                  <Icon className="w-6 h-6" />
                 </div>
                 <h3
-                  className="font-semibold mb-2"
-                  style={{
-                    fontFamily: "Times New Roman, serif",
-                    fontSize: "1rem",
-                    color: "#1A1A1A",
-                  }}
+                  className="font-bold text-xl mb-2 text-[#0D2318]"
+                  style={{ fontFamily: "Times New Roman, serif" }}
                 >
                   {title}
                 </h3>
-                <p className="text-sm leading-relaxed" style={{ color: "#767676" }}>
+                <p className="text-sm leading-relaxed text-[#4A4A4A] font-medium">
                   {desc}
                 </p>
               </motion.div>
@@ -772,7 +746,7 @@ export default function HomePage() {
       </section>
 
       {/* ══ 7. OUR COMMITMENT ════════════════════════════════════════════════ */}
-      <section className="py-16" style={{ background: "#F5F0E8" }}>
+      <section className="py-20" style={{ background: "#F5F0E8" }}>
         <div className="container-site">
           <div className="grid md:grid-cols-2 gap-14 items-center">
             <motion.div
@@ -782,30 +756,23 @@ export default function HomePage() {
               transition={{ duration: 0.6 }}
               className="relative"
             >
-              <div
-                className="relative rounded-[24px] overflow-hidden shadow-md"
-                style={{ aspectRatio: "4/4" }}
-              >
+              <div className="relative rounded-3xl overflow-hidden shadow-[0_20px_50px_rgba(13,35,24,0.15)] border border-[#EDE8DF] aspect-square">
                 <Image
                   src="/images/OUR-COMMITMENT.png"
                   alt="Cannabis cultivation"
                   fill
-                  className="object-cover animate-none"
+                  className="object-cover"
                   sizes="(max-width:768px) 100vw, 50vw"
                 />
               </div>
-              <div className="absolute bottom-6 right-6 bg-white/70 backdrop-blur-md rounded-2xl px-5 py-4 shadow-xl border border-white/20">
+              <div className="absolute bottom-6 right-6 bg-white/90 backdrop-blur-xl rounded-2xl px-6 py-5 shadow-2xl border border-white/40">
                 <p
-                  className="text-2xl font-bold"
-                  style={{
-                    fontFamily: "Times New Roman, serif",
-                    color: "#016C24",
-                  }}
+                  className="text-3xl font-extrabold text-[#0D2318] font-serif"
                 >
                   10+ Years
                 </p>
-                <p className="text-xs max-w-[160px] mt-0.5 text-neutral-600">
-                  Of experience in organic cultivation and wellness innovation.
+                <p className="text-xs font-semibold max-w-[170px] mt-1 text-[#4A4A4A]">
+                  Of excellence in organic cultivation and botanical innovation.
                 </p>
               </div>
             </motion.div>
@@ -816,21 +783,16 @@ export default function HomePage() {
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
             >
-              <p className="text-xs font-bold tracking-widest uppercase mb-3 text-[#016C24]">
-                Our Commitment
+              <p className="text-xs font-bold tracking-[0.2em] uppercase mb-2 text-[#C9A961]">
+                OUR BOTANICAL COMMITMENT
               </p>
               <h2
-                className="text-3xl md:text-4xl font-bold leading-snug mb-4"
-                style={{
-                  fontFamily: "Times New Roman, serif",
-                  color: "#016C24",
-                }}
+                className="text-3xl md:text-4xl font-bold leading-tight mb-5 text-[#0D2318]"
+                style={{ fontFamily: "Times New Roman, serif" }}
               >
-                Elevating Standards
-                <br />
-                in Cannabis Wellness
+                Elevating Standards in Cannabis Wellness
               </h2>
-              <p className="text-base leading-relaxed mb-6" style={{ color: "#4A4A4A" }}>
+              <p className="text-base leading-relaxed mb-7 text-[#4A4A4A] font-medium">
                 Our master growers and formulation chemists utilize clean extraction techniques without harmful solvents, delivering uncompromised herbal purity.
               </p>
               <div className="space-y-4">
@@ -844,15 +806,15 @@ export default function HomePage() {
                     desc: "Empowering adults 21+ with transparent lab data, strain guides, and dosing advice.",
                   },
                 ].map((item) => (
-                  <div key={item.title} className="flex gap-3">
-                    <div className="w-6 h-6 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5 bg-[#016C24]/10">
-                      <CheckCircle2 className="w-3.5 h-3.5 text-[#016C24]" />
+                  <div key={item.title} className="flex gap-3.5 p-4 rounded-xl bg-white border border-[#EDE8DF]/80 shadow-sm">
+                    <div className="w-7 h-7 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5 bg-[#016C24]/10">
+                      <CheckCircle2 className="w-4 h-4 text-[#016C24]" />
                     </div>
                     <div>
-                      <p className="font-semibold text-sm mb-0.5 text-[#1A1A1A]">
+                      <p className="font-bold text-sm mb-0.5 text-[#0D2318]">
                         {item.title}
                       </p>
-                      <p className="text-xs leading-relaxed text-[#767676]">
+                      <p className="text-xs leading-relaxed text-[#4A4A4A] font-medium">
                         {item.desc}
                       </p>
                     </div>
@@ -860,8 +822,8 @@ export default function HomePage() {
                 ))}
               </div>
               <div className="mt-8">
-                <Button href="/about" variant="primary">
-                  Read Our Full Story
+                <Button href="/about" variant="dark" size="lg">
+                  Read Our Full Story <ArrowRight className="w-4 h-4 ml-1" />
                 </Button>
               </div>
             </motion.div>
@@ -870,18 +832,21 @@ export default function HomePage() {
       </section>
 
       {/* ══ 8. COMMUNITY REVIEWS ═════════════════════════════════════════════ */}
-      <section className="py-16" style={{ background: "#F0EBE1" }}>
+      <section className="py-20 bg-[#EDE8DF]">
         <div className="container-site">
           <motion.div
             initial="hidden"
             whileInView="show"
             viewport={{ once: true }}
             variants={stagger}
-            className="text-center mb-10"
+            className="text-center mb-14"
           >
+            <motion.p variants={fadeUp} className="text-xs font-bold uppercase tracking-[0.2em] text-[#C9A961] mb-2">
+              REAL MEMBER EXPERIENCES
+            </motion.p>
             <motion.h2
               variants={fadeUp}
-              className="text-3xl md:text-[2.2rem] font-bold mb-3 text-[#1A1A1A]"
+              className="text-3xl md:text-4xl font-bold mb-3 text-[#0D2318]"
               style={{ fontFamily: "Times New Roman, serif" }}
             >
               What Our Community Says
@@ -904,29 +869,29 @@ export default function HomePage() {
               <motion.div
                 key={t.author}
                 variants={scaleIn}
-                className="bg-white rounded-2xl p-6 shadow-sm hover:shadow-lg transition-shadow"
+                className="bg-white rounded-2xl p-7 shadow-[0_4px_20px_rgba(0,0,0,0.04)] border border-[#EDE8DF] hover:shadow-[0_16px_40px_rgba(13,35,24,0.1)] transition-all duration-300 flex flex-col"
               >
                 <div className="flex gap-1 mb-4">
                   {[...Array(5)].map((_, i) => (
                     <Star key={i} className="w-4 h-4 fill-[#C9A961] text-[#C9A961]" />
                   ))}
                 </div>
-                <p className="text-sm leading-relaxed mb-5 italic text-[#4A4A4A]">
+                <p className="text-sm leading-relaxed mb-6 italic text-[#4A4A4A] font-medium flex-1">
                   &ldquo;{t.text}&rdquo;
                 </p>
-                <div className="flex items-center gap-3">
-                  <div className="relative w-10 h-10 rounded-full overflow-hidden flex-shrink-0">
+                <div className="flex items-center gap-3.5 pt-4 border-t border-[#EDE8DF]/60">
+                  <div className="relative w-11 h-11 rounded-full overflow-hidden flex-shrink-0 ring-2 ring-[#016C24]/20">
                     <Image
                       src={t.img}
                       alt={t.author}
                       fill
                       className="object-cover"
-                      sizes="40px"
+                      sizes="44px"
                     />
                   </div>
                   <div>
-                    <p className="font-semibold text-sm text-[#1A1A1A]">{t.author}</p>
-                    <p className="text-[11px] text-[#767676]">{t.role}</p>
+                    <p className="font-bold text-sm text-[#0D2318]">{t.author}</p>
+                    <p className="text-xs text-[#016C24] font-semibold">{t.role}</p>
                   </div>
                 </div>
               </motion.div>
@@ -936,34 +901,35 @@ export default function HomePage() {
       </section>
 
       {/* ══ 9. CANNABIS EDUCATION BLOG ═══════════════════════════════════════ */}
-      <section className="py-16" style={{ background: "#F5F0E8" }}>
+      <section className="py-20" style={{ background: "#F5F0E8" }}>
         <div className="container-site">
           <motion.div
             initial="hidden"
             whileInView="show"
             viewport={{ once: true }}
             variants={stagger}
-            className="flex items-end justify-between mb-8"
+            className="flex flex-col sm:flex-row items-start sm:items-end justify-between mb-10 gap-4"
           >
             <div>
+              <motion.p variants={fadeUp} className="text-xs font-bold uppercase tracking-[0.2em] text-[#C9A961] mb-1">
+                KNOWLEDGE & RESEARCH
+              </motion.p>
               <motion.h2
                 variants={fadeUp}
-                className="text-3xl font-bold"
-                style={{
-                  fontFamily: "Times New Roman, serif",
-                  color: "#016C24",
-                }}
+                className="text-3xl md:text-4xl font-bold text-[#0D2318]"
+                style={{ fontFamily: "Times New Roman, serif" }}
               >
-                Cannabis Education
+                Cannabis Education & Guides
               </motion.h2>
-              <motion.p variants={fadeUp} className="text-sm mt-1 text-[#767676]">
+              <motion.p variants={fadeUp} className="text-sm mt-1 text-[#4A4A4A] font-medium">
                 Expand your knowledge with our latest research and lifestyle guides.
               </motion.p>
             </div>
             <motion.div variants={fadeUp}>
               <Button
                 href="/blog"
-                className="text-ink border-ink hover:bg-ink hover:text-white px-4 py-1.5 text-sm rounded-full bg-transparent border transition-all"
+                variant="outline"
+                className="text-[#0D2318] border-[#0D2318] hover:bg-[#0D2318] hover:text-white px-5 py-2 text-xs font-bold uppercase tracking-wider rounded-full bg-transparent border transition-all"
               >
                 View All Articles
               </Button>
@@ -979,41 +945,34 @@ export default function HomePage() {
           >
             {blogPostsList.map((post: any) => (
               <motion.div key={post.id} variants={scaleIn}>
-                <Link href={`/blog/${post.slug}`} className="group block">
+                <Link href={`/blog/${post.slug}`} className="group block bg-white rounded-2xl p-4 border border-[#EDE8DF] hover:shadow-[0_16px_40px_rgba(13,35,24,0.1)] hover:border-[#016C24]/30 transition-all duration-300">
                   <div
-                    className="relative rounded-xl overflow-hidden mb-4"
+                    className="relative rounded-xl overflow-hidden mb-4 bg-[#F9F6F1]"
                     style={{ aspectRatio: "16/10" }}
                   >
                     <Image
                       src={post.img}
                       alt={post.title}
                       fill
-                      className="object-cover transition-transform duration-500 group-hover:scale-[1.05]"
+                      className="object-cover transition-transform duration-700 group-hover:scale-105"
                       sizes="(max-width:768px) 100vw, 33vw"
                     />
                   </div>
-                  <span
-                    className="text-[10px] font-bold tracking-widest uppercase block mb-1.5"
-                    style={{ color: "#2D6B4F" }}
-                  >
+                  <span className="text-[10px] font-extrabold tracking-widest uppercase block mb-2 text-[#016C24]">
                     {post.category}
                   </span>
                   <h3
-                    className="font-bold mb-2 transition-colors group-hover:opacity-70 text-[#1A1A1A]"
-                    style={{
-                      fontFamily: "Times New Roman, serif",
-                      fontSize: "1rem",
-                    }}
+                    className="font-bold mb-2 text-[#0D2318] group-hover:text-[#016C24] transition-colors text-lg"
+                    style={{ fontFamily: "Times New Roman, serif" }}
                   >
                     {post.title}
                   </h3>
-                  <p className="text-sm leading-relaxed mb-3 text-[#767676] line-clamp-2">
+                  <p className="text-sm leading-relaxed mb-4 text-[#4A4A4A] font-medium line-clamp-2">
                     {post.excerpt}
                   </p>
-                  <span
-                    className="flex items-center gap-1 text-sm font-semibold transition-all group-hover:gap-2 text-[#2D6B4F]"
-                  >
-                    Read Article <ArrowRight className="w-4 h-4" />
+                  <span className="flex items-center gap-1.5 text-xs font-bold text-[#016C24] group-hover:gap-2.5 transition-all">
+                    <span>Read Article</span>
+                    <ArrowRight className="w-3.5 h-3.5" />
                   </span>
                 </Link>
               </motion.div>
@@ -1023,38 +982,21 @@ export default function HomePage() {
       </section>
 
       {/* ══ 10. NEWSLETTER ═══════════════════════════════════════════════════ */}
-      <section className="py-4" style={{ background: "#F5F0E8" }}>
+      <section className="py-12" style={{ background: "#F5F0E8" }}>
         <div className="container-site">
-          <div className="relative rounded-3xl overflow-hidden py-12 px-8 md:px-28 bg-[#016C24] shadow-3xl">
-            <div className="absolute left-0 bottom-0 top-0 w-[120px] md:w-[250px] pointer-events-none select-none">
-              <Image
-                src="/images/cta-left.png"
-                alt="Cannabis Leaf Left"
-                fill
-                className="object-contain object-left-bottom"
-                sizes="(max-width: 768px) 120px, 180px"
-              />
-            </div>
-
-            <div className="absolute right-0 bottom-0 top-0 w-[120px] md:w-[280px] pointer-events-none select-none">
-              <Image
-                src="/images/Cta-right.png"
-                alt="Cannabis Leaf Right"
-                fill
-                className="object-contain object-right-bottom"
-                sizes="(max-width: 768px) 120px, 180px"
-              />
-            </div>
-
+          <div className="relative rounded-3xl overflow-hidden py-14 px-8 md:px-20 bg-gradient-to-r from-[#0D2318] via-[#016C24] to-[#0D2318] shadow-[0_20px_50px_rgba(13,35,24,0.25)] border border-white/15">
             <div className="relative z-10 flex flex-col lg:flex-row items-center justify-between gap-8">
               <div className="text-left text-white max-w-md">
+                <span className="text-[11px] font-extrabold tracking-[0.2em] uppercase text-[#E2C98A] block mb-2">
+                  STAY CONNECTED & INFORMED
+                </span>
                 <h2
-                  className="text-2xl md:text-4xl font-bold text-white mb-2"
+                  className="text-3xl md:text-4xl font-bold text-white mb-3"
                   style={{ fontFamily: "Times New Roman, serif" }}
                 >
                   Stay Elevated
                 </h2>
-                <p className="text-sm md:text-base text-white/85 leading-relaxed">
+                <p className="text-sm md:text-base text-white/85 leading-relaxed font-medium">
                   Subscribe to receive our latest organic drops, strain guides, discount coupons, and local dispensary delivery updates.
                 </p>
               </div>
@@ -1063,21 +1005,22 @@ export default function HomePage() {
                 onSubmit={handleSubscribeNewsletter}
                 className="flex flex-col sm:flex-row w-full lg:w-auto items-stretch sm:items-center gap-3"
               >
-                <div className="relative flex items-center bg-white rounded-full px-4 py-2.5 flex-1 sm:w-80 shadow-md">
-                  <Mail className="w-4 h-4 text-gray-400 mr-2.5 flex-shrink-0" />
+                <div className="relative flex items-center bg-white/95 rounded-full px-5 py-3 flex-1 sm:w-80 shadow-md">
+                  <Mail className="w-4 h-4 text-gray-400 mr-3 flex-shrink-0" />
                   <input
                     type="email"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                     placeholder="Enter your email address"
-                    className="bg-transparent border-none outline-none text-sm text-gray-800 placeholder-gray-400 w-full"
+                    className="bg-transparent border-none outline-none text-sm text-gray-900 placeholder-gray-500 w-full font-medium"
                   />
                 </div>
                 <Button
                   type="submit"
                   disabled={newsletterMutation.isPending}
-                  variant="primary"
-                  className="rounded-full px-8 py-2.5 border border-white text-white bg-transparent hover:bg-white hover:text-[#016C24] transition-all font-semibold shadow-md shrink-0"
+                  variant="gold"
+                  size="lg"
+                  className="shadow-lg shrink-0"
                 >
                   {newsletterMutation.isPending ? (
                     <Loader2 className="w-4 h-4 animate-spin" />
@@ -1092,25 +1035,28 @@ export default function HomePage() {
       </section>
 
       {/* ══ 11. FAQ ══════════════════════════════════════════════════════════ */}
-      <section className="py-16" style={{ background: "#F5F0E8" }}>
-        <div className="container-site" style={{ maxWidth: "720px" }}>
+      <section className="py-20" style={{ background: "#F5F0E8" }}>
+        <div className="container-site" style={{ maxWidth: "780px" }}>
           <motion.div
             initial="hidden"
             whileInView="show"
             viewport={{ once: true }}
             variants={stagger}
-            className="text-center mb-10"
+            className="text-center mb-12"
           >
+            <motion.p variants={fadeUp} className="text-xs font-bold uppercase tracking-[0.2em] text-[#C9A961] mb-2">
+              HELP & TRANSPARENCY
+            </motion.p>
             <motion.h2
               variants={fadeUp}
-              className="text-3xl font-bold text-[#1A1A1A]"
+              className="text-3xl md:text-4xl font-bold text-[#0D2318]"
               style={{ fontFamily: "Times New Roman, serif" }}
             >
               Frequently Asked Questions
             </motion.h2>
           </motion.div>
 
-          <div className="space-y-3">
+          <div className="space-y-4">
             {faqs.map((q, i) => (
               <motion.div
                 key={i}
@@ -1118,18 +1064,19 @@ export default function HomePage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.08, duration: 0.4 }}
-                className="bg-white rounded-xl overflow-hidden shadow-sm"
+                className="bg-white rounded-2xl overflow-hidden border border-[#EDE8DF] shadow-sm"
               >
                 <button
                   onClick={() => setOpenFaq(openFaq === i ? null : i)}
-                  className="w-full flex items-center justify-between px-6 py-4 text-[15px] font-semibold text-left transition-colors hover:opacity-70 text-[#2D6B4F]"
+                  className="w-full flex items-center justify-between px-6 py-5 text-base font-bold text-left transition-colors text-[#0D2318] hover:text-[#016C24]"
                 >
                   <span>{q.q}</span>
                   <motion.div
                     animate={{ rotate: openFaq === i ? 180 : 0 }}
                     transition={{ duration: 0.25 }}
+                    className="p-1 rounded-full bg-[#F5F0E8] ml-4 flex-shrink-0"
                   >
-                    <ChevronDown className="w-4 h-4 flex-shrink-0 text-[#2D6B4F]" />
+                    <ChevronDown className="w-4 h-4 text-[#016C24]" />
                   </motion.div>
                 </button>
                 <AnimatePresence initial={false}>
@@ -1141,7 +1088,7 @@ export default function HomePage() {
                       transition={{ duration: 0.3 }}
                       className="overflow-hidden"
                     >
-                      <p className="px-6 pb-5 text-sm md:text-base leading-relaxed text-[#767676]">
+                      <p className="px-6 pb-6 text-sm md:text-base leading-relaxed text-[#4A4A4A] font-medium border-t border-[#EDE8DF]/60 pt-4">
                         {q.a}
                       </p>
                     </motion.div>
