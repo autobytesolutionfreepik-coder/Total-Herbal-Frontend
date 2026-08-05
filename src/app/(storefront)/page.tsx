@@ -660,8 +660,8 @@ export default function HomePage() {
                 </motion.span>
                 <motion.h2
                   variants={fadeUp}
-                  className="text-3xl md:text-5xl font-bold mb-4 leading-tight text-white"
-                  style={{ fontFamily: "Times New Roman, serif" }}
+                  className="text-3xl md:text-5xl font-bold mb-4 leading-tight"
+                  style={{ fontFamily: "Times New Roman, serif", color: "white" }}
                 >
                   Seasonal Collection:
                   <br />
