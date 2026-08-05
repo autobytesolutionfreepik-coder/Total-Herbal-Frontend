@@ -80,226 +80,235 @@ export default function ShopPage() {
   };
 
   return (
-    <div className="container-site section-py">
-      {/* Header */}
-      <div className="text-center max-w-2xl mx-auto mb-10">
-        <h1 className="text-3xl sm:text-5xl font-serif font-bold text-green-950">
-          Our Organic Dispensary Catalog
-        </h1>
-        <p className="text-sm sm:text-base text-ink-muted mt-2">
-          Discover craft organic flowers, full-spectrum extracts, artisan edibles, and lab-tested tinctures.
-        </p>
-      </div>
-
-      <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
-        {/* Sidebar Filters */}
-        <div className="lg:col-span-3 bg-surface p-6 rounded-2xl border border-cream-dark/60 shadow-card space-y-6">
-          <div className="flex items-center justify-between border-b border-cream-dark/60 pb-3">
-            <h2 className="font-serif font-bold text-lg text-green-950 flex items-center gap-2">
-              <SlidersHorizontal className="w-4 h-4 text-green-700" />
-              Filter Products
-            </h2>
-          </div>
-
-          {/* Search Box */}
-          <form onSubmit={handleSearchSubmit}>
-            <label className="block text-xs font-semibold uppercase tracking-wider text-ink-muted mb-1.5">
-              Search Catalog
-            </label>
-            <div className="relative">
-              <input
-                type="text"
-                value={searchTerm}
-                onChange={(e) => setSearchTerm(e.target.value)}
-                placeholder="Strain, strain type, brand..."
-                className="w-full pl-9 pr-3 py-2 bg-cream/40 border border-cream-dark rounded-xl text-xs focus:outline-none focus:border-green-600"
-              />
-              <Search className="w-4 h-4 text-ink-subtle absolute left-3 top-2.5" />
-            </div>
-          </form>
-
-          {/* Categories */}
-          <div>
-            <label className="block text-xs font-semibold uppercase tracking-wider text-ink-muted mb-2">
-              Categories
-            </label>
-            <div className="space-y-1 text-sm">
-              <button
-                onClick={() =>
-                  setQueryParams((p) => ({ ...p, category: undefined, page: 1 }))
-                }
-                className={`block w-full text-left px-3 py-1.5 rounded-lg transition-colors text-xs font-semibold ${
-                  !queryParams.category
-                    ? "bg-green-100 text-green-800"
-                    : "text-ink-muted hover:bg-cream/60"
-                }`}
-              >
-                All Categories
-              </button>
-              {categories.map((cat) => (
-                <button
-                  key={cat.id}
-                  onClick={() =>
-                    setQueryParams((p) => ({ ...p, category: cat.slug, page: 1 }))
-                  }
-                  className={`block w-full text-left px-3 py-1.5 rounded-lg transition-colors text-xs font-semibold ${
-                    queryParams.category === cat.slug
-                      ? "bg-green-100 text-green-800"
-                      : "text-ink-muted hover:bg-cream/60"
-                  }`}
-                >
-                  {cat.name}
-                </button>
-              ))}
-            </div>
-          </div>
-
-          {/* Strain Type Filter */}
-          <div>
-            <label className="block text-xs font-semibold uppercase tracking-wider text-ink-muted mb-2">
-              Strain Type
-            </label>
-            <div className="flex flex-wrap gap-1.5">
-              {(["INDICA", "SATIVA", "HYBRID", "CBD"] as StrainType[]).map((type) => (
-                <button
-                  key={type}
-                  onClick={() =>
-                    setQueryParams((p) => ({
-                      ...p,
-                      strainType: p.strainType === type ? undefined : type,
-                      page: 1,
-                    }))
-                  }
-                  className={`px-2.5 py-1 rounded-md text-[11px] font-bold uppercase tracking-wider transition-all ${
-                    queryParams.strainType === type
-                      ? "bg-green-950 text-white"
-                      : "bg-cream/60 text-ink-muted hover:bg-cream"
-                  }`}
-                >
-                  {type}
-                </button>
-              ))}
-            </div>
+    <div className="bg-[#F5F0E8] min-h-screen section-py">
+      <div className="container-site">
+        {/* Header Hero Banner */}
+        <div className="relative rounded-3xl overflow-hidden mb-12 p-8 sm:p-14 bg-gradient-to-r from-[#0D2318] via-[#1B3A2D] to-[#0D2318] border border-white/15 shadow-[0_20px_50px_rgba(13,35,24,0.18)]">
+          <div className="relative z-10 max-w-2xl text-left">
+            <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-[11px] font-extrabold tracking-[0.2em] uppercase bg-[#C9A961] text-[#0D2318] mb-4 shadow-md">
+              <span className="w-1.5 h-1.5 rounded-full bg-[#0D2318] animate-pulse" />
+              CURATED BOTANICAL SELECTION
+            </span>
+            <h1 className="text-3xl sm:text-5xl font-serif font-bold text-white leading-tight mb-4">
+              Our Organic Dispensary Catalog
+            </h1>
+            <p className="text-sm sm:text-base text-white/85 leading-relaxed font-medium">
+              Discover craft organic flowers, full-spectrum extracts, artisan edibles, and lab-tested tinctures sourced directly from licensed California cultivators.
+            </p>
           </div>
         </div>
 
-        {/* Main Product Grid */}
-        <div className="lg:col-span-9 space-y-6">
-          {/* Top Sort & Result Count Bar */}
-          <div className="flex flex-wrap items-center justify-between gap-4 bg-surface p-4 rounded-xl border border-cream-dark/60">
-            <span className="text-xs font-semibold text-ink-muted">
-              Showing {products.length} of {meta?.total || products.length} items
-            </span>
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+          {/* Sidebar Filters */}
+          <div className="lg:col-span-3 bg-white p-6 rounded-2xl border border-[#EDE8DF] shadow-[0_4px_20px_rgba(0,0,0,0.04)] space-y-7 sticky top-24">
+            <div className="flex items-center justify-between border-b border-[#EDE8DF] pb-4">
+              <h2 className="font-serif font-bold text-lg text-[#0D2318] flex items-center gap-2.5">
+                <SlidersHorizontal className="w-4.5 h-4.5 text-[#016C24]" />
+                Filter Products
+              </h2>
+            </div>
 
-            <div className="flex items-center gap-2">
-              <span className="text-xs font-semibold text-ink-muted">Sort By:</span>
-              <select
-                value={queryParams.sort || "newest"}
-                onChange={(e) =>
-                  setQueryParams((p) => ({
-                    ...p,
-                    sort: e.target.value as ProductQueryParams["sort"],
-                  }))
-                }
-                className="bg-cream/40 border border-cream-dark rounded-lg px-3 py-1 text-xs font-semibold text-ink focus:outline-none"
-              >
-                <option value="newest">Newest Arrivals</option>
-                <option value="price_asc">Price: Low to High</option>
-                <option value="price_desc">Price: High to Low</option>
-                <option value="rating">Highest Rated</option>
-                <option value="name">Alphabetical</option>
-              </select>
+            {/* Search Box */}
+            <form onSubmit={handleSearchSubmit}>
+              <label className="block text-xs font-extrabold uppercase tracking-wider text-[#4A4A4A] mb-2">
+                Search Catalog
+              </label>
+              <div className="relative">
+                <input
+                  type="text"
+                  value={searchTerm}
+                  onChange={(e) => setSearchTerm(e.target.value)}
+                  placeholder="Strain, category, brand..."
+                  className="w-full pl-9 pr-3 py-2.5 bg-[#F9F6F1] border border-[#EDE8DF] rounded-xl text-xs font-semibold focus:outline-none focus:border-[#016C24] focus:bg-white transition-all text-[#0D2318]"
+                />
+                <Search className="w-4 h-4 text-[#767676] absolute left-3 top-3" />
+              </div>
+            </form>
+
+            {/* Categories */}
+            <div>
+              <label className="block text-xs font-extrabold uppercase tracking-wider text-[#4A4A4A] mb-2.5">
+                Categories
+              </label>
+              <div className="space-y-1 text-sm">
+                <button
+                  onClick={() =>
+                    setQueryParams((p) => ({ ...p, category: undefined, page: 1 }))
+                  }
+                  className={`block w-full text-left px-3.5 py-2 rounded-xl transition-all text-xs font-bold ${
+                    !queryParams.category
+                      ? "bg-[#0D2318] text-[#E2C98A] shadow-sm"
+                      : "text-[#4A4A4A] hover:bg-[#F9F6F1] hover:text-[#016C24]"
+                  }`}
+                >
+                  All Categories
+                </button>
+                {categories.map((cat) => (
+                  <button
+                    key={cat.id}
+                    onClick={() =>
+                      setQueryParams((p) => ({ ...p, category: cat.slug, page: 1 }))
+                    }
+                    className={`block w-full text-left px-3.5 py-2 rounded-xl transition-all text-xs font-bold ${
+                      queryParams.category === cat.slug
+                        ? "bg-[#0D2318] text-[#E2C98A] shadow-sm"
+                        : "text-[#4A4A4A] hover:bg-[#F9F6F1] hover:text-[#016C24]"
+                    }`}
+                  >
+                    {cat.name}
+                  </button>
+                ))}
+              </div>
+            </div>
+
+            {/* Strain Type Filter */}
+            <div>
+              <label className="block text-xs font-extrabold uppercase tracking-wider text-[#4A4A4A] mb-2.5">
+                Strain Type
+              </label>
+              <div className="flex flex-wrap gap-2">
+                {(["INDICA", "SATIVA", "HYBRID", "CBD"] as StrainType[]).map((type) => (
+                  <button
+                    key={type}
+                    onClick={() =>
+                      setQueryParams((p) => ({
+                        ...p,
+                        strainType: p.strainType === type ? undefined : type,
+                        page: 1,
+                      }))
+                    }
+                    className={`px-3 py-1.5 rounded-lg text-[11px] font-extrabold uppercase tracking-wider transition-all border ${
+                      queryParams.strainType === type
+                        ? "bg-[#016C24] text-white border-[#016C24] shadow-md"
+                        : "bg-[#F9F6F1] text-[#4A4A4A] border-[#EDE8DF] hover:border-[#016C24]/40"
+                    }`}
+                  >
+                    {type}
+                  </button>
+                ))}
+              </div>
             </div>
           </div>
 
-          {/* Products Grid */}
-          {isLoading ? (
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-              {[1, 2, 3, 4, 5, 6].map((i) => (
-                <div key={i} className="h-80 bg-surface rounded-2xl animate-pulse border border-cream-dark" />
-              ))}
-            </div>
-          ) : products.length === 0 ? (
-            <div className="bg-surface rounded-2xl p-12 text-center border border-cream-dark">
-              <p className="text-lg font-serif font-bold text-green-950">
-                No products match your selected filters.
-              </p>
-              <button
-                onClick={() => setQueryParams({ page: 1, limit: 12 })}
-                className="btn-outline text-xs mt-4"
-              >
-                Reset Filters
-              </button>
-            </div>
-          ) : (
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-              {products.map((prod) => (
-                <Link
-                  key={prod.id}
-                  href={`/products/${prod.slug}`}
-                  className="group card-base overflow-hidden flex flex-col p-4 bg-surface rounded-2xl border border-cream-dark/60 shadow-card hover:shadow-card-hover transition-all"
-                >
-                  <div className="relative aspect-square w-full rounded-xl overflow-hidden mb-3 bg-cream/40">
-                    <Image
-                      src={prod.images?.[0]?.url || "/placeholder-product.jpg"}
-                      alt={prod.name}
-                      fill
-                      className="object-cover group-hover:scale-105 transition-transform duration-300"
-                    />
-                    {prod.strainType !== "NONE" && (
-                      <span className="absolute top-2.5 left-2.5 strain-badge badge-hybrid text-[10px]">
-                        {prod.strainType}
-                      </span>
-                    )}
-                  </div>
-
-                  <span className="text-[11px] font-bold uppercase tracking-wider text-green-700">
-                    {prod.category?.name || "Herbal Care"}
-                  </span>
-                  <h3 className="font-serif font-bold text-lg text-green-950 group-hover:text-green-700 transition-colors line-clamp-1">
-                    {prod.name}
-                  </h3>
-
-                  <div className="mt-auto pt-3 flex items-center justify-between border-t border-cream-dark/40">
-                    <span className="text-lg font-serif font-bold text-green-950">
-                      {formatCurrency(prod.price)}
-                    </span>
-
-                    <button
-                      onClick={(e) => handleQuickAdd(e, prod)}
-                      className="btn-green p-2.5 rounded-full text-xs"
-                      title="Quick Add to Cart"
-                    >
-                      <ShoppingBag className="w-4 h-4" />
-                    </button>
-                  </div>
-                </Link>
-              ))}
-            </div>
-          )}
-
-          {/* Pagination */}
-          {meta && meta.totalPages > 1 && (
-            <div className="flex justify-center items-center gap-2 pt-6">
-              <button
-                disabled={!meta.hasPrevPage}
-                onClick={() => setQueryParams((p) => ({ ...p, page: (p.page || 1) - 1 }))}
-                className="btn-outline text-xs px-3 py-1.5 disabled:opacity-40"
-              >
-                Previous
-              </button>
-              <span className="text-xs font-semibold text-ink-muted">
-                Page {meta.page} of {meta.totalPages}
+          {/* Main Product Grid */}
+          <div className="lg:col-span-9 space-y-6">
+            {/* Top Sort & Result Count Bar */}
+            <div className="flex flex-wrap items-center justify-between gap-4 bg-white p-4.5 rounded-2xl border border-[#EDE8DF] shadow-[0_4px_20px_rgba(0,0,0,0.04)]">
+              <span className="text-xs font-extrabold text-[#4A4A4A]">
+                Showing <span className="text-[#0D2318] font-bold">{products.length}</span> of <span className="text-[#0D2318] font-bold">{meta?.total || products.length}</span> items
               </span>
-              <button
-                disabled={!meta.hasNextPage}
-                onClick={() => setQueryParams((p) => ({ ...p, page: (p.page || 1) + 1 }))}
-                className="btn-outline text-xs px-3 py-1.5 disabled:opacity-40"
-              >
-                Next
-              </button>
+
+              <div className="flex items-center gap-2.5">
+                <span className="text-xs font-extrabold text-[#4A4A4A]">Sort By:</span>
+                <select
+                  value={queryParams.sort || "newest"}
+                  onChange={(e) =>
+                    setQueryParams((p) => ({
+                      ...p,
+                      sort: e.target.value as ProductQueryParams["sort"],
+                    }))
+                  }
+                  className="bg-[#F9F6F1] border border-[#EDE8DF] rounded-xl px-3.5 py-1.5 text-xs font-bold text-[#0D2318] focus:outline-none focus:border-[#016C24]"
+                >
+                  <option value="newest">Newest Arrivals</option>
+                  <option value="price_asc">Price: Low to High</option>
+                  <option value="price_desc">Price: High to Low</option>
+                  <option value="rating">Highest Rated</option>
+                  <option value="name">Alphabetical</option>
+                </select>
+              </div>
             </div>
-          )}
+
+            {/* Products Grid */}
+            {isLoading ? (
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                {[1, 2, 3, 4, 5, 6].map((i) => (
+                  <div key={i} className="h-88 bg-white rounded-2xl animate-pulse border border-[#EDE8DF]" />
+                ))}
+              </div>
+            ) : products.length === 0 ? (
+              <div className="bg-white rounded-3xl p-14 text-center border border-[#EDE8DF] shadow-sm">
+                <p className="text-xl font-serif font-bold text-[#0D2318]">
+                  No products match your selected filters.
+                </p>
+                <button
+                  onClick={() => setQueryParams({ page: 1, limit: 12 })}
+                  className="btn-outline text-xs mt-5 px-6 py-2.5 text-[#0D2318] border-[#0D2318]"
+                >
+                  Reset All Filters
+                </button>
+              </div>
+            ) : (
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                {products.map((prod) => (
+                  <Link
+                    key={prod.id}
+                    href={`/products/${prod.slug}`}
+                    className="group relative rounded-2xl overflow-hidden flex flex-col p-4 bg-white border border-[#EDE8DF] shadow-[0_4px_20px_rgba(0,0,0,0.04)] hover:shadow-[0_16px_40px_rgba(13,35,24,0.12)] hover:border-[#016C24]/30 hover:-translate-y-1.5 transition-all duration-300 h-full"
+                  >
+                    <div className="relative aspect-square w-full rounded-xl overflow-hidden mb-4 bg-[#F9F6F1]">
+                      <Image
+                        src={prod.images?.[0]?.url || "/images/Skywalker-OG.png"}
+                        alt={prod.name}
+                        fill
+                        className="object-cover group-hover:scale-105 transition-transform duration-700"
+                        sizes="(max-width:640px) 100vw, (max-width:1024px) 50vw, 33vw"
+                      />
+                      {prod.strainType && prod.strainType !== "NONE" && (
+                        <span className="absolute top-3 left-3 text-white text-[10px] font-extrabold tracking-wider uppercase px-3 py-1 rounded-full bg-[#0D2318]/80 backdrop-blur-md border border-white/20 shadow-md">
+                          {prod.strainType}
+                        </span>
+                      )}
+                    </div>
+
+                    <span className="text-[11px] font-extrabold uppercase tracking-widest text-[#016C24] mb-1">
+                      {prod.category?.name || "Herbal Care"}
+                    </span>
+                    <h3 className="font-bold text-lg text-[#0D2318] group-hover:text-[#016C24] transition-colors line-clamp-1 font-sans">
+                      {prod.name}
+                    </h3>
+
+                    <div className="mt-auto pt-4 flex items-center justify-between border-t border-[#EDE8DF]/60">
+                      <span className="text-xl font-extrabold text-[#0D2318] font-sans">
+                        {formatCurrency(prod.price)}
+                      </span>
+
+                      <button
+                        onClick={(e) => handleQuickAdd(e, prod)}
+                        className="w-10 h-10 rounded-full bg-[#016C24] hover:bg-[#027F2C] text-white flex items-center justify-center transition-all shadow-[0_4px_16px_rgba(1,108,36,0.25)] hover:scale-105 active:scale-95"
+                        title="Quick Add to Cart"
+                      >
+                        <ShoppingBag className="w-4.5 h-4.5" />
+                      </button>
+                    </div>
+                  </Link>
+                ))}
+              </div>
+            )}
+
+            {/* Pagination */}
+            {meta && meta.totalPages > 1 && (
+              <div className="flex justify-center items-center gap-3 pt-8">
+                <button
+                  disabled={!meta.hasPrevPage}
+                  onClick={() => setQueryParams((p) => ({ ...p, page: (p.page || 1) - 1 }))}
+                  className="btn-outline text-xs px-4 py-2 text-[#0D2318] border-[#0D2318] disabled:opacity-40"
+                >
+                  Previous
+                </button>
+                <span className="text-xs font-bold text-[#4A4A4A]">
+                  Page <span className="text-[#0D2318]">{meta.page}</span> of <span className="text-[#0D2318]">{meta.totalPages}</span>
+                </span>
+                <button
+                  disabled={!meta.hasNextPage}
+                  onClick={() => setQueryParams((p) => ({ ...p, page: (p.page || 1) + 1 }))}
+                  className="btn-outline text-xs px-4 py-2 text-[#0D2318] border-[#0D2318] disabled:opacity-40"
+                >
+                  Next
+                </button>
+              </div>
+            )}
+          </div>
         </div>
       </div>
     </div>
