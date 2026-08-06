@@ -398,10 +398,10 @@ export default function HomePage() {
                 color: "#fff",
               }}
             >
-              Premium Organic Cannabis
+              Organic Cannabis
+
               <br />
-              Formulas for Every
-              <br />
+              Formulas for Every              <br />
               <span className="text-[#C9A961]">Lifestyle</span>
             </motion.h1>
 
@@ -631,49 +631,53 @@ export default function HomePage() {
       </section>
 
       {/* ══ 5. SEASONAL BANNER ═══════════════════════════════════════════════ */}
-      <section className="py-12 bg-transparent">
+      <section className="py-14 md:py-20" style={{ background: "#ede2d7" }}>
         <div className="container-site">
-          <div className="relative rounded-3xl overflow-hidden shadow-[0_20px_50px_rgba(13,35,24,0.18)] min-h-[420px] flex items-center border border-white/20">
+          <div className="relative rounded-[28px] sm:rounded-[36px] overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.15)] min-h-[440px] md:min-h-[480px] flex items-center justify-center border border-white/20">
             <Image
               src="/images/Limited-time-offer.png"
               alt="Seasonal Collection"
               fill
-              className="object-cover object-center brightness-75"
+              className="object-cover object-center brightness-90"
               sizes="100vw"
             />
-            <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/50 to-transparent" />
-            <div className="relative z-10 p-8 sm:p-14 max-w-2xl text-left">
+            <div className="absolute inset-0 bg-black/45" />
+            <div className="relative z-10 p-8 sm:p-16 max-w-2xl text-center flex flex-col items-center justify-center">
               <motion.div
                 initial="hidden"
                 whileInView="show"
                 viewport={{ once: true }}
                 variants={stagger}
+                className="flex flex-col items-center"
               >
-                <motion.span
+                <motion.p
                   variants={fadeUp}
-                  className="inline-block text-[11px] font-extrabold tracking-[0.22em] uppercase mb-3 px-4 py-1.5 rounded-full bg-[#C9A961] text-[#0D2318] shadow-md"
+                  className="text-xs sm:text-sm font-bold tracking-[0.22em] uppercase mb-4 text-white/90"
                 >
                   LIMITED TIME OFFER
-                </motion.span>
+                </motion.p>
                 <motion.h2
                   variants={fadeUp}
-                  className="text-3xl md:text-5xl font-bold mb-4 leading-tight"
-                  style={{ fontFamily: "Times New Roman, serif", color: "white" }}
+                  className="text-4xl sm:text-6xl md:text-5xl font-bold mb-4 leading-tight "
+                  style={{ fontFamily: "Times New Roman, serif", color:"white" }}
                 >
                   Seasonal Collection:
                   <br />
-                  <span className="text-[#E2C98A]">Fresh Summer Blooms</span>
+                  Fresh Summer Blooms
                 </motion.h2>
                 <motion.p
                   variants={fadeUp}
-                  className="text-sm md:text-base mb-8 leading-relaxed text-white/90 font-medium max-w-lg"
+                  className="text-md sm:text-lg mb-8 leading-relaxed text-white/95 font-normal max-w-xl mx-auto"
                 >
-                  Experience limited release organic terpene blends and high-potency concentrates crafted for summer relaxation.
+                  Experience the essence of the season with our exclusive sun-grown flower collection. 20% off all flower products this week.
                 </motion.p>
                 <motion.div variants={fadeUp}>
-                  <Button href="/shop" variant="gold" size="lg" className="shadow-xl">
-                    Explore Seasonal Collection <ArrowRight className="w-4 h-4 ml-1" />
-                  </Button>
+                  <Link
+                    href="/shop"
+                    className="bg-white hover:bg-neutral-100 text-[#006828] font-semibold text-sm sm:text-base px-8 py-3.5 rounded-full transition-all duration-200 shadow-md inline-flex items-center justify-center hover:scale-[1.02]"
+                  >
+                    Explore the Sale
+                  </Link>
                 </motion.div>
               </motion.div>
             </div>
@@ -682,7 +686,7 @@ export default function HomePage() {
       </section>
 
       {/* ══ 6. DIFFERENCE ════════════════════════════════════════════════════ */}
-      <section className="py-20" style={{ background: "#F5F0E8" }}>
+      <section className="py-20" style={{ background: "#ede2d7" }}>
         <div className="container-site">
           <motion.div
             initial="hidden"
