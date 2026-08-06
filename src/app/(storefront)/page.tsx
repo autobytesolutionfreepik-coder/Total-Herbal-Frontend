@@ -633,7 +633,7 @@ export default function HomePage() {
       {/* ══ 5. SEASONAL BANNER ═══════════════════════════════════════════════ */}
       <section className="py-14 md:py-20" style={{ background: "#ede2d7" }}>
         <div className="container-site">
-          <div className="relative rounded-[28px] sm:rounded-[36px] overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.15)] min-h-[440px] md:min-h-[480px] flex items-center justify-center border border-white/20">
+          <div className="relative rounded-[28px] sm:rounded-[36px] overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.15)] min-h-[440px] md:min-h-[580px] flex items-center justify-center border border-white/20">
             <Image
               src="/images/Limited-time-offer.png"
               alt="Seasonal Collection"
