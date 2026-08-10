@@ -63,7 +63,7 @@ const defaultCategories = [
     slug: "infused-drinks",
     img: "/images/Infused-Drinks.png",
   },
-  { label: "Topicals", slug: "topicals", img: "/images/Oils.png" },
+  { label: "Oils", slug: "oils", img: "/images/Oils.png" },
   { label: "Tinctures", slug: "tinctures", img: "/images/Tinctures.png" },
   { label: "Herbal Teas", slug: "herbal-teas", img: "/images/Herbal-Teas.png" },
   { label: "Apothecary", slug: "apothecary", img: "/images/Apothecary.png" },
@@ -358,7 +358,7 @@ export default function HomePage() {
       {/* ══ 1. HERO ══════════════════════════════════════════════════════════ */}
       <section
         ref={heroRef}
-        className="relative min-h-[600px] lg:min-h-[680px] overflow-hidden flex items-center bg-[#0D2318]"
+        className="relative min-h-[600px] lg:min-h-[680px] overflow-hidden flex items-center"
       >
         <motion.div
           style={{ y: heroY }}
@@ -369,7 +369,7 @@ export default function HomePage() {
             alt="Premium cannabis products"
             fill
             priority
-            className="object-cover object-center brightness-90"
+            className="object-cover object-center"
             sizes="100vw"
           />
           <div className="absolute inset-0 bg-gradient-to-r from-[#0D2318]/90 via-[#0D2318]/65 to-transparent" />
@@ -433,7 +433,7 @@ export default function HomePage() {
       {/* ══ 2. TRUST STRIP ═══════════════════════════════════════════════════ */}
       <section className="relative z-20 -mt-12 md:-mt-16 bg-transparent py-0">
         <div className="container-site">
-          <div className="rounded-2xl sm:rounded-3xl py-7 md:py-9 px-6 md:px-10 shadow-[0_20px_50px_rgba(1,108,36,0.3)] bg-gradient-to-b from-[#016C24] via-[#084824] to-[#071F14] border border-white/25 backdrop-blur-xl">
+          <div className="rounded-2xl sm:rounded-3xl py-7 md:py-9 px-6 md:px-10 bg-gradient-to-b from-[#016C24] via-[#084824] to-[#071F14] border border-white/25 backdrop-blur-xl">
             <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-6 md:gap-18 items-center">
               {trustItems.map(({ img, label, sub }) => (
                 <div key={label} className="flex items-center gap-3.5 sm:gap-4 group hover:translate-y-[-2px] transition-transform duration-300">
@@ -462,27 +462,24 @@ export default function HomePage() {
       </section>
 
       {/* ══ 3. EXPLORE COLLECTION ════════════════════════════════════════════ */}
-      <section className="py-20" style={{ background: "#E9E4DE" }}>
+      <section className="py-16 md:py-20 lg:py-24" style={{ background: "#EDE6DB" }}>
         <div className="container-site">
           <motion.div
             initial="hidden"
             whileInView="show"
             viewport={{ once: true, margin: "-60px" }}
             variants={stagger}
-            className="text-center mb-14"
+            className="text-center mb-10 md:mb-14 lg:mb-16"
           >
-            <motion.p variants={fadeUp} className="text-sm font-bold uppercase tracking-[0.2em] text-[#C9A961] mb-2">
-              CURATED BOTANICAL CATEGORIES
-            </motion.p>
             <motion.h2
               variants={fadeUp}
-              className="text-5xl md:text-6xl font-bold tracking-tight"
-              style={{ fontFamily: "Times New Roman, serif", color: "#0D2318" }}
+              className="text-3xl sm:text-4xl md:text-5xl lg:text-[2.65rem] font-bold tracking-tight text-[#054E26]"
+              style={{ fontFamily: "Times New Roman, serif" }}
             >
               Explore Our Collection
             </motion.h2>
-            <motion.div variants={fadeUp} className="flex justify-center mt-3 mb-1">
-              <div className="w-12 h-1 rounded-full bg-gradient-to-r from-[#016C24] to-[#C9A961]" />
+            <motion.div variants={fadeUp} className="flex justify-center mt-3.5">
+              <div className="w-12 h-1 rounded-full bg-[#054E26]" />
             </motion.div>
           </motion.div>
 
@@ -491,26 +488,26 @@ export default function HomePage() {
             whileInView="show"
             viewport={{ once: true, margin: "-40px" }}
             variants={stagger}
-            className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-5"
+            className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-x-5 gap-y-7 sm:gap-x-6 sm:gap-y-8 lg:gap-x-7 lg:gap-y-9"
           >
-            {categoriesList.map((cat: { label: string; slug: string; img: string }) => (
+            {defaultCategories.map((cat: { label: string; slug: string; img: string }) => (
               <motion.div key={cat.label} variants={scaleIn}>
                 <Link
                   href={`/shop?category=${cat.slug}`}
-                  className="group block text-center bg-white rounded-2xl p-3 border border-[#EDE8DF] shadow-[0_4px_20px_rgba(0,0,0,0.04)] hover:shadow-[0_12px_32px_rgba(13,35,24,0.12)] hover:border-[#016C24]/30 hover:-translate-y-1.5 transition-all duration-300"
+                  className="group block text-center"
                 >
-                  <div className="relative overflow-hidden rounded-xl mb-3 aspect-[4/3] bg-[#F9F6F1]">
+                  <div className="relative aspect-square w-full overflow-hidden">
                     <Image
                       src={cat.img}
                       alt={cat.label}
                       fill
-                      className="object-cover transition-transform duration-700 group-hover:scale-110"
+                      className="object-cover transition-transform duration-500 group-hover:scale-105"
                       sizes="(max-width:640px) 50vw, (max-width:1024px) 33vw, 20vw"
                     />
                   </div>
-                  <p className="text-sm font-extrabold text-[#0D2318] group-hover:text-[#016C24] transition-colors font-sans">
+                  <h3 className="mt-3.5 sm:mt-4 text-base sm:text-lg lg:text-[1.15rem] font-bold text-[#054E26] group-hover:text-[#03371a] transition-colors font-sans">
                     {cat.label}
-                  </p>
+                  </h3>
                 </Link>
               </motion.div>
             ))}

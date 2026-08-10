@@ -29,7 +29,7 @@ function SafeNavLinks({ navLinks }: { navLinks: { label: string; href: string }[
   }
 
   return (
-    <nav className="hidden md:flex items-center gap-7 lg:gap-9 xl:gap-11">
+    <nav className="hidden xl:flex items-center gap-5 lg:gap-7 xl:gap-9">
       {navLinks.map((link) => {
         const isActive = pathname === link.href || (link.href !== "/" && pathname.startsWith(link.href));
         return (
@@ -37,7 +37,7 @@ function SafeNavLinks({ navLinks }: { navLinks: { label: string; href: string }[
             key={link.label}
             href={link.href}
             className={cn(
-              "text-[15px] font-bold tracking-wider uppercase transition-colors duration-200 relative py-2",
+              "text-[14px] xl:text-[15px] font-bold tracking-wider uppercase transition-colors duration-200 relative py-2 whitespace-nowrap",
               isActive
                 ? "text-[#006828] border-b-2 border-[#006828]"
                 : "text-[#6E6E73] hover:text-[#006828]"
@@ -89,15 +89,15 @@ export function Header() {
   return (
     <>
       {/* Announcement Bar - Figma Match */}
-      <div className="bg-[#006828] text-white text-[11px] font-semibold tracking-widest py-2 select-none w-full border-b border-white/10 text-center uppercase">
-        <div className="container-site flex items-center justify-center gap-2">
+      <div className="bg-[#006828] text-white text-[10px] sm:text-[11px] font-semibold tracking-widest py-2 select-none w-full border-b border-white/10 text-center uppercase overflow-hidden">
+        <div className="container-site flex items-center justify-center gap-1.5 sm:gap-2 flex-wrap">
           <span>PREMIUM CANNABIS PRODUCTS</span>
           <span className="text-white/70">•</span>
           <span>ADULTS 21+ ONLY</span>
-          <span className="text-white/70">•</span>
-          <span>LAB TESTED</span>
-          <span className="text-white/70">•</span>
-          <span>SECURE SHOPPING</span>
+          <span className="text-white/70 hidden sm:inline">•</span>
+          <span className="hidden sm:inline">LAB TESTED</span>
+          <span className="text-white/70 hidden md:inline">•</span>
+          <span className="hidden md:inline">SECURE SHOPPING</span>
         </div>
       </div>
 
@@ -108,33 +108,33 @@ export function Header() {
           scrolled ? "shadow-md" : ""
         )}
       >
-        <div className="container-site flex items-center justify-between h-20 gap-4">
-          {/* Mobile: Left Hamburger Toggle */}
+        <div className="container-site flex items-center justify-between h-20 gap-2 sm:gap-4 overflow-hidden">
+          {/* Mobile/Tablet: Left Hamburger Toggle */}
           <button
             aria-label="Toggle menu"
             onClick={() => setMobileOpen(true)}
-            className="md:hidden p-2.5 -ml-2 rounded-full hover:bg-neutral-100 transition-colors text-[#1A1A1A]"
+            className="xl:hidden p-2 -ml-1 sm:-ml-2 rounded-full hover:bg-neutral-100 transition-colors text-[#1A1A1A] flex-shrink-0"
           >
-            <Menu className="w-5 h-5 text-[#1A1A1A]" />
+            <Menu className="w-6 h-6 text-[#1A1A1A]" />
           </button>
 
-          {/* Desktop Left: Logo matching Figma (Larger size, reduced boldness) */}
-          <div className="flex-1 md:flex-initial flex justify-center md:justify-start">
-            <Link href="/" className="inline-flex items-center group">
+          {/* Desktop Left: Logo matching Figma */}
+          <div className="flex-1 xl:flex-initial flex justify-center xl:justify-start min-w-0">
+            <Link href="/" className="inline-flex items-center group whitespace-nowrap">
               <span
-                className="text-3xl sm:text-4xl lg:text-[2.35rem] font-medium leading-none text-black tracking-tight"
+                className="text-2xl sm:text-3xl lg:text-[2.2rem] font-medium leading-none text-black tracking-tight"
                 style={{ fontFamily: "Times New Roman, serif" }}
               >
                 Total
               </span>
               <span
-                className="text-3xl sm:text-4xl lg:text-[2.35rem] font-medium leading-none text-[#006828] tracking-tight"
+                className="text-2xl sm:text-3xl lg:text-[2.2rem] font-medium leading-none text-[#006828] tracking-tight"
                 style={{ fontFamily: "Times New Roman, serif" }}
               >
                 Herbal
               </span>
               <span
-                className="text-3xl sm:text-4xl lg:text-[2.35rem] font-medium leading-none text-black tracking-tight"
+                className="text-2xl sm:text-3xl lg:text-[2.2rem] font-medium leading-none text-black tracking-tight"
                 style={{ fontFamily: "Times New Roman, serif" }}
               >
                 Care
@@ -146,11 +146,11 @@ export function Header() {
           <SafeNavLinks navLinks={navLinks} />
 
           {/* Desktop Right / Mobile Right: Actions */}
-          <div className="flex items-center gap-3.5 flex-shrink-0">
+          <div className="flex items-center gap-2 sm:gap-3 flex-shrink-0">
             {/* Search Input (Pill style matching Figma) */}
             <form
               onSubmit={handleSearchSubmit}
-              className="hidden lg:flex items-center gap-2 bg-[#EFEFEF] rounded-full px-4 py-2 w-44 xl:w-56 focus-within:bg-white focus-within:ring-1 focus-within:ring-[#006828] transition-all duration-300"
+              className="hidden 2xl:flex items-center gap-2 bg-[#EFEFEF] rounded-full px-4 py-2 w-44 xl:w-56 focus-within:bg-white focus-within:ring-1 focus-within:ring-[#006828] transition-all duration-300"
             >
               <Search className="w-4 h-4 text-[#8E8E93] flex-shrink-0" />
               <input
@@ -166,7 +166,7 @@ export function Header() {
             <Link
               href={isAuthenticated ? "/account" : "/sign-in"}
               aria-label="Account"
-              className="p-2 rounded-full hover:bg-neutral-100 transition-all text-[#1A1A1A] hover:text-[#006828]"
+              className="p-1.5 sm:p-2 rounded-full hover:bg-neutral-100 transition-all text-[#1A1A1A] hover:text-[#006828]"
             >
               <User className="w-5 h-5" />
             </Link>
@@ -175,7 +175,7 @@ export function Header() {
             <Link
               href={isAuthenticated ? "/account/wishlist" : "/sign-in"}
               aria-label="Wishlist"
-              className="p-2 rounded-full hover:bg-neutral-100 transition-all text-[#1A1A1A] hover:text-[#006828] relative"
+              className="p-1.5 sm:p-2 rounded-full hover:bg-neutral-100 transition-all text-[#1A1A1A] hover:text-[#006828] relative"
             >
               <Heart className="w-5 h-5" />
               {wishlistCount > 0 && (
@@ -189,7 +189,7 @@ export function Header() {
             <button
               onClick={openCartDrawer}
               aria-label="Shopping Cart"
-              className="p-2 rounded-full hover:bg-neutral-100 transition-all text-[#1A1A1A] hover:text-[#006828] relative"
+              className="p-1.5 sm:p-2 rounded-full hover:bg-neutral-100 transition-all text-[#1A1A1A] hover:text-[#006828] relative"
             >
               <ShoppingCart className="w-5 h-5" />
               <span className="absolute -top-0.5 -right-0.5 w-4.5 h-4.5 bg-[#006828] text-white text-[10px] font-extrabold rounded-full flex items-center justify-center">
@@ -200,7 +200,7 @@ export function Header() {
             {/* Shop Now Button matching Figma */}
             <Link
               href="/shop"
-              className="hidden sm:inline-flex bg-[#006828] hover:bg-[#005220] text-white text-sm font-semibold px-6 py-2.5 rounded-full transition-all duration-200 shadow-sm"
+              className="hidden sm:inline-flex bg-[#006828] hover:bg-[#005220] text-white text-xs sm:text-sm font-semibold px-4 sm:px-6 py-2 sm:py-2.5 rounded-full transition-all duration-200 shadow-sm whitespace-nowrap"
             >
               Shop Now
             </Link>
@@ -216,7 +216,7 @@ export function Header() {
                 animate={{ opacity: 0.5 }}
                 exit={{ opacity: 0 }}
                 onClick={() => setMobileOpen(false)}
-                className="fixed inset-0 z-50 bg-black md:hidden"
+                className="fixed inset-0 z-50 bg-black xl:hidden"
               />
 
               <motion.div
@@ -224,7 +224,7 @@ export function Header() {
                 animate={{ x: 0 }}
                 exit={{ x: "-100%" }}
                 transition={{ type: "spring", damping: 25, stiffness: 200 }}
-                className="fixed top-0 bottom-0 left-0 z-50 w-[280px] bg-white shadow-2xl p-6 flex flex-col gap-6 md:hidden overflow-y-auto"
+                className="fixed top-0 bottom-0 left-0 z-50 w-[280px] bg-white shadow-2xl p-6 flex flex-col gap-6 xl:hidden overflow-y-auto"
               >
                 <div className="flex items-center justify-between pb-4 border-b border-[#EDE8DF]">
                   <Link
