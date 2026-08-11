@@ -823,8 +823,8 @@ export default function HomePage() {
               </motion.p>
               <motion.h2
                 variants={fadeUp}
-                className="text-3xl md:text-4xl font-bold text-[#0D2318]"
-                style={{ fontFamily: "Times New Roman, serif" }}
+                className="text-3xl md:text-4xl font-bold"
+                style={{ fontFamily: "Times New Roman, serif", color: "#fff" }}
               >
                 Cannabis Education & Guides
               </motion.h2>
