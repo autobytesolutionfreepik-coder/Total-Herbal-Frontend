@@ -113,7 +113,10 @@ export function Footer() {
 
           {/* Column 2: Quick Links */}
           <div className="lg:col-span-2">
-            <h4 className="text-xs sm:text-sm font-bold uppercase tracking-wider text-white mb-5 font-sans">
+            <h4
+              className="text-xs sm:text-sm font-bold uppercase tracking-wider text-white mb-5 font-sans"
+              style={{ color: "#ffffff" }}
+            >
               QUICK LINKS
             </h4>
             <ul className="space-y-3">
@@ -132,7 +135,10 @@ export function Footer() {
 
           {/* Column 3: Support */}
           <div className="lg:col-span-3">
-            <h4 className="text-xs sm:text-sm font-bold uppercase tracking-wider text-white mb-5 font-sans">
+            <h4
+              className="text-xs sm:text-sm font-bold uppercase tracking-wider text-white mb-5 font-sans"
+              style={{ color: "#ffffff" }}
+            >
               SUPPORT
             </h4>
             <ul className="space-y-3">
@@ -151,7 +157,10 @@ export function Footer() {
 
           {/* Column 4: Our Location & Map */}
           <div className="lg:col-span-3 space-y-4">
-            <h4 className="text-xs sm:text-sm font-bold uppercase tracking-wider text-white mb-4 font-sans">
+            <h4
+              className="text-xs sm:text-sm font-bold uppercase tracking-wider text-white mb-4 font-sans"
+              style={{ color: "#ffffff" }}
+            >
               OUR LOCATION
             </h4>
             <div className="text-sm text-white/80 leading-relaxed font-sans space-y-1">

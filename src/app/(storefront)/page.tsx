@@ -474,13 +474,13 @@ export default function HomePage() {
           >
             <motion.h2
               variants={fadeUp}
-              className="text-3xl sm:text-4xl md:text-5xl lg:text-[2.65rem] font-bold tracking-tight text-[#054E26]"
-              style={{ fontFamily: "Times New Roman, serif" }}
+              className="text-3xl sm:text-4xl md:text-5xl lg:text-[2.65rem] font-bold tracking-tight text-[#006828]"
+              style={{ fontFamily: "Times New Roman, serif", color: "#006828" }}
             >
               Explore Our Collection
             </motion.h2>
             <motion.div variants={fadeUp} className="flex justify-center mt-3.5">
-              <div className="w-12 h-1 rounded-full bg-[#054E26]" />
+              <div className="w-12 h-1 rounded-full bg-[#006828]" />
             </motion.div>
           </motion.div>
 
@@ -506,7 +506,10 @@ export default function HomePage() {
                       sizes="(max-width:640px) 50vw, (max-width:1024px) 33vw, 20vw"
                     />
                   </div>
-                  <h3 className="mt-3.5 sm:mt-4 text-base sm:text-lg lg:text-[1.15rem] font-bold text-[#054E26] group-hover:text-[#03371a] transition-colors font-sans">
+                  <h3
+                    className="mt-3.5 sm:mt-4 text-base sm:text-lg lg:text-[1.15rem] font-bold text-[#006828] group-hover:text-[#005220] transition-colors font-sans"
+                    style={{ color: "#006828" }}
+                  >
                     {cat.label}
                   </h3>
                 </Link>
@@ -517,40 +520,37 @@ export default function HomePage() {
       </section>
 
       {/* ══ 4. NEW ARRIVALS ══════════════════════════════════════════════════ */}
-      <section className="py-12" style={{ background: "#ede2d7" }}>
+      <section className="py-12 md:py-16" style={{ background: "#EDE2D7" }}>
         <div className="container-site">
           <motion.div
             initial="hidden"
             whileInView="show"
             viewport={{ once: true }}
             variants={stagger}
-            className="flex flex-col sm:flex-row items-start sm:items-end justify-between mb-10 gap-4"
+            className="flex flex-col sm:flex-row items-start sm:items-end justify-between mb-8 gap-4"
           >
             <div>
-              <motion.p variants={fadeUp} className="text-sm font-bold uppercase tracking-[0.2em] text-[#C9A961] mb-1">
-                FRESHLY HARVESTED
-              </motion.p>
               <motion.h2
                 variants={fadeUp}
-                className="text-5xl md:text-6xl font-bold tracking-tight text-[#0D2318]"
-                style={{ fontFamily: "Times New Roman, serif", color: "#027F2C" }}
+                className="text-4xl sm:text-5xl font-bold tracking-tight text-[#006828]"
+                style={{ fontFamily: "Times New Roman, serif", color: "#006828" }}
               >
                 New Arrivals
               </motion.h2>
               <motion.p
                 variants={fadeUp}
-                className="text-md mt-1 text-[#4A4A4A] font-medium"
+                className="text-sm sm:text-base mt-1 text-[#666666] font-medium"
               >
-                Fresh organic harvests and laboratory-tested dispensary additions.
+                Our latest premium drops, laboratory-certified.
               </motion.p>
             </div>
             <motion.div variants={fadeUp}>
               <Link
                 href="/shop"
-                className="text-sm font-bold flex items-center gap-1.5 text-[#016C24] hover:text-[#0D2318] transition-colors group"
+                className="text-sm font-bold text-[#006828] hover:text-[#005220] underline underline-offset-4 transition-colors"
+                style={{ color: "#006828" }}
               >
-                <span>View All Catalog</span>
-                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                View All Products
               </Link>
             </motion.div>
           </motion.div>
@@ -565,7 +565,7 @@ export default function HomePage() {
             {newArrivals.map((p: { id: string; name: string; type: string; strain: string; thc: string; price: string; rating: number; reviewsCount: number; img: string; slug: string }) => {
               return (
                 <motion.div key={p.id} variants={scaleIn}>
-                  <div className="group relative rounded-2xl overflow-hidden flex flex-col bg-white border border-[#EDE8DF] hover:border-[#016C24]/30 shadow-[0_4px_20px_rgba(0,0,0,0.04)] hover:shadow-[0_16px_40px_rgba(13,35,24,0.12)] hover:-translate-y-1.5 transition-all duration-300 h-full">
+                  <div className="group relative rounded-2xl overflow-hidden flex flex-col bg-white border border-[#EDE8DF] hover:border-[#006828]/30 shadow-[0_4px_20px_rgba(0,0,0,0.04)] hover:shadow-[0_16px_40px_rgba(13,35,24,0.12)] hover:-translate-y-1.5 transition-all duration-300 h-full">
                     <Link href={`/products/${p.slug}`} className="block relative w-full aspect-[4/5] bg-[#F9F6F1] overflow-hidden">
                       <Image
                         src={p.img}
@@ -575,7 +575,7 @@ export default function HomePage() {
                         sizes="(max-width:640px) 100vw, (max-width:1024px) 50vw, 25vw"
                       />
                       <span
-                        className="absolute top-3.5 left-3.5 text-white text-[10px] font-extrabold tracking-wider uppercase px-3 py-1 rounded-full bg-[#0D2318]/80 backdrop-blur-md border border-white/20 shadow-md"
+                        className="absolute top-3.5 left-3.5 text-white text-[10px] font-extrabold tracking-wider uppercase px-3 py-1 rounded-full bg-[#006828] shadow-sm"
                       >
                         {p.type}
                       </span>
@@ -595,29 +595,33 @@ export default function HomePage() {
                       </div>
 
                       <Link href={`/products/${p.slug}`}>
-                        <h3 className="font-bold leading-snug text-lg text-[#0D2318] group-hover:text-[#016C24] transition-colors font-sans">
+                        <h3
+                          className="font-bold leading-snug text-lg text-[#006828] group-hover:text-[#005220] transition-colors font-sans"
+                          style={{ color: "#006828" }}
+                        >
                           {p.name}
                         </h3>
                       </Link>
 
-                      <p className="text-xs text-[#4A4A4A] font-semibold">
+                      <p className="text-xs text-[#666666] font-medium">
                         {p.strain} • {p.thc}
                       </p>
 
                       <div className="flex items-center justify-between mt-auto pt-4 border-t border-[#EDE8DF]/60">
-                        <span className="font-extrabold text-xl text-[#0D2318] font-sans">
+                        <span
+                          className="font-extrabold text-xl text-[#006828] font-sans"
+                          style={{ color: "#006828" }}
+                        >
                           {formatCurrency(p.price)}
                         </span>
 
-                        <Button
-                          variant="primary"
-                          size="icon"
+                        <button
                           onClick={() => handleAddToCart(p)}
-                          className="w-10 h-10 shadow-[0_4px_16px_rgba(1,108,36,0.25)] hover:shadow-[0_6px_20px_rgba(1,108,36,0.4)]"
+                          className="w-9 h-9 rounded-full bg-[#006828] hover:bg-[#005220] text-white flex items-center justify-center shadow-md transition-all"
                           aria-label={`Add ${p.name} to cart`}
                         >
-                          <ShoppingCart className="w-4 h-4" />
-                        </Button>
+                          <ShoppingCart className="w-4 h-4 text-white" />
+                        </button>
                       </div>
                     </div>
                   </div>
@@ -896,42 +900,42 @@ export default function HomePage() {
       </section>
 
       {/* ══ 9. SEASONAL BANNER ═══════════════════════════════════════════════ */}
-      <section className="py-12 md:py-16" style={{ background: "#EDE6DB" }}>
+      <section className="py-12 md:py-16" style={{ background: "#EDE2D7" }}>
         <div className="container-site">
-          <div className="relative rounded-[28px] sm:rounded-[36px] overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.18)] bg-[#07130C] border border-white/10 min-h-[380px] md:min-h-[460px] flex items-center">
+          <div className="relative rounded-[28px] sm:rounded-[36px] overflow-hidden shadow-xl bg-[#07130C] border border-white/10 min-h-[380px] md:min-h-[460px] flex items-center justify-center text-center">
             {/* Background Image across full container */}
             <Image
               src="/images/Fresh-Summer-Blooms.png"
               alt="Fresh Summer Blooms Collection"
               fill
-              className="object-cover object-right md:object-center"
+              className="object-cover object-center"
               sizes="100vw"
               priority
             />
 
-            {/* Dark gradient overlays to ensure left-side text readability */}
-            <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/60 to-transparent md:w-[65%] lg:w-[55%]" />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent md:hidden" />
+            {/* Dark overlay for rich centered text readability */}
+            <div className="absolute inset-0 bg-black/50" />
 
-            {/* Content Container */}
-            <div className="relative z-10 p-8 sm:p-12 md:p-16 max-w-xl flex flex-col items-start justify-center">
-              <p className="text-sm md:text-base font-medium text-white/80 mb-2 font-sans">
-                Seasonal Collection:
+            {/* Content Container - 100% Centered matching Figma */}
+            <div className="relative z-10 p-8 sm:p-12 md:p-16 max-w-xl mx-auto flex flex-col items-center justify-center text-center">
+              <p className="text-xs sm:text-sm font-semibold uppercase tracking-[0.25em] text-white/90 mb-3 font-sans">
+                LIMITED TIME OFFER
               </p>
               <h2
-                className="text-3xl sm:text-5xl md:text-5xl lg:text-6xl font-bold mb-4 leading-tight font-serif text-white"
-              style={{ fontFamily: "Times New Roman, serif", color:"#fff" }}
+                className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl font-bold mb-4 leading-tight font-serif text-white"
+                style={{ fontFamily: "Times New Roman, serif", color: "#ffffff" }}
               >
-                Fresh Summer Blooms
+                Seasonal Collection:<br />Fresh Summer Blooms
               </h2>
-              <p className="text-sm md:text-base text-white/80 leading-relaxed font-medium mb-8 max-w-md">
-                Experience our hand-crafted organic formulas and seasonal herbal remedies tailored for your wellness.
+              <p className="text-sm md:text-base text-white/90 leading-relaxed font-normal mb-8 max-w-lg mx-auto font-sans">
+                Experience the essence of the season with our exclusive sun-grown flower collection. 20% off all flower products this week.
               </p>
               <Link
                 href="/shop"
-                className="bg-[#007A2B] hover:bg-[#00581F] text-white text-xs sm:text-sm font-bold tracking-wider uppercase px-8 py-3.5 rounded-full transition-all shadow-md inline-flex items-center justify-center hover:scale-[1.02] font-sans"
+                className="bg-white hover:bg-gray-100 text-[#006828] text-xs sm:text-sm font-semibold px-8 py-3.5 rounded-full transition-all shadow-md inline-flex items-center justify-center hover:scale-[1.02] font-sans"
+                style={{ color: "#006828" }}
               >
-                Shop Now
+                Explore the Sale
               </Link>
             </div>
           </div>

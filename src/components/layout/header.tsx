@@ -29,7 +29,7 @@ function SafeNavLinks({ navLinks }: { navLinks: { label: string; href: string }[
   }
 
   return (
-    <nav className="hidden xl:flex items-center gap-5 lg:gap-7 xl:gap-9">
+    <nav className="hidden lg:flex items-center gap-4 lg:gap-6 xl:gap-8">
       {navLinks.map((link) => {
         const isActive = pathname === link.href || (link.href !== "/" && pathname.startsWith(link.href));
         return (
@@ -37,7 +37,7 @@ function SafeNavLinks({ navLinks }: { navLinks: { label: string; href: string }[
             key={link.label}
             href={link.href}
             className={cn(
-              "text-[14px] xl:text-[15px] font-bold tracking-wider uppercase transition-colors duration-200 relative py-2 whitespace-nowrap",
+              "text-[14px] xl:text-[15px] font-semibold transition-colors duration-200 relative py-2.5 whitespace-nowrap",
               isActive
                 ? "text-[#006828] border-b-2 border-[#006828]"
                 : "text-[#6E6E73] hover:text-[#006828]"
@@ -87,125 +87,114 @@ export function Header() {
   };
 
   return (
-    <>
-      {/* Announcement Bar - Figma Match */}
-      <div className="bg-[#006828] text-white text-[10px] sm:text-[11px] font-semibold tracking-widest py-2 select-none w-full border-b border-white/10 text-center uppercase overflow-hidden">
-        <div className="container-site flex items-center justify-center gap-1.5 sm:gap-2 flex-wrap">
-          <span>PREMIUM CANNABIS PRODUCTS</span>
-          <span className="text-white/70">•</span>
-          <span>ADULTS 21+ ONLY</span>
-          <span className="text-white/70 hidden sm:inline">•</span>
-          <span className="hidden sm:inline">LAB TESTED</span>
-          <span className="text-white/70 hidden md:inline">•</span>
-          <span className="hidden md:inline">SECURE SHOPPING</span>
-        </div>
-      </div>
+    <header
+      className={cn(
+        "sticky top-0 z-50 transition-all duration-300 bg-white border-b border-[#E5E5E5] w-full",
+        scrolled ? "shadow-md" : ""
+      )}
+    >
+      {/* Top Green Accent Bar */}
+      <div className="bg-[#006828] h-1.5 w-full select-none" />
 
-      {/* Main Header - Figma Match */}
-      <header
-        className={cn(
-          "sticky top-0 z-40 transition-all duration-300 bg-white border-b border-[#E5E5E5]",
-          scrolled ? "shadow-md" : ""
-        )}
-      >
-        <div className="container-site flex items-center justify-between h-20 gap-2 sm:gap-4 overflow-hidden">
-          {/* Mobile/Tablet: Left Hamburger Toggle */}
-          <button
-            aria-label="Toggle menu"
-            onClick={() => setMobileOpen(true)}
-            className="xl:hidden p-2 -ml-1 sm:-ml-2 rounded-full hover:bg-neutral-100 transition-colors text-[#1A1A1A] flex-shrink-0"
+      {/* Main Header Container */}
+      <div className="container-site flex items-center justify-between h-20 gap-3 sm:gap-4">
+        {/* Mobile/Tablet: Left Hamburger Toggle */}
+        <button
+          aria-label="Toggle menu"
+          onClick={() => setMobileOpen(true)}
+          className="lg:hidden p-2 -ml-1 sm:-ml-2 rounded-full hover:bg-neutral-100 transition-colors text-[#1A1A1A] flex-shrink-0"
+        >
+          <Menu className="w-6 h-6 text-[#1A1A1A]" />
+        </button>
+
+        {/* Desktop/Mobile Left: Logo matching Figma */}
+        <div className="flex-1 lg:flex-initial flex justify-center lg:justify-start min-w-0">
+          <Link href="/" className="inline-flex items-center group whitespace-nowrap">
+            <span
+              className="text-2xl sm:text-3xl lg:text-[2.2rem] font-medium leading-none text-black tracking-tight"
+              style={{ fontFamily: "Times New Roman, serif" }}
+            >
+              Total
+            </span>
+            <span
+              className="text-2xl sm:text-3xl lg:text-[2.2rem] font-medium leading-none text-[#006828] tracking-tight"
+              style={{ fontFamily: "Times New Roman, serif" }}
+            >
+              Herbal
+            </span>
+            <span
+              className="text-2xl sm:text-3xl lg:text-[2.2rem] font-medium leading-none text-black tracking-tight"
+              style={{ fontFamily: "Times New Roman, serif" }}
+            >
+              Care
+            </span>
+          </Link>
+        </div>
+
+        {/* Desktop Center: Nav Links */}
+        <SafeNavLinks navLinks={navLinks} />
+
+        {/* Desktop Right / Mobile Right: Actions */}
+        <div className="flex items-center gap-2 sm:gap-3 flex-shrink-0">
+          {/* Search Input Pill */}
+          <form
+            onSubmit={handleSearchSubmit}
+            className="hidden xl:flex items-center gap-2 bg-[#F0F0F0] rounded-full px-4 py-2 w-40 xl:w-52 focus-within:bg-white focus-within:ring-1 focus-within:ring-[#006828] transition-all duration-300"
           >
-            <Menu className="w-6 h-6 text-[#1A1A1A]" />
+            <Search className="w-4 h-4 text-[#8E8E93] flex-shrink-0" />
+            <input
+              type="text"
+              placeholder="Search..."
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
+              className="bg-transparent text-xs text-[#1A1A1A] placeholder-[#8E8E93] outline-none w-full font-medium"
+            />
+          </form>
+
+          {/* Account */}
+          <Link
+            href={isAuthenticated ? "/account" : "/sign-in"}
+            aria-label="Account"
+            className="p-1.5 sm:p-2 rounded-full hover:bg-neutral-100 transition-all text-[#1A1A1A] hover:text-[#006828]"
+          >
+            <User className="w-5 h-5" />
+          </Link>
+
+          {/* Wishlist */}
+          <Link
+            href={isAuthenticated ? "/account/wishlist" : "/sign-in"}
+            aria-label="Wishlist"
+            className="p-1.5 sm:p-2 rounded-full hover:bg-neutral-100 transition-all text-[#1A1A1A] hover:text-[#006828] relative"
+          >
+            <Heart className="w-5 h-5" />
+            {wishlistCount > 0 && (
+              <span className="absolute -top-0.5 -right-0.5 w-4.5 h-4.5 bg-red-600 text-white text-[10px] font-bold rounded-full flex items-center justify-center">
+                {wishlistCount}
+              </span>
+            )}
+          </Link>
+
+          {/* Cart Drawer Trigger */}
+          <button
+            onClick={openCartDrawer}
+            aria-label="Shopping Cart"
+            className="p-1.5 sm:p-2 rounded-full hover:bg-neutral-100 transition-all text-[#1A1A1A] hover:text-[#006828] relative"
+          >
+            <ShoppingCart className="w-5 h-5" />
+            <span className="absolute -top-0.5 -right-0.5 w-4.5 h-4.5 bg-[#006828] text-white text-[10px] font-extrabold rounded-full flex items-center justify-center">
+              {cartCount}
+            </span>
           </button>
 
-          {/* Desktop Left: Logo matching Figma */}
-          <div className="flex-1 xl:flex-initial flex justify-center xl:justify-start min-w-0">
-            <Link href="/" className="inline-flex items-center group whitespace-nowrap">
-              <span
-                className="text-2xl sm:text-3xl lg:text-[2.2rem] font-medium leading-none text-black tracking-tight"
-                style={{ fontFamily: "Times New Roman, serif" }}
-              >
-                Total
-              </span>
-              <span
-                className="text-2xl sm:text-3xl lg:text-[2.2rem] font-medium leading-none text-[#006828] tracking-tight"
-                style={{ fontFamily: "Times New Roman, serif" }}
-              >
-                Herbal
-              </span>
-              <span
-                className="text-2xl sm:text-3xl lg:text-[2.2rem] font-medium leading-none text-black tracking-tight"
-                style={{ fontFamily: "Times New Roman, serif" }}
-              >
-                Care
-              </span>
-            </Link>
-          </div>
-
-          {/* Desktop Center: Nav Links Title Case matching Figma */}
-          <SafeNavLinks navLinks={navLinks} />
-
-          {/* Desktop Right / Mobile Right: Actions */}
-          <div className="flex items-center gap-2 sm:gap-3 flex-shrink-0">
-            {/* Search Input (Pill style matching Figma) */}
-            <form
-              onSubmit={handleSearchSubmit}
-              className="hidden 2xl:flex items-center gap-2 bg-[#EFEFEF] rounded-full px-4 py-2 w-44 xl:w-56 focus-within:bg-white focus-within:ring-1 focus-within:ring-[#006828] transition-all duration-300"
-            >
-              <Search className="w-4 h-4 text-[#8E8E93] flex-shrink-0" />
-              <input
-                type="text"
-                placeholder="Search..."
-                value={searchQuery}
-                onChange={(e) => setSearchQuery(e.target.value)}
-                className="bg-transparent text-xs text-[#1A1A1A] placeholder-[#8E8E93] outline-none w-full font-medium"
-              />
-            </form>
-
-            {/* Account */}
-            <Link
-              href={isAuthenticated ? "/account" : "/sign-in"}
-              aria-label="Account"
-              className="p-1.5 sm:p-2 rounded-full hover:bg-neutral-100 transition-all text-[#1A1A1A] hover:text-[#006828]"
-            >
-              <User className="w-5 h-5" />
-            </Link>
-
-            {/* Wishlist */}
-            <Link
-              href={isAuthenticated ? "/account/wishlist" : "/sign-in"}
-              aria-label="Wishlist"
-              className="p-1.5 sm:p-2 rounded-full hover:bg-neutral-100 transition-all text-[#1A1A1A] hover:text-[#006828] relative"
-            >
-              <Heart className="w-5 h-5" />
-              {wishlistCount > 0 && (
-                <span className="absolute -top-0.5 -right-0.5 w-4.5 h-4.5 bg-red-600 text-white text-[10px] font-bold rounded-full flex items-center justify-center">
-                  {wishlistCount}
-                </span>
-              )}
-            </Link>
-
-            {/* Cart Drawer Trigger */}
-            <button
-              onClick={openCartDrawer}
-              aria-label="Shopping Cart"
-              className="p-1.5 sm:p-2 rounded-full hover:bg-neutral-100 transition-all text-[#1A1A1A] hover:text-[#006828] relative"
-            >
-              <ShoppingCart className="w-5 h-5" />
-              <span className="absolute -top-0.5 -right-0.5 w-4.5 h-4.5 bg-[#006828] text-white text-[10px] font-extrabold rounded-full flex items-center justify-center">
-                {cartCount}
-              </span>
-            </button>
-
-            {/* Shop Now Button matching Figma */}
-            <Link
-              href="/shop"
-              className="hidden sm:inline-flex bg-[#006828] hover:bg-[#005220] text-white text-xs sm:text-sm font-semibold px-4 sm:px-6 py-2 sm:py-2.5 rounded-full transition-all duration-200 shadow-sm whitespace-nowrap"
-            >
-              Shop Now
-            </Link>
-          </div>
+          {/* Shop Now Button matching Figma */}
+          <Link
+            href="/shop"
+            className="hidden sm:inline-flex bg-[#006828] hover:bg-[#005220] text-white text-xs sm:text-sm font-semibold px-5 sm:px-6 py-2 sm:py-2.5 rounded-full transition-all duration-200 shadow-sm whitespace-nowrap"
+          >
+            Shop Now
+          </Link>
         </div>
+      </div>
 
         {/* Mobile Left Drawer Navigation */}
         <AnimatePresence>
@@ -309,6 +298,5 @@ export function Header() {
           )}
         </AnimatePresence>
       </header>
-    </>
   );
 }
