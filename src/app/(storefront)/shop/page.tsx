@@ -82,18 +82,33 @@ export default function ShopPage() {
   return (
     <div className="bg-[#F5F0E8] min-h-screen section-py">
       <div className="container-site">
-        {/* Header Hero Banner */}
-        <div className="relative rounded-3xl overflow-hidden mb-12 p-8 sm:p-14 bg-gradient-to-r from-[#0D2318] via-[#1B3A2D] to-[#0D2318] border border-white/15 shadow-[0_20px_50px_rgba(13,35,24,0.18)]">
-          <div className="relative z-10 max-w-2xl text-left">
-            <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-[11px] font-extrabold tracking-[0.2em] uppercase bg-[#C9A961] text-[#0D2318] mb-4 shadow-md">
-              <span className="w-1.5 h-1.5 rounded-full bg-[#0D2318] animate-pulse" />
-              CURATED BOTANICAL SELECTION
-            </span>
-            <h1 className="text-3xl sm:text-5xl font-serif font-bold text-white leading-tight mb-4">
-              Our Organic Dispensary Catalog
+        {/* Header Hero Banner - Matching Image 5 */}
+        <div className="relative rounded-3xl overflow-hidden mb-10 min-h-[260px] sm:min-h-[300px] border border-[#EDE8DF] shadow-sm flex items-center bg-[#EDE6DB]">
+          {/* Background Banner Image - shop-banner.png */}
+          <Image
+            src="/images/shop-banner.png"
+            alt="Our Collection"
+            fill
+            className="object-cover object-right sm:object-center"
+            sizes="100vw"
+            priority
+          />
+
+          {/* Content Container */}
+          <div className="relative z-10 p-8 sm:p-12 md:p-14 max-w-xl text-left">
+            <nav className="flex items-center gap-1.5 text-xs text-[#666666] mb-2 font-sans font-normal">
+              <Link href="/" className="hover:text-[#006828] transition-colors">Home</Link>
+              <span>&rsaquo;</span>
+              <span className="text-[#006828] font-semibold">Shop</span>
+            </nav>
+            <h1
+              className="text-4xl sm:text-5xl lg:text-6xl font-bold text-[#006828] leading-tight mb-3 font-serif"
+              style={{ fontFamily: "Times New Roman, serif", color: "#006828" }}
+            >
+              Our Collection
             </h1>
-            <p className="text-sm sm:text-base text-white/85 leading-relaxed font-medium">
-              Discover craft organic flowers, full-spectrum extracts, artisan edibles, and lab-tested tinctures sourced directly from licensed California cultivators.
+            <p className="text-xs sm:text-sm text-[#666666] leading-relaxed font-normal max-w-md font-sans">
+              Premium cannabis products crafted for purity, potency, and peace of mind. Explore our laboratory-tested selections designed for every lifestyle.
             </p>
           </div>
         </div>

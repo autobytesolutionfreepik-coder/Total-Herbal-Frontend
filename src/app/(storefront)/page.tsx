@@ -632,7 +632,48 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ══ 5. DIFFERENCE ════════════════════════════════════════════════════ */}
+      {/* ══ BANNER 1: LIMITED TIME OFFER ═════════════════════════════════════ */}
+      <section className="py-12 md:py-16" style={{ background: "#EDE2D7" }}>
+        <div className="container-site">
+          <div className="relative rounded-[28px] sm:rounded-[36px] overflow-hidden shadow-xl bg-[#07130C] border border-white/10 min-h-[380px] md:min-h-[460px] flex items-center justify-center text-center">
+            {/* Background Image - Limited-time-offer.png */}
+            <Image
+              src="/images/Limited-time-offer.png"
+              alt="Seasonal Collection Field"
+              fill
+              className="object-cover object-center"
+              sizes="100vw"
+              priority
+            />
+
+            {/* Dark overlay for rich centered text readability */}
+            <div className="absolute inset-0 bg-black/45" />
+
+            {/* Content Container - 100% Centered matching Figma */}
+            <div className="relative z-10 p-8 sm:p-12 md:p-16 max-w-xl mx-auto flex flex-col items-center justify-center text-center">
+              <p className="text-xs sm:text-sm font-semibold uppercase tracking-[0.25em] text-white/90 mb-3 font-sans">
+                LIMITED TIME OFFER
+              </p>
+              <h2
+                className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl font-bold mb-4 leading-tight font-serif text-white"
+                style={{ fontFamily: "Times New Roman, serif", color: "#ffffff" }}
+              >
+                Seasonal Collection:<br />Fresh Summer Blooms
+              </h2>
+              <p className="text-sm md:text-base text-white/90 leading-relaxed font-normal mb-8 max-w-lg mx-auto font-sans">
+                Experience the essence of the season with our exclusive sun-grown flower collection. 20% off all flower products this week.
+              </p>
+              <Link
+                href="/shop"
+                className="bg-white hover:bg-gray-100 text-[#006828] text-xs sm:text-sm font-semibold px-8 py-3.5 rounded-full transition-all shadow-md inline-flex items-center justify-center hover:scale-[1.02] font-sans"
+                style={{ color: "#006828" }}
+              >
+                Explore the Sale
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
       <section className="py-16 md:py-20" style={{ background: "#EDE2D7" }}>
         <div className="container-site">
           <motion.div
@@ -920,43 +961,42 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ══ 9. SEASONAL BANNER ═══════════════════════════════════════════════ */}
+      {/* ══ BANNER 2: FRESH SUMMER BLOOMS ═══════════════════════════════════ */}
       <section className="py-12 md:py-16" style={{ background: "#EDE2D7" }}>
         <div className="container-site">
-          <div className="relative rounded-[28px] sm:rounded-[36px] overflow-hidden shadow-xl bg-[#07130C] border border-white/10 min-h-[380px] md:min-h-[460px] flex items-center justify-center text-center">
-            {/* Background Image across full container */}
+          <div className="relative rounded-[28px] sm:rounded-[36px] overflow-hidden shadow-xl bg-[#050D08] border border-white/10 min-h-[340px] md:min-h-[400px] flex items-center">
+            {/* Background Image - Fresh-Summer-Blooms.png */}
             <Image
               src="/images/Fresh-Summer-Blooms.png"
-              alt="Fresh Summer Blooms Collection"
+              alt="Fresh Summer Blooms Tincture"
               fill
               className="object-cover object-center"
               sizes="100vw"
               priority
             />
 
-            {/* Dark overlay for rich centered text readability */}
-            <div className="absolute inset-0 bg-black/50" />
+            {/* Subtle dark gradient overlay on left for text contrast */}
+            <div className="absolute inset-0 bg-gradient-to-r from-black/85 via-black/50 to-transparent" />
 
-            {/* Content Container - 100% Centered matching Figma */}
-            <div className="relative z-10 p-8 sm:p-12 md:p-16 max-w-xl mx-auto flex flex-col items-center justify-center text-center">
-              <p className="text-xs sm:text-sm font-semibold uppercase tracking-[0.25em] text-white/90 mb-3 font-sans">
-                LIMITED TIME OFFER
+            {/* Left Content Container - Matching Image 4 */}
+            <div className="relative z-10 p-8 sm:p-12 md:p-16 max-w-lg flex flex-col items-start justify-center text-left">
+              <p className="text-sm font-normal text-white/90 mb-1 font-sans">
+                Seasonal Collection:
               </p>
               <h2
-                className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl font-bold mb-4 leading-tight font-serif text-white"
+                className="text-3xl sm:text-4xl md:text-5xl font-bold mb-3 leading-tight font-serif text-white"
                 style={{ fontFamily: "Times New Roman, serif", color: "#ffffff" }}
               >
-                Seasonal Collection:<br />Fresh Summer Blooms
+                Fresh Summer Blooms
               </h2>
-              <p className="text-sm md:text-base text-white/90 leading-relaxed font-normal mb-8 max-w-lg mx-auto font-sans">
-                Experience the essence of the season with our exclusive sun-grown flower collection. 20% off all flower products this week.
+              <p className="text-xs sm:text-sm text-white/80 leading-relaxed font-normal mb-6 max-w-md font-sans">
+                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum
               </p>
               <Link
                 href="/shop"
-                className="bg-white hover:bg-gray-100 text-[#006828] text-xs sm:text-sm font-semibold px-8 py-3.5 rounded-full transition-all shadow-md inline-flex items-center justify-center hover:scale-[1.02] font-sans"
-                style={{ color: "#006828" }}
+                className="bg-[#006828] hover:bg-[#005220] text-white text-xs sm:text-sm font-semibold px-7 py-3 rounded-full transition-all shadow-md inline-flex items-center justify-center font-sans"
               >
-                Explore the Sale
+                Shop Now
               </Link>
             </div>
           </div>
