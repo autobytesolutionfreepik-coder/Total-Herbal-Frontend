@@ -80,22 +80,23 @@ export default function ShopPage() {
   };
 
   return (
-    <div className="bg-[#F5F0E8] min-h-screen section-py">
-      <div className="container-site">
-        {/* Header Hero Banner - Matching Image 5 */}
-        <div className="relative rounded-3xl overflow-hidden mb-10 min-h-[260px] sm:min-h-[300px] border border-[#EDE8DF] shadow-sm flex items-center bg-[#EDE6DB]">
-          {/* Background Banner Image - shop-banner.png */}
-          <Image
-            src="/images/shop-banner.png"
-            alt="Our Collection"
-            fill
-            className="object-cover object-right sm:object-center"
-            sizes="100vw"
-            priority
-          />
+    <div className="bg-[#F5F0E8] min-h-screen pb-16 font-[Manrope]">
+      {/* ══ 1. FULL BLEED EDGE-TO-EDGE HERO BANNER (100% FIGMA MATCH - NO ROUNDED RADIUS) ════ */}
+      <section className="relative w-full overflow-hidden mb-10 min-h-[260px] sm:min-h-[320px] md:min-h-[360px] lg:min-h-[400px] flex items-center bg-[#EDE6DB] border-b border-[#EDE8DF]">
+        {/* Background Banner Image - shop-banner.png */}
+        <Image
+          src="/images/shop-banner.png"
+          alt="Our Collection"
+          fill
+          priority
+          quality={100}
+          className="object-cover object-right sm:object-center"
+          sizes="100vw"
+        />
 
-          {/* Content Container */}
-          <div className="relative z-10 p-8 sm:p-12 md:p-14 max-w-xl text-left">
+        {/* Content Container */}
+        <div className="container-site relative z-10 py-10 md:py-14">
+          <div className="max-w-xl text-left">
             <nav className="flex items-center gap-1.5 text-xs text-[#666666] mb-2 font-sans font-normal">
               <Link href="/" className="hover:text-[#006828] transition-colors">Home</Link>
               <span>&rsaquo;</span>
@@ -112,7 +113,9 @@ export default function ShopPage() {
             </p>
           </div>
         </div>
+      </section>
 
+      <div className="container-site">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
           {/* Sidebar Filters */}
           <div className="lg:col-span-3 bg-white p-6 rounded-2xl border border-[#EDE8DF] shadow-[0_4px_20px_rgba(0,0,0,0.04)] space-y-7 sticky top-24">
