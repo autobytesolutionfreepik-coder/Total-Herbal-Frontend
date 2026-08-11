@@ -734,7 +734,7 @@ export default function HomePage() {
                 OUR COMMITMENT
               </p>
               <h2
-                className="text-4xl sm:text-6xl lg:text-[2.75rem] font-bold leading-[1.18] mb-5 text-[#016C24]"
+                className="text-4xl sm:text-4xl lg:text-[3.75rem] font-bold leading-[1.18] mb-5 text-[#016C24]"
                 style={{ fontFamily: "Times New Roman, serif" }}
               >
                 Elevating Standards in Cannabis Wellness
@@ -744,7 +744,7 @@ export default function HomePage() {
               </p>
 
               {/* Checkpoints */}
-              <div className="space-y-6 mb-8">
+              <div className="space-y-6 mb-8 mt-4">
                 {[
                   {
                     title: "Ethical Cultivation",
@@ -772,7 +772,7 @@ export default function HomePage() {
               <div>
                 <Link
                   href="/about"
-                  className="bg-[#007A2B] hover:bg-[#00581F] mt-10 text-white text-xs sm:text-sm font-bold tracking-wider uppercase px-8 py-3.5 rounded-full transition-all shadow-md inline-flex items-center justify-center hover:scale-[1.02] font-sans"
+                  className="bg-[#007A2B] hover:bg-[#00581F] mt-6 text-white text-xs sm:text-sm font-bold tracking-wider uppercase px-8 py-3.5 rounded-full transition-all shadow-md inline-flex items-center justify-center hover:scale-[1.02] font-sans"
                 >
                   Read Our Full Story
                 </Link>
