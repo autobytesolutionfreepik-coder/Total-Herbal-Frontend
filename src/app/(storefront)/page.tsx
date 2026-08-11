@@ -359,7 +359,7 @@ export default function HomePage() {
       {/* ══ 1. HERO ══════════════════════════════════════════════════════════ */}
       <section
         ref={heroRef}
-        className="relative min-h-[700px] lg:min-h-[880px] overflow-hidden flex items-center"
+        className="relative min-h-[700px] lg:min-h-[800px] overflow-hidden flex items-center"
       >
         <motion.div
           style={{ y: heroY }}
@@ -690,56 +690,61 @@ export default function HomePage() {
       </section>
 
       {/* ══ 6. OUR COMMITMENT ════════════════════════════════════════════════ */}
-      <section className="py-20" style={{ background: "#F5F0E8" }}>
+      <section className="py-16 md:py-24" style={{ background: "#EDE6DB" }}>
         <div className="container-site">
-          <div className="grid md:grid-cols-2 gap-14 items-center">
+          <div className="grid md:grid-cols-2 gap-10 lg:gap-16 items-center">
+            {/* Left Image & Floating Badge */}
             <motion.div
-              initial={{ opacity: 0, x: -40 }}
+              initial={{ opacity: 0, x: -30 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
               className="relative"
             >
-              <div className="relative rounded-3xl overflow-hidden shadow-[0_20px_50px_rgba(13,35,24,0.15)] border border-[#EDE8DF] aspect-square">
+              <div className="relative rounded-[28px] sm:rounded-[36px] overflow-hidden shadow-lg border border-black/5 aspect-square">
                 <Image
                   src="/images/OUR-COMMITMENT.png"
-                  alt="Cannabis cultivation"
+                  alt="Cannabis cultivation lab"
                   fill
                   className="object-cover"
                   sizes="(max-width:768px) 100vw, 50vw"
+                  priority
                 />
-              </div>
-              <div className="absolute bottom-6 right-6 bg-white/90 backdrop-blur-xl rounded-2xl px-6 py-5 shadow-2xl border border-white/40">
-                <p
-                  className="text-3xl font-extrabold text-[#0D2318] font-serif"
-                >
-                  10+ Years
-                </p>
-                <p className="text-xs font-semibold max-w-[170px] mt-1 text-[#4A4A4A]">
-                  Of excellence in organic cultivation and botanical innovation.
-                </p>
+                {/* Floating 10+ Years Badge */}
+                <div className="absolute bottom-6 left-6 right-6 sm:right-auto sm:max-w-[280px] bg-white/70 backdrop-blur-md rounded-2xl p-5 shadow-xl border border-white/60">
+                  <p className="text-2xl sm:text-3xl font-bold text-[#016C24] font-sans mb-1">
+                    10+ Years
+                  </p>
+                  <p className="text-xs sm:text-sm text-[#555555] font-medium leading-snug">
+                    Of excellence in organic cultivation and botanical innovation.
+                  </p>
+                </div>
               </div>
             </motion.div>
 
+            {/* Right Text Content */}
             <motion.div
-              initial={{ opacity: 0, x: 40 }}
+              initial={{ opacity: 0, x: 30 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
+              className="flex flex-col justify-center"
             >
-              <p className="text-md font-bold tracking-[0.2em] uppercase mb-2 text-[#C9A961]">
-                OUR BOTANICAL COMMITMENT
+              <p className="text-xs sm:text-sm font-bold uppercase tracking-[0.2em] text-[#016C24] mb-3">
+                OUR COMMITMENT
               </p>
               <h2
-                className="text-4xl md:text-6xl font-bold leading-tight mb-5 text-[#0D2318]"
+                className="text-3xl sm:text-4xl lg:text-[2.75rem] font-bold leading-[1.18] mb-5 text-[#016C24]"
                 style={{ fontFamily: "Times New Roman, serif" }}
               >
                 Elevating Standards in Cannabis Wellness
               </h2>
-              <p className="text-lg leading-relaxed mb-7 text-[#4A4A4A] font-medium">
+              <p className="text-sm sm:text-base leading-relaxed mb-8 text-[#555555] font-medium">
                 Our master growers and formulation chemists utilize clean extraction techniques without harmful solvents, delivering uncompromised herbal purity.
               </p>
-              <div className="space-y-4">
+
+              {/* Checkpoints */}
+              <div className="space-y-6 mb-8">
                 {[
                   {
                     title: "Ethical Cultivation",
@@ -750,25 +755,27 @@ export default function HomePage() {
                     desc: "Empowering adults 21+ with transparent lab data, strain guides, and dosing advice.",
                   },
                 ].map((item) => (
-                  <div key={item.title} className="flex gap-3.5 p-4 rounded-xl bg-white border border-[#EDE8DF]/80 shadow-sm">
-                    <div className="w-7 h-7 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5 bg-[#016C24]/10">
-                      <CheckCircle2 className="w-4 h-4 text-[#016C24]" />
-                    </div>
+                  <div key={item.title} className="flex items-start gap-3">
+                    <CheckCircle2 className="w-5 h-5 text-[#016C24] flex-shrink-0 mt-0.5" />
                     <div>
-                      <p className="font-bold text-sm mb-0.5 text-[#0D2318]">
+                      <h3 className="font-bold text-base sm:text-lg text-[#016C24] mb-1 font-sans">
                         {item.title}
-                      </p>
-                      <p className="text-xs leading-relaxed text-[#4A4A4A] font-medium">
+                      </h3>
+                      <p className="text-xs sm:text-sm text-[#555555] font-medium leading-relaxed">
                         {item.desc}
                       </p>
                     </div>
                   </div>
                 ))}
               </div>
-              <div className="mt-8">
-                <Button href="/about" variant="dark" size="lg">
-                  Read Our Full Story <ArrowRight className="w-4 h-4 ml-1" />
-                </Button>
+
+              <div>
+                <Link
+                  href="/about"
+                  className="bg-[#007A2B] hover:bg-[#00581F] text-white text-xs sm:text-sm font-bold tracking-wider uppercase px-8 py-3.5 rounded-full transition-all shadow-md inline-flex items-center justify-center hover:scale-[1.02] font-sans"
+                >
+                  Read Our Full Story
+                </Link>
               </div>
             </motion.div>
           </div>
@@ -1105,52 +1112,62 @@ export default function HomePage() {
       </section>
 
       {/* ══ 11. NEWSLETTER ═══════════════════════════════════════════════════ */}
-      <section className="py-12" style={{ background: "#F5F0E8" }}>
+      <section className="py-12 md:py-16" style={{ background: "#EDE6DB" }}>
         <div className="container-site">
-          <div className="relative rounded-3xl overflow-hidden py-14 px-8 md:px-20 bg-gradient-to-r from-[#0D2318] via-[#016C24] to-[#0D2318] shadow-[0_20px_50px_rgba(13,35,24,0.25)] border border-white/15">
+          <div className="relative rounded-[28px] sm:rounded-[36px] overflow-hidden py-10 md:py-14 px-8 sm:px-12 md:px-16 lg:px-20 bg-[#00682A] shadow-lg border border-white/10">
+            {/* Background Cannabis Leaf Graphics */}
+            <Image
+              src="/images/cta-left.png"
+              alt=""
+              width={350}
+              height={350}
+              className="absolute left-0 top-0 bottom-0 h-full w-auto object-cover opacity-80 pointer-events-none select-none"
+            />
+            <Image
+              src="/images/Cta-right.png"
+              alt=""
+              width={350}
+              height={350}
+              className="absolute right-0 top-0 bottom-0 h-full w-auto object-cover opacity-80 pointer-events-none select-none"
+            />
+
             <div className="relative z-10 flex flex-col lg:flex-row items-center justify-between gap-8">
+              {/* Left Content */}
               <div className="text-left text-white max-w-md">
-                <span className="text-[11px] font-extrabold tracking-[0.2em] uppercase text-[#E2C98A] block mb-2">
-                  STAY CONNECTED & INFORMED
-                </span>
-                <h2
-                  className="text-3xl md:text-4xl font-bold text-white mb-3"
-                  style={{ fontFamily: "Times New Roman, serif" }}
-                >
+                <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-2 leading-tight font-sans">
                   Stay Elevated
                 </h2>
-                <p className="text-sm md:text-base text-white/85 leading-relaxed font-medium">
+                <p className="text-xs sm:text-sm text-white/90 leading-relaxed font-medium">
                   Subscribe to receive our latest organic drops, strain guides, discount coupons, and local dispensary delivery updates.
                 </p>
               </div>
 
+              {/* Right Form */}
               <form
                 onSubmit={handleSubscribeNewsletter}
-                className="flex flex-col sm:flex-row w-full lg:w-auto items-stretch sm:items-center gap-3"
+                className="flex flex-col sm:flex-row items-center gap-3.5 w-full lg:w-auto"
               >
-                <div className="relative flex items-center bg-white/95 rounded-full px-5 py-3 flex-1 sm:w-80 shadow-md">
-                  <Mail className="w-4 h-4 text-gray-400 mr-3 flex-shrink-0" />
+                <div className="relative flex items-center bg-white rounded-full px-5 py-3.5 sm:py-4 w-full sm:w-[380px] lg:w-[440px] shadow-sm">
+                  <Mail className="w-4 h-4 text-gray-400 mr-2.5 flex-shrink-0" />
                   <input
                     type="email"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
-                    placeholder="Enter your email address"
-                    className="bg-transparent border-none outline-none text-sm text-gray-900 placeholder-gray-500 w-full font-medium"
+                    placeholder="Enter your email"
+                    className="bg-transparent border-none outline-none text-xs sm:text-sm text-gray-800 placeholder-gray-400 w-full font-medium"
                   />
                 </div>
-                <Button
+                <button
                   type="submit"
                   disabled={newsletterMutation.isPending}
-                  variant="gold"
-                  size="lg"
-                  className="shadow-lg shrink-0"
+                  className="bg-[#005424]/90 hover:bg-[#00421C] text-white text-xs sm:text-sm font-bold tracking-wider px-8 py-3.5 sm:py-4 rounded-full border border-white/40 transition-all shadow-md shrink-0 w-full sm:w-auto inline-flex items-center justify-center font-sans"
                 >
                   {newsletterMutation.isPending ? (
                     <Loader2 className="w-4 h-4 animate-spin" />
                   ) : (
                     "Subscribe"
                   )}
-                </Button>
+                </button>
               </form>
             </div>
           </div>
