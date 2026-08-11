@@ -76,19 +76,19 @@ export function Footer() {
           <div className="lg:col-span-4 space-y-4">
             <Link href="/" className="inline-flex items-center group whitespace-nowrap">
               <span
-                className="text-3xl sm:text-4xl lg:text-[2.85rem] font-bold leading-none text-white tracking-tight"
+                className="text-3xl sm:text-4xl lg:text-[2.6rem] font-medium leading-none text-white tracking-tight"
                 style={{ fontFamily: "Times New Roman, serif" }}
               >
                 Total
               </span>
               <span
-                className="text-3xl sm:text-4xl lg:text-[2.85rem] font-bold leading-none text-[#006828] tracking-tight"
+                className="text-3xl sm:text-4xl lg:text-[2.6rem] font-medium leading-none text-[#006828] tracking-tight"
                 style={{ fontFamily: "Times New Roman, serif", color: "#006828" }}
               >
                 Herbal
               </span>
               <span
-                className="text-3xl sm:text-4xl lg:text-[2.85rem] font-bold leading-none text-white tracking-tight"
+                className="text-3xl sm:text-4xl lg:text-[2.6rem] font-medium leading-none text-white tracking-tight"
                 style={{ fontFamily: "Times New Roman, serif" }}
               >
                 Care

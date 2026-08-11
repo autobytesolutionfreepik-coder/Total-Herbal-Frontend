@@ -860,11 +860,12 @@ export default function HomePage() {
                     &ldquo;{t.text}&rdquo;
                   </p>
                   <div className="flex items-center gap-3.5 pt-4 border-t border-[#EDE8DF]">
-                    <div className="relative w-10 h-10 rounded-full overflow-hidden flex-shrink-0 bg-[#EDE2D7]">
+                    <div className="relative w-10 h-10 rounded-full overflow-hidden flex-shrink-0 bg-[#E6F4EA] border border-[#006828]/20">
                       <Image
                         src={t.img}
-                        alt={t.author}
+                        alt=""
                         fill
+                        unoptimized
                         className="object-cover"
                         sizes="40px"
                       />
