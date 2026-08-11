@@ -358,7 +358,7 @@ export default function HomePage() {
       {/* ══ 1. HERO ══════════════════════════════════════════════════════════ */}
       <section
         ref={heroRef}
-        className="relative min-h-[600px] lg:min-h-[680px] overflow-hidden flex items-center"
+        className="relative min-h-[700px] lg:min-h-[880px] overflow-hidden flex items-center"
       >
         <motion.div
           style={{ y: heroY }}
@@ -372,8 +372,8 @@ export default function HomePage() {
             className="object-cover object-center"
             sizes="100vw"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-[#0D2318]/90 via-[#0D2318]/65 to-transparent" />
-          <div className="absolute inset-0 bg-gradient-to-t from-[#0D2318] via-transparent to-transparent opacity-80" />
+          {/* <div className="absolute inset-0 bg-gradient-to-r from-[#0D2318]/90 via-[#0D2318]/65 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#0D2318] via-transparent to-transparent opacity-80" /> */}
         </motion.div>
 
         <div className="container-site relative z-10 py-24 lg:py-32">
@@ -394,20 +394,20 @@ export default function HomePage() {
               className="font-bold leading-[1.08] mb-6 tracking-tight drop-shadow-md"
               style={{
                 fontFamily: "Times New Roman, serif",
-                fontSize: "clamp(2.8rem, 5.8vw, 4.2rem)",
+                fontSize: "clamp(2.8rem, 6.8vw, 4.8rem)",
                 color: "#fff",
               }}
             >
               Organic Cannabis
 
               <br />
-              Formulas for Every              <br />
+              Formulas for Every<br />
               <span className="text-[#C9A961]">Lifestyle</span>
             </motion.h1>
 
             <motion.p
               variants={fadeUp}
-              className="text-base sm:text-lg leading-relaxed mb-8 max-w-[560px] text-white/90 font-medium"
+              className="text-base sm:text-xl leading-relaxed mb-8 max-w-[560px] text-white/90 font-medium"
             >
               Discover lab-tested organic flowers, precision-dosed edibles, full-spectrum vapes, and apothecary wellness remedies delivered directly to your door.
             </motion.p>
@@ -433,7 +433,7 @@ export default function HomePage() {
       {/* ══ 2. TRUST STRIP ═══════════════════════════════════════════════════ */}
       <section className="relative z-20 -mt-12 md:-mt-16 bg-transparent py-0">
         <div className="container-site">
-          <div className="rounded-2xl sm:rounded-3xl py-7 md:py-9 px-6 md:px-10 bg-gradient-to-b from-[#016C24] via-[#084824] to-[#071F14] border border-white/25 backdrop-blur-xl">
+          <div className="rounded-2xl sm:rounded-3xl py-7 md:py-9 px-6 md:px-10 bg-gradient-to-b from-[#026C24] via-[#084824] to-[#071F14] border border-white/25 backdrop-blur-xl">
             <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-6 md:gap-18 items-center">
               {trustItems.map(({ img, label, sub }) => (
                 <div key={label} className="flex items-center gap-3.5 sm:gap-4 group hover:translate-y-[-2px] transition-transform duration-300">
@@ -781,16 +781,16 @@ export default function HomePage() {
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
             >
-              <p className="text-xs font-bold tracking-[0.2em] uppercase mb-2 text-[#C9A961]">
+              <p className="text-md font-bold tracking-[0.2em] uppercase mb-2 text-[#C9A961]">
                 OUR BOTANICAL COMMITMENT
               </p>
               <h2
-                className="text-3xl md:text-4xl font-bold leading-tight mb-5 text-[#0D2318]"
+                className="text-4xl md:text-6xl font-bold leading-tight mb-5 text-[#0D2318]"
                 style={{ fontFamily: "Times New Roman, serif" }}
               >
                 Elevating Standards in Cannabis Wellness
               </h2>
-              <p className="text-base leading-relaxed mb-7 text-[#4A4A4A] font-medium">
+              <p className="text-lg leading-relaxed mb-7 text-[#4A4A4A] font-medium">
                 Our master growers and formulation chemists utilize clean extraction techniques without harmful solvents, delivering uncompromised herbal purity.
               </p>
               <div className="space-y-4">
