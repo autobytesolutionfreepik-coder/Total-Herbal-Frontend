@@ -32,6 +32,7 @@ import { useSubscribeNewsletterMutation } from "@/features/marketing/api";
 import { useAddToCartMutation } from "@/features/cart/api";
 import { useCartStore } from "@/stores/cart-store";
 import { useAuthStore } from "@/stores/auth-store";
+import { ReviewsCarousel } from "@/features/reviews/components/reviews-carousel";
 
 /* ─── Fallback Static Data ─────────────────────────────────────────────────────────── */
 
@@ -627,62 +628,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ══ 5. SEASONAL BANNER ═══════════════════════════════════════════════ */}
-      <section className="py-14 md:py-20" style={{ background: "#ede2d7" }}>
-        <div className="container-site">
-          <div className="relative rounded-[28px] sm:rounded-[36px] overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.15)] min-h-[440px] md:min-h-[580px] flex items-center justify-center border border-white/20">
-            <Image
-              src="/images/Limited-time-offer.png"
-              alt="Seasonal Collection"
-              fill
-              className="object-cover object-center brightness-90"
-              sizes="100vw"
-            />
-            <div className="absolute inset-0 bg-black/45" />
-            <div className="relative z-10 p-8 sm:p-16 max-w-2xl text-center flex flex-col items-center justify-center">
-              <motion.div
-                initial="hidden"
-                whileInView="show"
-                viewport={{ once: true }}
-                variants={stagger}
-                className="flex flex-col items-center"
-              >
-                <motion.p
-                  variants={fadeUp}
-                  className="text-xs sm:text-sm font-bold tracking-[0.22em] uppercase mb-4 text-white/90"
-                >
-                  LIMITED TIME OFFER
-                </motion.p>
-                <motion.h2
-                  variants={fadeUp}
-                  className="text-4xl sm:text-6xl md:text-5xl font-bold mb-4 leading-tight "
-                  style={{ fontFamily: "Times New Roman, serif", color:"white" }}
-                >
-                  Seasonal Collection:
-                  <br />
-                  Fresh Summer Blooms
-                </motion.h2>
-                <motion.p
-                  variants={fadeUp}
-                  className="text-md sm:text-lg mb-8 leading-relaxed text-white/95 font-normal max-w-xl mx-auto"
-                >
-                  Experience the essence of the season with our exclusive sun-grown flower collection. 20% off all flower products this week.
-                </motion.p>
-                <motion.div variants={fadeUp}>
-                  <Link
-                    href="/shop"
-                    className="bg-white hover:bg-neutral-100 text-[#006828] font-semibold text-sm sm:text-base px-8 py-3.5 rounded-full transition-all duration-200 shadow-md inline-flex items-center justify-center hover:scale-[1.02]"
-                  >
-                    Explore the Sale
-                  </Link>
-                </motion.div>
-              </motion.div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ══ 6. DIFFERENCE ════════════════════════════════════════════════════ */}
+      {/* ══ 5. DIFFERENCE ════════════════════════════════════════════════════ */}
       <section className="py-20" style={{ background: "#ede2d7" }}>
         <div className="container-site">
           <motion.div
@@ -743,7 +689,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ══ 7. OUR COMMITMENT ════════════════════════════════════════════════ */}
+      {/* ══ 6. OUR COMMITMENT ════════════════════════════════════════════════ */}
       <section className="py-20" style={{ background: "#F5F0E8" }}>
         <div className="container-site">
           <div className="grid md:grid-cols-2 gap-14 items-center">
@@ -829,7 +775,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ══ 8. COMMUNITY REVIEWS ═════════════════════════════════════════════ */}
+      {/* ══ 7. COMMUNITY REVIEWS CAROUSEL ═════════════════════════════════════ */}
       <section className="py-20 bg-[#EDE8DF]">
         <div className="container-site">
           <motion.div
@@ -837,68 +783,31 @@ export default function HomePage() {
             whileInView="show"
             viewport={{ once: true }}
             variants={stagger}
-            className="text-center mb-14"
+            className="text-center mb-12"
           >
             <motion.p variants={fadeUp} className="text-xs font-bold uppercase tracking-[0.2em] text-[#C9A961] mb-2">
               REAL MEMBER EXPERIENCES
             </motion.p>
             <motion.h2
               variants={fadeUp}
-              className="text-3xl md:text-4xl font-bold mb-3 text-[#0D2318]"
+              className="text-3xl md:text-5xl font-bold mb-3 text-[#0D2318]"
               style={{ fontFamily: "Times New Roman, serif" }}
             >
               What Our Community Says
             </motion.h2>
-            <motion.div variants={fadeUp} className="flex justify-center gap-1">
+            <motion.div variants={fadeUp} className="flex justify-center items-center gap-1.5 mt-2">
               {[...Array(5)].map((_, i) => (
                 <Star key={i} className="w-5 h-5 fill-[#C9A961] text-[#C9A961]" />
               ))}
+              <span className="ml-2 text-sm font-bold text-[#0D2318]">4.9 out of 5 stars based on 100+ reviews</span>
             </motion.div>
           </motion.div>
 
-          <motion.div
-            initial="hidden"
-            whileInView="show"
-            viewport={{ once: true, margin: "-60px" }}
-            variants={stagger}
-            className="grid grid-cols-1 md:grid-cols-3 gap-6"
-          >
-            {testimonials.map((t) => (
-              <motion.div
-                key={t.author}
-                variants={scaleIn}
-                className="bg-white rounded-2xl p-7 shadow-[0_4px_20px_rgba(0,0,0,0.04)] border border-[#EDE8DF] hover:shadow-[0_16px_40px_rgba(13,35,24,0.1)] transition-all duration-300 flex flex-col"
-              >
-                <div className="flex gap-1 mb-4">
-                  {[...Array(5)].map((_, i) => (
-                    <Star key={i} className="w-4 h-4 fill-[#C9A961] text-[#C9A961]" />
-                  ))}
-                </div>
-                <p className="text-sm leading-relaxed mb-6 italic text-[#4A4A4A] font-medium flex-1">
-                  &ldquo;{t.text}&rdquo;
-                </p>
-                <div className="flex items-center gap-3.5 pt-4 border-t border-[#EDE8DF]/60">
-                  <div className="relative w-11 h-11 rounded-full overflow-hidden flex-shrink-0 ring-2 ring-[#016C24]/20">
-                    <Image
-                      src={t.img}
-                      alt={t.author}
-                      fill
-                      className="object-cover"
-                      sizes="44px"
-                    />
-                  </div>
-                  <div>
-                    <p className="font-bold text-sm text-[#0D2318]">{t.author}</p>
-                    <p className="text-xs text-[#016C24] font-semibold">{t.role}</p>
-                  </div>
-                </div>
-              </motion.div>
-            ))}
-          </motion.div>
+          <ReviewsCarousel />
         </div>
       </section>
 
-      {/* ══ 9. CANNABIS EDUCATION BLOG ═══════════════════════════════════════ */}
+      {/* ══ 8. CANNABIS EDUCATION BLOG ═══════════════════════════════════════ */}
       <section className="py-20" style={{ background: "#F5F0E8" }}>
         <div className="container-site">
           <motion.div
@@ -979,7 +888,224 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ══ 10. NEWSLETTER ═══════════════════════════════════════════════════ */}
+      {/* ══ 9. SEASONAL BANNER ═══════════════════════════════════════════════ */}
+      <section className="py-12 md:py-16" style={{ background: "#EDE6DB" }}>
+        <div className="container-site">
+          <div className="relative rounded-[28px] sm:rounded-[36px] overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.18)] bg-[#07130C] border border-white/10 min-h-[380px] md:min-h-[460px] flex items-center">
+            <div className="grid grid-cols-1 md:grid-cols-12 w-full h-full items-center">
+              {/* Left Content */}
+              <div className="md:col-span-6 p-8 sm:p-12 md:p-16 z-10 flex flex-col items-start justify-center">
+                <p className="text-sm md:text-base font-medium text-white/80 mb-2 font-sans">
+                  Seasonal Collection:
+                </p>
+                <h2
+                  className="text-3xl sm:text-5xl md:text-5xl lg:text-6xl font-bold text-white mb-4 leading-tight font-serif"
+                  style={{ fontFamily: "Times New Roman, serif" }}
+                >
+                  Fresh Summer Blooms
+                </h2>
+                <p className="text-sm md:text-base text-white/80 leading-relaxed font-medium mb-8 max-w-md">
+                  Experience our hand-crafted organic formulas and seasonal herbal remedies tailored for your wellness.
+                </p>
+                <Link
+                  href="/shop"
+                  className="bg-[#007A2B] hover:bg-[#00581F] text-white text-xs sm:text-sm font-bold tracking-wider uppercase px-8 py-3.5 rounded-full transition-all shadow-md inline-flex items-center justify-center hover:scale-[1.02] font-sans"
+                >
+                  Shop Now
+                </Link>
+              </div>
+
+              {/* Right Dropper Image */}
+              <div className="md:col-span-6 relative w-full h-[280px] md:h-[460px] overflow-hidden">
+                <Image
+                  src="/images/Fresh-Summer-Blooms.png"
+                  alt="Fresh Summer Blooms Collection"
+                  fill
+                  className="object-cover object-center"
+                  sizes="(max-width:768px) 100vw, 50vw"
+                  priority
+                />
+                <div className="absolute inset-0 bg-gradient-to-t md:bg-gradient-to-r from-[#07130C] via-transparent to-transparent opacity-80 md:opacity-100" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ══ 10. FIND NEAR YOU - LOCATIONS SECTION ════════════════════════════ */}
+      <section className="py-16 md:py-24" style={{ background: "#EDE6DB" }}>
+        <div className="container-site">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-stretch">
+            
+            {/* Left Column: Heading & CTA */}
+            <div className="lg:col-span-4 flex flex-col justify-center items-start">
+              <span className="text-xs font-bold uppercase tracking-[0.22em] text-[#016C24] mb-3">
+                FIND NEAR YOU
+              </span>
+              <h2
+                className="text-3xl sm:text-4xl lg:text-[2.65rem] font-bold leading-[1.14] text-[#0D2318] mb-4 font-serif"
+                style={{ fontFamily: "Times New Roman, serif" }}
+              >
+                Find a Total Herbal Care and Wellnary <span className="text-[#016C24]">Near You</span>
+              </h2>
+              <p className="text-sm sm:text-base text-[#4A4A4A] font-medium leading-relaxed mb-8 max-w-sm">
+                Visit one of our convenient locations for expert service and premium products.
+              </p>
+              <Link
+                href="/location"
+                className="bg-[#0B2014] hover:bg-[#016C24] text-white text-xs font-bold tracking-widest uppercase px-7 py-4 rounded-full transition-all shadow-lg inline-flex items-center gap-2.5 font-sans group"
+              >
+                <MapPin className="w-4 h-4 text-[#E2C98A] group-hover:text-white transition-colors" />
+                <span>VIEW ALL LOCATIONS</span>
+              </Link>
+            </div>
+
+            {/* Middle Column: Map Graphic */}
+            <div className="lg:col-span-4 relative rounded-3xl overflow-hidden shadow-md border border-[#EDE8DF] bg-[#FAF8F5] min-h-[340px] lg:min-h-[420px] flex items-center justify-center">
+              <Image
+                src="/images/Find-a-Location-Near-You.png"
+                alt="Total Herbal Care Store Locations Map"
+                fill
+                className="object-cover object-center"
+                sizes="(max-width:1024px) 100vw, 33vw"
+              />
+              <div className="absolute inset-0 bg-black/5 pointer-events-none" />
+
+              {/* Pin 1: Top Center */}
+              <div className="absolute top-12 left-1/2 -translate-x-1/2 group cursor-pointer">
+                <div className="w-10 h-10 rounded-full bg-[#016C24] text-white flex items-center justify-center shadow-xl border-2 border-white transform group-hover:scale-125 transition-transform duration-300">
+                  <MapPin className="w-5 h-5 text-white" />
+                </div>
+              </div>
+
+              {/* Pin 2: Left Side */}
+              <div className="absolute top-1/3 left-12 group cursor-pointer">
+                <div className="w-10 h-10 rounded-full bg-[#016C24] text-white flex items-center justify-center shadow-xl border-2 border-white transform group-hover:scale-125 transition-transform duration-300">
+                  <MapPin className="w-5 h-5 text-white" />
+                </div>
+              </div>
+
+              {/* Pin 3: Right Side */}
+              <div className="absolute top-1/2 right-16 group cursor-pointer">
+                <div className="w-10 h-10 rounded-full bg-[#016C24] text-white flex items-center justify-center shadow-xl border-2 border-white transform group-hover:scale-125 transition-transform duration-300">
+                  <MapPin className="w-5 h-5 text-white" />
+                </div>
+              </div>
+
+              {/* Pin 4: Bottom Center */}
+              <div className="absolute bottom-16 left-1/3 group cursor-pointer">
+                <div className="w-10 h-10 rounded-full bg-[#016C24] text-white flex items-center justify-center shadow-xl border-2 border-white transform group-hover:scale-125 transition-transform duration-300">
+                  <MapPin className="w-5 h-5 text-white" />
+                </div>
+              </div>
+            </div>
+
+            {/* Right Column: Featured Locations Card */}
+            <div className="lg:col-span-4 bg-white rounded-3xl p-6 shadow-xl border border-[#EDE8DF] flex flex-col justify-between h-full">
+              <div className="space-y-4">
+                {[
+                  {
+                    num: "1",
+                    name: "Downtown LA",
+                    address: "123 Herbal Way",
+                    cityStateZip: "Los Angeles, CA 90012",
+                    hours: "Mon – Sun: 9AM – 9PM",
+                    distance: "2.3 miles",
+                    img: "/images/Apothecary.png",
+                  },
+                  {
+                    num: "2",
+                    name: "West Hollywood",
+                    address: "789 Green Leaf Blvd.",
+                    cityStateZip: "West Hollywood, CA 90069",
+                    hours: "Mon – Sun: 9AM – 10PM",
+                    distance: "4.7 miles",
+                    img: "/images/Find-a-Location-Near-You.png",
+                  },
+                  {
+                    num: "3",
+                    name: "Culver City",
+                    address: "456 Herbal Ave",
+                    cityStateZip: "Culver City, CA 90232",
+                    hours: "Mon – Sun: 9AM – 9PM",
+                    distance: "6.1 miles",
+                    img: "/images/Apothecary.png",
+                  },
+                ].map((loc, idx) => (
+                  <div
+                    key={loc.name}
+                    className={cn(
+                      "flex items-center justify-between gap-3 pb-3.5",
+                      idx !== 2 && "border-b border-[#EDE8DF]/70"
+                    )}
+                  >
+                    <div className="flex items-start gap-3 flex-1 min-w-0">
+                      {/* Image Thumbnail */}
+                      <div className="w-16 h-14 sm:w-20 sm:h-16 rounded-xl overflow-hidden relative border border-[#EDE8DF] flex-shrink-0">
+                        <Image
+                          src={loc.img}
+                          alt={loc.name}
+                          fill
+                          className="object-cover"
+                          sizes="80px"
+                        />
+                      </div>
+
+                      {/* Location Details */}
+                      <div className="min-w-0 flex-1">
+                        <div className="flex items-center gap-1.5 mb-0.5">
+                          <span className="w-4 h-4 rounded-full bg-[#016C24] text-white font-extrabold text-[10px] flex items-center justify-center flex-shrink-0 font-sans">
+                            {loc.num}
+                          </span>
+                          <h3
+                            className="font-bold text-sm sm:text-base text-[#0D2318] truncate"
+                            style={{ fontFamily: "Times New Roman, serif" }}
+                          >
+                            {loc.name}
+                          </h3>
+                        </div>
+                        <p className="text-xs text-[#555555] font-medium leading-tight truncate">
+                          {loc.address}
+                        </p>
+                        <p className="text-xs text-[#555555] font-medium leading-tight truncate">
+                          {loc.cityStateZip}
+                        </p>
+                        <p className="text-[11px] text-[#767676] font-semibold mt-1">
+                          {loc.hours}
+                        </p>
+                      </div>
+                    </div>
+
+                    {/* Distance */}
+                    <div className="text-right flex-shrink-0">
+                      <p className="font-extrabold text-sm sm:text-base text-[#0D2318]">
+                        {loc.distance.split(" ")[0]}
+                      </p>
+                      <p className="text-[11px] text-[#767676] font-semibold uppercase">
+                        {loc.distance.split(" ")[1]}
+                      </p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+
+              {/* Bottom Card Link */}
+              <div className="pt-4 border-t border-[#EDE8DF] text-right">
+                <Link
+                  href="/location"
+                  className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-extrabold text-[#016C24] hover:text-[#0D2318] transition-colors uppercase tracking-wider group font-sans"
+                >
+                  <span>VIEW ALL LOCATIONS</span>
+                  <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                </Link>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      {/* ══ 11. NEWSLETTER ═══════════════════════════════════════════════════ */}
       <section className="py-12" style={{ background: "#F5F0E8" }}>
         <div className="container-site">
           <div className="relative rounded-3xl overflow-hidden py-14 px-8 md:px-20 bg-gradient-to-r from-[#0D2318] via-[#016C24] to-[#0D2318] shadow-[0_20px_50px_rgba(13,35,24,0.25)] border border-white/15">
@@ -1032,7 +1158,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ══ 11. FAQ ══════════════════════════════════════════════════════════ */}
+      {/* ══ 12. FAQ ══════════════════════════════════════════════════════════ */}
       <section className="py-20" style={{ background: "#F5F0E8" }}>
         <div className="container-site" style={{ maxWidth: "780px" }}>
           <motion.div
