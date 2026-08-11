@@ -93,8 +93,10 @@ export function Header() {
         scrolled ? "shadow-md" : ""
       )}
     >
-      {/* Top Green Accent Bar */}
-      <div className="bg-[#006828] h-1.5 w-full select-none" />
+      {/* Top Green Announcement Bar matching Screenshot 2 */}
+      <div className="bg-[#006828] text-white text-[10px] sm:text-xs font-semibold tracking-[0.15em] uppercase py-2 text-center select-none font-sans px-4">
+        PREMIUM CANNABIS PRODUCTS &bull; ADULTS 21+ ONLY &bull; LAB TESTED &bull; SECURE SHOPPING
+      </div>
 
       {/* Main Header Container */}
       <div className="container-site flex items-center justify-between h-20 gap-3 sm:gap-4">
@@ -118,7 +120,7 @@ export function Header() {
             </span>
             <span
               className="text-2xl sm:text-3xl lg:text-[2.2rem] font-medium leading-none text-[#006828] tracking-tight"
-              style={{ fontFamily: "Times New Roman, serif" }}
+              style={{ fontFamily: "Times New Roman, serif", color: "#006828" }}
             >
               Herbal
             </span>
@@ -139,7 +141,7 @@ export function Header() {
           {/* Search Input Pill */}
           <form
             onSubmit={handleSearchSubmit}
-            className="hidden xl:flex items-center gap-2 bg-[#F0F0F0] rounded-full px-4 py-2 w-40 xl:w-52 focus-within:bg-white focus-within:ring-1 focus-within:ring-[#006828] transition-all duration-300"
+            className="hidden xl:flex items-center gap-2 bg-[#F0F0F0] rounded-full px-4 py-2 w-40 xl:w-52 focus-within:bg-white focus-within:ring-1 focus-within:ring-[#006828] transition-all duration-300 border border-transparent focus-within:border-[#006828]"
           >
             <Search className="w-4 h-4 text-[#8E8E93] flex-shrink-0" />
             <input
@@ -155,18 +157,18 @@ export function Header() {
           <Link
             href={isAuthenticated ? "/account" : "/sign-in"}
             aria-label="Account"
-            className="p-1.5 sm:p-2 rounded-full hover:bg-neutral-100 transition-all text-[#1A1A1A] hover:text-[#006828]"
+            className="p-1.5 sm:p-2 rounded-full hover:bg-neutral-100 transition-all text-[#006828]"
           >
-            <User className="w-5 h-5" />
+            <User className="w-5 h-5 text-[#006828]" style={{ color: "#006828" }} />
           </Link>
 
           {/* Wishlist */}
           <Link
             href={isAuthenticated ? "/account/wishlist" : "/sign-in"}
             aria-label="Wishlist"
-            className="p-1.5 sm:p-2 rounded-full hover:bg-neutral-100 transition-all text-[#1A1A1A] hover:text-[#006828] relative"
+            className="p-1.5 sm:p-2 rounded-full hover:bg-neutral-100 transition-all text-[#006828] relative"
           >
-            <Heart className="w-5 h-5" />
+            <Heart className="w-5 h-5 text-[#006828]" style={{ color: "#006828" }} />
             {wishlistCount > 0 && (
               <span className="absolute -top-0.5 -right-0.5 w-4.5 h-4.5 bg-red-600 text-white text-[10px] font-bold rounded-full flex items-center justify-center">
                 {wishlistCount}
@@ -178,9 +180,9 @@ export function Header() {
           <button
             onClick={openCartDrawer}
             aria-label="Shopping Cart"
-            className="p-1.5 sm:p-2 rounded-full hover:bg-neutral-100 transition-all text-[#1A1A1A] hover:text-[#006828] relative"
+            className="p-1.5 sm:p-2 rounded-full hover:bg-neutral-100 transition-all text-[#006828] relative"
           >
-            <ShoppingCart className="w-5 h-5" />
+            <ShoppingCart className="w-5 h-5 text-[#006828]" style={{ color: "#006828" }} />
             <span className="absolute -top-0.5 -right-0.5 w-4.5 h-4.5 bg-[#006828] text-white text-[10px] font-extrabold rounded-full flex items-center justify-center">
               {cartCount}
             </span>

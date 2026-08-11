@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import { MessageSquare } from "lucide-react";
+import { MessageSquare, MapPin } from "lucide-react";
 
 const quickLinks = [
   { label: "Flowers", href: "/shop?category=flowers" },
@@ -15,6 +15,12 @@ const supportLinks = [
   { label: "Terms of Service", href: "/terms" },
   { label: "Shipping Info", href: "/faq" },
   { label: "FAQ", href: "/faq" },
+];
+
+const storeLocations = [
+  { name: "Downtown LA", address: "123 Herbal Way, Los Angeles, CA 90012" },
+  { name: "West Hollywood", address: "789 Green Leaf Blvd, West Hollywood, CA 90069" },
+  { name: "Culver City", address: "456 Herbal Ave, Culver City, CA 90232" },
 ];
 
 function FacebookIcon() {
@@ -155,29 +161,42 @@ export function Footer() {
             </ul>
           </div>
 
-          {/* Column 4: Our Location & Map */}
-          <div className="lg:col-span-3 space-y-4">
+          {/* Column 4: Our Locations & Map */}
+          <div className="lg:col-span-3 space-y-3.5">
             <h4
-              className="text-xs sm:text-sm font-bold uppercase tracking-wider text-white mb-4 font-sans"
+              className="text-xs sm:text-sm font-bold uppercase tracking-wider text-white mb-3 font-sans"
               style={{ color: "#ffffff" }}
             >
-              OUR LOCATION
+              OUR LOCATIONS
             </h4>
-            <div className="text-sm text-white/80 leading-relaxed font-sans space-y-1">
-              <p>123 Wellness Blvd, Green District</p>
-              <p>Los Angeles, CA 90012</p>
+            <div className="space-y-2.5 text-xs text-white/80 font-sans">
+              {storeLocations.map((loc) => (
+                <div key={loc.name} className="flex items-start gap-2">
+                  <MapPin className="w-3.5 h-3.5 text-[#006828] flex-shrink-0 mt-0.5" style={{ color: "#006828" }} />
+                  <div>
+                    <span className="font-bold text-white block">{loc.name}</span>
+                    <span className="text-white/70 block leading-tight">{loc.address}</span>
+                  </div>
+                </div>
+              ))}
             </div>
-            {/* Map Card */}
-            <div className="relative rounded-2xl overflow-hidden border border-white/20 w-full h-28 shadow-lg mt-3">
+            {/* Map Card Link */}
+            <Link
+              href="/location"
+              className="block relative rounded-xl overflow-hidden border border-white/20 w-full h-20 shadow-md mt-2 group"
+            >
               <Image
                 src="/images/Find-a-Location-Near-You.png"
-                alt="Store Location Map"
+                alt="Store Locations Map"
                 fill
-                className="object-cover"
+                className="object-cover group-hover:scale-105 transition-transform duration-300"
                 sizes="300px"
               />
-              <div className="absolute inset-0 bg-black/10" />
-            </div>
+              <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors" />
+              <span className="absolute bottom-1.5 left-2.5 bg-[#006828] text-white text-[10px] font-bold px-2.5 py-0.5 rounded-full shadow">
+                View All Locations &rarr;
+              </span>
+            </Link>
           </div>
         </div>
       </div>

@@ -633,7 +633,7 @@ export default function HomePage() {
       </section>
 
       {/* ══ BANNER 1: LIMITED TIME OFFER ═════════════════════════════════════ */}
-      <section className="py-12 md:py-16" style={{ background: "#EDE2D7" }}>
+      <section className="py-12 md:py-16" style={{ background: "#EDE6DB" }}>
         <div className="container-site">
           <div className="relative rounded-[28px] sm:rounded-[36px] overflow-hidden shadow-xl bg-[#07130C] border border-white/10 min-h-[380px] md:min-h-[460px] flex items-center justify-center text-center">
             {/* Background Image - Limited-time-offer.png */}
@@ -674,25 +674,27 @@ export default function HomePage() {
           </div>
         </div>
       </section>
-      <section className="py-16 md:py-20" style={{ background: "#EDE2D7" }}>
+
+      {/* ══ 5. THE TOTALHERBALCARE DIFFERENCE ════════════════════════════════ */}
+      <section className="py-16 md:py-24" style={{ background: "#EDE6DB" }}>
         <div className="container-site">
           <motion.div
             initial="hidden"
             whileInView="show"
             viewport={{ once: true }}
             variants={stagger}
-            className="text-center mb-12 md:mb-14"
+            className="text-center max-w-2xl mx-auto mb-12 md:mb-16"
           >
             <motion.h2
               variants={fadeUp}
-              className="text-3xl sm:text-4xl md:text-5xl font-bold text-[#006828]"
+              className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 text-[#006828] leading-tight font-serif"
               style={{ fontFamily: "Times New Roman, serif", color: "#006828" }}
             >
               The TotalHerbalCare Difference
             </motion.h2>
             <motion.p
               variants={fadeUp}
-              className="text-sm sm:text-base max-w-xl mx-auto mt-2.5 text-[#666666] font-medium"
+              className="text-sm sm:text-base text-[#666666] font-normal leading-relaxed font-sans"
             >
               Setting the benchmark for quality, safety, and luxury in the cannabis wellness industry.
             </motion.p>
@@ -728,7 +730,7 @@ export default function HomePage() {
       </section>
 
       {/* ══ 6. OUR COMMITMENT ════════════════════════════════════════════════ */}
-      <section className="py-16 md:py-20" style={{ background: "#EDE2D7" }}>
+      <section className="py-16 md:py-20" style={{ background: "#EDE6DB" }}>
         <div className="container-site">
           <div className="grid md:grid-cols-2 gap-10 lg:gap-14 items-center">
             {/* Left Image & Floating Badge */}
@@ -739,7 +741,7 @@ export default function HomePage() {
               transition={{ duration: 0.6 }}
               className="relative"
             >
-              <div className="relative rounded-[28px] sm:rounded-[32px] overflow-hidden shadow-sm border border-black/5 aspect-square">
+              <div className="relative rounded-[28px] sm:rounded-[32px] overflow-hidden shadow-sm border border-black/5 aspect-square sm:aspect-auto sm:min-h-[460px]">
                 <Image
                   src="/images/OUR-COMMITMENT.png"
                   alt="Cannabis cultivation lab"
@@ -760,7 +762,7 @@ export default function HomePage() {
               </div>
             </motion.div>
 
-            {/* Right Text Content */}
+            {/* Right Text Content - Matching Image 1 with real domain text */}
             <motion.div
               initial={{ opacity: 0, x: 30 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -778,7 +780,7 @@ export default function HomePage() {
                 Elevating Standards in Cannabis Wellness
               </h2>
               <p className="text-sm text-[#666666] leading-relaxed mb-6 font-normal">
-                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry&apos;s standard dummy text ever since 1966, when designers at Letraset and James Mosley,
+                Our master growers and formulation chemists utilize clean extraction techniques without harmful solvents, delivering uncompromised herbal purity across every strain.
               </p>
 
               {/* Bullet Points */}
@@ -786,11 +788,11 @@ export default function HomePage() {
                 {[
                   {
                     title: "Ethical Cultivation",
-                    desc: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been",
+                    desc: "Sustainable farming practices focused on soil health, zero synthetic pesticides, and energy-efficient solar greenhouse cultivation.",
                   },
                   {
                     title: "Community Education",
-                    desc: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been",
+                    desc: "Empowering customers with clear lab reports, accurate dosing guides, and transparent cannabinoid profiling.",
                   },
                 ].map((item) => (
                   <div key={item.title} className="flex items-start gap-3">
@@ -821,7 +823,7 @@ export default function HomePage() {
       </section>
 
       {/* ══ 7. COMMUNITY REVIEWS ═════════════════════════════════════════════ */}
-      <section className="py-16 md:py-20" style={{ background: "#EDE2D7" }}>
+      <section className="py-16 md:py-20" style={{ background: "#EDE6DB" }}>
         <div className="container-site">
           <motion.div
             initial="hidden"
@@ -857,7 +859,7 @@ export default function HomePage() {
                   <p className="text-sm sm:text-base text-[#555555] font-normal leading-relaxed mb-6 font-sans">
                     &ldquo;{t.text}&rdquo;
                   </p>
-                  <div className="flex items-center gap-3.5 pt-4">
+                  <div className="flex items-center gap-3.5 pt-4 border-t border-[#EDE8DF]">
                     <div className="relative w-10 h-10 rounded-full overflow-hidden flex-shrink-0 bg-[#EDE2D7]">
                       <Image
                         src={t.img}
@@ -884,34 +886,32 @@ export default function HomePage() {
       </section>
 
       {/* ══ 8. CANNABIS EDUCATION BLOG ═══════════════════════════════════════ */}
-      <section className="py-16 md:py-20" style={{ background: "#EDE2D7" }}>
+      <section className="py-16 md:py-24" style={{ background: "#EDE6DB" }}>
         <div className="container-site">
           <motion.div
             initial="hidden"
             whileInView="show"
             viewport={{ once: true }}
             variants={stagger}
-            className="flex flex-col sm:flex-row items-start sm:items-end justify-between mb-8 gap-4"
+            className="flex flex-col sm:flex-row items-start sm:items-end justify-between mb-10 md:mb-14 gap-4"
           >
             <div>
               <motion.h2
                 variants={fadeUp}
-                className="text-3xl sm:text-4xl font-bold text-[#006828]"
+                className="text-3xl sm:text-4xl md:text-5xl font-bold text-[#006828] leading-tight font-serif"
                 style={{ fontFamily: "Times New Roman, serif", color: "#006828" }}
               >
-                Cannabis Education
+                Cannabis Education &amp; Insights
               </motion.h2>
-              <motion.p variants={fadeUp} className="text-sm sm:text-base mt-1 text-[#666666] font-medium">
-                Expand your knowledge with our latest research and lifestyle guides.
-              </motion.p>
             </div>
             <motion.div variants={fadeUp}>
               <Link
                 href="/blog"
-                className="border border-[#006828] text-[#006828] px-5 py-2 rounded-full text-xs font-semibold hover:bg-[#006828] hover:text-white transition-all inline-block"
-                style={{ color: "#006828", borderColor: "#006828" }}
+                className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-bold text-[#006828] hover:gap-2.5 transition-all font-sans"
+                style={{ color: "#006828" }}
               >
-                View All Articles
+                <span>Read All Articles</span>
+                <ArrowRight className="w-4 h-4" />
               </Link>
             </motion.div>
           </motion.div>
@@ -919,38 +919,42 @@ export default function HomePage() {
           <motion.div
             initial="hidden"
             whileInView="show"
-            viewport={{ once: true, margin: "-40px" }}
+            viewport={{ once: true, margin: "-60px" }}
             variants={stagger}
-            className="grid grid-cols-1 md:grid-cols-3 gap-6"
+            className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8"
           >
             {blogPostsList.map((post: any) => (
               <motion.div key={post.id} variants={scaleIn}>
-                <Link href={`/blog/${post.slug}`} className="group block">
-                  <div
-                    className="relative rounded-2xl overflow-hidden mb-3 bg-[#EDE2D7]"
-                    style={{ aspectRatio: "16/10" }}
-                  >
+                <Link
+                  href={`/blog/${post.slug}`}
+                  className="group bg-white rounded-3xl p-6 border border-white/60 shadow-sm transition-all duration-300 hover:shadow-md flex flex-col h-full"
+                >
+                  <div className="relative rounded-2xl overflow-hidden mb-5 aspect-[16/10]">
                     <Image
                       src={post.img}
                       alt={post.title}
                       fill
-                      className="object-cover transition-transform duration-500 group-hover:scale-105"
+                      className="object-cover group-hover:scale-105 transition-transform duration-500"
                       sizes="(max-width:768px) 100vw, 33vw"
                     />
                   </div>
-                  <span className="text-[11px] font-bold tracking-wider uppercase block text-[#006828] mb-1 font-sans" style={{ color: "#006828" }}>
-                    {post.category}
+
+                  <span className="text-[10px] font-bold tracking-widest text-[#006828] uppercase mb-2 block font-sans" style={{ color: "#006828" }}>
+                    {post.date}
                   </span>
+
                   <h3
-                    className="font-bold mb-1 text-lg sm:text-xl text-[#006828] group-hover:text-[#005220] transition-colors font-sans"
-                    style={{ color: "#006828" }}
+                    className="font-bold text-lg sm:text-xl text-[#006828] group-hover:text-[#005220] transition-colors mb-2 font-serif leading-snug"
+                    style={{ fontFamily: "Times New Roman, serif", color: "#006828" }}
                   >
                     {post.title}
                   </h3>
-                  <p className="text-xs sm:text-sm leading-relaxed mb-3 text-[#666666] font-normal">
+
+                  <p className="text-xs sm:text-sm leading-relaxed mb-4 text-[#666666] font-normal">
                     {post.excerpt}
                   </p>
-                  <span className="inline-flex items-center gap-1 text-xs sm:text-sm font-bold text-[#006828] group-hover:gap-2 transition-all font-sans" style={{ color: "#006828" }}>
+
+                  <span className="inline-flex items-center gap-1 text-xs sm:text-sm font-bold text-[#006828] group-hover:gap-2 transition-all font-sans mt-auto" style={{ color: "#006828" }}>
                     <span>Read Article</span>
                     <ArrowRight className="w-3.5 h-3.5" />
                   </span>
@@ -962,7 +966,7 @@ export default function HomePage() {
       </section>
 
       {/* ══ BANNER 2: FRESH SUMMER BLOOMS ═══════════════════════════════════ */}
-      <section className="py-12 md:py-16" style={{ background: "#EDE2D7" }}>
+      <section className="py-12 md:py-16" style={{ background: "#EDE6DB" }}>
         <div className="container-site">
           <div className="relative rounded-[28px] sm:rounded-[36px] overflow-hidden shadow-xl bg-[#050D08] border border-white/10 min-h-[340px] md:min-h-[400px] flex items-center">
             {/* Background Image - Fresh-Summer-Blooms.png */}
@@ -989,8 +993,8 @@ export default function HomePage() {
               >
                 Fresh Summer Blooms
               </h2>
-              <p className="text-xs sm:text-sm text-white/80 leading-relaxed font-normal mb-6 max-w-md font-sans">
-                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum
+              <p className="text-xs sm:text-sm text-white/85 leading-relaxed font-normal mb-6 max-w-md font-sans">
+                Experience our hand-crafted organic formulas and seasonal herbal remedies tailored for your supreme wellness.
               </p>
               <Link
                 href="/shop"
