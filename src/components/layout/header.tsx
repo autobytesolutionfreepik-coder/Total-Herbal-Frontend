@@ -109,23 +109,23 @@ export function Header() {
           <Menu className="w-6 h-6 text-[#1A1A1A]" />
         </button>
 
-        {/* Desktop/Mobile Left: Logo matching Figma */}
+        {/* Desktop/Mobile Left: Logo matching Figma with increased font size */}
         <div className="flex-1 lg:flex-initial flex justify-center lg:justify-start min-w-0">
           <Link href="/" className="inline-flex items-center group whitespace-nowrap">
             <span
-              className="text-2xl sm:text-3xl lg:text-[2.2rem] font-medium leading-none text-black tracking-tight"
+              className="text-3xl sm:text-4xl lg:text-[2.85rem] font-bold leading-none text-black tracking-tight"
               style={{ fontFamily: "Times New Roman, serif" }}
             >
               Total
             </span>
             <span
-              className="text-2xl sm:text-3xl lg:text-[2.2rem] font-medium leading-none text-[#006828] tracking-tight"
+              className="text-3xl sm:text-4xl lg:text-[2.85rem] font-bold leading-none text-[#006828] tracking-tight"
               style={{ fontFamily: "Times New Roman, serif", color: "#006828" }}
             >
               Herbal
             </span>
             <span
-              className="text-2xl sm:text-3xl lg:text-[2.2rem] font-medium leading-none text-black tracking-tight"
+              className="text-3xl sm:text-4xl lg:text-[2.85rem] font-bold leading-none text-black tracking-tight"
               style={{ fontFamily: "Times New Roman, serif" }}
             >
               Care

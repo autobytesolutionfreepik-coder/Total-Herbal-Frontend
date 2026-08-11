@@ -59,17 +59,17 @@ const purityFeatures = [
   {
     icon: ShieldCheck,
     title: "Triple-Tested Batching",
-    desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    desc: "Every harvest is independently screened by accredited ISO laboratories for cannabinoid potency, terpene density, and 100% pesticide-free purity.",
   },
   {
     icon: Zap,
     title: "Advanced Extraction",
-    desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    desc: "State-of-the-art solventless rosin and cold CO2 extraction methods preserve full-spectrum terpenes and vital plant compounds without harsh chemicals.",
   },
   {
     icon: HeartHandshake,
     title: "Patient Safety First",
-    desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    desc: "Strict state dispensary compliance, transparent batch lab results, and tamper-evident child-resistant packaging safeguard every order.",
   },
 ];
 
