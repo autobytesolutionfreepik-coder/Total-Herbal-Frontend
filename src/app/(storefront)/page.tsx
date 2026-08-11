@@ -892,41 +892,40 @@ export default function HomePage() {
       <section className="py-12 md:py-16" style={{ background: "#EDE6DB" }}>
         <div className="container-site">
           <div className="relative rounded-[28px] sm:rounded-[36px] overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.18)] bg-[#07130C] border border-white/10 min-h-[380px] md:min-h-[460px] flex items-center">
-            <div className="grid grid-cols-1 md:grid-cols-12 w-full h-full items-center">
-              {/* Left Content */}
-              <div className="md:col-span-6 p-8 sm:p-12 md:p-16 z-10 flex flex-col items-start justify-center">
-                <p className="text-sm md:text-base font-medium text-white/80 mb-2 font-sans">
-                  Seasonal Collection:
-                </p>
-                <h2
-                  className="text-3xl sm:text-5xl md:text-5xl lg:text-6xl font-bold mb-4 leading-tight font-serif"
-                  style={{ fontFamily: "Times New Roman, serif", color:"#ffffff" }}
-                >
-                  Fresh Summer Blooms
-                </h2>
-                <p className="text-sm md:text-base text-white/80 leading-relaxed font-medium mb-8 max-w-md">
-                  Experience our hand-crafted organic formulas and seasonal herbal remedies tailored for your wellness.
-                </p>
-                <Link
-                  href="/shop"
-                  className="bg-[#007A2B] hover:bg-[#00581F] text-white text-xs sm:text-sm font-bold tracking-wider uppercase px-8 py-3.5 rounded-full transition-all shadow-md inline-flex items-center justify-center hover:scale-[1.02] font-sans"
-                >
-                  Shop Now
-                </Link>
-              </div>
+            {/* Background Image across full container */}
+            <Image
+              src="/images/Fresh-Summer-Blooms.png"
+              alt="Fresh Summer Blooms Collection"
+              fill
+              className="object-cover object-right md:object-center"
+              sizes="100vw"
+              priority
+            />
 
-              {/* Right Dropper Image */}
-              <div className="md:col-span-6 relative w-full h-[280px] md:h-[460px] overflow-hidden">
-                <Image
-                  src="/images/Fresh-Summer-Blooms.png"
-                  alt="Fresh Summer Blooms Collection"
-                  fill
-                  className="object-cover object-center"
-                  sizes="(max-width:768px) 100vw, 50vw"
-                  priority
-                />
-                <div className="absolute inset-0 bg-gradient-to-t md:bg-gradient-to-r from-[#07130C] via-transparent to-transparent opacity-80 md:opacity-100" />
-              </div>
+            {/* Dark gradient overlays to ensure left-side text readability */}
+            <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/60 to-transparent md:w-[65%] lg:w-[55%]" />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent md:hidden" />
+
+            {/* Content Container */}
+            <div className="relative z-10 p-8 sm:p-12 md:p-16 max-w-xl flex flex-col items-start justify-center">
+              <p className="text-sm md:text-base font-medium text-white/80 mb-2 font-sans">
+                Seasonal Collection:
+              </p>
+              <h2
+                className="text-3xl sm:text-5xl md:text-5xl lg:text-6xl font-bold mb-4 leading-tight font-serif text-white"
+                style={{ fontFamily: "Times New Roman, serif" }}
+              >
+                Fresh Summer Blooms
+              </h2>
+              <p className="text-sm md:text-base text-white/80 leading-relaxed font-medium mb-8 max-w-md">
+                Experience our hand-crafted organic formulas and seasonal herbal remedies tailored for your wellness.
+              </p>
+              <Link
+                href="/shop"
+                className="bg-[#007A2B] hover:bg-[#00581F] text-white text-xs sm:text-sm font-bold tracking-wider uppercase px-8 py-3.5 rounded-full transition-all shadow-md inline-flex items-center justify-center hover:scale-[1.02] font-sans"
+              >
+                Shop Now
+              </Link>
             </div>
           </div>
         </div>
