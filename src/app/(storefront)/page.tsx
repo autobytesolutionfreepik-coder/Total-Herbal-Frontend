@@ -125,52 +125,52 @@ const differenceCards = [
   {
     icon: Award,
     title: "Premium Quality",
-    desc: "Rigorous organic sourcing standards ensured for pure, potent, unadulterated herbal formulas.",
+    desc: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the",
   },
   {
     icon: FlaskConical,
     title: "Lab Tested",
-    desc: "Every strain batch undergoes third-party ISO lab testing for cannabinoids, terpenes, and purity.",
+    desc: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the",
   },
   {
     icon: Shield,
     title: "Licensed Dispensary",
-    desc: "Fully compliant legal state dispensary adhering to strict safety and age verification standards.",
+    desc: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the",
   },
   {
     icon: Package,
     title: "Wide Selection",
-    desc: "Curated flowers, full-spectrum vapes, precision-dosed edibles, tinctures, and apothecary line.",
+    desc: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the",
   },
   {
     icon: Users,
     title: "Friendly Experts",
-    desc: "Our knowledgeable herbal wellness consultants guide your personal strain selection.",
+    desc: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the",
   },
   {
     icon: Lock,
     title: "Secure Checkout",
-    desc: "End-to-end encrypted checkout supporting credit card intents and cash-on-delivery.",
+    desc: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the",
   },
 ];
 
 const testimonials = [
   {
-    text: "Total Herbal Care transformed my evening sleep routine. The Skywalker OG strain is remarkably smooth and deeply relaxing.",
+    text: "The selection at TotalHerbalCare is unparalleled. Their edibles actually taste gourmet and the results are consistent every time. Best dispensary in the city.",
     author: "Sarah J.",
-    role: "Verified Customer",
+    role: "VERIFIED CUSTOMER",
     img: "https://images.unsplash.com/photo-1494790108755-2616b612b47c?w=80&h=80&fit=crop&q=80",
   },
   {
-    text: "Top-notch lab-tested quality. The delivery was fast, discreet, and the Golden Hour vape cart has an incredible natural terpene flavor.",
+    text: "Their staff really knows their stuff. I was looking for something to help with sleep and their recommendations were spot on. The store vibe is so high-end.",
     author: "Marcus W.",
-    role: "Regular Member",
+    role: "VERIFIED CUSTOMER",
     img: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=80&h=80&fit=crop&q=80",
   },
   {
-    text: "Customer service and educational blog guides helped me choose the exact CBD chocolate for muscle recovery. Highly recommended!",
-    author: "Diana R.",
-    role: "Verified Customer",
+    text: "Absolutely love the packaging and the focus on lab results. It gives me peace of mind knowing exactly what I'm putting into my body. Truly a premium experience.",
+    author: "Elena R.",
+    role: "VERIFIED CUSTOMER",
     img: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=80&h=80&fit=crop&q=80",
   },
 ];
@@ -178,25 +178,25 @@ const testimonials = [
 const defaultBlogPosts = [
   {
     id: "1",
-    category: "BEGINNER",
-    title: "A Beginner's Guide to CBD & Wellness",
-    excerpt: "Learn how full-spectrum cannabinoids interact with your endocannabinoid system to support daily balance.",
+    category: "BEGINNERS",
+    title: "A Beginner's Guide to CBD",
+    excerpt: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum",
     img: "/images/Beginners.png",
     slug: "beginners-guide-to-cbd",
   },
   {
     id: "2",
     category: "SCIENCE",
-    title: "Understanding Terpenes & Strain Entourage",
-    excerpt: "Explore the aromatic compounds that define strain effects, flavor profiles, and therapeutic benefits.",
+    title: "Understanding Terpenes",
+    excerpt: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum",
     img: "/images/science.png",
     slug: "understanding-terpenes",
   },
   {
     id: "3",
     category: "LIFESTYLE",
-    title: "The Art of Organic Pre-Roll Craftsmanship",
-    excerpt: "From unbleached hemp papers to kief infusion techniques, discover premium pre-roll standards.",
+    title: "The Art of Pre-Rolls",
+    excerpt: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum",
     img: "/images/LIFESTYLE.png",
     slug: "the-art-of-pre-rolls",
   },
@@ -221,16 +221,16 @@ const locations = [
 
 const faqs = [
   {
-    q: "Are all products third-party lab tested?",
+    q: "Do you offer same-day delivery?",
+    a: "Yes! Orders submitted before 4:00 PM in qualifying local zip codes are delivered same-day in discreet, temperature-controlled packaging.",
+  },
+  {
+    q: "What payment methods do you accept?",
+    a: "We accept all major credit cards, debit cards, bank transfers, and cash-on-delivery for local orders.",
+  },
+  {
+    q: "Are your products laboratory tested?",
     a: "Yes! Every single product batch at Total Herbal Care undergoes comprehensive ISO-accredited lab testing for cannabinoid potency, terpene profiles, pesticides, heavy metals, and residual solvents.",
-  },
-  {
-    q: "What is the legal purchase age limit?",
-    a: "In compliance with state regulations, all customers must be 21 years of age or older with valid government-issued photo identification.",
-  },
-  {
-    q: "How does same-day local dispensary delivery work?",
-    a: "Orders submitted before 4:00 PM in qualifying local zip codes are delivered same-day in discreet, temperature-controlled packaging.",
   },
 ];
 
@@ -633,30 +633,27 @@ export default function HomePage() {
       </section>
 
       {/* ══ 5. DIFFERENCE ════════════════════════════════════════════════════ */}
-      <section className="py-20" style={{ background: "#ede2d7" }}>
+      <section className="py-16 md:py-20" style={{ background: "#EDE2D7" }}>
         <div className="container-site">
           <motion.div
             initial="hidden"
             whileInView="show"
             viewport={{ once: true }}
             variants={stagger}
-            className="text-center mb-14"
+            className="text-center mb-12 md:mb-14"
           >
-            <motion.p variants={fadeUp} className="text-xs font-bold uppercase tracking-[0.2em] text-[#C9A961] mb-2">
-              WHY CHOOSE TOTAL HERBAL CARE
-            </motion.p>
             <motion.h2
               variants={fadeUp}
-              className="text-3xl md:text-4xl font-bold text-[#0D2318]"
-              style={{ fontFamily: "Times New Roman, serif" }}
+              className="text-3xl sm:text-4xl md:text-5xl font-bold text-[#006828]"
+              style={{ fontFamily: "Times New Roman, serif", color: "#006828" }}
             >
               The TotalHerbalCare Difference
             </motion.h2>
             <motion.p
               variants={fadeUp}
-              className="text-base max-w-xl mx-auto mt-2 text-[#4A4A4A] font-medium"
+              className="text-sm sm:text-base max-w-xl mx-auto mt-2.5 text-[#666666] font-medium"
             >
-              Setting the standard for purity, safety, and customer guidance in organic herbal cannabis.
+              Setting the benchmark for quality, safety, and luxury in the cannabis wellness industry.
             </motion.p>
           </motion.div>
 
@@ -671,20 +668,16 @@ export default function HomePage() {
               <motion.div
                 key={title}
                 variants={scaleIn}
-                className="bg-white rounded-2xl p-7 border border-[#EDE8DF] transition-all duration-300 hover:shadow-[0_16px_40px_rgba(13,35,24,0.1)] hover:border-[#016C24]/30 hover:-translate-y-1"
+                className="bg-white rounded-3xl p-7 sm:p-8 border border-white/60 shadow-sm transition-all duration-300 hover:shadow-md"
               >
-                <div
-                  className="w-12 h-12 rounded-2xl flex items-center justify-center mb-5 bg-[#0D2318] text-[#E2C98A] shadow-md"
-                >
-                  <Icon className="w-6 h-6" />
-                </div>
+                <Icon className="w-7 h-7 text-[#006828] mb-4" style={{ color: "#006828" }} />
                 <h3
-                  className="font-bold text-xl mb-2 text-[#0D2318]"
-                  style={{ fontFamily: "Times New Roman, serif" }}
+                  className="font-bold text-xl mb-2 text-[#006828] font-sans"
+                  style={{ color: "#006828" }}
                 >
                   {title}
                 </h3>
-                <p className="text-sm leading-relaxed text-[#4A4A4A] font-medium">
+                <p className="text-sm leading-relaxed text-[#666666] font-normal">
                   {desc}
                 </p>
               </motion.div>
@@ -694,9 +687,9 @@ export default function HomePage() {
       </section>
 
       {/* ══ 6. OUR COMMITMENT ════════════════════════════════════════════════ */}
-      <section className="py-16 md:py-24" style={{ background: "#EDE6DB" }}>
+      <section className="py-16 md:py-20" style={{ background: "#EDE2D7" }}>
         <div className="container-site">
-          <div className="grid md:grid-cols-2 gap-10 lg:gap-16 items-center">
+          <div className="grid md:grid-cols-2 gap-10 lg:gap-14 items-center">
             {/* Left Image & Floating Badge */}
             <motion.div
               initial={{ opacity: 0, x: -30 }}
@@ -705,7 +698,7 @@ export default function HomePage() {
               transition={{ duration: 0.6 }}
               className="relative"
             >
-              <div className="relative rounded-[28px] sm:rounded-[36px] overflow-hidden shadow-lg border border-black/5 aspect-square">
+              <div className="relative rounded-[28px] sm:rounded-[32px] overflow-hidden shadow-sm border border-black/5 aspect-square">
                 <Image
                   src="/images/OUR-COMMITMENT.png"
                   alt="Cannabis cultivation lab"
@@ -715,12 +708,12 @@ export default function HomePage() {
                   priority
                 />
                 {/* Floating 10+ Years Badge */}
-                <div className="absolute bottom-6 left-6 right-6 sm:right-auto sm:max-w-[280px] bg-white/70 backdrop-blur-md rounded-2xl p-5 shadow-xl border border-white/60">
-                  <p className="text-2xl sm:text-3xl font-bold text-[#016C24] font-sans mb-1">
+                <div className="absolute bottom-6 left-6 right-6 sm:right-auto sm:max-w-[280px] bg-white/90 backdrop-blur-md rounded-2xl p-5 shadow-lg border border-white/60">
+                  <p className="text-2xl font-bold text-[#006828] font-sans mb-0.5" style={{ color: "#006828" }}>
                     10+ Years
                   </p>
-                  <p className="text-xs sm:text-sm text-[#555555] font-medium leading-snug">
-                    Of excellence in organic cultivation and botanical innovation.
+                  <p className="text-xs text-[#666666] font-normal leading-snug">
+                    Of experience in organic cultivation and wellness innovation.
                   </p>
                 </div>
               </div>
@@ -734,38 +727,38 @@ export default function HomePage() {
               transition={{ duration: 0.6 }}
               className="flex flex-col justify-center"
             >
-              <p className="text-xs sm:text-lg font-bold uppercase tracking-[0.2em] text-[#016C24] mb-3">
+              <p className="text-xs font-bold uppercase tracking-[0.2em] text-[#006828] mb-2 font-sans" style={{ color: "#006828" }}>
                 OUR COMMITMENT
               </p>
               <h2
-                className="text-4xl sm:text-4xl lg:text-[3.75rem] font-bold leading-[1.18] mb-5 text-[#016C24]"
-                style={{ fontFamily: "Times New Roman, serif" }}
+                className="text-3xl sm:text-4xl lg:text-[2.5rem] font-bold leading-tight mb-4 text-[#006828] font-serif"
+                style={{ fontFamily: "Times New Roman, serif", color: "#006828" }}
               >
                 Elevating Standards in Cannabis Wellness
               </h2>
-              <p className="text-sm sm:text-xl leading-relaxed mb-8 text-[#555555] font-medium">
-                Our master growers and formulation chemists utilize clean extraction techniques without harmful solvents, delivering uncompromised herbal purity.
+              <p className="text-sm text-[#666666] leading-relaxed mb-6 font-normal">
+                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry&apos;s standard dummy text ever since 1966, when designers at Letraset and James Mosley,
               </p>
 
-              {/* Checkpoints */}
-              <div className="space-y-6 mb-8 mt-4">
+              {/* Bullet Points */}
+              <div className="space-y-4 mb-6">
                 {[
                   {
                     title: "Ethical Cultivation",
-                    desc: "Sustainable organic farming methods preserving soil health and natural terpene complexity.",
+                    desc: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been",
                   },
                   {
                     title: "Community Education",
-                    desc: "Empowering adults 21+ with transparent lab data, strain guides, and dosing advice.",
+                    desc: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been",
                   },
                 ].map((item) => (
                   <div key={item.title} className="flex items-start gap-3">
-                    <CheckCircle2 className="w-5 h-5 text-[#016C24] flex-shrink-0 mt-0.5" />
+                    <CheckCircle2 className="w-5 h-5 text-[#006828] flex-shrink-0 mt-0.5" style={{ color: "#006828" }} />
                     <div>
-                      <h3 className="font-bold text-md sm:text-xl text-[#016C24] mb-1 font-sans">
+                      <h3 className="font-bold text-base text-[#006828] mb-0.5 font-sans" style={{ color: "#006828" }}>
                         {item.title}
                       </h3>
-                      <p className="text-sm sm:text-lg text-[#555555] font-medium leading-relaxed">
+                      <p className="text-xs text-[#666666] font-normal leading-relaxed">
                         {item.desc}
                       </p>
                     </div>
@@ -776,7 +769,7 @@ export default function HomePage() {
               <div>
                 <Link
                   href="/about"
-                  className="bg-[#007A2B] hover:bg-[#00581F] mt-6 text-white text-xs sm:text-sm font-bold tracking-wider uppercase px-8 py-3.5 rounded-full transition-all shadow-md inline-flex items-center justify-center hover:scale-[1.02] font-sans"
+                  className="bg-[#006828] hover:bg-[#005220] text-white text-sm font-semibold px-7 py-3 rounded-full transition-all shadow-md inline-flex items-center justify-center font-sans"
                 >
                   Read Our Full Story
                 </Link>
@@ -786,71 +779,99 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ══ 7. COMMUNITY REVIEWS CAROUSEL ═════════════════════════════════════ */}
-      <section className="py-20 bg-[#EDE8DF]">
+      {/* ══ 7. COMMUNITY REVIEWS ═════════════════════════════════════════════ */}
+      <section className="py-16 md:py-20" style={{ background: "#EDE2D7" }}>
         <div className="container-site">
           <motion.div
             initial="hidden"
             whileInView="show"
             viewport={{ once: true }}
             variants={stagger}
-            className="text-center mb-12"
+            className="text-center mb-10 md:mb-12"
           >
-            <motion.p variants={fadeUp} className="text-xs font-bold uppercase tracking-[0.2em] text-[#C9A961] mb-2">
-              REAL MEMBER EXPERIENCES
-            </motion.p>
             <motion.h2
               variants={fadeUp}
-              className="text-3xl md:text-5xl font-bold mb-3 text-[#0D2318]"
-              style={{ fontFamily: "Times New Roman, serif" }}
+              className="text-3xl sm:text-4xl md:text-4xl font-bold text-[#006828]"
+              style={{ fontFamily: "Times New Roman, serif", color: "#006828" }}
             >
               What Our Community Says
             </motion.h2>
-            <motion.div variants={fadeUp} className="flex justify-center items-center gap-1.5 mt-2">
+            <motion.div variants={fadeUp} className="flex justify-center items-center gap-1 mt-2.5">
               {[...Array(5)].map((_, i) => (
-                <Star key={i} className="w-5 h-5 fill-[#C9A961] text-[#C9A961]" />
+                <Star key={i} className="w-4 h-4 fill-[#006828] text-[#006828]" style={{ color: "#006828" }} />
               ))}
-              <span className="ml-2 text-sm font-bold text-[#0D2318]">4.9 out of 5 stars based on 100+ reviews</span>
             </motion.div>
           </motion.div>
 
-          <ReviewsCarousel />
+          <motion.div
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: true, margin: "-40px" }}
+            variants={stagger}
+            className="grid grid-cols-1 md:grid-cols-3 gap-6"
+          >
+            {testimonials.map((t) => (
+              <motion.div key={t.author} variants={scaleIn}>
+                <div className="bg-white rounded-3xl p-7 sm:p-8 border border-white/60 shadow-sm flex flex-col justify-between h-full">
+                  <p className="text-sm sm:text-base text-[#555555] font-normal leading-relaxed mb-6 font-sans">
+                    &ldquo;{t.text}&rdquo;
+                  </p>
+                  <div className="flex items-center gap-3.5 pt-4">
+                    <div className="relative w-10 h-10 rounded-full overflow-hidden flex-shrink-0 bg-[#EDE2D7]">
+                      <Image
+                        src={t.img}
+                        alt={t.author}
+                        fill
+                        className="object-cover"
+                        sizes="40px"
+                      />
+                    </div>
+                    <div>
+                      <h3 className="text-sm font-bold text-[#006828] font-sans" style={{ color: "#006828" }}>
+                        {t.author}
+                      </h3>
+                      <p className="text-[10px] text-[#888888] font-semibold tracking-wider uppercase">
+                        {t.role}
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </motion.div>
+            ))}
+          </motion.div>
         </div>
       </section>
 
       {/* ══ 8. CANNABIS EDUCATION BLOG ═══════════════════════════════════════ */}
-      <section className="py-20" style={{ background: "#F5F0E8" }}>
+      <section className="py-16 md:py-20" style={{ background: "#EDE2D7" }}>
         <div className="container-site">
           <motion.div
             initial="hidden"
             whileInView="show"
             viewport={{ once: true }}
             variants={stagger}
-            className="flex flex-col sm:flex-row items-start sm:items-end justify-between mb-10 gap-4"
+            className="flex flex-col sm:flex-row items-start sm:items-end justify-between mb-8 gap-4"
           >
             <div>
-              <motion.p variants={fadeUp} className="text-xs font-bold uppercase tracking-[0.2em] text-[#C9A961] mb-1">
-                KNOWLEDGE & RESEARCH
-              </motion.p>
               <motion.h2
                 variants={fadeUp}
-                className="text-3xl md:text-4xl font-bold text-[#0D2318]"
-                style={{ fontFamily: "Times New Roman, serif" }}
+                className="text-3xl sm:text-4xl font-bold text-[#006828]"
+                style={{ fontFamily: "Times New Roman, serif", color: "#006828" }}
               >
-                Cannabis Education & Guides
+                Cannabis Education
               </motion.h2>
-              <motion.p variants={fadeUp} className="text-sm mt-1 text-[#4A4A4A] font-medium">
+              <motion.p variants={fadeUp} className="text-sm sm:text-base mt-1 text-[#666666] font-medium">
                 Expand your knowledge with our latest research and lifestyle guides.
               </motion.p>
             </div>
             <motion.div variants={fadeUp}>
-              <Button
+              <Link
                 href="/blog"
-                variant="outline"
-                className="text-[#0D2318] border-[#0D2318] hover:bg-[#0D2318] hover:text-white px-5 py-2 text-xs font-bold uppercase tracking-wider rounded-full bg-transparent border transition-all"
+                className="border border-[#006828] text-[#006828] px-5 py-2 rounded-full text-xs font-semibold hover:bg-[#006828] hover:text-white transition-all inline-block"
+                style={{ color: "#006828", borderColor: "#006828" }}
               >
                 View All Articles
-              </Button>
+              </Link>
             </motion.div>
           </motion.div>
 
@@ -863,32 +884,32 @@ export default function HomePage() {
           >
             {blogPostsList.map((post: any) => (
               <motion.div key={post.id} variants={scaleIn}>
-                <Link href={`/blog/${post.slug}`} className="group block bg-white rounded-2xl p-4 border border-[#EDE8DF] hover:shadow-[0_16px_40px_rgba(13,35,24,0.1)] hover:border-[#016C24]/30 transition-all duration-300">
+                <Link href={`/blog/${post.slug}`} className="group block">
                   <div
-                    className="relative rounded-xl overflow-hidden mb-4 bg-[#F9F6F1]"
+                    className="relative rounded-2xl overflow-hidden mb-3 bg-[#EDE2D7]"
                     style={{ aspectRatio: "16/10" }}
                   >
                     <Image
                       src={post.img}
                       alt={post.title}
                       fill
-                      className="object-cover transition-transform duration-700 group-hover:scale-105"
+                      className="object-cover transition-transform duration-500 group-hover:scale-105"
                       sizes="(max-width:768px) 100vw, 33vw"
                     />
                   </div>
-                  <span className="text-[10px] font-extrabold tracking-widest uppercase block mb-2 text-[#016C24]">
+                  <span className="text-[11px] font-bold tracking-wider uppercase block text-[#006828] mb-1 font-sans" style={{ color: "#006828" }}>
                     {post.category}
                   </span>
                   <h3
-                    className="font-bold mb-2 text-[#0D2318] group-hover:text-[#016C24] transition-colors text-lg"
-                    style={{ fontFamily: "Times New Roman, serif" }}
+                    className="font-bold mb-1 text-lg sm:text-xl text-[#006828] group-hover:text-[#005220] transition-colors font-sans"
+                    style={{ color: "#006828" }}
                   >
                     {post.title}
                   </h3>
-                  <p className="text-sm leading-relaxed mb-4 text-[#4A4A4A] font-medium line-clamp-2">
+                  <p className="text-xs sm:text-sm leading-relaxed mb-3 text-[#666666] font-normal">
                     {post.excerpt}
                   </p>
-                  <span className="flex items-center gap-1.5 text-xs font-bold text-[#016C24] group-hover:gap-2.5 transition-all">
+                  <span className="inline-flex items-center gap-1 text-xs sm:text-sm font-bold text-[#006828] group-hover:gap-2 transition-all font-sans" style={{ color: "#006828" }}>
                     <span>Read Article</span>
                     <ArrowRight className="w-3.5 h-3.5" />
                   </span>
@@ -1179,28 +1200,25 @@ export default function HomePage() {
       </section>
 
       {/* ══ 12. FAQ ══════════════════════════════════════════════════════════ */}
-      <section className="py-20" style={{ background: "#F5F0E8" }}>
-        <div className="container-site" style={{ maxWidth: "780px" }}>
+      <section className="py-16 md:py-20" style={{ background: "#EDE2D7" }}>
+        <div className="container-site" style={{ maxWidth: "820px" }}>
           <motion.div
             initial="hidden"
             whileInView="show"
             viewport={{ once: true }}
             variants={stagger}
-            className="text-center mb-12"
+            className="text-center mb-10 md:mb-12"
           >
-            <motion.p variants={fadeUp} className="text-xs font-bold uppercase tracking-[0.2em] text-[#C9A961] mb-2">
-              HELP & TRANSPARENCY
-            </motion.p>
             <motion.h2
               variants={fadeUp}
-              className="text-3xl md:text-4xl font-bold text-[#0D2318]"
-              style={{ fontFamily: "Times New Roman, serif" }}
+              className="text-3xl sm:text-4xl md:text-4xl font-bold text-[#006828]"
+              style={{ fontFamily: "Times New Roman, serif", color: "#006828" }}
             >
               Frequently Asked Questions
             </motion.h2>
           </motion.div>
 
-          <div className="space-y-4">
+          <div className="space-y-3.5">
             {faqs.map((q, i) => (
               <motion.div
                 key={i}
@@ -1208,19 +1226,20 @@ export default function HomePage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.08, duration: 0.4 }}
-                className="bg-white rounded-2xl overflow-hidden border border-[#EDE8DF] shadow-sm"
+                className="bg-[#EBE4DA] rounded-2xl overflow-hidden border border-[#DDD4C7]"
               >
                 <button
                   onClick={() => setOpenFaq(openFaq === i ? null : i)}
-                  className="w-full flex items-center justify-between px-6 py-5 text-base font-bold text-left transition-colors text-[#0D2318] hover:text-[#016C24]"
+                  className="w-full flex items-center justify-between px-6 py-5 text-base sm:text-lg font-semibold text-left text-[#006828] hover:text-[#005220] transition-colors font-sans"
+                  style={{ color: "#006828" }}
                 >
                   <span>{q.q}</span>
                   <motion.div
                     animate={{ rotate: openFaq === i ? 180 : 0 }}
                     transition={{ duration: 0.25 }}
-                    className="p-1 rounded-full bg-[#F5F0E8] ml-4 flex-shrink-0"
+                    className="ml-4 flex-shrink-0"
                   >
-                    <ChevronDown className="w-4 h-4 text-[#016C24]" />
+                    <ChevronDown className="w-5 h-5 text-[#006828]" style={{ color: "#006828" }} />
                   </motion.div>
                 </button>
                 <AnimatePresence initial={false}>
@@ -1232,7 +1251,7 @@ export default function HomePage() {
                       transition={{ duration: 0.3 }}
                       className="overflow-hidden"
                     >
-                      <p className="px-6 pb-6 text-sm md:text-base leading-relaxed text-[#4A4A4A] font-medium border-t border-[#EDE8DF]/60 pt-4">
+                      <p className="px-6 pb-5 pt-2 text-sm sm:text-base leading-relaxed text-[#666666] font-normal border-t border-[#DDD4C7]/60">
                         {q.a}
                       </p>
                     </motion.div>
