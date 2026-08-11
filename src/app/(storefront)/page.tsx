@@ -730,16 +730,16 @@ export default function HomePage() {
               transition={{ duration: 0.6 }}
               className="flex flex-col justify-center"
             >
-              <p className="text-xs sm:text-sm font-bold uppercase tracking-[0.2em] text-[#016C24] mb-3">
+              <p className="text-xs sm:text-lg font-bold uppercase tracking-[0.2em] text-[#016C24] mb-3">
                 OUR COMMITMENT
               </p>
               <h2
-                className="text-3xl sm:text-4xl lg:text-[2.75rem] font-bold leading-[1.18] mb-5 text-[#016C24]"
+                className="text-4xl sm:text-6xl lg:text-[2.75rem] font-bold leading-[1.18] mb-5 text-[#016C24]"
                 style={{ fontFamily: "Times New Roman, serif" }}
               >
                 Elevating Standards in Cannabis Wellness
               </h2>
-              <p className="text-sm sm:text-base leading-relaxed mb-8 text-[#555555] font-medium">
+              <p className="text-sm sm:text-xl leading-relaxed mb-8 text-[#555555] font-medium">
                 Our master growers and formulation chemists utilize clean extraction techniques without harmful solvents, delivering uncompromised herbal purity.
               </p>
 
@@ -758,10 +758,10 @@ export default function HomePage() {
                   <div key={item.title} className="flex items-start gap-3">
                     <CheckCircle2 className="w-5 h-5 text-[#016C24] flex-shrink-0 mt-0.5" />
                     <div>
-                      <h3 className="font-bold text-base sm:text-lg text-[#016C24] mb-1 font-sans">
+                      <h3 className="font-bold text-md sm:text-xl text-[#016C24] mb-1 font-sans">
                         {item.title}
                       </h3>
-                      <p className="text-xs sm:text-sm text-[#555555] font-medium leading-relaxed">
+                      <p className="text-sm sm:text-lg text-[#555555] font-medium leading-relaxed">
                         {item.desc}
                       </p>
                     </div>
@@ -772,7 +772,7 @@ export default function HomePage() {
               <div>
                 <Link
                   href="/about"
-                  className="bg-[#007A2B] hover:bg-[#00581F] text-white text-xs sm:text-sm font-bold tracking-wider uppercase px-8 py-3.5 rounded-full transition-all shadow-md inline-flex items-center justify-center hover:scale-[1.02] font-sans"
+                  className="bg-[#007A2B] hover:bg-[#00581F] mt-10 text-white text-xs sm:text-sm font-bold tracking-wider uppercase px-8 py-3.5 rounded-full transition-all shadow-md inline-flex items-center justify-center hover:scale-[1.02] font-sans"
                 >
                   Read Our Full Story
                 </Link>
