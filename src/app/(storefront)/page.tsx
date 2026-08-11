@@ -899,8 +899,8 @@ export default function HomePage() {
                   Seasonal Collection:
                 </p>
                 <h2
-                  className="text-3xl sm:text-5xl md:text-5xl lg:text-6xl font-bold text-white mb-4 leading-tight font-serif"
-                  style={{ fontFamily: "Times New Roman, serif" }}
+                  className="text-3xl sm:text-5xl md:text-5xl lg:text-6xl font-bold mb-4 leading-tight font-serif"
+                  style={{ fontFamily: "Times New Roman, serif", color:"#ffffff" }}
                 >
                   Fresh Summer Blooms
                 </h2>
