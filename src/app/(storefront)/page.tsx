@@ -732,78 +732,101 @@ export default function HomePage() {
       </section>
 
       {/* ══ 6. OUR COMMITMENT ════════════════════════════════════════════════ */}
-      <section className="py-16 md:py-20" style={{ background: "#EDE6DB" }}>
-        <div className="container-site">
-          <div className="grid md:grid-cols-2 gap-10 lg:gap-14 items-center">
-            {/* Left Image & Floating Badge */}
+      <section className="py-16 sm:py-20 md:py-24 lg:py-28" style={{ background: "#EDE6DB" }}>
+        <div className="max-w-[1728px] mx-auto px-4 sm:px-8 xl:px-16">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 xl:gap-[120px] items-center">
+            {/* Left Image & Floating Badge - Figma Spec: 804x900px, rounded-[36px] */}
             <motion.div
               initial={{ opacity: 0, x: -30 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
-              className="relative"
+              className="relative w-full"
             >
-              <div className="relative rounded-[28px] sm:rounded-[32px] overflow-hidden shadow-sm border border-black/5 aspect-square sm:aspect-auto sm:min-h-[460px]">
+              <div className="relative rounded-[36px] overflow-hidden shadow-md border border-black/5 w-full aspect-square lg:aspect-[804/900] min-h-[460px] sm:min-h-[580px] lg:min-h-[680px] xl:min-h-[780px]">
                 <Image
                   src="/images/OUR-COMMITMENT.png"
                   alt="Cannabis cultivation lab"
                   fill
-                  className="object-cover"
-                  sizes="(max-width:768px) 100vw, 50vw"
+                  className="object-cover object-center"
+                  sizes="(max-width:1024px) 100vw, 50vw"
                   priority
                 />
                 {/* Floating 10+ Years Badge */}
-                <div className="absolute bottom-6 left-6 right-6 sm:right-auto sm:max-w-[280px] bg-white/90 backdrop-blur-md rounded-2xl p-5 shadow-lg border border-white/60">
-                  <p className="text-2xl font-bold text-[#006828] font-sans mb-0.5" style={{ color: "#006828" }}>
+                <div className="absolute bottom-6 sm:bottom-8 left-6 sm:left-8 right-6 sm:right-auto sm:max-w-[320px] bg-white/90 backdrop-blur-md rounded-[24px] p-6 shadow-xl border border-white/60">
+                  <p className="text-2xl sm:text-3xl font-bold text-[#026C24] font-sans mb-1" style={{ color: "#026C24" }}>
                     10+ Years
                   </p>
-                  <p className="text-xs text-[#666666] font-normal leading-snug">
+                  <p className="text-xs sm:text-sm text-[#5F5E5E] font-normal leading-relaxed font-sans">
                     Of experience in organic cultivation and wellness innovation.
                   </p>
                 </div>
               </div>
             </motion.div>
 
-            {/* Right Text Content - Matching Image 1 with real domain text */}
+            {/* Right Text Content Stack - Figma Spec: gap 36px, pt-9px */}
             <motion.div
               initial={{ opacity: 0, x: 30 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
-              className="flex flex-col justify-center"
+              className="flex flex-col gap-6 sm:gap-[36px] pt-2 lg:pt-[9px]"
             >
-              <p className="text-xs font-bold uppercase tracking-[0.2em] text-[#006828] mb-2 font-sans" style={{ color: "#006828" }}>
-                OUR COMMITMENT
-              </p>
+              {/* Subheading Tag */}
+              <div>
+                <p
+                  className="text-base sm:text-[18px] font-bold uppercase tracking-[1.8px] text-[#026C24] font-sans leading-[24px]"
+                  style={{ color: "#026C24" }}
+                >
+                  OUR COMMITMENT
+                </p>
+              </div>
+
+              {/* Main Heading */}
               <h2
-                className="text-3xl sm:text-4xl lg:text-[2.5rem] font-bold leading-tight mb-4 text-[#006828] font-serif"
-                style={{ fontFamily: "Times New Roman, serif", color: "#006828" }}
+                className="text-3xl sm:text-4xl lg:text-[48px] font-bold leading-tight lg:leading-[72px] text-[#026C24] font-serif"
+                style={{ fontFamily: "Times New Roman, serif", color: "#026C24" }}
               >
                 Elevating Standards in Cannabis Wellness
               </h2>
-              <p className="text-sm text-[#666666] leading-relaxed mb-6 font-normal">
-                Our master growers and formulation chemists utilize clean extraction techniques without harmful solvents, delivering uncompromised herbal purity across every strain.
+
+              {/* Main Body Content - User text + added rich details */}
+              <p
+                className="text-base sm:text-xl lg:text-[24px] leading-relaxed lg:leading-[39px] text-[#5F5E5E] font-normal font-sans"
+                style={{ color: "#5F5E5E" }}
+              >
+                Our master growers and formulation chemists utilize clean extraction techniques without harmful solvents, delivering uncompromised herbal purity across every strain. Every batch is meticulously crafted to preserve natural terpene profiles, ensuring consistent therapeutic results and an elevated wellness experience.
               </p>
 
-              {/* Bullet Points */}
-              <div className="space-y-4 mb-6">
+              {/* Checkpoints Stack - Figma Spec: gap 24px */}
+              <div className="flex flex-col gap-6 sm:gap-[24px]">
                 {[
                   {
                     title: "Ethical Cultivation",
-                    desc: "Sustainable farming practices focused on soil health, zero synthetic pesticides, and energy-efficient solar greenhouse cultivation.",
+                    desc: "Sustainable farming practices focused on soil health, zero synthetic pesticides, and energy-efficient solar greenhouse cultivation for 100% pure organic harvests.",
                   },
                   {
                     title: "Community Education",
-                    desc: "Empowering customers with clear lab reports, accurate dosing guides, and transparent cannabinoid profiling.",
+                    desc: "Empowering customers with clear lab reports, accurate dosing guides, and transparent cannabinoid profiling to make informed botanical choices.",
+                  },
+                  {
+                    title: "ISO-Certified Lab Testing",
+                    desc: "Rigorous third-party lab verification ensuring complete safety, zero residual heavy metals or solvents, and guaranteed terpene density.",
                   },
                 ].map((item) => (
-                  <div key={item.title} className="flex items-start gap-3">
-                    <CheckCircle2 className="w-5 h-5 text-[#006828] flex-shrink-0 mt-0.5" style={{ color: "#006828" }} />
-                    <div>
-                      <h3 className="font-bold text-base text-[#006828] mb-0.5 font-sans" style={{ color: "#006828" }}>
+                  <div key={item.title} className="flex items-start gap-4">
+                    <CheckCircle2 className="w-6 h-6 sm:w-7 sm:h-7 text-[#026C24] flex-shrink-0 mt-1" style={{ color: "#026C24" }} />
+                    <div className="flex flex-col gap-1">
+                      <h3
+                        className="font-semibold text-xl sm:text-2xl lg:text-[27px] leading-snug lg:leading-[42px] text-[#026C24] font-sans"
+                        style={{ color: "#026C24" }}
+                      >
                         {item.title}
                       </h3>
-                      <p className="text-xs text-[#666666] font-normal leading-relaxed">
+                      <p
+                        className="text-sm sm:text-lg lg:text-[21px] leading-relaxed lg:leading-[30px] text-[#5F5E5E] font-normal font-sans"
+                        style={{ color: "#5F5E5E" }}
+                      >
                         {item.desc}
                       </p>
                     </div>
@@ -811,10 +834,12 @@ export default function HomePage() {
                 ))}
               </div>
 
-              <div>
+              {/* CTA Button - Figma Spec: 328x90px, rounded-full, #026C24 */}
+              <div className="pt-2">
                 <Link
                   href="/about"
-                  className="bg-[#006828] hover:bg-[#005220] text-white text-sm font-semibold px-7 py-3 rounded-full transition-all shadow-md inline-flex items-center justify-center font-sans"
+                  className="bg-[#026C24] hover:bg-[#005220] text-white text-base sm:text-xl font-bold w-full sm:w-[328px] h-[64px] sm:h-[80px] lg:h-[90px] rounded-full transition-all shadow-lg inline-flex items-center justify-center font-sans hover:scale-[1.02] active:scale-[0.98]"
+                  style={{ backgroundColor: "#026C24" }}
                 >
                   Read Our Full Story
                 </Link>
