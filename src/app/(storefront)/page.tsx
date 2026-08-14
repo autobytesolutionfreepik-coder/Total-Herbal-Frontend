@@ -64,7 +64,7 @@ const defaultCategories = [
     slug: "infused-drinks",
     img: "/images/Infused-Drinks.png",
   },
-  { label: "Oils", slug: "oils", img: "/images/Oils.png" },
+  { label: "Topicals", slug: "topicals", img: "/images/Oils.png" },
   { label: "Tinctures", slug: "tinctures", img: "/images/Tinctures.png" },
   { label: "Herbal Teas", slug: "herbal-teas", img: "/images/Herbal-Teas.png" },
   { label: "Apothecary", slug: "apothecary", img: "/images/Apothecary.png" },
@@ -357,9 +357,10 @@ export default function HomePage() {
   return (
     <div className="overflow-x-hidden">
       {/* ══ 1. HERO ══════════════════════════════════════════════════════════ */}
+      {/* ══ 1. HERO ══════════════════════════════════════════════════════════ */}
       <section
         ref={heroRef}
-        className="relative min-h-[700px] lg:min-h-[800px] overflow-hidden flex items-center"
+        className="relative min-h-[540px] sm:min-h-[620px] lg:min-h-[700px] overflow-hidden flex items-center"
       >
         <motion.div
           style={{ y: heroY }}
@@ -370,32 +371,30 @@ export default function HomePage() {
             alt="Premium cannabis products"
             fill
             priority
-            className="object-cover object-center"
+            className="object-cover object-bottom"
             sizes="100vw"
           />
-          {/* <div className="absolute inset-0 bg-gradient-to-r from-[#0D2318]/90 via-[#0D2318]/65 to-transparent" />
-          <div className="absolute inset-0 bg-gradient-to-t from-[#0D2318] via-transparent to-transparent opacity-80" /> */}
         </motion.div>
 
-        <div className="container-site relative z-10 py-24 lg:py-32">
+        <div className="container-site relative z-10 py-16 sm:py-20 md:py-24 lg:py-28">
           <motion.div
             initial="hidden"
             animate="show"
             variants={stagger}
             className="max-w-[620px]"
           >
-            <motion.div variants={fadeUp} className="mb-5">
-              <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-xs font-bold tracking-widest uppercase bg-black/40 border border-white/15 text-[#C9A961] backdrop-blur-md">
-                ESTABLISHED 2022 • ISO 17025 CERTIFIED
+            <motion.div variants={fadeUp} className="mb-4 sm:mb-5">
+              <span className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-[11px] sm:text-xs font-bold tracking-widest uppercase bg-black/40 border border-white/15 text-[#C9A961] backdrop-blur-md">
+                ESTABLISHED 2024 • ISO 17025 CERTIFIED
               </span>
             </motion.div>
 
             <motion.h1
               variants={fadeUp}
-              className="font-bold leading-[1.08] mb-6 tracking-tight drop-shadow-md"
+              className="font-bold leading-[1.08] mb-5 tracking-tight drop-shadow-md"
               style={{
                 fontFamily: "Times New Roman, serif",
-                fontSize: "clamp(2.8rem, 6.8vw, 4.8rem)",
+                fontSize: "clamp(2.4rem, 5.5vw, 4.4rem)",
                 color: "#fff",
               }}
             >
@@ -408,21 +407,21 @@ export default function HomePage() {
 
             <motion.p
               variants={fadeUp}
-              className="text-base sm:text-xl leading-relaxed mb-8 max-w-[560px] text-white/90 font-medium"
+              className="text-sm sm:text-base md:text-lg leading-relaxed mb-7 max-w-[540px] text-white/90 font-medium"
             >
-              Discover lab-tested organic flowers, precision-dosed edibles, full-spectrum vapes, and apothecary wellness remedies delivered directly to your door.
+              Discover lab-tested organic flower, precision-dosed edibles, full-spectrum vapes, and apothecary wellness remedies delivered directly to your door.
             </motion.p>
 
-            <motion.div variants={fadeUp} className="flex flex-wrap items-center gap-4">
+            <motion.div variants={fadeUp} className="flex flex-wrap items-center gap-3.5">
               <Link
                 href="/shop"
-                className="bg-[#007A2B] hover:bg-[#00581F] text-white text-sm font-bold tracking-wider uppercase px-8 py-3.5 rounded-full transition-all shadow-md inline-flex items-center justify-center"
+                className="bg-[#007A2B] hover:bg-[#00581F] text-white text-xs sm:text-sm font-bold tracking-wider uppercase px-7 py-3 rounded-full transition-all shadow-md inline-flex items-center justify-center"
               >
                 Shop Now
               </Link>
               <Link
                 href="/location"
-                className="bg-[#E5EAE7] hover:bg-white text-[#006828] text-sm font-bold tracking-wider uppercase px-8 py-3.5 rounded-full transition-all shadow-sm inline-flex items-center justify-center"
+                className="bg-[#E5EAE7] hover:bg-white text-[#006828] text-xs sm:text-sm font-bold tracking-wider uppercase px-7 py-3 rounded-full transition-all shadow-sm inline-flex items-center justify-center"
               >
                 Find a Location
               </Link>
@@ -432,26 +431,26 @@ export default function HomePage() {
       </section>
 
       {/* ══ 2. TRUST STRIP ═══════════════════════════════════════════════════ */}
-      <section className="relative z-20 -mt-12 md:-mt-16 bg-transparent py-0">
+      <section className="relative z-20 -mt-8 sm:-mt-10 md:-mt-12 bg-transparent py-0">
         <div className="container-site">
-          <div className="rounded-2xl sm:rounded-3xl py-7 md:py-9 px-6 md:px-10 bg-gradient-to-b from-[#026C24] via-[#084824] to-[#071F14] border border-white/25 backdrop-blur-xl">
-            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-6 md:gap-18 items-center">
+          <div className="rounded-xl sm:rounded-2xl lg:rounded-3xl py-4 sm:py-5 md:py-6 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-[#026C24] via-[#084824] to-[#071F14] border border-white/25 backdrop-blur-xl shadow-xl">
+            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3 sm:gap-4 md:gap-5 lg:gap-6 items-center">
               {trustItems.map(({ img, label, sub }) => (
-                <div key={label} className="flex items-center gap-3.5 sm:gap-4 group hover:translate-y-[-2px] transition-transform duration-300">
-                  <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-full border-2 border-white flex items-center justify-center flex-shrink-0 bg-[#0D2318]/30 group-hover:bg-[#016C24] transition-all duration-300 shadow-md">
+                <div key={label} className="flex items-center gap-2.5 sm:gap-3 group hover:translate-y-[-2px] transition-transform duration-300">
+                  <div className="w-10 h-10 sm:w-12 sm:h-12 lg:w-14 lg:h-14 rounded-full border border-white/80 flex items-center justify-center flex-shrink-0 bg-[#0D2318]/30 group-hover:bg-[#016C24] transition-all duration-300 shadow-sm">
                     <Image
                       src={img}
                       alt={`${label} ${sub}`}
-                      width={48}
-                      height={48}
-                      className="w-10 h-10 sm:w-12 sm:h-12 object-contain"
+                      width={36}
+                      height={36}
+                      className="w-6 h-6 sm:w-7 sm:h-7 lg:w-8 lg:h-8 object-contain"
                     />
                   </div>
                   <div className="leading-tight font-sans">
-                    <p className="text-white text-base sm:text-lg font-bold tracking-tight">
+                    <p className="text-white text-xs sm:text-sm lg:text-base font-bold tracking-tight">
                       {label}
                     </p>
-                    <p className="text-sm sm:text-base font-bold text-[#E2C98A] tracking-tight">
+                    <p className="text-[11px] sm:text-xs lg:text-sm font-bold text-[#E2C98A] tracking-tight">
                       {sub}
                     </p>
                   </div>
@@ -969,7 +968,7 @@ export default function HomePage() {
       {/* ══ BANNER 2: FRESH SUMMER BLOOMS ═══════════════════════════════════ */}
       <section className="py-12 md:py-16" style={{ background: "#EDE6DB" }}>
         <div className="container-site">
-          <div className="relative rounded-[28px] sm:rounded-[36px] overflow-hidden shadow-xl bg-[#050D08] border border-white/10 min-h-[340px] md:min-h-[400px] flex items-center">
+          <div className="relative rounded-[24px] sm:rounded-[28px] overflow-hidden shadow-lg bg-[#050D08] border border-white/10 min-h-[360px] sm:min-h-[400px] md:min-h-[440px] flex items-center">
             {/* Background Image - Fresh-Summer-Blooms.png */}
             <Image
               src="/images/Fresh-Summer-Blooms.png"
@@ -980,26 +979,26 @@ export default function HomePage() {
               priority
             />
 
-            {/* Subtle dark gradient overlay on left for text contrast */}
-            <div className="absolute inset-0 bg-gradient-to-r from-black/85 via-black/50 to-transparent" />
+            {/* Dark gradient overlay on left for text contrast */}
+            <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/65 to-transparent w-full md:w-[70%]" />
 
-            {/* Left Content Container - Matching Image 4 */}
-            <div className="relative z-10 p-8 sm:p-12 md:p-16 max-w-lg flex flex-col items-start justify-center text-left">
-              <p className="text-sm font-normal text-white/90 mb-1 font-sans">
+            {/* Left Content Container - 100% Image Match */}
+            <div className="relative z-10 p-8 sm:p-12 md:p-16 lg:p-20 max-w-lg lg:max-w-xl flex flex-col items-start justify-center text-left">
+              <p className="text-sm sm:text-base font-normal text-white/90 mb-2 font-sans">
                 Seasonal Collection:
               </p>
               <h2
-                className="text-3xl sm:text-4xl md:text-5xl font-bold mb-3 leading-tight font-serif text-white"
+                className="text-3xl sm:text-4xl md:text-4xl lg:text-[40px] font-bold mb-3.5 leading-[1.1] font-serif text-white tracking-tight"
                 style={{ fontFamily: "Times New Roman, serif", color: "#ffffff" }}
               >
                 Fresh Summer Blooms
               </h2>
-              <p className="text-xs sm:text-sm text-white/85 leading-relaxed font-normal mb-6 max-w-md font-sans">
+              <p className="text-xs sm:text-sm md:text-base text-white/85 leading-relaxed font-normal mb-7 max-w-md font-sans">
                 Experience our hand-crafted organic formulas and seasonal herbal remedies tailored for your supreme wellness.
               </p>
               <Link
                 href="/shop"
-                className="bg-[#006828] hover:bg-[#005220] text-white text-xs sm:text-sm font-semibold px-7 py-3 rounded-full transition-all shadow-md inline-flex items-center justify-center font-sans"
+                className="bg-[#006828] hover:bg-[#005220] text-white text-xs sm:text-sm font-semibold px-7 sm:px-8 py-3 sm:py-3.5 rounded-full transition-all shadow-md inline-flex items-center justify-center font-sans hover:scale-[1.02]"
               >
                 Shop Now
               </Link>
@@ -1184,30 +1183,30 @@ export default function HomePage() {
       {/* ══ 11. NEWSLETTER ═══════════════════════════════════════════════════ */}
       <section className="py-12 md:py-16" style={{ background: "#EDE6DB" }}>
         <div className="container-site">
-          <div className="relative rounded-[28px] sm:rounded-[36px] overflow-hidden py-10 md:py-14 px-8 sm:px-12 md:px-16 lg:px-20 bg-[#00682A] shadow-lg border border-white/10">
+          <div className="relative rounded-[20px] sm:rounded-[24px] overflow-hidden py-7 sm:py-8 md:py-9 px-6 sm:px-10 lg:px-14 bg-[#006428] shadow-md border border-white/10">
             {/* Background Cannabis Leaf Graphics */}
             <Image
               src="/images/cta-left.png"
               alt=""
-              width={350}
-              height={350}
+              width={320}
+              height={320}
               className="absolute left-0 top-0 bottom-0 h-full w-auto object-cover opacity-80 pointer-events-none select-none"
             />
             <Image
               src="/images/Cta-right.png"
               alt=""
-              width={350}
-              height={350}
+              width={320}
+              height={320}
               className="absolute right-0 top-0 bottom-0 h-full w-auto object-cover opacity-80 pointer-events-none select-none"
             />
 
-            <div className="relative z-10 flex flex-col lg:flex-row items-center justify-between gap-8">
+            <div className="relative z-10 flex flex-col lg:flex-row items-center justify-between gap-6 lg:gap-8">
               {/* Left Content */}
-              <div className="text-left text-white max-w-md">
-                <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-2 leading-tight font-sans">
+              <div className="text-left text-white max-w-md lg:max-w-lg">
+                <h2 className="text-3xl sm:text-4xl lg:text-[40px] font-bold text-white mb-2 leading-tight font-sans tracking-tight">
                   Stay Elevated
                 </h2>
-                <p className="text-xs sm:text-sm text-white/90 leading-relaxed font-medium">
+                <p className="text-xs sm:text-sm text-white/85 leading-relaxed font-normal font-sans max-w-sm lg:max-w-md">
                   Subscribe to receive our latest organic drops, strain guides, discount coupons, and local dispensary delivery updates.
                 </p>
               </div>
@@ -1215,10 +1214,10 @@ export default function HomePage() {
               {/* Right Form */}
               <form
                 onSubmit={handleSubscribeNewsletter}
-                className="flex flex-col sm:flex-row items-center gap-3.5 w-full lg:w-auto"
+                className="flex flex-col sm:flex-row items-center gap-3.5 sm:gap-4 w-full lg:w-auto"
               >
-                <div className="relative flex items-center bg-white rounded-full px-5 py-3.5 sm:py-4 w-full sm:w-[380px] lg:w-[440px] shadow-sm">
-                  <Mail className="w-4 h-4 text-gray-400 mr-2.5 flex-shrink-0" />
+                <div className="relative flex items-center bg-white rounded-full px-5 py-3.5 w-full sm:w-[360px] lg:w-[460px] shadow-sm">
+                  <Mail className="w-4 h-4 text-gray-400 mr-3 flex-shrink-0" />
                   <input
                     type="email"
                     value={email}
@@ -1230,7 +1229,7 @@ export default function HomePage() {
                 <button
                   type="submit"
                   disabled={newsletterMutation.isPending}
-                  className="bg-[#005424]/90 hover:bg-[#00421C] text-white text-xs sm:text-sm font-bold tracking-wider px-8 py-3.5 sm:py-4 rounded-full border border-white/40 transition-all shadow-md shrink-0 w-full sm:w-auto inline-flex items-center justify-center font-sans"
+                  className="bg-[#005220] hover:bg-white/15 text-white text-xs sm:text-sm font-semibold tracking-wide px-7 sm:px-9 py-3.5 rounded-[14px] sm:rounded-[16px] border border-white/50 transition-all shadow-sm shrink-0 w-full sm:w-auto inline-flex items-center justify-center font-sans"
                 >
                   {newsletterMutation.isPending ? (
                     <Loader2 className="w-4 h-4 animate-spin" />
