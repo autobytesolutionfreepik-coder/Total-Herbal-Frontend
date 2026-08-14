@@ -792,7 +792,7 @@ export default function HomePage() {
 
               {/* Main Body Content - User text + added rich details */}
               <p
-                className="text-base sm:text-md lg:text-[24px] leading-relaxed lg:leading-[39px] text-[#5F5E5E] font-normal font-sans"
+                className="text-base sm:text-md lg:text-[16px] leading-relaxed lg:leading-[39px] text-[#5F5E5E] font-normal font-sans"
                 style={{ color: "#5F5E5E" }}
               >
                 Our master growers and formulation chemists utilize clean extraction techniques without harmful solvents, delivering uncompromised herbal purity across every strain. Every batch is meticulously crafted to preserve natural terpene profiles, ensuring consistent therapeutic results and an elevated wellness experience.
