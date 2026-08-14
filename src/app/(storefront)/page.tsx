@@ -772,7 +772,7 @@ export default function HomePage() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
-              className="flex flex-col gap-5 sm:gap-6 pt-2"
+              className="flex flex-col gap-5 sm:gap-16 pt-2"
             >
               {/* Subheading Tag */}
               <div>
@@ -838,7 +838,7 @@ export default function HomePage() {
 
               {/* CTA Button */}
               <div className="pt-2">
-                <Button href="/about" variant="primary" size="xl" className="w-full sm:w-[328px]">
+                <Button href="/about" variant="primary" size="lg" className="w-full sm:w-[250px]">
                   Read Our Full Story
                 </Button>
               </div>
