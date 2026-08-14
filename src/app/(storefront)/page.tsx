@@ -1209,58 +1209,72 @@ export default function HomePage() {
       </section>
 
       {/* ══ 11. NEWSLETTER ═══════════════════════════════════════════════════ */}
-      <section className="py-12 md:py-16" style={{ background: "#EDE6DB" }}>
-        <div className="container-site">
-          <div className="relative rounded-[20px] sm:rounded-[24px] overflow-hidden py-7 sm:py-8 md:py-9 px-6 sm:px-10 lg:px-14 bg-[#006428] shadow-md border border-white/10">
-            {/* Background Cannabis Leaf Graphics */}
+      <section className="py-10 sm:py-14 md:py-16" style={{ background: "#EDE6DB" }}>
+        <div className="max-w-[1742px] mx-auto px-4 sm:px-8 xl:px-12">
+          <div className="relative rounded-[24px] sm:rounded-[28px] overflow-hidden min-h-[216px] py-8 lg:py-0 px-6 sm:px-10 lg:px-16 bg-[#026C24] shadow-lg border border-white/10 flex items-center justify-center">
+            {/* Background Cannabis Leaf Graphics with mix-blend-multiply - Figma Spec: 263.5 x 291.5px */}
             <Image
               src="/images/cta-left.png"
               alt=""
-              width={320}
-              height={320}
-              className="absolute left-0 top-0 bottom-0 h-full w-auto object-cover opacity-80 pointer-events-none select-none"
+              width={264}
+              height={292}
+              className="absolute -left-[42px] -top-[30px] w-[220px] sm:w-[264px] h-auto object-contain pointer-events-none select-none mix-blend-multiply opacity-80 z-0"
             />
             <Image
               src="/images/Cta-right.png"
               alt=""
-              width={320}
-              height={320}
-              className="absolute right-0 top-0 bottom-0 h-full w-auto object-cover opacity-80 pointer-events-none select-none"
+              width={264}
+              height={292}
+              className="absolute -right-[40px] -top-[30px] w-[220px] sm:w-[264px] h-auto object-contain pointer-events-none select-none mix-blend-multiply opacity-80 z-0"
             />
 
-            <div className="relative z-10 flex flex-col lg:flex-row items-center justify-between gap-6 lg:gap-8">
-              {/* Left Content */}
-              <div className="text-left text-white max-w-md lg:max-w-lg">
-                <h2 className="text-3xl sm:text-4xl lg:text-[40px] font-bold text-white mb-2 leading-tight font-sans tracking-tight">
+            {/* Inner Content Stack - Figma Spec: 1396px width */}
+            <div className="relative z-10 w-full max-w-[1396px] mx-auto flex flex-col lg:flex-row items-center justify-between gap-6 lg:gap-10 xl:gap-[60px]">
+              {/* Left Content Block */}
+              <div className="text-left text-white flex flex-col gap-1.5 max-w-[420px] shrink-0">
+                {/* Heading: Manrope 700, 48px, leading 60px, tracking 0.96px */}
+                <h2
+                  className="text-3xl sm:text-4xl lg:text-[48px] font-bold text-white leading-tight lg:leading-[60px] tracking-[0.96px] font-sans"
+                  style={{ fontFamily: "Manrope, sans-serif", color: "#ffffff" }}
+                >
                   Stay Elevated
                 </h2>
-                <p className="text-xs sm:text-sm text-white/85 leading-relaxed font-normal font-sans max-w-sm lg:max-w-md">
+
+                {/* Content: Manrope 400, 17px, leading 25px */}
+                <p
+                  className="text-sm sm:text-base lg:text-[17px] text-white/95 leading-relaxed lg:leading-[25px] font-normal max-w-[385px] font-sans"
+                  style={{ fontFamily: "Manrope, sans-serif" }}
+                >
                   Subscribe to receive our latest organic drops, strain guides, discount coupons, and local dispensary delivery updates.
                 </p>
               </div>
 
-              {/* Right Form */}
+              {/* Right Form - Email Box (670x68px, r:22px) & Button (161x66px, r:17.6px) */}
               <form
                 onSubmit={handleSubscribeNewsletter}
-                className="flex flex-col sm:flex-row items-center gap-3.5 sm:gap-4 w-full lg:w-auto"
+                className="flex flex-col sm:flex-row items-center gap-4 lg:gap-6 w-full lg:w-auto"
               >
-                <div className="relative flex items-center bg-white rounded-full px-5 py-3.5 w-full sm:w-[360px] lg:w-[460px] shadow-sm">
-                  <Mail className="w-4 h-4 text-gray-400 mr-3 flex-shrink-0" />
+                {/* Email Box: 670px x 68px, rounded-[22px] */}
+                <div className="relative flex items-center bg-white rounded-[22px] px-6 h-[60px] sm:h-[68px] w-full sm:w-[420px] lg:w-[670px] shadow-sm">
+                  <Mail className="w-5 h-5 text-gray-400 mr-3.5 flex-shrink-0" />
                   <input
                     type="email"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                     placeholder="Enter your email"
-                    className="bg-transparent border-none outline-none text-xs sm:text-sm text-gray-800 placeholder-gray-400 w-full font-medium"
+                    className="bg-transparent border-none outline-none text-sm sm:text-base lg:text-[17px] text-gray-900 placeholder-gray-400 w-full font-normal font-sans"
                   />
                 </div>
+
+                {/* Button: 161px x 66px, rounded-[17.6px], border 1px solid #FFFFFF */}
                 <button
                   type="submit"
                   disabled={newsletterMutation.isPending}
-                  className="bg-[#005220] hover:bg-white/15 text-white text-xs sm:text-sm font-semibold tracking-wide px-7 sm:px-9 py-3.5 rounded-[14px] sm:rounded-[16px] border border-white/50 transition-all shadow-sm shrink-0 w-full sm:w-auto inline-flex items-center justify-center font-sans"
+                  className="bg-[#00581F] hover:bg-[#004217] active:bg-[#003612] text-white text-base sm:text-lg font-bold w-full sm:w-[161px] h-[58px] sm:h-[66px] rounded-[17.6px] border border-white transition-all shadow-[0px_4.4px_6.6px_-1.1px_rgba(0,0,0,0.1)] shrink-0 inline-flex items-center justify-center font-sans hover:scale-[1.02] active:scale-[0.98]"
+                  style={{ borderRadius: "17.6px", border: "1px solid #FFFFFF" }}
                 >
                   {newsletterMutation.isPending ? (
-                    <Loader2 className="w-4 h-4 animate-spin" />
+                    <Loader2 className="w-5 h-5 animate-spin" />
                   ) : (
                     "Subscribe"
                   )}
