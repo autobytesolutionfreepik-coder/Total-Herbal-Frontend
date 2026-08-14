@@ -786,7 +786,7 @@ export default function HomePage() {
 
               {/* Main Heading */}
               <h1
-                className="text-section-title font-bold leading-tight text-[#026C24] font-serif"
+                className="text-section-title font-bold leading-tight text-[#026C24] font-serif text-3xl sm:text-4xl lg:text-5xl"
                 style={{ color: "#026C24" }}
               >
                 Elevating Standards in Cannabis Wellness
@@ -794,7 +794,7 @@ export default function HomePage() {
 
               {/* Main Body Content */}
               <p
-                className="text-sm sm:text-md leading-relaxed text-[#5F5E5E] font-normal font-sans"
+                className="text-sm sm:text-lg leading-relaxed text-[#5F5E5E] font-normal font-sans"
                 style={{ color: "#5F5E5E" }}
               >
                 Our master growers and formulation chemists utilize clean extraction techniques without harmful solvents, delivering uncompromised herbal purity across every strain. Every batch is meticulously crafted to preserve natural terpene profiles, ensuring consistent therapeutic results and an elevated wellness experience.
@@ -820,13 +820,13 @@ export default function HomePage() {
                     <CheckCircle2 className="w-5 h-5 sm:w-6 sm:h-6 text-[#026C24] flex-shrink-0 mt-0.5" style={{ color: "#026C24" }} />
                     <div className="flex flex-col gap-0.5">
                       <h3
-                        className="font-semibold text-base sm:text-lg text-[#026C24] font-sans"
+                        className="font-semibold text-base sm:text-xl text-[#026C24] font-sans"
                         style={{ color: "#026C24" }}
                       >
                         {item.title}
                       </h3>
                       <p
-                        className="text-xs sm:text-md leading-relaxed text-[#5F5E5E] font-normal font-sans"
+                        className="text-xs sm:text-lg leading-relaxed text-[#5F5E5E] font-normal font-sans"
                         style={{ color: "#5F5E5E" }}
                       >
                         {item.desc}
@@ -838,7 +838,12 @@ export default function HomePage() {
 
               {/* CTA Button */}
               <div className="pt-2">
-                <Button href="/about" variant="primary" size="lg" className="w-full sm:w-[200px]">
+                <Button
+                  href="/about"
+                  variant="primary"
+                  size="lg"
+                  className="w-full sm:w-auto px-9 py-4 h-14 sm:h-16 text-base sm:text-lg font-bold normal-case tracking-normal whitespace-nowrap shadow-md"
+                >
                   Read Our Full Story
                 </Button>
               </div>
