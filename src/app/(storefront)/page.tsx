@@ -1229,7 +1229,7 @@ export default function HomePage() {
             />
 
             {/* Inner Content Stack - Figma Spec: 1396px width */}
-            <div className="relative z-10 w-full max-w-[1396px] mx-auto flex flex-col lg:flex-row items-center justify-between gap-6 lg:gap-10 xl:gap-[60px]">
+            <div className="relative z-10 w-full max-w-[1296px] mx-auto flex flex-col lg:flex-row items-center justify-between gap-6 lg:gap-10 xl:gap-[60px]">
               {/* Left Content Block */}
               <div className="text-left text-white flex flex-col gap-1.5 max-w-[400px] shrink-0">
                 {/* Heading: Manrope 700, 48px, leading 60px, tracking 0.96px */}
