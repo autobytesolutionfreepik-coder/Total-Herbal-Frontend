@@ -18,9 +18,9 @@ const supportLinks = [
 ];
 
 const storeLocations = [
-  { name: "Downtown LA", address: "123 Herbal Way, Los Angeles, CA 90012" },
-  { name: "West Hollywood", address: "789 Green Leaf Blvd, West Hollywood, CA 90069" },
-  { name: "Culver City", address: "456 Herbal Ave, Culver City, CA 90232" },
+  { name: "Raleigh Store", address: "Raleigh, NC · (919) 703-0100" },
+  { name: "Raleigh Downtown", address: "Raleigh, NC · (919) 322-5112" },
+  { name: "Cary Store", address: "Cary, NC · (919) 234-0504" },
 ];
 
 function FacebookIcon() {

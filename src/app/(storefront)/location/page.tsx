@@ -20,48 +20,33 @@ import { Button } from "@/components/ui/button";
 const locationsList = [
   {
     id: "1",
-    name: "Total Herbal Care — Downtown LA",
+    name: "Total Herbal Care — Raleigh",
     status: "OPEN NOW",
-    address: "123 Herbal Way, Los Angeles, CA 90012",
-    phone: "(716) 556-0125",
-    hours: "Mon – Sun: 9:00 AM – 9:00 PM",
+    address: "Raleigh, NC",
+    phone: "(919) 703-0100",
+    hours: "Mon – Sun: 9:00 AM – 11:00 PM (Closes 11 PM)",
+    rating: "5.0 ★ (2.6K reviews)",
     distance: "2.3 miles",
   },
   {
     id: "2",
-    name: "Total Herbal Care — West Hollywood",
+    name: "Total Herbal Care — Raleigh Downtown",
     status: "OPEN NOW",
-    address: "789 Green Leaf Blvd, West Hollywood, CA 90069",
-    phone: "(716) 556-0126",
-    hours: "Mon – Sun: 9:00 AM – 10:00 PM",
+    address: "Raleigh, NC",
+    phone: "(919) 322-5112",
+    hours: "Mon – Sun: 9:00 AM – 12:00 AM (Closes 12 AM)",
+    rating: "5.0 ★ (699 reviews)",
     distance: "4.7 miles",
   },
   {
     id: "3",
-    name: "Total Herbal Care — Culver City",
+    name: "Total Herbal Care — Cary",
     status: "OPEN NOW",
-    address: "456 Herbal Ave, Culver City, CA 90232",
-    phone: "(716) 556-0127",
-    hours: "Mon – Sun: 9:00 AM – 9:00 PM",
+    address: "Cary, NC",
+    phone: "(919) 234-0504",
+    hours: "Mon – Sun: 9:00 AM – 11:00 PM (Closes 11 PM)",
+    rating: "5.0 ★ (820 reviews)",
     distance: "6.1 miles",
-  },
-  {
-    id: "4",
-    name: "Total Herbal Care — Westside Flagship",
-    status: "OPEN NOW",
-    address: "520 Overthrow Blvd, Los Angeles, CA 90011",
-    phone: "(716) 556-0125",
-    hours: "Mon – Sun: 9:00 AM - 10:00 PM",
-    distance: "8.2 miles",
-  },
-  {
-    id: "5",
-    name: "Total Herbal Care — Downtown Storefront",
-    status: "OPEN NOW",
-    address: "112 Ocean Road, Los Angeles, CA 90011",
-    phone: "(716) 556-0128",
-    hours: "Mon – Sun: 9:00 AM - 10:00 PM",
-    distance: "10.5 miles",
   },
 ];
 
@@ -125,7 +110,7 @@ export default function LocationPage() {
             </motion.h1>
 
             <motion.p variants={fadeIn} className="text-xs md:text-sm text-[#4A4A4A] leading-relaxed max-w-2xl mx-auto">
-              Locate licensed Total Herbal Care dispensary storefronts in Westside and Downtown Los Angeles. Visit us for in-store consultation, express curbside pickup, or same-day local delivery across LA zip code 90011.
+              Locate licensed Total Herbal Care dispensary storefronts in Raleigh and Cary, North Carolina. Visit us for in-store shopping, expert consultation, or express pickup across our Triangle-area locations.
             </motion.p>
           </motion.div>
         </div>
@@ -196,7 +181,7 @@ export default function LocationPage() {
                         Order for Pickup
                       </Button>
                       <Button
-                        href={`https://maps.google.com/?q=${encodeURIComponent(loc.address)}`}
+                        href={`https://maps.google.com/?q=${encodeURIComponent(loc.name + ' ' + loc.address)}`}
                         variant="outline"
                         size="sm"
                         className="px-4 py-2 text-xs font-semibold rounded-xl border-[#D5CECE] hover:border-[#016C24] text-[#1A1A1A]"
@@ -230,8 +215,8 @@ export default function LocationPage() {
                       <MapPin className="w-5 h-5 text-[#016C24]" />
                     </div>
                     <div>
-                      <h4 className="text-sm font-bold text-[#1A1A1A]">Westside LA Dispensary Hub</h4>
-                      <p className="text-xs text-[#767676]">520 Overthrow Blvd, Los Angeles, CA 90011</p>
+                      <h4 className="text-sm font-bold text-[#1A1A1A]">Total Herbal Care — Raleigh Store</h4>
+                      <p className="text-xs text-[#767676]">Raleigh, NC · (919) 703-0100</p>
                     </div>
                   </div>
                   <Button href="/shop" variant="primary" size="sm" className="hidden sm:inline-flex text-xs">
@@ -323,7 +308,7 @@ export default function LocationPage() {
                   Stay Elevated
                 </h2>
                 <p className="text-sm md:text-base text-white/85 leading-relaxed">
-                  Subscribe for real-time Los Angeles dispensary stock updates, local delivery promotions, and strain releases.
+                  Subscribe for real-time Raleigh & Cary dispensary stock updates, local delivery promotions, and strain releases.
                 </p>
               </div>
 
