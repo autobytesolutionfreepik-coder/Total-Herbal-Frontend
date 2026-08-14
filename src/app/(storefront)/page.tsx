@@ -770,7 +770,7 @@ export default function HomePage() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
-              className="flex flex-col gap-6 sm:gap-[36px] pt-2 lg:pt-[9px]"
+              className="flex flex-col gap-6 sm:gap-[30px] pt-2 lg:pt-[9px]"
             >
               {/* Subheading Tag */}
               <div>
