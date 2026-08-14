@@ -438,26 +438,32 @@ export default function HomePage() {
       </section>
 
       {/* ══ 2. TRUST STRIP ═══════════════════════════════════════════════════ */}
-      <section className="relative z-20 -mt-8 sm:-mt-10 md:-mt-12 bg-transparent py-0">
-        <div className="container-site">
-          <div className="rounded-xl sm:rounded-2xl lg:rounded-3xl py-4 sm:py-5 md:py-6 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-[#026C24] via-[#084824] to-[#071F14] border border-white/25 backdrop-blur-xl shadow-xl">
-            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3 sm:gap-4 md:gap-5 lg:gap-6 items-center">
+      <section className="relative z-20 -mt-10 sm:-mt-12 lg:-mt-16 bg-transparent py-0">
+        <div className="w-full max-w-[1729px] mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="w-full rounded-[20px] bg-gradient-to-b from-[#026C24] via-[#084824] to-[#071F14] border border-white/25 backdrop-blur-xl shadow-xl py-4 sm:py-6 xl:py-0 xl:h-[176px] px-4 sm:px-8 xl:px-[70px] flex items-center justify-center">
+            <div className="w-full max-w-[1589px] xl:h-[111.8px] grid grid-cols-2 sm:grid-cols-3 xl:grid-cols-6 gap-4 sm:gap-6 xl:gap-6 items-center justify-between">
               {trustItems.map(({ img, label, sub }) => (
-                <div key={label} className="flex items-center gap-2.5 sm:gap-3 group hover:translate-y-[-2px] transition-transform duration-300">
-                  <div className="w-10 h-10 sm:w-12 sm:h-12 lg:w-14 lg:h-14 rounded-full border border-white/80 flex items-center justify-center flex-shrink-0 bg-[#0D2318]/30 group-hover:bg-[#016C24] transition-all duration-300 shadow-sm">
+                <div key={label} className="flex items-center gap-2.5 sm:gap-3.5 xl:gap-[18px] group hover:translate-y-[-2px] transition-transform duration-300">
+                  <div className="w-12 h-12 sm:w-16 sm:h-16 lg:w-20 lg:h-20 xl:w-[111.8px] xl:h-[111.8px] rounded-full border border-white/80 flex items-center justify-center flex-shrink-0 bg-[#0D2318]/30 group-hover:bg-[#016C24] transition-all duration-300 shadow-sm">
                     <Image
                       src={img}
                       alt={`${label} ${sub}`}
-                      width={36}
-                      height={36}
-                      className="w-6 h-6 sm:w-7 sm:h-7 lg:w-8 lg:h-8 object-contain"
+                      width={112}
+                      height={112}
+                      className="w-6 h-6 sm:w-8 sm:h-8 lg:w-10 lg:h-10 xl:w-[56px] xl:h-[56px] object-contain"
                     />
                   </div>
-                  <div className="leading-tight font-sans">
-                    <p className="text-white text-xs sm:text-sm lg:text-base font-bold tracking-tight">
+                  <div className="flex flex-col justify-center leading-tight xl:leading-[42px] font-sans">
+                    <p
+                      className="text-white text-xs sm:text-base lg:text-xl xl:text-[25px] font-bold xl:leading-[42px] xl:tracking-[0.27px]"
+                      style={{ fontFamily: "var(--font-manrope), Manrope, sans-serif" }}
+                    >
                       {label}
                     </p>
-                    <p className="text-[11px] sm:text-xs lg:text-sm font-bold text-[#E2C98A] tracking-tight">
+                    <p
+                      className="text-xs sm:text-base lg:text-xl xl:text-[25px] font-bold xl:leading-[42px] xl:tracking-[0.27px] text-[#E0A74B]"
+                      style={{ fontFamily: "var(--font-manrope), Manrope, sans-serif" }}
+                    >
                       {sub}
                     </p>
                   </div>
