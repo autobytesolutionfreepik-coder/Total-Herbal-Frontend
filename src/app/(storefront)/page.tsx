@@ -406,7 +406,6 @@ export default function HomePage() {
               }}
             >
               Organic Cannabis
-
               <br />
               Formulas for Every<br />
               <span className="text-[#C9A961]">Lifestyle</span>
@@ -419,49 +418,43 @@ export default function HomePage() {
               Discover lab-tested organic flower, precision-dosed edibles, full-spectrum vapes, and apothecary wellness remedies delivered directly to your door.
             </motion.p>
 
-            <motion.div variants={fadeUp} className="flex flex-wrap items-center gap-3.5">
-              <Link
-                href="/shop"
-                className="bg-[#007A2B] hover:bg-[#00581F] text-white text-xs sm:text-sm font-bold tracking-wider uppercase px-7 py-3 rounded-full transition-all shadow-md inline-flex items-center justify-center"
-              >
+            <motion.div variants={fadeUp} className="flex flex-wrap items-center gap-4">
+              <Button href="/shop" variant="primary" size="lg">
                 Shop Now
-              </Link>
-              <Link
-                href="/location"
-                className="bg-[#E5EAE7] hover:bg-white text-[#006828] text-xs sm:text-sm font-bold tracking-wider uppercase px-7 py-3 rounded-full transition-all shadow-sm inline-flex items-center justify-center"
-              >
+              </Button>
+              <Button href="/location" variant="secondary" size="lg">
                 Find a Location
-              </Link>
+              </Button>
             </motion.div>
           </motion.div>
         </div>
       </section>
 
       {/* ══ 2. TRUST STRIP ═══════════════════════════════════════════════════ */}
-      <section className="relative z-20 -mt-10 sm:-mt-12 lg:-mt-16 bg-transparent py-0">
-        <div className="w-full max-w-[1729px] mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="w-full rounded-[20px] bg-gradient-to-b from-[#026C24] via-[#084824] to-[#071F14] border border-white/25 backdrop-blur-xl shadow-xl py-4 sm:py-6 xl:py-0 xl:h-[176px] px-4 sm:px-8 xl:px-[70px] flex items-center justify-center">
-            <div className="w-full max-w-[1589px] xl:h-[111.8px] grid grid-cols-2 sm:grid-cols-3 xl:grid-cols-6 gap-4 sm:gap-6 xl:gap-6 items-center justify-between">
+      <section className="relative z-20 -mt-8 sm:-mt-10 lg:-mt-12 bg-transparent py-0">
+        <div className="w-full max-w-[1729px] mx-auto px-3 sm:px-6 lg:px-8">
+          <div className="w-full rounded-[20px] bg-gradient-to-b from-[#026C24] via-[#084824] to-[#071F14] border border-white/25 backdrop-blur-xl shadow-xl py-3.5 sm:py-5 lg:py-6 px-4 sm:px-6 lg:px-8 xl:px-12 flex items-center justify-center min-h-[130px] xl:min-h-[160px]">
+            <div className="w-full max-w-[1589px] grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3 sm:gap-4 lg:gap-5 xl:gap-6 items-center justify-between">
               {trustItems.map(({ img, label, sub }) => (
-                <div key={label} className="flex items-center gap-2.5 sm:gap-3.5 xl:gap-[18px] group hover:translate-y-[-2px] transition-transform duration-300">
-                  <div className="w-12 h-12 sm:w-16 sm:h-16 lg:w-20 lg:h-20 xl:w-[111.8px] xl:h-[111.8px] rounded-full border border-white/80 flex items-center justify-center flex-shrink-0 bg-[#0D2318]/30 group-hover:bg-[#016C24] transition-all duration-300 shadow-sm">
+                <div key={label} className="flex items-center gap-2.5 sm:gap-3 xl:gap-4 group hover:translate-y-[-2px] transition-transform duration-300">
+                  <div className="w-10 h-10 sm:w-14 sm:h-14 lg:w-16 lg:h-16 xl:w-20 xl:h-20 2xl:w-[90px] 2xl:h-[90px] rounded-full border border-white/80 flex items-center justify-center flex-shrink-0 bg-[#0D2318]/30 group-hover:bg-[#016C24] transition-all duration-300 shadow-sm">
                     <Image
                       src={img}
                       alt={`${label} ${sub}`}
-                      width={100}
-                      height={100}
-                      className="w-6 h-6 sm:w-8 sm:h-8 lg:w-10 lg:h-10 xl:w-[50px] xl:h-[50px] object-contain"
+                      width={90}
+                      height={90}
+                      className="w-5 h-5 sm:w-7 sm:h-7 lg:w-8 lg:h-8 xl:w-10 xl:h-10 2xl:w-11 2xl:h-11 object-contain"
                     />
                   </div>
-                  <div className="flex flex-col justify-center leading-tight xl:leading-[42px] font-sans">
+                  <div className="flex flex-col justify-center leading-tight font-sans">
                     <p
-                      className="text-white text-xs sm:text-base lg:text-xl xl:text-[20px] font-bold xl:leading-[42px] xl:tracking-[0.27px]"
+                      className="text-white text-xs sm:text-sm lg:text-base xl:text-[17px] 2xl:text-[20px] font-bold leading-tight"
                       style={{ fontFamily: "var(--font-manrope), Manrope, sans-serif" }}
                     >
                       {label}
                     </p>
                     <p
-                      className="text-xs sm:text-base lg:text-xl xl:text-[20px] font-bold xl:leading-[42px] xl:tracking-[0.27px] text-[#E0A74B]"
+                      className="text-xs sm:text-sm lg:text-base xl:text-[17px] 2xl:text-[20px] font-bold leading-tight text-[#E0A74B]"
                       style={{ fontFamily: "var(--font-manrope), Manrope, sans-serif" }}
                     >
                       {sub}
@@ -475,23 +468,23 @@ export default function HomePage() {
       </section>
 
       {/* ══ 3. EXPLORE COLLECTION ════════════════════════════════════════════ */}
-      <section className="py-16 md:py-20 lg:py-24" style={{ background: "#EDE6DB" }}>
+      <section className="py-10 md:py-14 lg:py-16" style={{ background: "#EDE6DB" }}>
         <div className="container-site">
           <motion.div
             initial="hidden"
             whileInView="show"
             viewport={{ once: true, margin: "-60px" }}
             variants={stagger}
-            className="text-center mb-10 md:mb-14 lg:mb-16"
+            className="text-center mb-8 md:mb-12"
           >
             <motion.h2
               variants={fadeUp}
-              className="text-3xl sm:text-4xl md:text-5xl lg:text-[2.65rem] font-bold tracking-tight text-[#006828]"
-              style={{ fontFamily: "Times New Roman, serif", color: "#006828" }}
+              className="text-section-title font-bold tracking-tight text-[#006828]"
+              style={{ color: "#006828" }}
             >
               Explore Our Collection
             </motion.h2>
-            <motion.div variants={fadeUp} className="flex justify-center mt-3.5">
+            <motion.div variants={fadeUp} className="flex justify-center mt-3">
               <div className="w-12 h-1 rounded-full bg-[#006828]" />
             </motion.div>
           </motion.div>
@@ -501,7 +494,7 @@ export default function HomePage() {
             whileInView="show"
             viewport={{ once: true, margin: "-40px" }}
             variants={stagger}
-            className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-x-5 gap-y-7 sm:gap-x-6 sm:gap-y-8 lg:gap-x-7 lg:gap-y-9"
+            className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-x-4 gap-y-6 sm:gap-x-6 sm:gap-y-7 lg:gap-x-7 lg:gap-y-8"
           >
             {defaultCategories.map((cat: { label: string; slug: string; img: string }) => (
               <motion.div key={cat.label} variants={scaleIn}>
@@ -509,7 +502,7 @@ export default function HomePage() {
                   href={`/shop?category=${cat.slug}`}
                   className="group block text-center"
                 >
-                  <div className="relative aspect-square w-full overflow-hidden">
+                  <div className="relative aspect-square w-full overflow-hidden rounded-2xl border border-black/5 shadow-sm">
                     <Image
                       src={cat.img}
                       alt={cat.label}
@@ -519,7 +512,7 @@ export default function HomePage() {
                     />
                   </div>
                   <h3
-                    className="mt-3.5 sm:mt-4 text-base sm:text-lg lg:text-[1.15rem] font-bold text-[#006828] group-hover:text-[#005220] transition-colors font-sans"
+                    className="mt-3 text-base sm:text-lg font-bold text-[#006828] group-hover:text-[#005220] transition-colors font-sans"
                     style={{ color: "#006828" }}
                   >
                     {cat.label}
@@ -532,7 +525,7 @@ export default function HomePage() {
       </section>
 
       {/* ══ 4. NEW ARRIVALS ══════════════════════════════════════════════════ */}
-      <section className="py-12 md:py-16" style={{ background: "#EDE2D7" }}>
+      <section className="py-10 md:py-14 lg:py-16" style={{ background: "#EDE6DB" }}>
         <div className="container-site">
           <motion.div
             initial="hidden"
@@ -544,8 +537,8 @@ export default function HomePage() {
             <div>
               <motion.h2
                 variants={fadeUp}
-                className="text-4xl sm:text-5xl font-bold tracking-tight text-[#006828]"
-                style={{ fontFamily: "Times New Roman, serif", color: "#006828" }}
+                className="text-section-title font-bold tracking-tight text-[#006828]"
+                style={{ color: "#006828" }}
               >
                 New Arrivals
               </motion.h2>
@@ -645,9 +638,9 @@ export default function HomePage() {
       </section>
 
       {/* ══ BANNER 1: LIMITED TIME OFFER ═════════════════════════════════════ */}
-      <section className="py-10 sm:py-14 md:py-16" style={{ background: "#EDE6DB" }}>
+      <section className="py-8 sm:py-10 md:py-12" style={{ background: "#EDE6DB" }}>
         <div className="container-site">
-          <div className="relative rounded-[24px] sm:rounded-[32px] overflow-hidden shadow-lg bg-[#07130C] min-h-[380px] sm:min-h-[440px] md:min-h-[480px] flex items-center justify-center text-center">
+          <div className="relative rounded-[24px] sm:rounded-[32px] overflow-hidden shadow-lg bg-[#07130C] min-h-[360px] sm:min-h-[420px] md:min-h-[450px] flex items-center justify-center text-center">
             {/* Background Image - Limited-time-offer.png */}
             <Image
               src="/images/Limited-time-offer.png"
@@ -662,48 +655,44 @@ export default function HomePage() {
             <div className="absolute inset-0 bg-black/40" />
 
             {/* Content Container - Centered layout matching reference image */}
-            <div className="relative z-10 py-12 sm:py-16 md:py-20 px-6 sm:px-10 max-w-[660px] mx-auto flex flex-col items-center justify-center text-center">
-              <p className="text-xs sm:text-[13px] font-semibold uppercase tracking-[0.25em] text-white/90 mb-3 sm:mb-4 font-sans">
+            <div className="relative z-10 py-10 sm:py-14 md:py-16 px-6 sm:px-10 max-w-[660px] mx-auto flex flex-col items-center justify-center text-center">
+              <p className="text-xs sm:text-[13px] font-semibold uppercase tracking-[0.25em] text-white/90 mb-3 font-sans">
                 LIMITED TIME OFFER
               </p>
 
               <h2
-                className="text-3xl sm:text-4xl md:text-[46px] lg:text-[50px] font-bold text-white leading-[1.14] mb-4 sm:mb-5 font-serif"
+                className="text-3xl sm:text-4xl md:text-[44px] font-bold text-white leading-[1.14] mb-4 font-serif"
                 style={{ fontFamily: "Times New Roman, serif", color: "#ffffff" }}
               >
                 Seasonal Collection:<br />Fresh Summer Blooms
               </h2>
 
-              <p className="text-sm sm:text-base md:text-[16px] text-white/90 leading-[1.6] max-w-[580px] mx-auto mb-7 sm:mb-8 font-normal font-sans">
+              <p className="text-sm sm:text-base text-white/90 leading-relaxed max-w-[580px] mx-auto mb-7 font-normal font-sans">
                 Experience the essence of the season with our exclusive sun-grown flower collection. 20% off all flower products this week.
               </p>
 
-              <Link
-                href="/shop"
-                className="bg-white hover:bg-white/95 text-[#006828] text-sm sm:text-base font-semibold px-7 sm:px-8 py-3 sm:py-3.5 rounded-[14px] transition-all shadow-md inline-flex items-center justify-center hover:scale-[1.02] active:scale-[0.98] font-sans"
-                style={{ color: "#006828" }}
-              >
+              <Button href="/shop" variant="white" size="lg">
                 Explore the Sale
-              </Link>
+              </Button>
             </div>
           </div>
         </div>
       </section>
 
       {/* ══ 5. THE TOTALHERBALCARE DIFFERENCE ════════════════════════════════ */}
-      <section className="py-16 md:py-24" style={{ background: "#EDE6DB" }}>
+      <section className="py-10 md:py-14 lg:py-16" style={{ background: "#EDE6DB" }}>
         <div className="container-site">
           <motion.div
             initial="hidden"
             whileInView="show"
             viewport={{ once: true }}
             variants={stagger}
-            className="text-center max-w-2xl mx-auto mb-12 md:mb-16"
+            className="text-center max-w-2xl mx-auto mb-10 md:mb-12"
           >
             <motion.h2
               variants={fadeUp}
-              className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 text-[#006828] leading-tight font-serif"
-              style={{ fontFamily: "Times New Roman, serif", color: "#006828" }}
+              className="text-section-title font-bold mb-3 text-[#006828] leading-tight font-serif"
+              style={{ color: "#006828" }}
             >
               The TotalHerbalCare Difference
             </motion.h2>
@@ -745,10 +734,10 @@ export default function HomePage() {
       </section>
 
       {/* ══ 6. OUR COMMITMENT ════════════════════════════════════════════════ */}
-      <section className="py-16 sm:py-20 md:py-24 lg:py-28" style={{ background: "#EDE6DB" }}>
-        <div className="max-w-[1728px] mx-auto px-4 sm:px-8 xl:px-16">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 xl:gap-[120px] items-center">
-            {/* Left Image & Floating Badge - Figma Spec: 804x900px, rounded-[36px] */}
+      <section className="py-10 md:py-14 lg:py-16" style={{ background: "#EDE6DB" }}>
+        <div className="max-w-[1728px] mx-auto px-4 sm:px-8 xl:px-12">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 xl:gap-[80px] items-center">
+            {/* Left Image & Floating Badge */}
             <motion.div
               initial={{ opacity: 0, x: -30 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -756,7 +745,7 @@ export default function HomePage() {
               transition={{ duration: 0.6 }}
               className="relative w-full"
             >
-              <div className="relative rounded-[36px] overflow-hidden shadow-md border border-black/5 w-full aspect-square lg:aspect-[804/900] min-h-[460px] sm:min-h-[580px] lg:min-h-[680px] xl:min-h-[780px]">
+              <div className="relative rounded-[32px] overflow-hidden shadow-md border border-black/5 w-full aspect-square lg:aspect-[804/820] min-h-[380px] sm:min-h-[480px] lg:min-h-[580px]">
                 <Image
                   src="/images/OUR-COMMITMENT.png"
                   alt="Cannabis cultivation lab"
@@ -766,8 +755,8 @@ export default function HomePage() {
                   priority
                 />
                 {/* Floating 10+ Years Badge */}
-                <div className="absolute bottom-6 sm:bottom-8 left-6 sm:left-8 right-6 sm:right-auto sm:max-w-[320px] bg-white/90 backdrop-blur-md rounded-[24px] p-6 shadow-xl border border-white/60">
-                  <p className="text-2xl sm:text-3xl font-bold text-[#026C24] font-sans mb-1" style={{ color: "#026C24" }}>
+                <div className="absolute bottom-6 left-6 right-6 sm:right-auto sm:max-w-[300px] bg-white/90 backdrop-blur-md rounded-[24px] p-5 shadow-xl border border-white/60">
+                  <p className="text-2xl font-bold text-[#026C24] font-sans mb-1" style={{ color: "#026C24" }}>
                     10+ Years
                   </p>
                   <p className="text-xs sm:text-sm text-[#5F5E5E] font-normal leading-relaxed font-sans">
@@ -777,18 +766,18 @@ export default function HomePage() {
               </div>
             </motion.div>
 
-            {/* Right Text Content Stack - Figma Spec: gap 36px, pt-9px */}
+            {/* Right Text Content Stack */}
             <motion.div
               initial={{ opacity: 0, x: 30 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
-              className="flex flex-col gap-6 sm:gap-[30px] pt-2 lg:pt-[9px]"
+              className="flex flex-col gap-5 sm:gap-6 pt-2"
             >
               {/* Subheading Tag */}
               <div>
                 <p
-                  className="text-base sm:text-[18px] font-bold uppercase tracking-[1.8px] text-[#026C24] font-sans leading-[24px]"
+                  className="text-sm sm:text-base font-bold uppercase tracking-[1.8px] text-[#026C24] font-sans leading-[24px]"
                   style={{ color: "#026C24" }}
                 >
                   OUR COMMITMENT
@@ -797,22 +786,22 @@ export default function HomePage() {
 
               {/* Main Heading */}
               <h2
-                className="text-3xl sm:text-4xl lg:text-[48px] font-bold leading-tight lg:leading-[72px] text-[#026C24] font-serif"
-                style={{ fontFamily: "Times New Roman, serif", color: "#026C24" }}
+                className="text-section-title font-bold leading-tight text-[#026C24] font-serif"
+                style={{ color: "#026C24" }}
               >
                 Elevating Standards in Cannabis Wellness
               </h2>
 
-              {/* Main Body Content - User text + added rich details */}
+              {/* Main Body Content */}
               <p
-                className="text-base sm:text-md lg:text-[16px] leading-relaxed lg:leading-[39px] text-[#5F5E5E] font-normal font-sans"
+                className="text-sm sm:text-base leading-relaxed text-[#5F5E5E] font-normal font-sans"
                 style={{ color: "#5F5E5E" }}
               >
                 Our master growers and formulation chemists utilize clean extraction techniques without harmful solvents, delivering uncompromised herbal purity across every strain. Every batch is meticulously crafted to preserve natural terpene profiles, ensuring consistent therapeutic results and an elevated wellness experience.
               </p>
 
-              {/* Checkpoints Stack - Figma Spec: gap 24px */}
-              <div className="flex flex-col gap-6 sm:gap-[24px]">
+              {/* Checkpoints Stack */}
+              <div className="flex flex-col gap-4 sm:gap-5">
                 {[
                   {
                     title: "Ethical Cultivation",
@@ -827,17 +816,17 @@ export default function HomePage() {
                     desc: "Rigorous third-party lab verification ensuring complete safety, zero residual heavy metals or solvents, and guaranteed terpene density.",
                   },
                 ].map((item) => (
-                  <div key={item.title} className="flex items-start gap-4">
-                    <CheckCircle2 className="w-6 h-6 sm:w-7 sm:h-7 text-[#026C24] flex-shrink-0 mt-1" style={{ color: "#026C24" }} />
-                    <div className="flex flex-col gap-1">
+                  <div key={item.title} className="flex items-start gap-3.5">
+                    <CheckCircle2 className="w-5 h-5 sm:w-6 sm:h-6 text-[#026C24] flex-shrink-0 mt-0.5" style={{ color: "#026C24" }} />
+                    <div className="flex flex-col gap-0.5">
                       <h3
-                        className="font-semibold text-xl sm:text-md lg:text-[22px] leading-snug lg:leading-[42px] text-[#026C24] font-sans"
+                        className="font-semibold text-base sm:text-lg text-[#026C24] font-sans"
                         style={{ color: "#026C24" }}
                       >
                         {item.title}
                       </h3>
                       <p
-                        className="text-sm sm:text-md lg:text-[16px] leading-relaxed lg:leading-[30px] text-[#5F5E5E] font-normal font-sans"
+                        className="text-xs sm:text-sm leading-relaxed text-[#5F5E5E] font-normal font-sans"
                         style={{ color: "#5F5E5E" }}
                       >
                         {item.desc}
@@ -847,15 +836,11 @@ export default function HomePage() {
                 ))}
               </div>
 
-              {/* CTA Button - Figma Spec: 328x90px, rounded-full, #026C24 */}
+              {/* CTA Button */}
               <div className="pt-2">
-                <Link
-                  href="/about"
-                  className="bg-[#026C24] hover:bg-[#005220] text-white text-base sm:text-xl font-bold w-full sm:w-[328px] h-[64px] sm:h-[80px] lg:h-[90px] rounded-full transition-all shadow-lg inline-flex items-center justify-center font-sans hover:scale-[1.02] active:scale-[0.98]"
-                  style={{ backgroundColor: "#026C24" }}
-                >
+                <Button href="/about" variant="primary" size="xl" className="w-full sm:w-[328px]">
                   Read Our Full Story
-                </Link>
+                </Button>
               </div>
             </motion.div>
           </div>
@@ -863,23 +848,23 @@ export default function HomePage() {
       </section>
 
       {/* ══ 7. COMMUNITY REVIEWS ═════════════════════════════════════════════ */}
-      <section className="py-16 md:py-20" style={{ background: "#EDE6DB" }}>
+      <section className="py-10 md:py-14 lg:py-16" style={{ background: "#EDE6DB" }}>
         <div className="container-site">
           <motion.div
             initial="hidden"
             whileInView="show"
             viewport={{ once: true }}
             variants={stagger}
-            className="text-center mb-10 md:mb-12"
+            className="text-center mb-8 md:mb-10"
           >
             <motion.h2
               variants={fadeUp}
-              className="text-3xl sm:text-4xl md:text-4xl font-bold text-[#006828]"
-              style={{ fontFamily: "Times New Roman, serif", color: "#006828" }}
+              className="text-section-title font-bold text-[#006828]"
+              style={{ color: "#006828" }}
             >
               What Our Community Says
             </motion.h2>
-            <motion.div variants={fadeUp} className="flex justify-center items-center gap-1 mt-2.5">
+            <motion.div variants={fadeUp} className="flex justify-center items-center gap-1 mt-2">
               {[...Array(5)].map((_, i) => (
                 <Star key={i} className="w-4 h-4 fill-[#006828] text-[#006828]" style={{ color: "#006828" }} />
               ))}
@@ -927,20 +912,20 @@ export default function HomePage() {
       </section>
 
       {/* ══ 8. CANNABIS EDUCATION BLOG ═══════════════════════════════════════ */}
-      <section className="py-16 md:py-24" style={{ background: "#EDE6DB" }}>
+      <section className="py-10 md:py-14 lg:py-16" style={{ background: "#EDE6DB" }}>
         <div className="container-site">
           <motion.div
             initial="hidden"
             whileInView="show"
             viewport={{ once: true }}
             variants={stagger}
-            className="flex flex-col sm:flex-row items-start sm:items-end justify-between mb-10 md:mb-14 gap-4"
+            className="flex flex-col sm:flex-row items-start sm:items-end justify-between mb-8 md:mb-12 gap-4"
           >
             <div>
               <motion.h2
                 variants={fadeUp}
-                className="text-3xl sm:text-4xl md:text-5xl font-bold text-[#006828] leading-tight font-serif"
-                style={{ fontFamily: "Times New Roman, serif", color: "#006828" }}
+                className="text-section-title font-bold text-[#006828] leading-tight font-serif"
+                style={{ color: "#006828" }}
               >
                 Cannabis Education &amp; Insights
               </motion.h2>
@@ -1007,9 +992,9 @@ export default function HomePage() {
       </section>
 
       {/* ══ BANNER 2: FRESH SUMMER BLOOMS ═══════════════════════════════════ */}
-      <section className="py-12 md:py-16" style={{ background: "#EDE6DB" }}>
+      <section className="py-8 sm:py-10 md:py-12" style={{ background: "#EDE6DB" }}>
         <div className="container-site">
-          <div className="relative rounded-[24px] sm:rounded-[28px] overflow-hidden shadow-lg bg-[#050D08] border border-white/10 min-h-[360px] sm:min-h-[400px] md:min-h-[440px] flex items-center">
+          <div className="relative rounded-[24px] sm:rounded-[28px] overflow-hidden shadow-lg bg-[#050D08] border border-white/10 min-h-[340px] sm:min-h-[380px] md:min-h-[420px] flex items-center">
             {/* Background Image - Fresh-Summer-Blooms.png */}
             <Image
               src="/images/Fresh-Summer-Blooms.png"
@@ -1023,33 +1008,30 @@ export default function HomePage() {
             {/* Dark gradient overlay on left for text contrast */}
             <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/65 to-transparent w-full md:w-[70%]" />
 
-            {/* Left Content Container - 100% Image Match */}
-            <div className="relative z-10 p-8 sm:p-12 md:p-16 lg:p-20 max-w-lg lg:max-w-xl flex flex-col items-start justify-center text-left">
-              <p className="text-sm sm:text-base font-normal text-white/90 mb-2 font-sans">
+            {/* Left Content Container */}
+            <div className="relative z-10 p-7 sm:p-10 md:p-14 lg:p-16 max-w-lg lg:max-w-xl flex flex-col items-start justify-center text-left">
+              <p className="text-xs sm:text-sm font-normal text-white/90 mb-1.5 font-sans">
                 Seasonal Collection:
               </p>
               <h2
-                className="text-3xl sm:text-4xl md:text-4xl lg:text-[40px] font-bold mb-3.5 leading-[1.1] font-serif text-white tracking-tight"
+                className="text-2xl sm:text-3xl md:text-4xl font-bold mb-3 leading-[1.15] font-serif text-white tracking-tight"
                 style={{ fontFamily: "Times New Roman, serif", color: "#ffffff" }}
               >
                 Fresh Summer Blooms
               </h2>
-              <p className="text-xs sm:text-sm md:text-base text-white/85 leading-relaxed font-normal mb-7 max-w-md font-sans">
+              <p className="text-xs sm:text-sm md:text-base text-white/85 leading-relaxed font-normal mb-6 max-w-md font-sans">
                 Experience our hand-crafted organic formulas and seasonal herbal remedies tailored for your supreme wellness.
               </p>
-              <Link
-                href="/shop"
-                className="bg-[#006828] hover:bg-[#005220] text-white text-xs sm:text-sm font-semibold px-7 sm:px-8 py-3 sm:py-3.5 rounded-full transition-all shadow-md inline-flex items-center justify-center font-sans hover:scale-[1.02]"
-              >
+              <Button href="/shop" variant="primary" size="lg">
                 Shop Now
-              </Link>
+              </Button>
             </div>
           </div>
         </div>
       </section>
 
       {/* ══ 10. FIND NEAR YOU - LOCATIONS SECTION ════════════════════════════ */}
-      <section className="py-16 md:py-24" style={{ background: "#EDE6DB" }}>
+      <section className="py-10 md:py-14 lg:py-16" style={{ background: "#EDE6DB" }}>
         <div className="container-site">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-stretch">
             
@@ -1059,25 +1041,22 @@ export default function HomePage() {
                 FIND NEAR YOU
               </span>
               <h2
-                className="text-3xl sm:text-4xl lg:text-[2.65rem] font-bold leading-[1.14] text-[#0D2318] mb-4 font-serif"
+                className="text-2xl sm:text-3xl lg:text-[2.4rem] font-bold leading-[1.14] text-[#0D2318] mb-3.5 font-serif"
                 style={{ fontFamily: "Times New Roman, serif" }}
               >
                 Find a Total Herbal Care and Wellnary <span className="text-[#016C24]">Near You</span>
               </h2>
-              <p className="text-sm sm:text-base text-[#4A4A4A] font-medium leading-relaxed mb-8 max-w-sm">
+              <p className="text-sm sm:text-base text-[#4A4A4A] font-medium leading-relaxed mb-6 max-w-sm">
                 Visit one of our convenient locations for expert service and premium products.
               </p>
-              <Link
-                href="/location"
-                className="bg-[#0B2014] hover:bg-[#016C24] text-white text-xs font-bold tracking-widest uppercase px-7 py-4 rounded-full transition-all shadow-lg inline-flex items-center gap-2.5 font-sans group"
-              >
-                <MapPin className="w-4 h-4 text-[#E2C98A] group-hover:text-white transition-colors" />
+              <Button href="/location" variant="dark" size="lg" className="inline-flex items-center gap-2.5">
+                <MapPin className="w-4 h-4 text-[#E2C98A]" />
                 <span>VIEW ALL LOCATIONS</span>
-              </Link>
+              </Button>
             </div>
 
             {/* Middle Column: Map Graphic */}
-            <div className="lg:col-span-4 relative rounded-3xl overflow-hidden shadow-md border border-[#EDE8DF] bg-[#FAF8F5] min-h-[340px] lg:min-h-[420px] flex items-center justify-center">
+            <div className="lg:col-span-4 relative rounded-3xl overflow-hidden shadow-md border border-[#EDE8DF] bg-[#FAF8F5] min-h-[320px] lg:min-h-[380px] flex items-center justify-center">
               <Image
                 src="/images/Find-a-Location-Near-You.png"
                 alt="Total Herbal Care Store Locations Map"
@@ -1087,31 +1066,20 @@ export default function HomePage() {
               />
               <div className="absolute inset-0 bg-black/5 pointer-events-none" />
 
-              {/* Pin 1: Top Center */}
+              {/* Pins */}
               <div className="absolute top-12 left-1/2 -translate-x-1/2 group cursor-pointer">
-                <div className="w-10 h-10 rounded-full bg-[#016C24] text-white flex items-center justify-center shadow-xl border-2 border-white transform group-hover:scale-125 transition-transform duration-300">
-                  <MapPin className="w-5 h-5 text-white" />
+                <div className="w-9 h-9 rounded-full bg-[#016C24] text-white flex items-center justify-center shadow-xl border-2 border-white transform group-hover:scale-125 transition-transform duration-300">
+                  <MapPin className="w-4 h-4 text-white" />
                 </div>
               </div>
-
-              {/* Pin 2: Left Side */}
               <div className="absolute top-1/3 left-12 group cursor-pointer">
-                <div className="w-10 h-10 rounded-full bg-[#016C24] text-white flex items-center justify-center shadow-xl border-2 border-white transform group-hover:scale-125 transition-transform duration-300">
-                  <MapPin className="w-5 h-5 text-white" />
+                <div className="w-9 h-9 rounded-full bg-[#016C24] text-white flex items-center justify-center shadow-xl border-2 border-white transform group-hover:scale-125 transition-transform duration-300">
+                  <MapPin className="w-4 h-4 text-white" />
                 </div>
               </div>
-
-              {/* Pin 3: Right Side */}
               <div className="absolute top-1/2 right-16 group cursor-pointer">
-                <div className="w-10 h-10 rounded-full bg-[#016C24] text-white flex items-center justify-center shadow-xl border-2 border-white transform group-hover:scale-125 transition-transform duration-300">
-                  <MapPin className="w-5 h-5 text-white" />
-                </div>
-              </div>
-
-              {/* Pin 4: Bottom Center */}
-              <div className="absolute bottom-16 left-1/3 group cursor-pointer">
-                <div className="w-10 h-10 rounded-full bg-[#016C24] text-white flex items-center justify-center shadow-xl border-2 border-white transform group-hover:scale-125 transition-transform duration-300">
-                  <MapPin className="w-5 h-5 text-white" />
+                <div className="w-9 h-9 rounded-full bg-[#016C24] text-white flex items-center justify-center shadow-xl border-2 border-white transform group-hover:scale-125 transition-transform duration-300">
+                  <MapPin className="w-4 h-4 text-white" />
                 </div>
               </div>
             </div>
@@ -1156,7 +1124,6 @@ export default function HomePage() {
                     )}
                   >
                     <div className="flex items-start gap-3 flex-1 min-w-0">
-                      {/* Image Thumbnail */}
                       <div className="w-16 h-14 sm:w-20 sm:h-16 rounded-xl overflow-hidden relative border border-[#EDE8DF] flex-shrink-0">
                         <Image
                           src={loc.img}
@@ -1166,8 +1133,6 @@ export default function HomePage() {
                           sizes="80px"
                         />
                       </div>
-
-                      {/* Location Details */}
                       <div className="min-w-0 flex-1">
                         <div className="flex items-center gap-1.5 mb-0.5">
                           <span className="w-4 h-4 rounded-full bg-[#016C24] text-white font-extrabold text-[10px] flex items-center justify-center flex-shrink-0 font-sans">
@@ -1191,8 +1156,6 @@ export default function HomePage() {
                         </p>
                       </div>
                     </div>
-
-                    {/* Distance */}
                     <div className="text-right flex-shrink-0">
                       <p className="font-extrabold text-sm sm:text-base text-[#0D2318]">
                         {loc.distance.split(" ")[0]}
@@ -1205,7 +1168,6 @@ export default function HomePage() {
                 ))}
               </div>
 
-              {/* Bottom Card Link */}
               <div className="pt-4 border-t border-[#EDE8DF] text-right">
                 <Link
                   href="/location"
@@ -1222,10 +1184,9 @@ export default function HomePage() {
       </section>
 
       {/* ══ 11. NEWSLETTER ═══════════════════════════════════════════════════ */}
-      <section className="py-10 sm:py-14 md:py-16" style={{ background: "#EDE6DB" }}>
+      <section className="py-8 sm:py-10 md:py-12" style={{ background: "#EDE6DB" }}>
         <div className="max-w-[1742px] mx-auto px-4 sm:px-8 xl:px-12">
-          <div className="relative rounded-[24px] sm:rounded-[28px] overflow-hidden min-h-[216px] py-8 lg:py-0 px-6 sm:px-10 lg:px-16 bg-[#026C24] shadow-lg border border-white/10 flex items-center justify-center">
-            {/* Background Cannabis Leaf Graphics with mix-blend-multiply - Figma Spec: 263.5 x 291.5px */}
+          <div className="relative rounded-[24px] sm:rounded-[28px] overflow-hidden min-h-[200px] py-8 lg:py-0 px-6 sm:px-10 lg:px-16 bg-[#026C24] shadow-lg border border-white/10 flex items-center justify-center">
             <Image
               src="/images/cta-left.png"
               alt=""
@@ -1241,19 +1202,14 @@ export default function HomePage() {
               className="absolute -right-[40px] -top-[30px] w-[220px] sm:w-[264px] h-auto object-contain pointer-events-none select-none mix-blend-multiply opacity-80 z-0"
             />
 
-            {/* Inner Content Stack - Figma Spec: 1396px width */}
             <div className="relative z-10 w-full max-w-[1296px] mx-auto flex flex-col lg:flex-row items-center justify-between gap-6 lg:gap-10 xl:gap-[60px]">
-              {/* Left Content Block */}
               <div className="text-left text-white flex flex-col gap-1.5 max-w-[400px] shrink-0">
-                {/* Heading: Manrope 700, 48px, leading 60px, tracking 0.96px */}
                 <h2
                   className="text-3xl sm:text-4xl lg:text-[40px] font-bold text-white leading-tight lg:leading-[60px] tracking-[0.96px] font-sans"
                   style={{ fontFamily: "Manrope, sans-serif", color: "#ffffff" }}
                 >
                   Stay Elevated
                 </h2>
-
-                {/* Content: Manrope 400, 17px, leading 25px */}
                 <p
                   className="text-sm sm:text-base lg:text-[16px] text-white/95 leading-relaxed lg:leading-[25px] font-normal max-w-[385px] font-sans"
                   style={{ fontFamily: "Manrope, sans-serif" }}
@@ -1262,12 +1218,10 @@ export default function HomePage() {
                 </p>
               </div>
 
-              {/* Right Form - Email Box (670x68px, r:22px) & Button (161x66px, r:17.6px) */}
               <form
                 onSubmit={handleSubscribeNewsletter}
                 className="flex flex-col sm:flex-row items-center gap-4 lg:gap-6 w-full lg:w-auto"
               >
-                {/* Email Box: 670px x 68px, rounded-[22px] */}
                 <div className="relative flex items-center bg-white rounded-[22px] px-6 h-[60px] sm:h-[68px] w-full sm:w-[420px] lg:w-[670px] shadow-sm">
                   <Mail className="w-5 h-5 text-gray-400 mr-3.5 flex-shrink-0" />
                   <input
@@ -1279,7 +1233,6 @@ export default function HomePage() {
                   />
                 </div>
 
-                {/* Button: 161px x 66px, rounded-[17.6px], border 1px solid #FFFFFF */}
                 <button
                   type="submit"
                   disabled={newsletterMutation.isPending}
@@ -1299,19 +1252,19 @@ export default function HomePage() {
       </section>
 
       {/* ══ 12. FAQ ══════════════════════════════════════════════════════════ */}
-      <section className="py-16 md:py-20" style={{ background: "#EDE2D7" }}>
+      <section className="py-10 md:py-14 lg:py-16" style={{ background: "#EDE6DB" }}>
         <div className="container-site" style={{ maxWidth: "820px" }}>
           <motion.div
             initial="hidden"
             whileInView="show"
             viewport={{ once: true }}
             variants={stagger}
-            className="text-center mb-10 md:mb-12"
+            className="text-center mb-8 md:mb-10"
           >
             <motion.h2
               variants={fadeUp}
-              className="text-3xl sm:text-4xl md:text-4xl font-bold text-[#006828]"
-              style={{ fontFamily: "Times New Roman, serif", color: "#006828" }}
+              className="text-section-title font-bold text-[#006828]"
+              style={{ color: "#006828" }}
             >
               Frequently Asked Questions
             </motion.h2>

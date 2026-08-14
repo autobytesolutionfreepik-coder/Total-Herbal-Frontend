@@ -150,15 +150,44 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Section padding */
 .section-py {
-  padding-top: 4rem;
-  padding-bottom: 4rem;
+  padding-top: 2.5rem;
+  padding-bottom: 2.5rem;
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 768px) {
   .section-py {
-    padding-top: 5rem;
-    padding-bottom: 5rem;
+    padding-top: 3.5rem;
+    padding-bottom: 3.5rem;
   }
+}
+
+@media (min-width: 1280px) {
+  .section-py {
+    padding-top: 4.5rem;
+    padding-bottom: 4.5rem;
+  }
+}
+
+/* Fluid Typography System */
+.text-hero-title {
+  font-family: var(--font-serif);
+  font-size: clamp(2.2rem, 4.8vw, 4.2rem);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+}
+
+.text-section-title {
+  font-family: var(--font-serif);
+  font-size: clamp(1.75rem, 3.2vw, 2.75rem);
+  line-height: 1.2;
+  letter-spacing: -0.015em;
+  color: #006828;
+}
+
+.text-body-fluid {
+  font-family: var(--font-sans);
+  font-size: clamp(0.875rem, 1vw, 1.125rem);
+  line-height: 1.6;
 }
 
 /* Card base */
