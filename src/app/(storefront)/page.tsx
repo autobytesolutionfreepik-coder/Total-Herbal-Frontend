@@ -638,7 +638,7 @@ export default function HomePage() {
       </section>
 
       {/* ══ BANNER 1: LIMITED TIME OFFER ═════════════════════════════════════ */}
-      <section className="py-8 sm:py-10 md:py-12" style={{ background: "#EDE6DB" }}>
+      <section className="py-8 sm:py-10 md:py-12" style={{ background: "#FFFFFF" }}>
         <div className="container-site">
           <div className="relative rounded-[24px] sm:rounded-[32px] overflow-hidden shadow-lg bg-[#07130C] min-h-[360px] sm:min-h-[420px] md:min-h-[450px] flex items-center justify-center text-center">
             {/* Background Image - Limited-time-offer.png */}
@@ -680,7 +680,7 @@ export default function HomePage() {
       </section>
 
       {/* ══ 5. THE TOTALHERBALCARE DIFFERENCE ════════════════════════════════ */}
-      <section className="py-10 md:py-14 lg:py-16" style={{ background: "#EDE6DB" }}>
+      <section className="py-10 md:py-14 lg:py-12" style={{ background: "#E7DBD1" }}>
         <div className="container-site">
           <motion.div
             initial="hidden"
@@ -734,7 +734,7 @@ export default function HomePage() {
       </section>
 
       {/* ══ 6. OUR COMMITMENT ════════════════════════════════════════════════ */}
-      <section className="py-10 md:py-14 lg:py-16" style={{ background: "#EDE6DB" }}>
+      <section className="py-10 md:py-14 lg:py-12" style={{ background: "#E9E4DE" }}>
         <div className="max-w-[1728px] mx-auto px-4 sm:px-8 xl:px-12">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 xl:gap-[80px] items-center">
             {/* Left Image & Floating Badge */}
@@ -853,7 +853,7 @@ export default function HomePage() {
       </section>
 
       {/* ══ 7. COMMUNITY REVIEWS ═════════════════════════════════════════════ */}
-      <section className="py-10 md:py-14 lg:py-16" style={{ background: "#EDE6DB" }}>
+      <section className="py-10 md:py-14 lg:py-12" style={{ background: "#E7DBD1" }}>
         <div className="container-site">
           <motion.div
             initial="hidden"
@@ -917,7 +917,7 @@ export default function HomePage() {
       </section>
 
       {/* ══ 8. CANNABIS EDUCATION BLOG ═══════════════════════════════════════ */}
-      <section className="py-10 md:py-14 lg:py-16" style={{ background: "#EDE6DB" }}>
+      <section className="py-10 md:py-14 lg:py-12" style={{ background: "#E9E4DE" }}>
         <div className="container-site">
           <motion.div
             initial="hidden"
@@ -997,7 +997,7 @@ export default function HomePage() {
       </section>
 
       {/* ══ BANNER 2: FRESH SUMMER BLOOMS ═══════════════════════════════════ */}
-      <section className="py-8 sm:py-10 md:py-12" style={{ background: "#EDE6DB" }}>
+      <section className="py-8 sm:py-10 md:py-12" style={{ background: "#E9E4DE" }}>
         <div className="container-site">
           <div className="relative rounded-[24px] sm:rounded-[28px] overflow-hidden shadow-lg bg-[#050D08] border border-white/10 min-h-[340px] sm:min-h-[380px] md:min-h-[420px] flex items-center">
             {/* Background Image - Fresh-Summer-Blooms.png */}
@@ -1036,7 +1036,7 @@ export default function HomePage() {
       </section>
 
       {/* ══ 10. FIND NEAR YOU - LOCATIONS SECTION ════════════════════════════ */}
-      <section className="py-10 md:py-14 lg:py-16" style={{ background: "#EDE6DB" }}>
+      <section className="py-10 md:py-14 lg:py-12" style={{ background: "#E9E4DE" }}>
         <div className="container-site">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-stretch">
             
@@ -1189,7 +1189,7 @@ export default function HomePage() {
       </section>
 
       {/* ══ 11. NEWSLETTER ═══════════════════════════════════════════════════ */}
-      <section className="py-8 sm:py-10 md:py-12" style={{ background: "#EDE6DB" }}>
+      <section className="py-8 sm:py-10 md:py-12" style={{ background: "#E9E4DE" }}>
         <div className="max-w-[1742px] mx-auto px-4 sm:px-8 xl:px-12">
           <div className="relative rounded-[24px] sm:rounded-[28px] overflow-hidden min-h-[200px] py-8 lg:py-0 px-6 sm:px-10 lg:px-16 bg-[#026C24] shadow-lg border border-white/10 flex items-center justify-center">
             <Image
@@ -1257,7 +1257,7 @@ export default function HomePage() {
       </section>
 
       {/* ══ 12. FAQ ══════════════════════════════════════════════════════════ */}
-      <section className="py-10 md:py-14 lg:py-16" style={{ background: "#EDE6DB" }}>
+      <section className="py-10 md:py-14 lg:py-12" style={{ background: "#E9E4DE" }}>
         <div className="container-site" style={{ maxWidth: "820px" }}>
           <motion.div
             initial="hidden"
