@@ -772,7 +772,7 @@ export default function HomePage() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
-              className="flex flex-col gap-5 sm:gap-16 pt-2"
+              className="flex flex-col gap-5 sm:gap-12 pt-2"
             >
               {/* Subheading Tag */}
               <div>
@@ -785,16 +785,16 @@ export default function HomePage() {
               </div>
 
               {/* Main Heading */}
-              <h2
+              <h1
                 className="text-section-title font-bold leading-tight text-[#026C24] font-serif"
                 style={{ color: "#026C24" }}
               >
                 Elevating Standards in Cannabis Wellness
-              </h2>
+              </h1>
 
               {/* Main Body Content */}
               <p
-                className="text-sm sm:text-base leading-relaxed text-[#5F5E5E] font-normal font-sans"
+                className="text-sm sm:text-md leading-relaxed text-[#5F5E5E] font-normal font-sans"
                 style={{ color: "#5F5E5E" }}
               >
                 Our master growers and formulation chemists utilize clean extraction techniques without harmful solvents, delivering uncompromised herbal purity across every strain. Every batch is meticulously crafted to preserve natural terpene profiles, ensuring consistent therapeutic results and an elevated wellness experience.
@@ -826,7 +826,7 @@ export default function HomePage() {
                         {item.title}
                       </h3>
                       <p
-                        className="text-xs sm:text-sm leading-relaxed text-[#5F5E5E] font-normal font-sans"
+                        className="text-xs sm:text-md leading-relaxed text-[#5F5E5E] font-normal font-sans"
                         style={{ color: "#5F5E5E" }}
                       >
                         {item.desc}
@@ -838,7 +838,7 @@ export default function HomePage() {
 
               {/* CTA Button */}
               <div className="pt-2">
-                <Button href="/about" variant="primary" size="lg" className="w-full sm:w-[250px]">
+                <Button href="/about" variant="primary" size="lg" className="w-full sm:w-[200px]">
                   Read Our Full Story
                 </Button>
               </div>
