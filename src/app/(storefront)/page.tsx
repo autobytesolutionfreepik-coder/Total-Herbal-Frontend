@@ -448,20 +448,20 @@ export default function HomePage() {
                     <Image
                       src={img}
                       alt={`${label} ${sub}`}
-                      width={112}
-                      height={112}
-                      className="w-6 h-6 sm:w-8 sm:h-8 lg:w-10 lg:h-10 xl:w-[56px] xl:h-[56px] object-contain"
+                      width={100}
+                      height={100}
+                      className="w-6 h-6 sm:w-8 sm:h-8 lg:w-10 lg:h-10 xl:w-[50px] xl:h-[50px] object-contain"
                     />
                   </div>
                   <div className="flex flex-col justify-center leading-tight xl:leading-[42px] font-sans">
                     <p
-                      className="text-white text-xs sm:text-base lg:text-xl xl:text-[25px] font-bold xl:leading-[42px] xl:tracking-[0.27px]"
+                      className="text-white text-xs sm:text-base lg:text-xl xl:text-[20px] font-bold xl:leading-[42px] xl:tracking-[0.27px]"
                       style={{ fontFamily: "var(--font-manrope), Manrope, sans-serif" }}
                     >
                       {label}
                     </p>
                     <p
-                      className="text-xs sm:text-base lg:text-xl xl:text-[25px] font-bold xl:leading-[42px] xl:tracking-[0.27px] text-[#E0A74B]"
+                      className="text-xs sm:text-base lg:text-xl xl:text-[20px] font-bold xl:leading-[42px] xl:tracking-[0.27px] text-[#E0A74B]"
                       style={{ fontFamily: "var(--font-manrope), Manrope, sans-serif" }}
                     >
                       {sub}
