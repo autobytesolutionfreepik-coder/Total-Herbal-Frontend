@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Dispensary Locations & Store Hours",
   description:
-    "Locate Total Herbal Care licensed dispensary storefronts in Westside and Downtown Los Angeles. View hours, driving directions, phone numbers, and delivery zones.",
+    "Locate Total Herbal Care licensed dispensary storefronts in Raleigh and Cary, NC. View hours, driving directions, phone numbers, and pickup options.",
   alternates: {
     canonical: "https://totalherbalcare.com/location",
   },
