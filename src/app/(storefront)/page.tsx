@@ -1216,25 +1216,25 @@ export default function HomePage() {
             <Image
               src="/images/cta-left.png"
               alt=""
-              width={264}
-              height={292}
+              width={244}
+              height={272}
               className="absolute -left-[42px] -top-[30px] w-[220px] sm:w-[264px] h-auto object-contain pointer-events-none select-none mix-blend-multiply opacity-80 z-0"
             />
             <Image
               src="/images/Cta-right.png"
               alt=""
-              width={264}
-              height={292}
+              width={244}
+              height={272}
               className="absolute -right-[40px] -top-[30px] w-[220px] sm:w-[264px] h-auto object-contain pointer-events-none select-none mix-blend-multiply opacity-80 z-0"
             />
 
             {/* Inner Content Stack - Figma Spec: 1396px width */}
             <div className="relative z-10 w-full max-w-[1396px] mx-auto flex flex-col lg:flex-row items-center justify-between gap-6 lg:gap-10 xl:gap-[60px]">
               {/* Left Content Block */}
-              <div className="text-left text-white flex flex-col gap-1.5 max-w-[420px] shrink-0">
+              <div className="text-left text-white flex flex-col gap-1.5 max-w-[400px] shrink-0">
                 {/* Heading: Manrope 700, 48px, leading 60px, tracking 0.96px */}
                 <h2
-                  className="text-3xl sm:text-4xl lg:text-[48px] font-bold text-white leading-tight lg:leading-[60px] tracking-[0.96px] font-sans"
+                  className="text-3xl sm:text-4xl lg:text-[40px] font-bold text-white leading-tight lg:leading-[60px] tracking-[0.96px] font-sans"
                   style={{ fontFamily: "Manrope, sans-serif", color: "#ffffff" }}
                 >
                   Stay Elevated
@@ -1242,7 +1242,7 @@ export default function HomePage() {
 
                 {/* Content: Manrope 400, 17px, leading 25px */}
                 <p
-                  className="text-sm sm:text-base lg:text-[17px] text-white/95 leading-relaxed lg:leading-[25px] font-normal max-w-[385px] font-sans"
+                  className="text-sm sm:text-base lg:text-[16px] text-white/95 leading-relaxed lg:leading-[25px] font-normal max-w-[385px] font-sans"
                   style={{ fontFamily: "Manrope, sans-serif" }}
                 >
                   Subscribe to receive our latest organic drops, strain guides, discount coupons, and local dispensary delivery updates.
