@@ -632,9 +632,9 @@ export default function HomePage() {
       </section>
 
       {/* ══ BANNER 1: LIMITED TIME OFFER ═════════════════════════════════════ */}
-      <section className="py-12 md:py-16" style={{ background: "#EDE6DB" }}>
+      <section className="py-10 sm:py-14 md:py-16" style={{ background: "#EDE6DB" }}>
         <div className="container-site">
-          <div className="relative rounded-[28px] sm:rounded-[36px] overflow-hidden shadow-xl bg-[#07130C] border border-white/10 min-h-[380px] md:min-h-[460px] flex items-center justify-center text-center">
+          <div className="relative rounded-[24px] sm:rounded-[32px] overflow-hidden shadow-lg bg-[#07130C] min-h-[380px] sm:min-h-[440px] md:min-h-[480px] flex items-center justify-center text-center">
             {/* Background Image - Limited-time-offer.png */}
             <Image
               src="/images/Limited-time-offer.png"
@@ -645,26 +645,29 @@ export default function HomePage() {
               priority
             />
 
-            {/* Dark overlay for rich centered text readability */}
-            <div className="absolute inset-0 bg-black/45" />
+            {/* Dark semi-transparent overlay for visual clarity */}
+            <div className="absolute inset-0 bg-black/40" />
 
-            {/* Content Container - 100% Centered matching Figma */}
-            <div className="relative z-10 p-8 sm:p-12 md:p-16 max-w-xl mx-auto flex flex-col items-center justify-center text-center">
-              <p className="text-xs sm:text-sm font-semibold uppercase tracking-[0.25em] text-white/90 mb-3 font-sans">
+            {/* Content Container - Centered layout matching reference image */}
+            <div className="relative z-10 py-12 sm:py-16 md:py-20 px-6 sm:px-10 max-w-[660px] mx-auto flex flex-col items-center justify-center text-center">
+              <p className="text-xs sm:text-[13px] font-semibold uppercase tracking-[0.25em] text-white/90 mb-3 sm:mb-4 font-sans">
                 LIMITED TIME OFFER
               </p>
+
               <h2
-                className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl font-bold mb-4 leading-tight font-serif text-white"
+                className="text-3xl sm:text-4xl md:text-[46px] lg:text-[50px] font-bold text-white leading-[1.14] mb-4 sm:mb-5 font-serif"
                 style={{ fontFamily: "Times New Roman, serif", color: "#ffffff" }}
               >
                 Seasonal Collection:<br />Fresh Summer Blooms
               </h2>
-              <p className="text-sm md:text-base text-white/90 leading-relaxed font-normal mb-8 max-w-lg mx-auto font-sans">
+
+              <p className="text-sm sm:text-base md:text-[16px] text-white/90 leading-[1.6] max-w-[580px] mx-auto mb-7 sm:mb-8 font-normal font-sans">
                 Experience the essence of the season with our exclusive sun-grown flower collection. 20% off all flower products this week.
               </p>
+
               <Link
                 href="/shop"
-                className="bg-white hover:bg-gray-100 text-[#006828] text-xs sm:text-sm font-semibold px-8 py-3.5 rounded-full transition-all shadow-md inline-flex items-center justify-center hover:scale-[1.02] font-sans"
+                className="bg-white hover:bg-white/95 text-[#006828] text-sm sm:text-base font-semibold px-7 sm:px-8 py-3 sm:py-3.5 rounded-[14px] transition-all shadow-md inline-flex items-center justify-center hover:scale-[1.02] active:scale-[0.98] font-sans"
                 style={{ color: "#006828" }}
               >
                 Explore the Sale
