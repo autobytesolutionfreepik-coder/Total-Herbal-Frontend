@@ -792,7 +792,7 @@ export default function HomePage() {
 
               {/* Main Body Content - User text + added rich details */}
               <p
-                className="text-base sm:text-xl lg:text-[24px] leading-relaxed lg:leading-[39px] text-[#5F5E5E] font-normal font-sans"
+                className="text-base sm:text-md lg:text-[24px] leading-relaxed lg:leading-[39px] text-[#5F5E5E] font-normal font-sans"
                 style={{ color: "#5F5E5E" }}
               >
                 Our master growers and formulation chemists utilize clean extraction techniques without harmful solvents, delivering uncompromised herbal purity across every strain. Every batch is meticulously crafted to preserve natural terpene profiles, ensuring consistent therapeutic results and an elevated wellness experience.
@@ -818,13 +818,13 @@ export default function HomePage() {
                     <CheckCircle2 className="w-6 h-6 sm:w-7 sm:h-7 text-[#026C24] flex-shrink-0 mt-1" style={{ color: "#026C24" }} />
                     <div className="flex flex-col gap-1">
                       <h3
-                        className="font-semibold text-xl sm:text-2xl lg:text-[27px] leading-snug lg:leading-[42px] text-[#026C24] font-sans"
+                        className="font-semibold text-xl sm:text-md lg:text-[22px] leading-snug lg:leading-[42px] text-[#026C24] font-sans"
                         style={{ color: "#026C24" }}
                       >
                         {item.title}
                       </h3>
                       <p
-                        className="text-sm sm:text-lg lg:text-[21px] leading-relaxed lg:leading-[30px] text-[#5F5E5E] font-normal font-sans"
+                        className="text-sm sm:text-md lg:text-[16px] leading-relaxed lg:leading-[30px] text-[#5F5E5E] font-normal font-sans"
                         style={{ color: "#5F5E5E" }}
                       >
                         {item.desc}
